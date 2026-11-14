@@ -498,7 +498,7 @@ body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none
 .conn__rest{color:var(--muted);font-size:14.5px;margin:16px 0 10px}
 .conn .chip.prof::before{background:var(--warn);box-shadow:0 0 8px rgba(240,182,90,.5)}
 
-/* íslenskar tengingar: samstarf */
+/* local connections: partners */
 .partner{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
 .partner__why{color:var(--muted);font-size:15.5px;max-width:600px}
 .ways3{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:10px}

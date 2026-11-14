@@ -15,7 +15,7 @@
   const meiraBtn = document.createElement('button');
   meiraBtn.type = 'button';
   meiraBtn.className = 'btn btn--ghost btn--sm';
-  if (window.X) meiraBtn.append(window.X.malSpan('is', 'Sýna allar leiðbeiningarnar'), window.X.malSpan('en', 'Show all guides'));
+  meiraBtn.textContent = 'Show all guides';
   meira.appendChild(meiraBtn);
   const grind = spjold[0].parentElement;
   grind.after(meira);
@@ -33,10 +33,8 @@
     b.appendChild(t);
   });
 
-  // "1 leiðbeining", "21 leiðbeining", annars "leiðbeiningar"
-  const ordIs = n => (n % 10 === 1 && n % 100 !== 11) ? 'leiðbeining' : 'leiðbeiningar';
+  // "1 guide", annars "guides"
   const ordEn = n => n === 1 ? 'guide' : 'guides';
-  const ordIsTgf = n => (n % 10 === 1 && n % 100 !== 11) ? 'leiðbeiningu' : 'leiðbeiningum';
 
   function syna() {
     let synileg = 0, alls = 0;
@@ -50,10 +48,7 @@
     meira.hidden = synileg === alls;
     hnappar.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.sia === val)));
     if (fjoldi) {
-      fjoldi.replaceChildren(
-        window.X ? window.X.malSpan('is', synileg === alls ? synileg + ' ' + ordIs(synileg) : synileg + ' af ' + alls + ' ' + ordIsTgf(alls)) : document.createTextNode(''),
-        window.X ? window.X.malSpan('en', synileg === alls ? synileg + ' ' + ordEn(synileg) : synileg + ' of ' + alls + ' ' + ordEn(alls)) : document.createTextNode('')
-      );
+      fjoldi.textContent = synileg === alls ? synileg + ' ' + ordEn(synileg) : synileg + ' of ' + alls + ' ' + ordEn(alls);
     }
   }
 

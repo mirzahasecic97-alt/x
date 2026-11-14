@@ -57,7 +57,7 @@
 <header class="nav">
 <div class="wrap nav__in">
 <a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
-<nav aria-label="Valmynd / Menu" class="nav__links" id="valmynd">
+<nav aria-label="Menu" class="nav__links" id="valmynd">
 <a href="kerfid.html"><span>The system</span></a>
 <a aria-current="page" href="tengingar.html"><span>Connections</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
@@ -68,7 +68,7 @@
 <div class="nav__right">
 
 <a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span>Get started</span></a>
-<button aria-controls="valmynd" aria-expanded="false" aria-label="Valmynd / Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<button aria-controls="valmynd" aria-expanded="false" aria-label="Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </div>
 </header>
@@ -110,7 +110,7 @@
 </div>
 <div class="picker" data-velja="">
 <div class="picker__groups">
-<div aria-label="Bókhald / Accounting" class="pgroup edge rv" role="group">
+<div aria-label="Accounting" class="pgroup edge rv" role="group">
 <h3><span>Accounting</span></h3>
 <div class="tools">
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">DK</span><span class="tool__does" hidden=""><span>An accepted quote becomes an invoice in DK. You create a key there and paste it in.</span></span></button>
@@ -118,8 +118,9 @@
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Torfi</span><span class="tool__does" hidden=""><span>Invoices go to Torfi when the connection is ready. Until then, they go out as a file.</span></span></button>
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Something else</span></span><span class="tool__does" hidden=""><span>Invoices go out as a file your bookkeeper imports. Zapier and Make connect the rest.</span></span></button>
 </div>
+<p class="conn__rest"><span>More local systems for each country we open in.</span></p>
 </div>
-<div aria-label="Greiðslur / Payments" class="pgroup edge rv" role="group">
+<div aria-label="Payments" class="pgroup edge rv" role="group">
 <h3><span>Payments</span></h3>
 <div class="tools">
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Repeat</span><span class="tool__does" hidden=""><span>See who is subscribed, whose payment failed and who cancelled. An accepted quote can become a subscription.</span></span></button>
@@ -128,42 +129,42 @@
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Pei</span><span class="tool__does" hidden=""><span>A button on the accepted quote so your customer can pay in instalments. Uses your own Pei agreement.</span></span></button>
 </div>
 </div>
-<div aria-label="Póstur og dagatal / Email and calendar" class="pgroup edge rv" role="group">
+<div aria-label="Email and calendar" class="pgroup edge rv" role="group">
 <h3><span>Email and calendar</span></h3>
 <div class="tools">
 <button aria-pressed="true" class="tool" data-st="ok" type="button"><span class="tool__name">Google</span><span class="tool__does" hidden=""><span>X sends email from your Gmail and puts jobs in your calendar. Incoming mail arrives by forwarding.</span></span></button>
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">Microsoft 365</span><span class="tool__does" hidden=""><span>Email and calendar in Outlook. Your admin approves X once.</span></span></button>
 </div>
 </div>
-<div aria-label="Gervigreind / AI" class="pgroup edge rv" role="group">
+<div aria-label="AI" class="pgroup edge rv" role="group">
 <h3><span>AI</span></h3>
 <div class="tools">
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">Claude</span><span class="tool__does" hidden=""><span>Claude works with your data and always asks first. Included, or your own key.</span></span></button>
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">ChatGPT</span><span class="tool__does" hidden=""><span>ChatGPT works with your data and always asks first. Included, or your own key.</span></span></button>
 </div>
 </div>
-<div aria-label="Vefverslun / Webshop" class="pgroup edge rv" role="group">
+<div aria-label="Webshop" class="pgroup edge rv" role="group">
 <h3><span>Webshop</span></h3>
 <div class="tools">
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">WooCommerce</span><span class="tool__does" hidden=""><span>Customers and orders from your store come into X. You paste in a key from WooCommerce.</span></span></button>
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Shopify</span><span class="tool__does" hidden=""><span>Customers and orders from your store come into X. Your store creates an app and pastes in the keys. We help you.</span></span></button>
 </div>
 </div>
-<div aria-label="Bókanir og undirskriftir / Bookings and signing" class="pgroup edge rv" role="group">
+<div aria-label="Bookings and signing" class="pgroup edge rv" role="group">
 <h3><span>Bookings and signing</span></h3>
 <div class="tools">
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Noona</span><span class="tool__does" hidden=""><span>Your bookings stay in Noona. Your customers come into X for quotes and follow-up.</span></span></button>
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Taktikal</span><span class="tool__does" hidden=""><span>Your customer signs the quote or contract with electronic ID.</span></span></button>
 </div>
 </div>
-<div aria-label="Gögn inn / Data in" class="pgroup edge rv" role="group">
+<div aria-label="Data in" class="pgroup edge rv" role="group">
 <h3><span>Data in</span></h3>
 <div class="tools">
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Excel and CSV</span></span><span class="tool__does" hidden=""><span>Customers, products and history come in from a file. You don't start from zero.</span></span></button>
 <button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Web form</span></span><span class="tool__does" hidden=""><span>Enquiries from your website go straight into sales in X.</span></span></button>
 </div>
 </div>
-<div aria-label="Önnur verkfæri / Other tools" class="pgroup edge rv" role="group">
+<div aria-label="Other tools" class="pgroup edge rv" role="group">
 <h3><span>Other tools</span></h3>
 <div class="tools">
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Mailchimp</span><span class="tool__does" hidden=""><span>Contacts and mailing lists with an API key. A ready template for Mailchimp does the rest.</span></span></button>
@@ -199,7 +200,7 @@
 <div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is/tengingar</span></div>
 <div class="app__body">
 <aside class="app__side">
-<div class="app__co"><b>B</b>Bergás Verk</div>
+<div class="app__co"><b>N</b>Northside Builders</div>
 <div class="app__nav"><svg><use href="#i-yfirlit"></use></svg><span>Overview</span></div>
 <div class="app__nav"><svg><use href="#i-folk"></use></svg><span>Customers</span></div>
 <div class="app__nav"><svg><use href="#i-sala"></use></svg><span>Sales</span></div>
@@ -293,12 +294,12 @@
 <p class="lead">The system is built in phases. Green comes with the first release. Grey is planned and will be marked live when it really works.</p>
 </div>
 <div class="conn">
-<div class="conn__g edge rv"><h3><span>Accounting</span></h3><div class="chips"><span class="chip">DK</span><span class="chip">Payday <small>Premium or higher</small></span><span class="chip soon">Torfi</span></div></div>
+<div class="conn__g edge rv"><h3><span>Accounting</span></h3><div class="chips"><span class="chip">DK</span><span class="chip">Payday <small>Premium or higher</small></span><span class="chip soon">Torfi</span></div><p class="conn__rest"><span>More local systems for each country we open in.</span></p></div>
 <div class="conn__g edge rv"><h3><span>Payments</span></h3><div class="chips"><span class="chip soon">Repeat</span><span class="chip soon">Straumur</span><span class="chip soon">Teya</span><span class="chip soon">Pei <small>instalments</small></span></div></div>
 <div class="conn__g edge rv"><h3><span>Email and calendar</span></h3><div class="chips"><span class="chip">Gmail <small>send</small></span><span class="chip">Google Calendar</span><span class="chip"><span>Outlook and Microsoft 365</span></span><span class="chip soon">Gmail <small>read</small></span></div></div>
 <div class="conn__g edge rv"><h3><span>AI</span></h3><div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip soon"><span>X in Claude</span></span><span class="chip soon"><span>X in ChatGPT</span></span></div></div>
 <div class="conn__g edge rv"><h3><span>Webshop</span></h3><div class="chips"><span class="chip">WooCommerce</span><span class="chip soon">Shopify</span></div></div>
-<div class="conn__g edge rv"><h3><span>Data in</span></h3><div class="chips"><span class="chip"><span>Web form</span></span><span class="chip"><span>Excel and CSV</span></span><span class="chip"><span>Forwarding address (verk@)</span></span></div></div>
+<div class="conn__g edge rv"><h3><span>Data in</span></h3><div class="chips"><span class="chip"><span>Web form</span></span><span class="chip"><span>Excel and CSV</span></span><span class="chip"><span>Forwarding address (jobs@)</span></span></div></div>
 <div class="conn__g edge rv"><h3><span>Signing and bookings</span></h3><div class="chips"><span class="chip soon">Taktikal</span><span class="chip soon">Noona</span></div></div>
 <div class="conn__g edge rv"><h3><span>Files, chat and social</span></h3><div class="chips"><span class="chip soon"><span>Google Drive and OneDrive</span></span><span class="chip soon"><span>Slack and Microsoft Teams</span></span><span class="chip soon"><span>Facebook and Instagram</span></span><span class="chip soon"><span>Google reviews</span></span></div></div>
 </div>
@@ -482,7 +483,7 @@
 <a class="brand" href="index.html"><img alt="X" class="brand__logo" height="24" src="assets/merki/x-logo-malmur.svg" width="60"/></a>
 <span class="foot__line">Your tools, tied together.</span>
 </div>
-<nav aria-label="Síður / Pages" class="foot__links">
+<nav aria-label="Pages" class="foot__links">
 <a href="kerfid.html"><span>The system</span></a>
 <a aria-current="page" href="tengingar.html"><span>Connections</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
