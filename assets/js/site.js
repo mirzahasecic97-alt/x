@@ -26,10 +26,8 @@ const GEYMSLA = 'x-mal';
 let geymslaVirkar = true;
 
 function lesaMal() {
-  const p = new URLSearchParams(location.search).get('lang');
-  if (p === 'is' || p === 'en') { geyma(p); return p; }
-  try { const g = localStorage.getItem(GEYMSLA); if (g === 'is' || g === 'en') return g; } catch (e) { geymslaVirkar = false; }
-  return (navigator.language || '').toLowerCase().startsWith('is') ? 'is' : 'en';
+  // vefurinn er eingöngu á ensku
+  return 'en';
 }
 function geyma(m) { try { localStorage.setItem(GEYMSLA, m); } catch (e) { geymslaVirkar = false; } }
 
@@ -83,7 +81,6 @@ function setjaMal(m) {
 }
 
 setjaMal(lesaMal());
-document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => { geyma(b.dataset.mal); setjaMal(b.dataset.mal); }));
 
 // opið fyrir skriftur einstakra síðna
 window.X = { STILLINGAR, STADA, malSpan, mal: () => document.documentElement.lang };

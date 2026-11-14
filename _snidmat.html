@@ -1,3 +1,4 @@
+<!doctype html>
 <!--
   SNIÐMÁT FYRIR SÍÐU Á x.is
   1. Afritaðu þessa skrá sem <síða>.html (kerfid, tengingar, gervigreind, leidbeiningar, samstarf, verd).
@@ -8,110 +9,98 @@
   6. Hausinn, táknin og fóturinn eru eins á öllum síðum. Breyttu þeim ekki á einni síðu.
   Þessi athugasemd má fara út á síðunum sjálfum.
 -->
-<!doctype html>
-<html lang="is"
-  data-titill-is="[Síða]: X"
-  data-titill-en="[Page]: X"
-  data-lysing-is="[Lýsing á íslensku, ein til tvær setningar.]"
-  data-lysing-en="[Description in English, one or two sentences.]">
+<!DOCTYPE html>
+
+<html data-lysing-en="[Description in English, one or two sentences.]" data-titill-en="[Page]: X" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>[Síða]: X</title>
-<meta name="description" content="[Lýsing á íslensku, ein til tvær setningar.]">
-<meta name="theme-color" content="#08090a">
-<meta name="robots" content="noindex">
-<link rel="icon" href="assets/merki/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Michroma&display=swap">
-<link rel="stylesheet" href="assets/css/site.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>[Page]: X</title>
+<meta content="[Description in English, one or two sentences.]" name="description"/>
+<meta content="#08090a" name="theme-color"/>
+<meta content="noindex" name="robots"/>
+<link href="assets/merki/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Michroma&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/site.css" rel="stylesheet"/>
 <!-- <link rel="stylesheet" href="assets/css/[síða].css"> -->
 </head>
 <body>
-
 <!-- tákn: notuð með <svg><use href="#i-nafn"/></svg> -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-yfirlit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="9" rx="2"/><rect x="13.5" y="3" width="7.5" height="5" rx="2"/><rect x="13.5" y="11" width="7.5" height="10" rx="2"/><rect x="3" y="15" width="7.5" height="6" rx="2"/></symbol>
-    <symbol id="i-folk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.8a3.3 3.3 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></symbol>
-    <symbol id="i-sala" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></symbol>
-    <symbol id="i-tilbod" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
-    <symbol id="i-verk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 12.5 2.7 2.7L16.5 9"/></symbol>
-    <symbol id="i-dagatal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15.5" r="1.2" fill="currentColor"/></symbol>
-    <symbol id="i-postur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
-    <symbol id="i-samfelag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/></symbol>
-    <symbol id="i-reikningur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
-    <symbol id="i-vorur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.5 4.5v9L12 21l-8.5-4.5v-9z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></symbol>
-    <symbol id="i-skjol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
-    <symbol id="i-gatt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19c1.2-2.5 3.1-3.7 5.5-3.7s4.3 1.2 5.5 3.7"/></symbol>
-    <symbol id="i-sjalfvirkni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12z"/></symbol>
-    <symbol id="i-heili" viewBox="8 7 103 70" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z"/><path d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46"/></symbol>
-    <symbol id="i-skyrsla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-    <symbol id="i-tengi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></symbol>
-    <symbol id="i-bok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/></symbol>
-    <symbol id="i-lykill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="m11.5 11.5 9-9M17 6l3 3M14.5 8.5l2 2"/></symbol>
-    <symbol id="i-skjoldur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
-    <symbol id="i-hnottur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"/></symbol>
-    <symbol id="i-nidur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
-    <symbol id="i-lag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
-    <symbol id="i-hond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="i-hak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-or" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-pensill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1.3" fill="currentColor"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor"/><circle cx="16" cy="10" r="1.3" fill="currentColor"/><path d="M12 21c-1.5 0-2-1-2-2s1-2 2.5-2H15a3 3 0 0 0 3-3"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7 7 17"/></symbol>
-    <symbol id="i-greidsla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19M6 15h4"/></symbol>
-    <symbol id="i-verslun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
-    <symbol id="i-skipti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></symbol>
-    <symbol id="i-spjall" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></symbol>
-  </defs>
+<svg aria-hidden="true" height="0" style="position:absolute" width="0">
+<defs>
+<symbol fill="none" id="i-yfirlit" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="9" rx="2" width="7.5" x="3" y="3"></rect><rect height="5" rx="2" width="7.5" x="13.5" y="3"></rect><rect height="10" rx="2" width="7.5" x="13.5" y="11"></rect><rect height="6" rx="2" width="7.5" x="3" y="15"></rect></symbol>
+<symbol fill="none" id="i-folk" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"></path><path d="M16 4.8a3.3 3.3 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"></path></symbol>
+<symbol fill="none" id="i-sala" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"></path></symbol>
+<symbol fill="none" id="i-tilbod" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></symbol>
+<symbol fill="none" id="i-verk" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="18" rx="4" width="18" x="3" y="3"></rect><path d="m8 12.5 2.7 2.7L16.5 9"></path></symbol>
+<symbol fill="none" id="i-dagatal" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="5"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><circle cx="12" cy="15.5" fill="currentColor" r="1.2"></circle></symbol>
+<symbol fill="none" id="i-postur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></symbol>
+<symbol fill="none" id="i-samfelag" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="6" cy="12" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="18" cy="18" r="2.5"></circle><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"></path></symbol>
+<symbol fill="none" id="i-reikningur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6M9 16h3"></path></symbol>
+<symbol fill="none" id="i-vorur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="m12 3 8.5 4.5v9L12 21l-8.5-4.5v-9z"></path><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"></path></symbol>
+<symbol fill="none" id="i-skjol" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></symbol>
+<symbol fill="none" id="i-gatt" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="18" rx="4" width="18" x="3" y="3"></rect><circle cx="12" cy="10" r="3"></circle><path d="M6.5 19c1.2-2.5 3.1-3.7 5.5-3.7s4.3 1.2 5.5 3.7"></path></symbol>
+<symbol fill="none" id="i-sjalfvirkni" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12z"></path></symbol>
+<symbol fill="none" id="i-heili" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" viewbox="8 7 103 70"><path d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z"></path><path d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46"></path></symbol>
+<symbol fill="none" id="i-skyrsla" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></symbol>
+<symbol fill="none" id="i-tengi" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"></path></symbol>
+<symbol fill="none" id="i-bok" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"></path><path d="M4 20a2 2 0 0 0 2 2h13v-4"></path></symbol>
+<symbol fill="none" id="i-lykill" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="8" cy="15" r="4.5"></circle><path d="m11.5 11.5 9-9M17 6l3 3M14.5 8.5l2 2"></path></symbol>
+<symbol fill="none" id="i-skjoldur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></symbol>
+<symbol fill="none" id="i-hnottur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"></path></symbol>
+<symbol fill="none" id="i-nidur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"></path></symbol>
+<symbol fill="none" id="i-lag" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></symbol>
+<symbol fill="none" id="i-hond" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path><path d="M12 7v5l3 2"></path></symbol>
+<symbol fill="none" id="i-hak" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"></path></symbol>
+<symbol fill="none" id="i-or" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+<symbol fill="none" id="i-pensill" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="8" cy="10" fill="currentColor" r="1.3"></circle><circle cx="12" cy="7.5" fill="currentColor" r="1.3"></circle><circle cx="16" cy="10" fill="currentColor" r="1.3"></circle><path d="M12 21c-1.5 0-2-1-2-2s1-2 2.5-2H15a3 3 0 0 0 3-3"></path></symbol>
+<symbol fill="none" id="i-x" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17"></path></symbol>
+<symbol fill="none" id="i-greidsla" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14" rx="3" width="19" x="2.5" y="5"></rect><path d="M2.5 10h19M6 15h4"></path></symbol>
+<symbol fill="none" id="i-verslun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></symbol>
+<symbol fill="none" id="i-skipti" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"></path></symbol>
+<symbol fill="none" id="i-spjall" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 10h8M8 13h5"></path></symbol>
+</defs>
 </svg>
-
-<a class="skip" href="#efni"><span lang="is">Fara í efni</span><span lang="en">Skip to content</span></a>
-
+<a class="skip" href="#efni"><span>Skip to content</span></a>
 <!-- ============ HAUS: eins á öllum síðum. aria-current="page" á tengil síðunnar sem er opin ============ -->
 <header class="nav">
-  <div class="wrap nav__in">
-    <a href="index.html" class="brand"><img class="brand__logo" src="assets/merki/x-logo-malmur.svg" alt="X" width="70" height="28"></a>
-    <nav class="nav__links" id="valmynd" aria-label="Valmynd / Menu">
-      <a href="kerfid.html"><span lang="is">Kerfið</span><span lang="en">The system</span></a>
-      <a href="tengingar.html"><span lang="is">Tengingar</span><span lang="en">Connections</span></a>
-      <a href="gervigreind.html"><span lang="is">Gervigreind</span><span lang="en">AI</span></a>
-      <a href="leidbeiningar.html"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span></a>
-      <a href="samstarf.html"><span lang="is">Samstarf</span><span lang="en">Partners</span></a>
-      <a href="verd.html"><span lang="is">Verð</span><span lang="en">Pricing</span></a>
-    </nav>
-    <div class="nav__right">
-      <div class="lang" role="group" aria-label="Tungumál / Language">
-        <button type="button" data-mal="is" aria-pressed="true">IS</button>
-        <button type="button" data-mal="en" aria-pressed="false">EN</button>
-      </div>
-      <a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span lang="is">Byrja</span><span lang="en">Get started</span></a>
-      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="valmynd" aria-label="Valmynd / Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
-  </div>
-</header>
+<div class="wrap nav__in">
+<a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
+<nav aria-label="Valmynd / Menu" class="nav__links" id="valmynd">
+<a href="kerfid.html"><span>The system</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
+<a href="gervigreind.html"><span>AI</span></a>
+<a href="leidbeiningar.html"><span>Guides</span></a>
+<a href="samstarf.html"><span>Partners</span></a>
+<a href="verd.html"><span>Pricing</span></a>
+</nav>
+<div class="nav__right">
 
+<a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span>Get started</span></a>
+<button aria-controls="valmynd" aria-expanded="false" aria-label="Valmynd / Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</div>
+</header>
 <!-- ============ EFNI ============
      Hetja undirsíðu: .hero.hero--page. Minni en forsíðan, sama flæði í bakgrunni (.hero__fx).
      Kicker, ein h1 á hvoru máli, lead á hvoru máli. Valfrjálst: .hero__cta með hnöppum.
      Á eftir hetjunni koma kaflar: <section class="sec"><div class="wrap"> ... </div></section>
      Sjá SIDUR.md fyrir klasa, stöðumerki og reglur. -->
 <main id="efni" tabindex="-1">
-
 <section class="hero hero--page">
-  <div class="hero__fx" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
-  <div class="wrap">
-    <div class="hero__in">
-      <p class="kicker"><span lang="is">[Yfirskrift]</span><span lang="en">[Kicker]</span></p>
-      <h1 lang="is">[Fyrirsögn síðunnar.] <span class="metal">[Málmhluti.]</span></h1>
-      <h1 lang="en">[Page headline.] <span class="metal">[Metal part.]</span></h1>
-      <p class="lead" lang="is">[Ein til tvær stuttar setningar.]</p>
-      <p class="lead" lang="en">[One or two short sentences.]</p>
-    </div>
-  </div>
-</section>
+<div aria-hidden="true" class="hero__fx"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
+<div class="wrap">
+<div class="hero__in">
+<p class="kicker"><span>[Kicker]</span></p>
 
+<h1>[Page headline.] <span class="metal">[Metal part.]</span></h1>
+
+<p class="lead">[One or two short sentences.]</p>
+</div>
+</div>
+</section>
 <!-- Dæmi um kafla (eyða eða afrita):
 <section class="sec" id="kafli">
   <div class="wrap">
@@ -125,29 +114,26 @@
   </div>
 </section>
 -->
-
 </main>
-
 <!-- ============ FÓTUR: eins á öllum síðum ============ -->
 <footer class="foot">
-  <div class="wrap foot__in">
-    <div class="foot__brand">
-      <a href="index.html" class="brand"><img class="brand__logo" src="assets/merki/x-logo-malmur.svg" alt="X" width="60" height="24"></a>
-      <span class="foot__line" lang="is">Þín verkfæri, tengd saman.</span><span class="foot__line" lang="en">Your tools, tied together.</span>
-    </div>
-    <nav class="foot__links" aria-label="Síður / Pages">
-      <a href="kerfid.html"><span lang="is">Kerfið</span><span lang="en">The system</span></a>
-      <a href="tengingar.html"><span lang="is">Tengingar</span><span lang="en">Connections</span></a>
-      <a href="gervigreind.html"><span lang="is">Gervigreind</span><span lang="en">AI</span></a>
-      <a href="leidbeiningar.html"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span></a>
-      <a href="samstarf.html"><span lang="is">Samstarf</span><span lang="en">Partners</span></a>
-      <a href="verd.html"><span lang="is">Verð</span><span lang="en">Pricing</span></a>
-    </nav>
-    <p class="foot__copy">© <span data-ar>2026</span> X</p>
-  </div>
+<div class="wrap foot__in">
+<div class="foot__brand">
+<a class="brand" href="index.html"><img alt="X" class="brand__logo" height="24" src="assets/merki/x-logo-malmur.svg" width="60"/></a>
+<span class="foot__line">Your tools, tied together.</span>
+</div>
+<nav aria-label="Síður / Pages" class="foot__links">
+<a href="kerfid.html"><span>The system</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
+<a href="gervigreind.html"><span>AI</span></a>
+<a href="leidbeiningar.html"><span>Guides</span></a>
+<a href="samstarf.html"><span>Partners</span></a>
+<a href="verd.html"><span>Pricing</span></a>
+</nav>
+<p class="foot__copy">© <span data-ar="">2026</span> X</p>
+</div>
 </footer>
-
-<script src="assets/js/site.js" defer></script>
+<script defer="" src="assets/js/site.js"></script>
 <!-- <script src="assets/js/[síða].js" defer></script> -->
 </body>
 </html>

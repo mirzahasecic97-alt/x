@@ -1,721 +1,683 @@
-<!doctype html>
-<html lang="is"
-  data-titill-is="Leiðbeiningar: X"
-  data-titill-en="Guides: X"
-  data-lysing-is="Stuttar greinar og myndbönd á mannamáli: fyrsti dagurinn í X, Claude og ChatGPT, skipanir, sjálfvirkni og ein leiðbeining fyrir hverja tengingu."
-  data-lysing-en="Short articles and videos in plain language: your first day in X, Claude and ChatGPT, prompts, automation and one guide for each connection.">
+<!DOCTYPE html>
+
+<html data-lysing-en="Short articles and videos in plain language: your first day in X, Claude and ChatGPT, prompts, automation and one guide for each connection." data-titill-en="Guides: X" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Leiðbeiningar: X</title>
-<meta name="description" content="Stuttar greinar og myndbönd á mannamáli: fyrsti dagurinn í X, Claude og ChatGPT, skipanir, sjálfvirkni og ein leiðbeining fyrir hverja tengingu.">
-<meta name="theme-color" content="#08090a">
-<meta name="robots" content="noindex">
-<link rel="icon" href="assets/merki/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Michroma&display=swap">
-<link rel="stylesheet" href="assets/css/site.css">
-<link rel="stylesheet" href="assets/css/leidbeiningar.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>Guides: X</title>
+<meta content="Short articles and videos in plain language: your first day in X, Claude and ChatGPT, prompts, automation and one guide for each connection." name="description"/>
+<meta content="#08090a" name="theme-color"/>
+<meta content="noindex" name="robots"/>
+<link href="assets/merki/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Michroma&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/site.css" rel="stylesheet"/>
+<link href="assets/css/leidbeiningar.css" rel="stylesheet"/>
 </head>
 <body>
-
 <!-- tákn: notuð með <svg><use href="#i-nafn"/></svg> -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-yfirlit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="9" rx="2"/><rect x="13.5" y="3" width="7.5" height="5" rx="2"/><rect x="13.5" y="11" width="7.5" height="10" rx="2"/><rect x="3" y="15" width="7.5" height="6" rx="2"/></symbol>
-    <symbol id="i-folk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.8a3.3 3.3 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></symbol>
-    <symbol id="i-sala" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></symbol>
-    <symbol id="i-tilbod" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
-    <symbol id="i-verk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 12.5 2.7 2.7L16.5 9"/></symbol>
-    <symbol id="i-dagatal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15.5" r="1.2" fill="currentColor"/></symbol>
-    <symbol id="i-postur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
-    <symbol id="i-samfelag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/></symbol>
-    <symbol id="i-reikningur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
-    <symbol id="i-vorur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.5 4.5v9L12 21l-8.5-4.5v-9z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></symbol>
-    <symbol id="i-skjol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
-    <symbol id="i-gatt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19c1.2-2.5 3.1-3.7 5.5-3.7s4.3 1.2 5.5 3.7"/></symbol>
-    <symbol id="i-sjalfvirkni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12z"/></symbol>
-    <symbol id="i-heili" viewBox="8 7 103 70" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z"/><path d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46"/></symbol>
-    <symbol id="i-skyrsla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-    <symbol id="i-tengi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></symbol>
-    <symbol id="i-bok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/></symbol>
-    <symbol id="i-lykill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="m11.5 11.5 9-9M17 6l3 3M14.5 8.5l2 2"/></symbol>
-    <symbol id="i-skjoldur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
-    <symbol id="i-hnottur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"/></symbol>
-    <symbol id="i-nidur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
-    <symbol id="i-lag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
-    <symbol id="i-hond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="i-hak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-or" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-pensill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1.3" fill="currentColor"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor"/><circle cx="16" cy="10" r="1.3" fill="currentColor"/><path d="M12 21c-1.5 0-2-1-2-2s1-2 2.5-2H15a3 3 0 0 0 3-3"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7 7 17"/></symbol>
-    <symbol id="i-greidsla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19M6 15h4"/></symbol>
-    <symbol id="i-verslun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
-    <symbol id="i-skipti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></symbol>
-    <symbol id="i-spjall" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></symbol>
-  </defs>
+<svg aria-hidden="true" height="0" style="position:absolute" width="0">
+<defs>
+<symbol fill="none" id="i-yfirlit" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="9" rx="2" width="7.5" x="3" y="3"></rect><rect height="5" rx="2" width="7.5" x="13.5" y="3"></rect><rect height="10" rx="2" width="7.5" x="13.5" y="11"></rect><rect height="6" rx="2" width="7.5" x="3" y="15"></rect></symbol>
+<symbol fill="none" id="i-folk" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"></path><path d="M16 4.8a3.3 3.3 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"></path></symbol>
+<symbol fill="none" id="i-sala" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"></path></symbol>
+<symbol fill="none" id="i-tilbod" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></symbol>
+<symbol fill="none" id="i-verk" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="18" rx="4" width="18" x="3" y="3"></rect><path d="m8 12.5 2.7 2.7L16.5 9"></path></symbol>
+<symbol fill="none" id="i-dagatal" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="5"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><circle cx="12" cy="15.5" fill="currentColor" r="1.2"></circle></symbol>
+<symbol fill="none" id="i-postur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></symbol>
+<symbol fill="none" id="i-samfelag" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="6" cy="12" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="18" cy="18" r="2.5"></circle><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"></path></symbol>
+<symbol fill="none" id="i-reikningur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6M9 16h3"></path></symbol>
+<symbol fill="none" id="i-vorur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="m12 3 8.5 4.5v9L12 21l-8.5-4.5v-9z"></path><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"></path></symbol>
+<symbol fill="none" id="i-skjol" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></symbol>
+<symbol fill="none" id="i-gatt" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="18" rx="4" width="18" x="3" y="3"></rect><circle cx="12" cy="10" r="3"></circle><path d="M6.5 19c1.2-2.5 3.1-3.7 5.5-3.7s4.3 1.2 5.5 3.7"></path></symbol>
+<symbol fill="none" id="i-sjalfvirkni" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12z"></path></symbol>
+<symbol fill="none" id="i-heili" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" viewbox="8 7 103 70"><path d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z"></path><path d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46"></path></symbol>
+<symbol fill="none" id="i-skyrsla" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></symbol>
+<symbol fill="none" id="i-tengi" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"></path></symbol>
+<symbol fill="none" id="i-bok" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"></path><path d="M4 20a2 2 0 0 0 2 2h13v-4"></path></symbol>
+<symbol fill="none" id="i-lykill" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="8" cy="15" r="4.5"></circle><path d="m11.5 11.5 9-9M17 6l3 3M14.5 8.5l2 2"></path></symbol>
+<symbol fill="none" id="i-skjoldur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></symbol>
+<symbol fill="none" id="i-hnottur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"></path></symbol>
+<symbol fill="none" id="i-nidur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"></path></symbol>
+<symbol fill="none" id="i-lag" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></symbol>
+<symbol fill="none" id="i-hond" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path><path d="M12 7v5l3 2"></path></symbol>
+<symbol fill="none" id="i-hak" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"></path></symbol>
+<symbol fill="none" id="i-or" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+<symbol fill="none" id="i-pensill" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="8" cy="10" fill="currentColor" r="1.3"></circle><circle cx="12" cy="7.5" fill="currentColor" r="1.3"></circle><circle cx="16" cy="10" fill="currentColor" r="1.3"></circle><path d="M12 21c-1.5 0-2-1-2-2s1-2 2.5-2H15a3 3 0 0 0 3-3"></path></symbol>
+<symbol fill="none" id="i-x" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17"></path></symbol>
+<symbol fill="none" id="i-greidsla" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14" rx="3" width="19" x="2.5" y="5"></rect><path d="M2.5 10h19M6 15h4"></path></symbol>
+<symbol fill="none" id="i-verslun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></symbol>
+<symbol fill="none" id="i-skipti" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"></path></symbol>
+<symbol fill="none" id="i-spjall" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 10h8M8 13h5"></path></symbol>
+</defs>
 </svg>
-
-<a class="skip" href="#efni"><span lang="is">Fara í efni</span><span lang="en">Skip to content</span></a>
-
+<a class="skip" href="#efni"><span>Skip to content</span></a>
 <!-- ============ HAUS: eins á öllum síðum. aria-current="page" á tengil síðunnar sem er opin ============ -->
 <header class="nav">
-  <div class="wrap nav__in">
-    <a href="index.html" class="brand"><img class="brand__logo" src="assets/merki/x-logo-malmur.svg" alt="X" width="70" height="28"></a>
-    <nav class="nav__links" id="valmynd" aria-label="Valmynd / Menu">
-      <a href="kerfid.html"><span lang="is">Kerfið</span><span lang="en">The system</span></a>
-      <a href="tengingar.html"><span lang="is">Tengingar</span><span lang="en">Connections</span></a>
-      <a href="gervigreind.html"><span lang="is">Gervigreind</span><span lang="en">AI</span></a>
-      <a href="leidbeiningar.html" aria-current="page"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span></a>
-      <a href="samstarf.html"><span lang="is">Samstarf</span><span lang="en">Partners</span></a>
-      <a href="verd.html"><span lang="is">Verð</span><span lang="en">Pricing</span></a>
-    </nav>
-    <div class="nav__right">
-      <div class="lang" role="group" aria-label="Tungumál / Language">
-        <button type="button" data-mal="is" aria-pressed="true">IS</button>
-        <button type="button" data-mal="en" aria-pressed="false">EN</button>
-      </div>
-      <a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span lang="is">Byrja</span><span lang="en">Get started</span></a>
-      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="valmynd" aria-label="Valmynd / Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
-  </div>
-</header>
+<div class="wrap nav__in">
+<a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
+<nav aria-label="Valmynd / Menu" class="nav__links" id="valmynd">
+<a href="kerfid.html"><span>The system</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
+<a href="gervigreind.html"><span>AI</span></a>
+<a aria-current="page" href="leidbeiningar.html"><span>Guides</span></a>
+<a href="samstarf.html"><span>Partners</span></a>
+<a href="verd.html"><span>Pricing</span></a>
+</nav>
+<div class="nav__right">
 
+<a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span>Get started</span></a>
+<button aria-controls="valmynd" aria-expanded="false" aria-label="Valmynd / Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</div>
+</header>
 <!-- ============ EFNI ============ -->
 <main id="efni" tabindex="-1">
-
 <section class="hero hero--page">
-  <div class="hero__fx" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
-  <div class="wrap">
-    <div class="hero__in">
-      <p class="kicker"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span></p>
-      <h1 lang="is">Lærðu á kerfið. <span class="metal">Láttu svo gervigreindina vinna.</span></h1>
-      <h1 lang="en">Learn the system. <span class="metal">Then put AI to work.</span></h1>
-      <p class="lead" lang="is">Stuttar greinar með skjámyndum og stutt myndbönd, á mannamáli. Frá fyrsta deginum í X yfir í Claude og ChatGPT sem vinna fyrir þig.</p>
-      <p class="lead" lang="en">Short articles with screenshots and short videos, in plain language. From your first day in X to Claude and ChatGPT working for you.</p>
-      <div class="hero__cta">
-        <a class="btn btn--metal" href="#fyrsti-dagur"><span lang="is">Byrjaðu hér</span><span lang="en">Start here</span><svg><use href="#i-or"/></svg></a>
-        <a class="btn btn--ghost" href="#safn"><span lang="is">Skoða safnið</span><span lang="en">Browse the library</span></a>
-      </div>
-      <p class="hero__note">
-        <span><svg><use href="#i-lag"/></svg><span lang="is">Íslenska og enska</span><span lang="en">Icelandic and English</span></span>
-        <span><svg><use href="#i-bok"/></svg><span lang="is">Ein leiðbeining, eitt verk</span><span lang="en">One guide, one job</span></span>
-        <span><svg><use href="#i-hond"/></svg><span lang="is">Myndböndin eru á leiðinni</span><span lang="en">Videos are on the way</span></span>
-      </p>
-    </div>
-  </div>
-</section>
+<div aria-hidden="true" class="hero__fx"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
+<div class="wrap">
+<div class="hero__in">
+<p class="kicker"><span>Guides</span></p>
 
+<h1>Learn the system. <span class="metal">Then put AI to work.</span></h1>
+
+<p class="lead">Short articles with screenshots and short videos, in plain language. From your first day in X to Claude and ChatGPT working for you.</p>
+<div class="hero__cta">
+<a class="btn btn--metal" href="#fyrsti-dagur"><span>Start here</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--ghost" href="#safn"><span>Browse the library</span></a>
+</div>
+<p class="hero__note">
+<span><svg><use href="#i-lag"></use></svg><span>Icelandic and English</span></span>
+<span><svg><use href="#i-bok"></use></svg><span>One guide, one job</span></span>
+<span><svg><use href="#i-hond"></use></svg><span>Videos are on the way</span></span>
+</p>
+</div>
+</div>
+</section>
 <!-- ============ HVERNIG ÞÆR VIRKA ============ -->
 <section class="sec" id="hvernig">
-  <div class="wrap lg-how">
-    <div>
-      <div class="sec__head rv">
-        <p class="kicker"><span lang="is">Hvernig þær virka</span><span lang="en">How they work</span></p>
-        <h2 lang="is">Stutt og skýrt. <span class="metal">Þar sem þú þarft það.</span></h2>
-        <h2 lang="en">Short and clear. <span class="metal">Where you need it.</span></h2>
-        <p class="lead" lang="is">Hver leiðbeining kennir eitt verk. Þú finnur þær hér á vefnum og inni í kerfinu, við hliðina á verkinu sjálfu.</p>
-        <p class="lead" lang="en">Each guide teaches one job. You find them here on the site and inside the system, right next to the job itself.</p>
-      </div>
-      <div class="lg-pts">
-        <div class="pt edge rv">
-          <span class="mod__ic"><svg><use href="#i-bok"/></svg></span>
-          <div>
-            <h3><span lang="is">Grein með skjámyndum</span><span lang="en">An article with screenshots</span> <span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></h3>
-            <p lang="is">Skref fyrir skref, eins og þú sérð það á skjánum. Lestu, gerðu og haltu áfram.</p>
-            <p lang="en">Step by step, the way you see it on screen. Read it, do it, move on.</p>
-          </div>
-        </div>
-        <div class="pt edge rv">
-          <span class="mod__ic"><svg><use href="#i-hond"/></svg></span>
-          <div>
-            <h3><span lang="is">Stutt myndband</span><span lang="en">A short video</span> <span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></h3>
-            <p lang="is">Um tvær mínútur hvert. Þau hafa ekki verið tekin upp enn, svo hvert myndband er merkt væntanlegt þar til það kemur.</p>
-            <p lang="en">About two minutes each. They are not recorded yet, so every video is marked coming soon until it is out.</p>
-          </div>
-        </div>
-        <div class="pt edge rv">
-          <span class="mod__ic"><svg><use href="#i-verk"/></svg></span>
-          <div>
-            <h3><span lang="is">Inni í kerfinu, með hökum</span><span lang="en">Inside the system, with ticks</span></h3>
-            <p lang="is">Á yfirlitinu bíður listi yfir fyrstu skrefin, með tengli á rétta leiðbeiningu. Listinn hverfur þegar allt er hakað.</p>
-            <p lang="en">Your overview shows a list of first steps, each linked to the right guide. The list goes away once everything is ticked.</p>
-          </div>
-        </div>
-        <div class="pt edge rv">
-          <span class="mod__ic"><svg><use href="#i-lag"/></svg></span>
-          <div>
-            <h3><span lang="is">Valið eftir grein</span><span lang="en">Picked for your trade</span></h3>
-            <p lang="is">Greinin sem þú velur í byrjun ræður hvaða leiðbeiningum þér er bent á fyrst.</p>
-            <p lang="en">The trade you pick at the start decides which guides you are pointed to first.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="wrap lg-how">
+<div>
+<div class="sec__head rv">
+<p class="kicker"><span>How they work</span></p>
 
-    <div class="lg-shot rv" aria-hidden="true">
-      <div class="app">
-        <div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is/yfirlit</span></div>
-        <div class="lg-first">
-          <div class="lg-first__co"><span class="app__co"><b>B</b>Bergás Verk</span></div>
-          <div class="lg-first__head">
-            <b><span lang="is">Fyrstu skrefin</span><span lang="en">First steps</span></b>
-            <span class="lg-first__n"><span lang="is">3 af 6</span><span lang="en">3 of 6</span></span>
-          </div>
-          <div class="lg-bar"><i style="width:50%"></i></div>
-          <ul class="lg-chk">
-            <li class="on"><span class="lg-box"><svg><use href="#i-hak"/></svg></span><span lang="is">Merkið og litirnir</span><span lang="en">Logo and colours</span></li>
-            <li class="on"><span class="lg-box"><svg><use href="#i-hak"/></svg></span><span lang="is">Viðskiptavinirnir inn</span><span lang="en">Customers in</span></li>
-            <li class="on"><span class="lg-box"><svg><use href="#i-hak"/></svg></span><span lang="is">Tengdu póstinn</span><span lang="en">Connect your email</span></li>
-            <li class="now"><span class="lg-box"></span><span lang="is">Tengdu bókhaldið</span><span lang="en">Connect your accounting</span><em><span lang="is">Leiðbeining</span><span lang="en">Guide</span><svg><use href="#i-or"/></svg></em></li>
-            <li><span class="lg-box"></span><span lang="is">Fyrsta tilboðið út</span><span lang="en">Send your first quote</span></li>
-            <li><span class="lg-box"></span><span lang="is">Prófaðu gervigreindina</span><span lang="en">Try the AI</span></li>
-          </ul>
-          <div class="lg-peek">
-            <span class="lg-peek__ic"><svg><use href="#i-bok"/></svg></span>
-            <div>
-              <small><span lang="is">Leiðbeining</span><span lang="en">Guide</span></small>
-              <b><span lang="is">Tengdu DK eða Payday</span><span lang="en">Connect DK or Payday</span></b>
-              <span class="lg-peek__f"><span lang="is">Grein</span><span lang="en">Article</span> <i></i> <span lang="is">Myndband væntanlegt</span><span lang="en">Video coming soon</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<h2>Short and clear. <span class="metal">Where you need it.</span></h2>
+
+<p class="lead">Each guide teaches one job. You find them here on the site and inside the system, right next to the job itself.</p>
+</div>
+<div class="lg-pts">
+<div class="pt edge rv">
+<span class="mod__ic"><svg><use href="#i-bok"></use></svg></span>
+<div>
+<h3><span>An article with screenshots</span> <span class="tag tag--ok"><span>In the first release</span></span></h3>
+
+<p>Step by step, the way you see it on screen. Read it, do it, move on.</p>
+</div>
+</div>
+<div class="pt edge rv">
+<span class="mod__ic"><svg><use href="#i-hond"></use></svg></span>
+<div>
+<h3><span>A short video</span> <span class="tag"><span>Coming soon</span></span></h3>
+
+<p>About two minutes each. They are not recorded yet, so every video is marked coming soon until it is out.</p>
+</div>
+</div>
+<div class="pt edge rv">
+<span class="mod__ic"><svg><use href="#i-verk"></use></svg></span>
+<div>
+<h3><span>Inside the system, with ticks</span></h3>
+
+<p>Your overview shows a list of first steps, each linked to the right guide. The list goes away once everything is ticked.</p>
+</div>
+</div>
+<div class="pt edge rv">
+<span class="mod__ic"><svg><use href="#i-lag"></use></svg></span>
+<div>
+<h3><span>Picked for your trade</span></h3>
+
+<p>The trade you pick at the start decides which guides you are pointed to first.</p>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="lg-shot rv">
+<div class="app">
+<div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is/yfirlit</span></div>
+<div class="lg-first">
+<div class="lg-first__co"><span class="app__co"><b>B</b>Bergás Verk</span></div>
+<div class="lg-first__head">
+<b><span>First steps</span></b>
+<span class="lg-first__n"><span>3 of 6</span></span>
+</div>
+<div class="lg-bar"><i style="width:50%"></i></div>
+<ul class="lg-chk">
+<li class="on"><span class="lg-box"><svg><use href="#i-hak"></use></svg></span><span>Logo and colours</span></li>
+<li class="on"><span class="lg-box"><svg><use href="#i-hak"></use></svg></span><span>Customers in</span></li>
+<li class="on"><span class="lg-box"><svg><use href="#i-hak"></use></svg></span><span>Connect your email</span></li>
+<li class="now"><span class="lg-box"></span><span>Connect your accounting</span><em><span>Guide</span><svg><use href="#i-or"></use></svg></em></li>
+<li><span class="lg-box"></span><span>Send your first quote</span></li>
+<li><span class="lg-box"></span><span>Try the AI</span></li>
+</ul>
+<div class="lg-peek">
+<span class="lg-peek__ic"><svg><use href="#i-bok"></use></svg></span>
+<div>
+<small><span>Guide</span></small>
+<b><span>Connect DK or Payday</span></b>
+<span class="lg-peek__f"><span>Article</span> <i></i> <span>Video coming soon</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ SAFNIÐ ============ -->
 <section class="sec sec--tight" id="safn">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="kicker"><span lang="is">Safnið</span><span lang="en">The library</span></p>
-      <h2 lang="is">Allar leiðbeiningarnar. <span class="metal">Veldu efni.</span></h2>
-      <h2 lang="en">Every guide. <span class="metal">Pick a topic.</span></h2>
-      <p class="lead" lang="is">Kerfið er smíðað í áföngum og leiðbeiningarnar fylgja. Hver þeirra er merkt með stöðu, svo þú sérð hvað fylgir fyrstu útgáfu og hvað kemur seinna.</p>
-      <p class="lead" lang="en">The system is built in phases and the guides follow. Each one is marked with its status, so you can see what ships with the first release and what comes later.</p>
-    </div>
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>The library</span></p>
 
-    <div class="lg-tools rv">
-      <div class="lg-filter" role="group" data-al-is="Sía eftir efni" data-al-en="Filter by topic" aria-label="Sía eftir efni" hidden>
-        <button type="button" class="lg-fb" data-sia="allt" aria-pressed="true"><span lang="is">Allt</span><span lang="en">All</span></button>
-        <button type="button" class="lg-fb" data-sia="byrja" aria-pressed="false"><span lang="is">Byrjaðu hér</span><span lang="en">Start here</span></button>
-        <button type="button" class="lg-fb" data-sia="claude" aria-pressed="false">Claude 101</button>
-        <button type="button" class="lg-fb" data-sia="chatgpt" aria-pressed="false">ChatGPT 101</button>
-        <button type="button" class="lg-fb" data-sia="inni" aria-pressed="false"><span lang="is">X í Claude og ChatGPT</span><span lang="en">X inside Claude and ChatGPT</span></button>
-        <button type="button" class="lg-fb" data-sia="skipanir" aria-pressed="false"><span lang="is">Skipanasafn</span><span lang="en">Prompt library</span></button>
-        <button type="button" class="lg-fb" data-sia="sjalfvirkni" aria-pressed="false"><span lang="is">Sjálfvirkni</span><span lang="en">Automation</span></button>
-        <button type="button" class="lg-fb" data-sia="spara" aria-pressed="false"><span lang="is">Spara pening</span><span lang="en">Save money</span></button>
-        <button type="button" class="lg-fb" data-sia="grein" aria-pressed="false"><span lang="is">Eftir grein</span><span lang="en">By trade</span></button>
-        <button type="button" class="lg-fb" data-sia="tengingar" aria-pressed="false"><span lang="is">Tengingar</span><span lang="en">Connections</span></button>
-      </div>
-      <div class="lg-tools__row">
-        <p class="lg-count" aria-live="polite"></p>
-        <div class="conn__legend">
-          <span><i></i><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span>
-          <span><i class="s"></i><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span>
-        </div>
-      </div>
-    </div>
+<h2>Every guide. <span class="metal">Pick a topic.</span></h2>
 
-    <div class="lg-lib">
+<p class="lead">The system is built in phases and the guides follow. Each one is marked with its status, so you can see what ships with the first release and what comes later.</p>
+</div>
+<div class="lg-tools rv">
+<div aria-label="Sía eftir efni" class="lg-filter" data-al-en="Filter by topic" data-al-is="Sía eftir efni" hidden="" role="group">
+<button aria-pressed="true" class="lg-fb" data-sia="allt" type="button"><span>All</span></button>
+<button aria-pressed="false" class="lg-fb" data-sia="byrja" type="button"><span>Start here</span></button>
+<button aria-pressed="false" class="lg-fb" data-sia="claude" type="button">Claude 101</button>
+<button aria-pressed="false" class="lg-fb" data-sia="chatgpt" type="button">ChatGPT 101</button>
+<button aria-pressed="false" class="lg-fb" data-sia="inni" type="button"><span>X inside Claude and ChatGPT</span></button>
+<button aria-pressed="false" class="lg-fb" data-sia="skipanir" type="button"><span>Prompt library</span></button>
+<button aria-pressed="false" class="lg-fb" data-sia="sjalfvirkni" type="button"><span>Automation</span></button>
+<button aria-pressed="false" class="lg-fb" data-sia="spara" type="button"><span>Save money</span></button>
+<button aria-pressed="false" class="lg-fb" data-sia="grein" type="button"><span>By trade</span></button>
+<button aria-pressed="false" class="lg-fb" data-sia="tengingar" type="button"><span>Connections</span></button>
+</div>
+<div class="lg-tools__row">
+<p aria-live="polite" class="lg-count"></p>
+<div class="conn__legend">
+<span><i></i><span>In the first release</span></span>
+<span><i class="s"></i><span>Coming soon</span></span>
+</div>
+</div>
+</div>
+<div class="lg-lib">
+<!-- Byrjaðu hér -->
+<article class="lg-card edge rv" data-efni="byrja">
+<div class="lg-card__top"><span class="tag"><span>Start here</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Your first day in X</h3>
 
-      <!-- Byrjaðu hér -->
-      <article class="lg-card edge rv" data-efni="byrja">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Byrjaðu hér</span><span lang="en">Start here</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Fyrsti dagurinn í X</h3><h3 lang="en">Your first day in X</h3>
-        <p lang="is">Fimm stutt skref: fyrirtækið, greinin, teymið, tengingarnar og gögnin. Markmiðið er að fyrsta tilboðið fari út sama dag.</p>
-        <p lang="en">Five short steps: company, trade, team, connections and data. The goal is your first quote out the same day.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span><a class="lg-card__go" href="#fyrsti-dagur"><span class="sr" lang="is">Sjá sýnishorn</span><span class="sr" lang="en">See the sample</span><svg><use href="#i-or"/></svg></a></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="byrja">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Byrjaðu hér</span><span lang="en">Start here</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Merkið og litirnir</h3><h3 lang="en">Your logo and colours</h3>
-        <p lang="is">Settu inn merkið og aðallitinn. Tilboðin og reikningarnir fá útlitið þitt.</p>
-        <p lang="en">Add your logo and main colour. Your quotes and invoices take on your look.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="byrja">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Byrjaðu hér</span><span lang="en">Start here</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Viðskiptavinirnir inn</h3><h3 lang="en">Bring your customers in</h3>
-        <p lang="is">Úr Excel eða CSV, eða beint úr bókhaldinu. Verðskráin kemur inn sömu leið.</p>
-        <p lang="en">From Excel or CSV, or straight from your accounting system. Your price list comes in the same way.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="byrja">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Byrjaðu hér</span><span lang="en">Start here</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Bjóddu teyminu</h3><h3 lang="en">Invite your team</h3>
-        <p lang="is">Bættu samstarfsfólki við með netfangi. Allir vinna í sama kerfinu og sjá sömu verkin.</p>
-        <p lang="en">Add colleagues by email. Everyone works in the same system and sees the same jobs.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>Five short steps: company, trade, team, connections and data. The goal is your first quote out the same day.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span><a class="lg-card__go" href="#fyrsti-dagur"><span class="sr">See the sample</span><svg><use href="#i-or"></use></svg></a></div>
+</article>
+<article class="lg-card edge rv" data-efni="byrja">
+<div class="lg-card__top"><span class="tag"><span>Start here</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Your logo and colours</h3>
 
-      <!-- Claude 101 -->
-      <article class="lg-card edge rv" data-efni="claude">
-        <div class="lg-card__top"><span class="tag">Claude 101</span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Hvað er Claude?</h3><h3 lang="en">What is Claude?</h3>
-        <p lang="is">Hvað Claude getur gert fyrir reksturinn, á mannamáli. Og hvar mörkin liggja.</p>
-        <p lang="en">What Claude can do for your business, in plain words. And where its limits are.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="claude">
-        <div class="lg-card__top"><span class="tag">Claude 101</span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Claude Pro eða API lykill?</h3><h3 lang="en">Claude Pro or an API key?</h3>
-        <p lang="is">Áskrift og lykill eru ekki það sama. Hvað hvort um sig gerir, og hvað þú tengir við X.</p>
-        <p lang="en">A subscription and a key are not the same thing. What each one does, and which one you connect to X.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span><a class="lg-card__go" href="#gervigreind"><span class="sr" lang="is">Sjá muninn</span><span class="sr" lang="en">See the difference</span><svg><use href="#i-or"/></svg></a></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="claude">
-        <div class="lg-card__top"><span class="tag">Claude 101</span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Fyrstu tíu skipanirnar</h3><h3 lang="en">Your first ten prompts</h3>
-        <p lang="is">Tíu skipanir fyrir reksturinn: tilboð úr minnispunktum, svar við fyrirspurn og samantekt vikunnar.</p>
-        <p lang="en">Ten prompts for your business: a quote from rough notes, a reply to an enquiry and a summary of the week.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>Add your logo and main colour. Your quotes and invoices take on your look.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="byrja">
+<div class="lg-card__top"><span class="tag"><span>Start here</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Bring your customers in</h3>
 
-      <!-- ChatGPT 101 -->
-      <article class="lg-card edge rv" data-efni="chatgpt">
-        <div class="lg-card__top"><span class="tag">ChatGPT 101</span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">ChatGPT fyrir reksturinn</h3><h3 lang="en">ChatGPT for your business</h3>
-        <p lang="is">Hvað ChatGPT gerir vel, hvar þú byrjar og fyrstu skipanirnar.</p>
-        <p lang="en">What ChatGPT does well, where to start and your first prompts.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="chatgpt">
-        <div class="lg-card__top"><span class="tag">ChatGPT 101</span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Lykill hjá OpenAI</h3><h3 lang="en">Get a key from OpenAI</h3>
-        <p lang="is">Hvernig þú býrð til API lykil, setur þak á notkunina og límir hann inn í X.</p>
-        <p lang="en">How to create an API key, set a cap on usage and paste it into X.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>From Excel or CSV, or straight from your accounting system. Your price list comes in the same way.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="byrja">
+<div class="lg-card__top"><span class="tag"><span>Start here</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Invite your team</h3>
 
-      <!-- X í Claude og ChatGPT -->
-      <article class="lg-card edge rv" data-efni="inni">
-        <div class="lg-card__top"><span class="tag"><span lang="is">X í Claude og ChatGPT</span><span lang="en">X inside Claude and ChatGPT</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">Tengdu X við Claude</h3><h3 lang="en">Connect X to Claude</h3>
-        <p lang="is">Spurðu hvaða tilboð eru enn opin, beint úr þínu eigin spjalli við Claude.</p>
-        <p lang="en">Ask which quotes are still open, straight from your own Claude chat.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="inni">
-        <div class="lg-card__top"><span class="tag"><span lang="is">X í Claude og ChatGPT</span><span lang="en">X inside Claude and ChatGPT</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">Tengdu X við ChatGPT</h3><h3 lang="en">Connect X to ChatGPT</h3>
-        <p lang="is">Bættu verki á listann eða flettu upp viðskiptavini án þess að opna X.</p>
-        <p lang="en">Add a task to the list or look up a customer without opening X.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>Add colleagues by email. Everyone works in the same system and sees the same jobs.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<!-- Claude 101 -->
+<article class="lg-card edge rv" data-efni="claude">
+<div class="lg-card__top"><span class="tag">Claude 101</span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>What is Claude?</h3>
 
-      <!-- Skipanasafn -->
-      <article class="lg-card edge rv" data-efni="skipanir">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Skipanasafn</span><span lang="en">Prompt library</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Skipanir fyrir verktaka</h3><h3 lang="en">Prompts for contractors</h3>
-        <p lang="is">Tilboð úr minnispunktum, svar við kvörtun, samantekt á verkum vikunnar. Afritaðu og notaðu.</p>
-        <p lang="en">A quote from rough notes, a reply to a complaint, a summary of the week's jobs. Copy and use.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-spjall"/></svg><span lang="is">Safn</span><span lang="en">Library</span></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="skipanir">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Skipanasafn</span><span lang="en">Prompt library</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">Skipanir fyrir þjónustufyrirtæki</h3><h3 lang="en">Prompts for service firms</h3>
-        <p lang="is">Svör við algengum spurningum, áminningar um bókanir og færslur fyrir heilan mánuð.</p>
-        <p lang="en">Answers to common questions, booking reminders and a month of social posts.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-spjall"/></svg><span lang="is">Safn</span><span lang="en">Library</span></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="skipanir">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Skipanasafn</span><span lang="en">Prompt library</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">Skipanir fyrir verslanir</h3><h3 lang="en">Prompts for shops</h3>
-        <p lang="is">Vörulýsingar, fréttabréf og svör við spurningum um pantanir.</p>
-        <p lang="en">Product descriptions, newsletters and replies to questions about orders.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-spjall"/></svg><span lang="is">Safn</span><span lang="en">Library</span></span></div>
-      </article>
+<p>What Claude can do for your business, in plain words. And where its limits are.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="claude">
+<div class="lg-card__top"><span class="tag">Claude 101</span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Claude Pro or an API key?</h3>
 
-      <!-- Sjálfvirkni -->
-      <article class="lg-card edge rv" data-efni="sjalfvirkni">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Sjálfvirkni</span><span lang="en">Automation</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Fyrsta sjálfvirknin þín</h3><h3 lang="en">Your first automation</h3>
-        <p lang="is">Eftirfylgni tilboða sem fer af stað sjálf. Þú lest póstinn yfir og samþykkir áður en hann fer.</p>
-        <p lang="en">Quote follow-up that starts on its own. You read the email and approve it before it goes.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="sjalfvirkni">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Sjálfvirkni</span><span lang="en">Automation</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Verk@ netfangið</h3><h3 lang="en">The verk@ address</h3>
-        <p lang="is">Áframsendu póst á verk@ netfangið þitt og hann verður að verki á listanum.</p>
-        <p lang="en">Forward an email to your verk@ address and it becomes a task on the list.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="sjalfvirkni">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Sjálfvirkni</span><span lang="en">Automation</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">Sjálfvirkni á mannamáli</h3><h3 lang="en">Automations in plain words</h3>
-        <p lang="is">Skrifaðu eina setningu: þegar tilboð er samþykkt, búðu til verk og láttu teymið vita.</p>
-        <p lang="en">Write one sentence: when a quote is accepted, create the job and let the team know.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>A subscription and a key are not the same thing. What each one does, and which one you connect to X.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span><a class="lg-card__go" href="#gervigreind"><span class="sr">See the difference</span><svg><use href="#i-or"></use></svg></a></div>
+</article>
+<article class="lg-card edge rv" data-efni="claude">
+<div class="lg-card__top"><span class="tag">Claude 101</span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Your first ten prompts</h3>
 
-      <!-- Spara pening -->
-      <article class="lg-card edge rv" data-efni="spara">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Spara pening</span><span lang="en">Save money</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Formúlan</h3><h3 lang="en">The formula</h3>
-        <p lang="is">Skráðu áskriftirnar sem þú borgar fyrir, sjáðu hverjar skarast og segðu upp í réttri röð.</p>
-        <p lang="en">List the subscriptions you pay for, see which overlap and cancel in the right order.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span><a class="lg-card__go" href="#formulan"><span class="sr" lang="is">Sjá formúluna</span><span class="sr" lang="en">See the formula</span><svg><use href="#i-or"/></svg></a></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="spara">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Spara pening</span><span lang="en">Save money</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Gögnin með þér</h3><h3 lang="en">Take your data with you</h3>
-        <p lang="is">Hvernig þú sækir gögnin úr gamla kerfinu áður en þú segir því upp, svo ekkert týnist.</p>
-        <p lang="en">How to get your data out of the old system before you cancel it, so nothing is lost.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>Ten prompts for your business: a quote from rough notes, a reply to an enquiry and a summary of the week.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<!-- ChatGPT 101 -->
+<article class="lg-card edge rv" data-efni="chatgpt">
+<div class="lg-card__top"><span class="tag">ChatGPT 101</span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>ChatGPT for your business</h3>
 
-      <!-- Eftir grein -->
-      <article class="lg-card edge rv" data-efni="grein">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Eftir grein</span><span lang="en">By trade</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">X fyrir verktaka</h3><h3 lang="en">X for contractors</h3>
-        <p lang="is">Tilboð, verk í áföngum og reikningur fyrir hvern áfanga sem fer í DK eða Payday.</p>
-        <p lang="en">Quotes, jobs in stages and an invoice for each stage that goes to DK or Payday.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="grein">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Eftir grein</span><span lang="en">By trade</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">X fyrir þjónustufyrirtæki</h3><h3 lang="en">X for service firms</h3>
-        <p lang="is">Fyrirspurnir, tilboð, verk og fastir viðskiptavinir á einum stað.</p>
-        <p lang="en">Enquiries, quotes, jobs and regular customers in one place.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="grein">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Eftir grein</span><span lang="en">By trade</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">X fyrir ráðgjafa</h3><h3 lang="en">X for consultants</h3>
-        <p lang="is">Tilboð, verkefni og samskipti við viðskiptavini á sama stað.</p>
-        <p lang="en">Proposals, projects and client conversations in the same place.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="grein">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Eftir grein</span><span lang="en">By trade</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">X fyrir verslanir</h3><h3 lang="en">X for shops</h3>
-        <p lang="is">Vörur, pantanir og viðskiptavinir úr vefversluninni, og reikningar áfram í bókhaldið.</p>
-        <p lang="en">Products, orders and customers from your online store, with invoices passed on to your accounting.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>What ChatGPT does well, where to start and your first prompts.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="chatgpt">
+<div class="lg-card__top"><span class="tag">ChatGPT 101</span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Get a key from OpenAI</h3>
 
-      <!-- Tengingar -->
-      <article class="lg-card edge rv" data-efni="tengingar">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Tengingar</span><span lang="en">Connections</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Tengdu DK</h3><h3 lang="en">Connect DK</h3>
-        <p lang="is">Búðu til lykil í DK og límdu hann inn. Reikningarnir fara þá beint í bókhaldið.</p>
-        <p lang="en">Create a key in DK and paste it in. Your invoices then go straight to your accounting.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="tengingar">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Tengingar</span><span lang="en">Connections</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Tengdu Payday</h3><h3 lang="en">Connect Payday</h3>
-        <p lang="is">Sama leið fyrir Payday. Athugaðu að tengingin þarf Premium áskrift hjá Payday eða hærri.</p>
-        <p lang="en">The same route for Payday. Note that the connection needs Payday's Premium plan or higher.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="tengingar">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Tengingar</span><span lang="en">Connections</span></span><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></div>
-        <h3 lang="is">Tengdu Gmail eða Outlook</h3><h3 lang="en">Connect Gmail or Outlook</h3>
-        <p lang="is">Sendu póst úr X í þínu nafni og fáðu dagatalið með.</p>
-        <p lang="en">Send email from X in your own name and bring your calendar along.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
-      <article class="lg-card edge rv" data-efni="tengingar">
-        <div class="lg-card__top"><span class="tag"><span lang="is">Tengingar</span><span lang="en">Connections</span></span><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></div>
-        <h3 lang="is">Tengdu Shopify</h3><h3 lang="en">Connect Shopify</h3>
-        <p lang="is">Þú býrð til app í versluninni og límir lyklana inn. Við hjálpum þér með uppsetninguna.</p>
-        <p lang="en">You create an app in your store and paste the keys in. We help you with the setup.</p>
-        <div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"/></svg><span lang="is">Grein</span><span lang="en">Article</span></span><span class="lg-f lg-f--vid"><span lang="is">Myndband</span><span lang="en">Video</span> <em lang="is">væntanlegt</em><em lang="en">coming soon</em></span></div>
-      </article>
+<p>How to create an API key, set a cap on usage and paste it into X.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<!-- X í Claude og ChatGPT -->
+<article class="lg-card edge rv" data-efni="inni">
+<div class="lg-card__top"><span class="tag"><span>X inside Claude and ChatGPT</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>Connect X to Claude</h3>
 
-    </div>
-    <p class="fine" lang="is">Staðan breytist í „Tilbúið“ þegar leiðbeiningin er komin út. Myndböndin hafa ekki verið tekin upp enn og eru merkt væntanleg þar til þau koma.</p>
-    <p class="fine" lang="en">A status changes to "Live" when the guide is out. The videos have not been recorded yet and are marked coming soon until they are.</p>
-  </div>
+<p>Ask which quotes are still open, straight from your own Claude chat.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="inni">
+<div class="lg-card__top"><span class="tag"><span>X inside Claude and ChatGPT</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>Connect X to ChatGPT</h3>
+
+<p>Add a task to the list or look up a customer without opening X.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<!-- Skipanasafn -->
+<article class="lg-card edge rv" data-efni="skipanir">
+<div class="lg-card__top"><span class="tag"><span>Prompt library</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Prompts for contractors</h3>
+
+<p>A quote from rough notes, a reply to a complaint, a summary of the week's jobs. Copy and use.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-spjall"></use></svg><span>Library</span></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="skipanir">
+<div class="lg-card__top"><span class="tag"><span>Prompt library</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>Prompts for service firms</h3>
+
+<p>Answers to common questions, booking reminders and a month of social posts.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-spjall"></use></svg><span>Library</span></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="skipanir">
+<div class="lg-card__top"><span class="tag"><span>Prompt library</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>Prompts for shops</h3>
+
+<p>Product descriptions, newsletters and replies to questions about orders.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-spjall"></use></svg><span>Library</span></span></div>
+</article>
+<!-- Sjálfvirkni -->
+<article class="lg-card edge rv" data-efni="sjalfvirkni">
+<div class="lg-card__top"><span class="tag"><span>Automation</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Your first automation</h3>
+
+<p>Quote follow-up that starts on its own. You read the email and approve it before it goes.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="sjalfvirkni">
+<div class="lg-card__top"><span class="tag"><span>Automation</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>The verk@ address</h3>
+
+<p>Forward an email to your verk@ address and it becomes a task on the list.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="sjalfvirkni">
+<div class="lg-card__top"><span class="tag"><span>Automation</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>Automations in plain words</h3>
+
+<p>Write one sentence: when a quote is accepted, create the job and let the team know.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<!-- Spara pening -->
+<article class="lg-card edge rv" data-efni="spara">
+<div class="lg-card__top"><span class="tag"><span>Save money</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>The formula</h3>
+
+<p>List the subscriptions you pay for, see which overlap and cancel in the right order.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span><a class="lg-card__go" href="#formulan"><span class="sr">See the formula</span><svg><use href="#i-or"></use></svg></a></div>
+</article>
+<article class="lg-card edge rv" data-efni="spara">
+<div class="lg-card__top"><span class="tag"><span>Save money</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Take your data with you</h3>
+
+<p>How to get your data out of the old system before you cancel it, so nothing is lost.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<!-- Eftir grein -->
+<article class="lg-card edge rv" data-efni="grein">
+<div class="lg-card__top"><span class="tag"><span>By trade</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>X for contractors</h3>
+
+<p>Quotes, jobs in stages and an invoice for each stage that goes to DK or Payday.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="grein">
+<div class="lg-card__top"><span class="tag"><span>By trade</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>X for service firms</h3>
+
+<p>Enquiries, quotes, jobs and regular customers in one place.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="grein">
+<div class="lg-card__top"><span class="tag"><span>By trade</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>X for consultants</h3>
+
+<p>Proposals, projects and client conversations in the same place.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="grein">
+<div class="lg-card__top"><span class="tag"><span>By trade</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>X for shops</h3>
+
+<p>Products, orders and customers from your online store, with invoices passed on to your accounting.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<!-- Tengingar -->
+<article class="lg-card edge rv" data-efni="tengingar">
+<div class="lg-card__top"><span class="tag"><span>Connections</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Connect DK</h3>
+
+<p>Create a key in DK and paste it in. Your invoices then go straight to your accounting.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="tengingar">
+<div class="lg-card__top"><span class="tag"><span>Connections</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Connect Payday</h3>
+
+<p>The same route for Payday. Note that the connection needs Payday's Premium plan or higher.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="tengingar">
+<div class="lg-card__top"><span class="tag"><span>Connections</span></span><span class="tag tag--ok"><span>In the first release</span></span></div>
+<h3>Connect Gmail or Outlook</h3>
+
+<p>Send email from X in your own name and bring your calendar along.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+<article class="lg-card edge rv" data-efni="tengingar">
+<div class="lg-card__top"><span class="tag"><span>Connections</span></span><span class="tag"><span>Coming soon</span></span></div>
+<h3>Connect Shopify</h3>
+
+<p>You create an app in your store and paste the keys in. We help you with the setup.</p>
+<div class="lg-card__meta"><span class="lg-f"><svg><use href="#i-bok"></use></svg><span>Article</span></span><span class="lg-f lg-f--vid"><span>Video</span> <em>coming soon</em></span></div>
+</article>
+</div>
+
+<p class="fine">A status changes to "Live" when the guide is out. The videos have not been recorded yet and are marked coming soon until they are.</p>
+</div>
 </section>
-
 <!-- ============ SÝNISHORN: FYRSTI DAGURINN ============ -->
 <section class="sec" id="fyrsti-dagur">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="kicker"><span lang="is">Sýnishorn</span><span lang="en">A sample</span></p>
-      <h2 lang="is">Fyrsti dagurinn í X. <span class="metal">Fimm skref.</span></h2>
-      <h2 lang="en">Your first day in X. <span class="metal">Five steps.</span></h2>
-      <p class="lead" lang="is">Svona lítur leiðbeining út. Þetta er sú fyrsta sem þú sérð þegar þú stofnar aðgang.</p>
-      <p class="lead" lang="en">This is what a guide looks like. It is the first one you see when you open an account.</p>
-    </div>
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>A sample</span></p>
 
-    <div class="lg-sample edge rv">
-      <div class="lg-art">
-        <p class="lg-crumb"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span> <i>/</i> <span lang="is">Byrjaðu hér</span><span lang="en">Start here</span></p>
-        <h3 class="lg-art__t" lang="is">Fyrsti dagurinn í X</h3><h3 class="lg-art__t" lang="en">Your first day in X</h3>
-        <div class="lg-art__tags">
-          <span class="tag tag--ok"><span lang="is">Grein: í fyrstu útgáfu</span><span lang="en">Article: in the first release</span></span>
-          <span class="tag"><span lang="is">Myndband: væntanlegt</span><span lang="en">Video: coming soon</span></span>
-        </div>
-        <ol class="lg-steps">
-          <li>
-            <div>
-              <h4 lang="is">Fyrirtækið</h4><h4 lang="en">Your company</h4>
-              <p lang="is">Nafn, kennitala, merkið og aðalliturinn. Allt sem fer frá þér fær þitt útlit.</p>
-              <p lang="en">Name, company ID number, logo and main colour. Everything you send out carries your look.</p>
-              <span class="lg-path"><span lang="is">Í kerfinu: Stillingar › Fyrirtækið</span><span lang="en">In the system: Settings › Company</span></span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h4 lang="is">Greinin</h4><h4 lang="en">Your trade</h4>
-              <p lang="is">Verktaki, þjónusta, verslun eða ráðgjöf. Réttar einingar kvikna og þú getur breytt því seinna.</p>
-              <p lang="en">Contractor, service, shop or consulting. The right modules switch on, and you can change them later.</p>
-              <span class="lg-path"><span lang="is">Í kerfinu: Stillingar › Einingar</span><span lang="en">In the system: Settings › Modules</span></span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h4 lang="is">Teymið</h4><h4 lang="en">Your team</h4>
-              <p lang="is">Bjóddu samstarfsfólki með netfangi. Ef þú ert einn í rekstri sleppir þú þessu skrefi.</p>
-              <p lang="en">Invite colleagues by email. If you work alone, skip this step.</p>
-              <span class="lg-path"><span lang="is">Í kerfinu: Stillingar › Teymið</span><span lang="en">In the system: Settings › Team</span></span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h4 lang="is">Tengingarnar</h4><h4 lang="en">Your connections</h4>
-              <p lang="is">Gmail eða Outlook, dagatalið og bókhaldið: DK eða Payday með lykli. Claude eða ChatGPT ef þú vilt.</p>
-              <p lang="en">Gmail or Outlook, your calendar and your accounting: DK or Payday with a key. Claude or ChatGPT if you like.</p>
-              <span class="lg-path"><span lang="is">Í kerfinu: Tengingar</span><span lang="en">In the system: Connections</span></span>
-            </div>
-          </li>
-          <li>
-            <div>
-              <h4 lang="is">Gögnin inn</h4><h4 lang="en">Your data in</h4>
-              <p lang="is">Viðskiptavinir og verðskrá úr Excel eða CSV, eða beint úr bókhaldinu.</p>
-              <p lang="en">Customers and your price list from Excel or CSV, or straight from your accounting system.</p>
-              <span class="lg-path"><span lang="is">Í kerfinu: Viðskiptavinir › Flytja inn</span><span lang="en">In the system: Customers › Import</span></span>
-            </div>
-          </li>
-        </ol>
-        <div class="lg-goal">
-          <span class="mod__ic"><svg><use href="#i-tilbod"/></svg></span>
-          <p lang="is"><b>Markmiðið:</b> fyrsta tilboðið fer út sama dag.</p>
-          <p lang="en"><b>The goal:</b> your first quote goes out the same day.</p>
-        </div>
-      </div>
+<h2>Your first day in X. <span class="metal">Five steps.</span></h2>
 
-      <aside class="lg-side">
-        <div class="lg-vid" aria-hidden="true">
-          <img src="assets/merki/merki.svg" alt="">
-          <span class="lg-vid__play"></span>
-          <span class="lg-vid__cap tag"><span lang="is">Myndband væntanlegt</span><span lang="en">Video coming soon</span></span>
-        </div>
-        <p class="lg-side__note" lang="is">Myndbandið hefur ekki verið tekið upp. Greinin dugar ein og sér.</p>
-        <p class="lg-side__note" lang="en">The video has not been recorded yet. The article works on its own.</p>
-        <h4 class="lg-side__h" lang="is">Hafðu þetta við höndina</h4><h4 class="lg-side__h" lang="en">Have these ready</h4>
-        <ul class="lg-need">
-          <li><svg><use href="#i-pensill"/></svg><span lang="is">Merkið þitt sem mynd</span><span lang="en">Your logo as an image</span></li>
-          <li><svg><use href="#i-vorur"/></svg><span lang="is">Verðskrána í Excel eða CSV</span><span lang="en">Your price list in Excel or CSV</span></li>
-          <li><svg><use href="#i-lykill"/></svg><span lang="is">Lykil úr DK eða Payday</span><span lang="en">A key from DK or Payday</span></li>
-          <li><svg><use href="#i-postur"/></svg><span lang="is">Netfangið sem þú sendir úr</span><span lang="en">The email address you send from</span></li>
-        </ul>
-        <div class="lg-next">
-          <small><span lang="is">Næsta leiðbeining</span><span lang="en">Next guide</span></small>
-          <span lang="is">Merkið og litirnir</span><span lang="en">Your logo and colours</span>
-          <svg><use href="#i-or"/></svg>
-        </div>
-      </aside>
-    </div>
-  </div>
+<p class="lead">This is what a guide looks like. It is the first one you see when you open an account.</p>
+</div>
+<div class="lg-sample edge rv">
+<div class="lg-art">
+<p class="lg-crumb"><span>Guides</span> <i>/</i> <span>Start here</span></p>
+<h3 class="lg-art__t">Your first day in X</h3>
+<div class="lg-art__tags">
+<span class="tag tag--ok"><span>Article: in the first release</span></span>
+<span class="tag"><span>Video: coming soon</span></span>
+</div>
+<ol class="lg-steps">
+<li>
+<div>
+<h4>Your company</h4>
+
+<p>Name, company ID number, logo and main colour. Everything you send out carries your look.</p>
+<span class="lg-path"><span>In the system: Settings › Company</span></span>
+</div>
+</li>
+<li>
+<div>
+<h4>Your trade</h4>
+
+<p>Contractor, service, shop or consulting. The right modules switch on, and you can change them later.</p>
+<span class="lg-path"><span>In the system: Settings › Modules</span></span>
+</div>
+</li>
+<li>
+<div>
+<h4>Your team</h4>
+
+<p>Invite colleagues by email. If you work alone, skip this step.</p>
+<span class="lg-path"><span>In the system: Settings › Team</span></span>
+</div>
+</li>
+<li>
+<div>
+<h4>Your connections</h4>
+
+<p>Gmail or Outlook, your calendar and your accounting: DK or Payday with a key. Claude or ChatGPT if you like.</p>
+<span class="lg-path"><span>In the system: Connections</span></span>
+</div>
+</li>
+<li>
+<div>
+<h4>Your data in</h4>
+
+<p>Customers and your price list from Excel or CSV, or straight from your accounting system.</p>
+<span class="lg-path"><span>In the system: Customers › Import</span></span>
+</div>
+</li>
+</ol>
+<div class="lg-goal">
+<span class="mod__ic"><svg><use href="#i-tilbod"></use></svg></span>
+
+<p><b>The goal:</b> your first quote goes out the same day.</p>
+</div>
+</div>
+<aside class="lg-side">
+<div aria-hidden="true" class="lg-vid">
+<img alt="" src="assets/merki/merki.svg"/>
+<span class="lg-vid__play"></span>
+<span class="lg-vid__cap tag"><span>Video coming soon</span></span>
+</div>
+
+<p class="lg-side__note">The video has not been recorded yet. The article works on its own.</p>
+<h4 class="lg-side__h">Have these ready</h4>
+<ul class="lg-need">
+<li><svg><use href="#i-pensill"></use></svg><span>Your logo as an image</span></li>
+<li><svg><use href="#i-vorur"></use></svg><span>Your price list in Excel or CSV</span></li>
+<li><svg><use href="#i-lykill"></use></svg><span>A key from DK or Payday</span></li>
+<li><svg><use href="#i-postur"></use></svg><span>The email address you send from</span></li>
+</ul>
+<div class="lg-next">
+<small><span>Next guide</span></small>
+<span>Your logo and colours</span>
+<svg><use href="#i-or"></use></svg>
+</div>
+</aside>
+</div>
+</div>
 </section>
-
 <!-- ============ CLAUDE OG CHATGPT ============ -->
 <section class="sec sec--tight" id="gervigreind">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="kicker">Claude 101 <i class="lg-dot"></i> ChatGPT 101</p>
-      <h2 lang="is">Áskrift er ekki lykill. <span class="metal">Við útskýrum muninn.</span></h2>
-      <h2 lang="en">A subscription is not a key. <span class="metal">We explain the difference.</span></h2>
-      <p class="lead" lang="is">Það ruglar marga. Þrjár leiðir að sömu gervigreindinni, og hver þeirra er merkt með stöðu.</p>
-      <p class="lead" lang="en">It confuses a lot of people. Three routes to the same AI, each marked with its status.</p>
-    </div>
-    <div class="lg-keys">
-      <article class="lg-key edge rv">
-        <span class="mod__ic"><svg><use href="#i-spjall"/></svg></span>
-        <h3 lang="is">Áskrift</h3><h3 lang="en">A subscription</h3>
-        <p class="lg-key__ex">Claude Pro, ChatGPT Plus</p>
-        <p lang="is">Þú spjallar í appinu þeirra. Áskriftin er ekki lykill og verður ekki límd inn í X.</p>
-        <p lang="en">You chat in their app. The subscription is not a key and cannot be pasted into X.</p>
-      </article>
-      <article class="lg-key edge rv">
-        <span class="mod__ic"><svg><use href="#i-lykill"/></svg></span>
-        <h3><span lang="is">API lykill</span><span lang="en">An API key</span> <span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></h3>
-        <p class="lg-key__ex"><span lang="is">Anthropic eða OpenAI</span><span lang="en">Anthropic or OpenAI</span></p>
-        <p lang="is">Þú límir lykilinn inn undir Stillingar › Gervigreind. Hann er geymdur dulkóðaður og þú borgar notkunina beint til þeirra.</p>
-        <p lang="en">You paste the key in under Settings › AI. It is stored encrypted and you pay for the usage directly to them.</p>
-      </article>
-      <article class="lg-key edge rv">
-        <span class="mod__ic"><svg><use href="#i-heili"/></svg></span>
-        <h3><span lang="is">X í Claude og ChatGPT</span><span lang="en">X inside Claude and ChatGPT</span> <span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></h3>
-        <p class="lg-key__ex"><span lang="is">Fyrir þá sem eru með áskrift</span><span lang="en">For people with a subscription</span></p>
-        <p lang="is">Þú tengir X inn í spjallið sem þú borgar nú þegar fyrir og spyrð þar.</p>
-        <p lang="en">You connect X to the chat you already pay for and ask there.</p>
-        <div class="lg-mini" aria-hidden="true">
-          <div class="msg msg--me"><span lang="is">Hvaða tilboð eru enn opin?</span><span lang="en">Which quotes are still open?</span></div>
-          <div class="msg"><span lang="is">Tvö tilboð bíða svars. Viltu að ég skrifi eftirfylgni?</span><span lang="en">Two quotes are waiting for an answer. Want me to write a follow-up?</span></div>
-        </div>
-      </article>
-    </div>
-    <p class="fine" lang="is">Án eigin lykils notar þú gervigreindina sem fylgir áskriftinni að X. Gagnagrunnurinn er í Evrópu en gervigreindin vinnur hjá Anthropic eða OpenAI. Claude er vörumerki Anthropic og ChatGPT er vörumerki OpenAI.</p>
-    <p class="fine" lang="en">Without your own key you use the AI included in your X subscription. The database is in Europe, while the AI runs at Anthropic or OpenAI. Claude is a trademark of Anthropic and ChatGPT is a trademark of OpenAI.</p>
-  </div>
-</section>
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker">Claude 101 <i class="lg-dot"></i> ChatGPT 101</p>
 
+<h2>A subscription is not a key. <span class="metal">We explain the difference.</span></h2>
+
+<p class="lead">It confuses a lot of people. Three routes to the same AI, each marked with its status.</p>
+</div>
+<div class="lg-keys">
+<article class="lg-key edge rv">
+<span class="mod__ic"><svg><use href="#i-spjall"></use></svg></span>
+<h3>A subscription</h3>
+<p class="lg-key__ex">Claude Pro, ChatGPT Plus</p>
+
+<p>You chat in their app. The subscription is not a key and cannot be pasted into X.</p>
+</article>
+<article class="lg-key edge rv">
+<span class="mod__ic"><svg><use href="#i-lykill"></use></svg></span>
+<h3><span>An API key</span> <span class="tag tag--ok"><span>In the first release</span></span></h3>
+<p class="lg-key__ex"><span>Anthropic or OpenAI</span></p>
+
+<p>You paste the key in under Settings › AI. It is stored encrypted and you pay for the usage directly to them.</p>
+</article>
+<article class="lg-key edge rv">
+<span class="mod__ic"><svg><use href="#i-heili"></use></svg></span>
+<h3><span>X inside Claude and ChatGPT</span> <span class="tag"><span>Coming soon</span></span></h3>
+<p class="lg-key__ex"><span>For people with a subscription</span></p>
+
+<p>You connect X to the chat you already pay for and ask there.</p>
+<div aria-hidden="true" class="lg-mini">
+<div class="msg msg--me"><span>Which quotes are still open?</span></div>
+<div class="msg"><span>Two quotes are waiting for an answer. Want me to write a follow-up?</span></div>
+</div>
+</article>
+</div>
+
+<p class="fine">Without your own key you use the AI included in your X subscription. The database is in Europe, while the AI runs at Anthropic or OpenAI. Claude is a trademark of Anthropic and ChatGPT is a trademark of OpenAI.</p>
+</div>
+</section>
 <!-- ============ FORMÚLAN ============ -->
 <section class="sec" id="formulan">
-  <div class="wrap lg-form">
-    <div>
-      <div class="sec__head rv">
-        <p class="kicker"><span lang="is">Spara pening</span><span lang="en">Save money</span></p>
-        <h2 lang="is">Formúlan. <span class="metal">Hættu að borga tvisvar.</span></h2>
-        <h2 lang="en">The formula. <span class="metal">Stop paying twice.</span></h2>
-        <p class="lead" lang="is">Skráðu það sem þú borgar fyrir í dag. Formúlan sýnir hvað skarast við X, hverju þú heldur og í hvaða röð þú segir upp.</p>
-        <p class="lead" lang="en">List what you pay for today. The formula shows what overlaps with X, what you keep and in which order to cancel.</p>
-      </div>
-      <ol class="lg-four">
-        <li class="rv"><b lang="is">Skráðu</b><b lang="en">List</b><span lang="is">Öll kerfin og áskriftirnar sem þú borgar fyrir.</span><span lang="en">Every system and subscription you pay for.</span></li>
-        <li class="rv"><b lang="is">Berðu saman</b><b lang="en">Compare</b><span lang="is">Hvað gerir X sjálft, og við hvað tengist það bara?</span><span lang="en">What does X do itself, and what does it simply connect to?</span></li>
-        <li class="rv"><b lang="is">Færðu gögnin</b><b lang="en">Move your data</b><span lang="is">Sæktu gögnin og settu þau inn í X áður en þú segir upp.</span><span lang="en">Export your data and bring it into X before you cancel.</span></li>
-        <li class="rv"><b lang="is">Segðu upp í réttri röð</b><b lang="en">Cancel in order</b><span lang="is">Eitt í einu, svo ekkert detti niður á milli.</span><span lang="en">One at a time, so nothing falls through the cracks.</span></li>
-      </ol>
-    </div>
+<div class="wrap lg-form">
+<div>
+<div class="sec__head rv">
+<p class="kicker"><span>Save money</span></p>
 
-    <div class="lg-sheet edge rv" aria-hidden="true">
-      <div class="lg-sheet__head">
-        <b><span lang="is">Það sem þú borgar fyrir</span><span lang="en">What you pay for</span></b>
-        <span class="tag"><span lang="is">Dæmi</span><span lang="en">Example</span></span>
-      </div>
-      <div class="lg-sheet__row lg-sheet__row--h"><span lang="is">Kerfi</span><span lang="en">Tool</span><span lang="is">Niðurstaða</span><span lang="en">Result</span></div>
-      <div class="lg-sheet__row"><span lang="is">Tilboðsforrit</span><span lang="en">Quoting app</span><span class="tag tag--warn"><span lang="is">Skarast við X</span><span lang="en">Overlaps with X</span></span></div>
-      <div class="lg-sheet__row"><span lang="is">Verkefnalisti</span><span lang="en">Task list</span><span class="tag tag--warn"><span lang="is">Skarast við X</span><span lang="en">Overlaps with X</span></span></div>
-      <div class="lg-sheet__row"><span lang="is">Viðskiptamannaskrá í Excel</span><span lang="en">Customer list in Excel</span><span class="tag tag--warn"><span lang="is">Skarast við X</span><span lang="en">Overlaps with X</span></span></div>
-      <div class="lg-sheet__row"><span lang="is">Fréttabréfatól</span><span lang="en">Newsletter tool</span><span class="tag"><span lang="is">Skoða seinna</span><span lang="en">Review later</span></span></div>
-      <div class="lg-sheet__row"><span><span lang="is">DK eða Payday</span><span lang="en">DK or Payday</span></span><span class="tag tag--ok"><span lang="is">Heldur áfram, X tengist</span><span lang="en">Keep it, X connects</span></span></div>
-      <div class="lg-sheet__row"><span lang="is">Póstur og dagatal</span><span lang="en">Email and calendar</span><span class="tag tag--ok"><span lang="is">Heldur áfram, X tengist</span><span lang="en">Keep it, X connects</span></span></div>
-      <p class="lg-sheet__foot" lang="is">Bókhaldið og pósturinn halda áfram. X tengir þau saman.</p>
-      <p class="lg-sheet__foot" lang="en">Your accounting and email stay. X ties them together.</p>
-    </div>
-  </div>
+<h2>The formula. <span class="metal">Stop paying twice.</span></h2>
+
+<p class="lead">List what you pay for today. The formula shows what overlaps with X, what you keep and in which order to cancel.</p>
+</div>
+<ol class="lg-four">
+<li class="rv"><b>List</b><span>Every system and subscription you pay for.</span></li>
+<li class="rv"><b>Compare</b><span>What does X do itself, and what does it simply connect to?</span></li>
+<li class="rv"><b>Move your data</b><span>Export your data and bring it into X before you cancel.</span></li>
+<li class="rv"><b>Cancel in order</b><span>One at a time, so nothing falls through the cracks.</span></li>
+</ol>
+</div>
+<div aria-hidden="true" class="lg-sheet edge rv">
+<div class="lg-sheet__head">
+<b><span>What you pay for</span></b>
+<span class="tag"><span>Example</span></span>
+</div>
+<div class="lg-sheet__row lg-sheet__row--h"><span>Tool</span><span>Result</span></div>
+<div class="lg-sheet__row"><span>Quoting app</span><span class="tag tag--warn"><span>Overlaps with X</span></span></div>
+<div class="lg-sheet__row"><span>Task list</span><span class="tag tag--warn"><span>Overlaps with X</span></span></div>
+<div class="lg-sheet__row"><span>Customer list in Excel</span><span class="tag tag--warn"><span>Overlaps with X</span></span></div>
+<div class="lg-sheet__row"><span>Newsletter tool</span><span class="tag"><span>Review later</span></span></div>
+<div class="lg-sheet__row"><span><span>DK or Payday</span></span><span class="tag tag--ok"><span>Keep it, X connects</span></span></div>
+<div class="lg-sheet__row"><span>Email and calendar</span><span class="tag tag--ok"><span>Keep it, X connects</span></span></div>
+
+<p class="lg-sheet__foot">Your accounting and email stay. X ties them together.</p>
+</div>
+</div>
 </section>
-
 <!-- ============ EIN LEIÐBEINING FYRIR HVERJA TENGINGU ============ -->
 <section class="sec sec--tight" id="tengingar">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="kicker"><span lang="is">Tengingar</span><span lang="en">Connections</span></p>
-      <h2 lang="is">Ein leiðbeining <span class="metal">fyrir hverja tengingu.</span></h2>
-      <h2 lang="en">One guide <span class="metal">for each connection.</span></h2>
-      <p class="lead" lang="is">Hver leiðbeining birtist þegar tengingin virkar. Þangað til er hún merkt væntanleg.</p>
-      <p class="lead" lang="en">Each guide goes up when that connection works. Until then it is marked coming soon.</p>
-    </div>
-    <div class="lg-conn">
-      <div class="lg-conn__g edge rv">
-        <h3><span class="tag tag--ok"><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span></h3>
-        <div class="chips chips--sm">
-          <span class="chip"><span lang="is">Tengdu DK</span><span lang="en">Connect DK</span></span>
-          <span class="chip"><span lang="is">Tengdu Payday</span><span lang="en">Connect Payday</span></span>
-          <span class="chip"><span lang="is">Tengdu Gmail</span><span lang="en">Connect Gmail</span></span>
-          <span class="chip"><span lang="is">Tengdu Google Calendar</span><span lang="en">Connect Google Calendar</span></span>
-          <span class="chip"><span lang="is">Tengdu Outlook og Microsoft 365</span><span lang="en">Connect Outlook and Microsoft 365</span></span>
-          <span class="chip"><span lang="is">Tengdu Claude</span><span lang="en">Connect Claude</span></span>
-          <span class="chip"><span lang="is">Tengdu ChatGPT</span><span lang="en">Connect ChatGPT</span></span>
-          <span class="chip"><span lang="is">Tengdu WooCommerce</span><span lang="en">Connect WooCommerce</span></span>
-          <span class="chip"><span lang="is">Vefformið á þinni síðu</span><span lang="en">The web form on your site</span></span>
-          <span class="chip"><span lang="is">Excel og CSV inn</span><span lang="en">Excel and CSV import</span></span>
-          <span class="chip"><span lang="is">Áframsendingarnetfangið</span><span lang="en">The forwarding address</span></span>
-          <span class="chip"><span lang="is">Tengdu Zapier</span><span lang="en">Connect Zapier</span></span>
-          <span class="chip"><span lang="is">Tengdu Make</span><span lang="en">Connect Make</span></span>
-        </div>
-      </div>
-      <div class="lg-conn__g edge rv">
-        <h3><span class="tag"><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></h3>
-        <div class="chips chips--sm">
-          <span class="chip soon"><span lang="is">Tengdu Shopify</span><span lang="en">Connect Shopify</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Torfa</span><span lang="en">Connect Torfi</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Repeat</span><span lang="en">Connect Repeat</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Straum</span><span lang="en">Connect Straumur</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Teya</span><span lang="en">Connect Teya</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Pei</span><span lang="en">Connect Pei</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Noona</span><span lang="en">Connect Noona</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Taktikal</span><span lang="en">Connect Taktikal</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Google Drive og OneDrive</span><span lang="en">Connect Google Drive and OneDrive</span></span>
-          <span class="chip soon"><span lang="is">Tengdu Facebook og Instagram</span><span lang="en">Connect Facebook and Instagram</span></span>
-          <span class="chip soon"><span lang="is">X í Claude og ChatGPT</span><span lang="en">X inside Claude and ChatGPT</span></span>
-        </div>
-      </div>
-    </div>
-    <div class="lg-conn__foot rv">
-      <p class="fine" lang="is">Nöfnin eru vörumerki viðkomandi fyrirtækja. Tenging á listanum þýðir ekki samstarf.</p>
-      <p class="fine" lang="en">Names are trademarks of their owners. A listed connection does not mean a partnership.</p>
-      <a class="tlink" href="tengingar.html"><span lang="is">Sjá allar tengingar</span><span lang="en">See all connections</span><svg><use href="#i-or"/></svg></a>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>Connections</span></p>
 
+<h2>One guide <span class="metal">for each connection.</span></h2>
+
+<p class="lead">Each guide goes up when that connection works. Until then it is marked coming soon.</p>
+</div>
+<div class="lg-conn">
+<div class="lg-conn__g edge rv">
+<h3><span class="tag tag--ok"><span>In the first release</span></span></h3>
+<div class="chips chips--sm">
+<span class="chip"><span>Connect DK</span></span>
+<span class="chip"><span>Connect Payday</span></span>
+<span class="chip"><span>Connect Gmail</span></span>
+<span class="chip"><span>Connect Google Calendar</span></span>
+<span class="chip"><span>Connect Outlook and Microsoft 365</span></span>
+<span class="chip"><span>Connect Claude</span></span>
+<span class="chip"><span>Connect ChatGPT</span></span>
+<span class="chip"><span>Connect WooCommerce</span></span>
+<span class="chip"><span>The web form on your site</span></span>
+<span class="chip"><span>Excel and CSV import</span></span>
+<span class="chip"><span>The forwarding address</span></span>
+<span class="chip"><span>Connect Zapier</span></span>
+<span class="chip"><span>Connect Make</span></span>
+</div>
+</div>
+<div class="lg-conn__g edge rv">
+<h3><span class="tag"><span>Coming soon</span></span></h3>
+<div class="chips chips--sm">
+<span class="chip soon"><span>Connect Shopify</span></span>
+<span class="chip soon"><span>Connect Torfi</span></span>
+<span class="chip soon"><span>Connect Repeat</span></span>
+<span class="chip soon"><span>Connect Straumur</span></span>
+<span class="chip soon"><span>Connect Teya</span></span>
+<span class="chip soon"><span>Connect Pei</span></span>
+<span class="chip soon"><span>Connect Noona</span></span>
+<span class="chip soon"><span>Connect Taktikal</span></span>
+<span class="chip soon"><span>Connect Google Drive and OneDrive</span></span>
+<span class="chip soon"><span>Connect Facebook and Instagram</span></span>
+<span class="chip soon"><span>X inside Claude and ChatGPT</span></span>
+</div>
+</div>
+</div>
+<div class="lg-conn__foot rv">
+
+<p class="fine">Names are trademarks of their owners. A listed connection does not mean a partnership.</p>
+<a class="tlink" href="tengingar.html"><span>See all connections</span><svg><use href="#i-or"></use></svg></a>
+</div>
+</div>
+</section>
 <!-- ============ SPURNINGAR ============ -->
 <section class="sec sec--tight" id="spurningar">
-  <div class="wrap">
-    <div class="sec__head sec__head--mid rv">
-      <p class="kicker"><span lang="is">Spurningar</span><span lang="en">Questions</span></p>
-      <h2 lang="is">Gott að vita.</h2>
-      <h2 lang="en">Good to know.</h2>
-    </div>
-    <div class="faq rv">
-      <details><summary><span lang="is">Eru myndböndin komin?</span><span lang="en">Are the videos out?</span></summary><p lang="is">Nei, ekki enn. Hver leiðbeining er fyrst grein með skjámyndum. Myndbandið bætist við seinna og er merkt væntanlegt þangað til.</p><p lang="en">No, not yet. Every guide starts as an article with screenshots. The video is added later and is marked coming soon until then.</p></details>
-      <details><summary><span lang="is">Þarf ég að kunna eitthvað á gervigreind?</span><span lang="en">Do I need to know anything about AI?</span></summary><p lang="is">Nei. Claude 101 og ChatGPT 101 byrja á byrjuninni, á mannamáli. Þú lærir með því að gera, á þínum eigin verkum.</p><p lang="en">No. Claude 101 and ChatGPT 101 start at the very beginning, in plain language. You learn by doing, on your own work.</p></details>
-      <details><summary><span lang="is">Á hvaða máli eru leiðbeiningarnar?</span><span lang="en">What language are the guides in?</span></summary><p lang="is">Íslensku og ensku. Þú skiptir um mál efst á síðunni, eins og hér.</p><p lang="en">Icelandic and English. You switch language at the top of the page, just like here.</p></details>
-      <details><summary><span lang="is">Hvað ef ég festist?</span><span lang="en">What if I get stuck?</span></summary><p lang="is">Inni í kerfinu er hnappur sem sendir okkur skilaboð. Þú færð svar frá manneskju.</p><p lang="en">Inside the system there is a button that sends us a message. You get an answer from a person.</p></details>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+<div class="sec__head sec__head--mid rv">
+<p class="kicker"><span>Questions</span></p>
 
+<h2>Good to know.</h2>
+</div>
+<div class="faq rv">
+<details><summary><span>Are the videos out?</span></summary><p>No, not yet. Every guide starts as an article with screenshots. The video is added later and is marked coming soon until then.</p></details>
+<details><summary><span>Do I need to know anything about AI?</span></summary><p>No. Claude 101 and ChatGPT 101 start at the very beginning, in plain language. You learn by doing, on your own work.</p></details>
+<details><summary><span>What language are the guides in?</span></summary><p>Icelandic and English. You switch language at the top of the page, just like here.</p></details>
+<details><summary><span>What if I get stuck?</span></summary><p>Inside the system there is a button that sends us a message. You get an answer from a person.</p></details>
+</div>
+</div>
+</section>
 <!-- ============ LOKAKALL ============ -->
 <section class="sec lg-end">
-  <div class="wrap">
-    <div class="final edge rv">
-      <img src="assets/merki/merki.svg" alt="">
-      <h2 lang="is">Þú lærir á það. <span class="metal">Kerfið vinnur.</span></h2>
-      <h2 lang="en">You learn it. <span class="metal">The system does the work.</span></h2>
-      <p class="lead" lang="is">Leiðbeiningarnar eru opnar öllum. Sjáðu hvað hver áskrift inniheldur, eða lestu hvernig gervigreindin vinnur fyrir þig.</p>
-      <p class="lead" lang="en">The guides are open to everyone. See what each plan includes, or read how the AI works for you.</p>
-      <div class="hero__cta">
-        <a class="btn btn--metal" href="verd.html"><span lang="is">Skoða verð</span><span lang="en">See pricing</span><svg><use href="#i-or"/></svg></a>
-        <a class="btn btn--ghost" href="gervigreind.html"><span lang="is">Um gervigreindina</span><span lang="en">About the AI</span></a>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="final edge rv">
+<img alt="" src="assets/merki/merki.svg"/>
+
+<h2>You learn it. <span class="metal">The system does the work.</span></h2>
+
+<p class="lead">The guides are open to everyone. See what each plan includes, or read how the AI works for you.</p>
+<div class="hero__cta">
+<a class="btn btn--metal" href="verd.html"><span>See pricing</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--ghost" href="gervigreind.html"><span>About the AI</span></a>
+</div>
+</div>
+</div>
 </section>
-
 </main>
-
 <!-- ============ FÓTUR: eins á öllum síðum ============ -->
 <footer class="foot">
-  <div class="wrap foot__in">
-    <div class="foot__brand">
-      <a href="index.html" class="brand"><img class="brand__logo" src="assets/merki/x-logo-malmur.svg" alt="X" width="60" height="24"></a>
-      <span class="foot__line" lang="is">Þín verkfæri, tengd saman.</span><span class="foot__line" lang="en">Your tools, tied together.</span>
-    </div>
-    <nav class="foot__links" aria-label="Síður / Pages">
-      <a href="kerfid.html"><span lang="is">Kerfið</span><span lang="en">The system</span></a>
-      <a href="tengingar.html"><span lang="is">Tengingar</span><span lang="en">Connections</span></a>
-      <a href="gervigreind.html"><span lang="is">Gervigreind</span><span lang="en">AI</span></a>
-      <a href="leidbeiningar.html" aria-current="page"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span></a>
-      <a href="samstarf.html"><span lang="is">Samstarf</span><span lang="en">Partners</span></a>
-      <a href="verd.html"><span lang="is">Verð</span><span lang="en">Pricing</span></a>
-    </nav>
-    <p class="foot__copy">© <span data-ar>2026</span> X</p>
-  </div>
+<div class="wrap foot__in">
+<div class="foot__brand">
+<a class="brand" href="index.html"><img alt="X" class="brand__logo" height="24" src="assets/merki/x-logo-malmur.svg" width="60"/></a>
+<span class="foot__line">Your tools, tied together.</span>
+</div>
+<nav aria-label="Síður / Pages" class="foot__links">
+<a href="kerfid.html"><span>The system</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
+<a href="gervigreind.html"><span>AI</span></a>
+<a aria-current="page" href="leidbeiningar.html"><span>Guides</span></a>
+<a href="samstarf.html"><span>Partners</span></a>
+<a href="verd.html"><span>Pricing</span></a>
+</nav>
+<p class="foot__copy">© <span data-ar="">2026</span> X</p>
+</div>
 </footer>
-
-<script src="assets/js/site.js" defer></script>
-<script src="assets/js/leidbeiningar.js" defer></script>
+<script defer="" src="assets/js/site.js"></script>
+<script defer="" src="assets/js/leidbeiningar.js"></script>
 </body>
 </html>

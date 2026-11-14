@@ -1,468 +1,439 @@
-<!doctype html>
-<html lang="is"
-  data-titill-is="Gervigreind: X"
-  data-titill-en="AI: X"
-  data-lysing-is="Claude eða ChatGPT vinnur með gögnum fyrirtækisins þíns og spyr alltaf fyrst. Morgunlisti, drög sem bíða samþykkis, aðgerðaskrá og notkunarmælir."
-  data-lysing-en="Claude or ChatGPT works with your company's data and always asks first. A morning list, drafts that wait for approval, an audit log and a usage meter.">
+<!DOCTYPE html>
+
+<html data-lysing-en="Claude or ChatGPT works with your company's data and always asks first. A morning list, drafts that wait for approval, an audit log and a usage meter." data-titill-en="AI: X" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Gervigreind: X</title>
-<meta name="description" content="Claude eða ChatGPT vinnur með gögnum fyrirtækisins þíns og spyr alltaf fyrst. Morgunlisti, drög sem bíða samþykkis, aðgerðaskrá og notkunarmælir.">
-<meta name="theme-color" content="#08090a">
-<meta name="robots" content="noindex">
-<link rel="icon" href="assets/merki/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Michroma&display=swap">
-<link rel="stylesheet" href="assets/css/site.css">
-<link rel="stylesheet" href="assets/css/gervigreind.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>AI: X</title>
+<meta content="Claude or ChatGPT works with your company's data and always asks first. A morning list, drafts that wait for approval, an audit log and a usage meter." name="description"/>
+<meta content="#08090a" name="theme-color"/>
+<meta content="noindex" name="robots"/>
+<link href="assets/merki/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Michroma&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/site.css" rel="stylesheet"/>
+<link href="assets/css/gervigreind.css" rel="stylesheet"/>
 </head>
 <body>
-
 <!-- tákn: notuð með <svg><use href="#i-nafn"/></svg> -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="i-yfirlit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="9" rx="2"/><rect x="13.5" y="3" width="7.5" height="5" rx="2"/><rect x="13.5" y="11" width="7.5" height="10" rx="2"/><rect x="3" y="15" width="7.5" height="6" rx="2"/></symbol>
-    <symbol id="i-folk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.8a3.3 3.3 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"/></symbol>
-    <symbol id="i-sala" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></symbol>
-    <symbol id="i-tilbod" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
-    <symbol id="i-verk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m8 12.5 2.7 2.7L16.5 9"/></symbol>
-    <symbol id="i-dagatal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="12" cy="15.5" r="1.2" fill="currentColor"/></symbol>
-    <symbol id="i-postur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></symbol>
-    <symbol id="i-samfelag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/></symbol>
-    <symbol id="i-reikningur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
-    <symbol id="i-vorur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8.5 4.5v9L12 21l-8.5-4.5v-9z"/><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/></symbol>
-    <symbol id="i-skjol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
-    <symbol id="i-gatt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19c1.2-2.5 3.1-3.7 5.5-3.7s4.3 1.2 5.5 3.7"/></symbol>
-    <symbol id="i-sjalfvirkni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12z"/></symbol>
-    <symbol id="i-heili" viewBox="8 7 103 70" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"><path d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z"/><path d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46"/></symbol>
-    <symbol id="i-skyrsla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-    <symbol id="i-tengi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></symbol>
-    <symbol id="i-bok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/></symbol>
-    <symbol id="i-lykill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="m11.5 11.5 9-9M17 6l3 3M14.5 8.5l2 2"/></symbol>
-    <symbol id="i-skjoldur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
-    <symbol id="i-hnottur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"/></symbol>
-    <symbol id="i-nidur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></symbol>
-    <symbol id="i-lag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
-    <symbol id="i-hond" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 2"/></symbol>
-    <symbol id="i-hak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-    <symbol id="i-or" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-    <symbol id="i-pensill" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1.3" fill="currentColor"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor"/><circle cx="16" cy="10" r="1.3" fill="currentColor"/><path d="M12 21c-1.5 0-2-1-2-2s1-2 2.5-2H15a3 3 0 0 0 3-3"/></symbol>
-    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10M17 7 7 17"/></symbol>
-    <symbol id="i-greidsla" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M2.5 10h19M6 15h4"/></symbol>
-    <symbol id="i-verslun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
-    <symbol id="i-skipti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"/></symbol>
-    <symbol id="i-spjall" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></symbol>
-  </defs>
+<svg aria-hidden="true" height="0" style="position:absolute" width="0">
+<defs>
+<symbol fill="none" id="i-yfirlit" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="9" rx="2" width="7.5" x="3" y="3"></rect><rect height="5" rx="2" width="7.5" x="13.5" y="3"></rect><rect height="10" rx="2" width="7.5" x="13.5" y="11"></rect><rect height="6" rx="2" width="7.5" x="3" y="15"></rect></symbol>
+<symbol fill="none" id="i-folk" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"></path><path d="M16 4.8a3.3 3.3 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.4 3.5 5.2"></path></symbol>
+<symbol fill="none" id="i-sala" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"></path></symbol>
+<symbol fill="none" id="i-tilbod" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></symbol>
+<symbol fill="none" id="i-verk" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="18" rx="4" width="18" x="3" y="3"></rect><path d="m8 12.5 2.7 2.7L16.5 9"></path></symbol>
+<symbol fill="none" id="i-dagatal" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="16" rx="3" width="18" x="3" y="5"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><circle cx="12" cy="15.5" fill="currentColor" r="1.2"></circle></symbol>
+<symbol fill="none" id="i-postur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14" rx="3" width="18" x="3" y="5"></rect><path d="m4 7 8 6 8-6"></path></symbol>
+<symbol fill="none" id="i-samfelag" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="6" cy="12" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><circle cx="18" cy="18" r="2.5"></circle><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"></path></symbol>
+<symbol fill="none" id="i-reikningur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6M9 16h3"></path></symbol>
+<symbol fill="none" id="i-vorur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="m12 3 8.5 4.5v9L12 21l-8.5-4.5v-9z"></path><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"></path></symbol>
+<symbol fill="none" id="i-skjol" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></symbol>
+<symbol fill="none" id="i-gatt" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="18" rx="4" width="18" x="3" y="3"></rect><circle cx="12" cy="10" r="3"></circle><path d="M6.5 19c1.2-2.5 3.1-3.7 5.5-3.7s4.3 1.2 5.5 3.7"></path></symbol>
+<symbol fill="none" id="i-sjalfvirkni" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M13 2 4.5 13.5H12L11 22l8.5-11.5H12z"></path></symbol>
+<symbol fill="none" id="i-heili" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" viewbox="8 7 103 70"><path d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z"></path><path d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46"></path></symbol>
+<symbol fill="none" id="i-skyrsla" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></symbol>
+<symbol fill="none" id="i-tengi" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"></path></symbol>
+<symbol fill="none" id="i-bok" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2z"></path><path d="M4 20a2 2 0 0 0 2 2h13v-4"></path></symbol>
+<symbol fill="none" id="i-lykill" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="8" cy="15" r="4.5"></circle><path d="m11.5 11.5 9-9M17 6l3 3M14.5 8.5l2 2"></path></symbol>
+<symbol fill="none" id="i-skjoldur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.2 7.5 9.5 4.4-1.3 7.5-4.9 7.5-9.5V6z"></path><path d="m9 12 2.2 2.2L15.5 10"></path></symbol>
+<symbol fill="none" id="i-hnottur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"></path></symbol>
+<symbol fill="none" id="i-nidur" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"></path></symbol>
+<symbol fill="none" id="i-lag" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></symbol>
+<symbol fill="none" id="i-hond" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path><path d="M12 7v5l3 2"></path></symbol>
+<symbol fill="none" id="i-hak" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"></path></symbol>
+<symbol fill="none" id="i-or" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></symbol>
+<symbol fill="none" id="i-pensill" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="8" cy="10" fill="currentColor" r="1.3"></circle><circle cx="12" cy="7.5" fill="currentColor" r="1.3"></circle><circle cx="16" cy="10" fill="currentColor" r="1.3"></circle><path d="M12 21c-1.5 0-2-1-2-2s1-2 2.5-2H15a3 3 0 0 0 3-3"></path></symbol>
+<symbol fill="none" id="i-x" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9" viewbox="0 0 24 24"><path d="M7 7l10 10M17 7 7 17"></path></symbol>
+<symbol fill="none" id="i-greidsla" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><rect height="14" rx="3" width="19" x="2.5" y="5"></rect><path d="M2.5 10h19M6 15h4"></path></symbol>
+<symbol fill="none" id="i-verslun" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"></path><path d="M9 8V6.5a3 3 0 0 1 6 0V8"></path></symbol>
+<symbol fill="none" id="i-skipti" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 8h15M15 4l4 4-4 4M20 16H5M9 12l-4 4 4 4"></path></symbol>
+<symbol fill="none" id="i-spjall" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" viewbox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"></path><path d="M8 10h8M8 13h5"></path></symbol>
+</defs>
 </svg>
-
-<a class="skip" href="#efni"><span lang="is">Fara í efni</span><span lang="en">Skip to content</span></a>
-
+<a class="skip" href="#efni"><span>Skip to content</span></a>
 <!-- ============ HAUS: eins á öllum síðum. aria-current="page" á tengil síðunnar sem er opin ============ -->
 <header class="nav">
-  <div class="wrap nav__in">
-    <a href="index.html" class="brand"><img class="brand__logo" src="assets/merki/x-logo-malmur.svg" alt="X" width="70" height="28"></a>
-    <nav class="nav__links" id="valmynd" aria-label="Valmynd / Menu">
-      <a href="kerfid.html"><span lang="is">Kerfið</span><span lang="en">The system</span></a>
-      <a href="tengingar.html"><span lang="is">Tengingar</span><span lang="en">Connections</span></a>
-      <a href="gervigreind.html" aria-current="page"><span lang="is">Gervigreind</span><span lang="en">AI</span></a>
-      <a href="leidbeiningar.html"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span></a>
-      <a href="samstarf.html"><span lang="is">Samstarf</span><span lang="en">Partners</span></a>
-      <a href="verd.html"><span lang="is">Verð</span><span lang="en">Pricing</span></a>
-    </nav>
-    <div class="nav__right">
-      <div class="lang" role="group" aria-label="Tungumál / Language">
-        <button type="button" data-mal="is" aria-pressed="true">IS</button>
-        <button type="button" data-mal="en" aria-pressed="false">EN</button>
-      </div>
-      <a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span lang="is">Byrja</span><span lang="en">Get started</span></a>
-      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="valmynd" aria-label="Valmynd / Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
-    </div>
-  </div>
+<div class="wrap nav__in">
+<a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
+<nav aria-label="Valmynd / Menu" class="nav__links" id="valmynd">
+<a href="kerfid.html"><span>The system</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
+<a aria-current="page" href="gervigreind.html"><span>AI</span></a>
+<a href="leidbeiningar.html"><span>Guides</span></a>
+<a href="samstarf.html"><span>Partners</span></a>
+<a href="verd.html"><span>Pricing</span></a>
+</nav>
+<div class="nav__right">
+
+<a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span>Get started</span></a>
+<button aria-controls="valmynd" aria-expanded="false" aria-label="Valmynd / Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</div>
 </header>
-
 <main id="efni" tabindex="-1">
-
 <!-- ============ HETJA ============ -->
 <section class="hero hero--page">
-  <div class="hero__fx" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
-  <div class="wrap">
-    <div class="hero__in">
-      <svg class="hero__mark gv-mark" viewBox="8 7 103 70" fill="none" aria-hidden="true"><defs><linearGradient id="hm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".28" stop-color="#c9ced6"/><stop offset=".5" stop-color="#868e99"/><stop offset=".72" stop-color="#eceff3"/><stop offset="1" stop-color="#9aa2ad"/><animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="9s" repeatCount="indefinite"/></linearGradient></defs><g stroke="url(#hm)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path class="hm-heili" pathLength="1" d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z"/><path class="hm-s" pathLength="1" d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46"/></g></svg>
-      <p class="kicker"><span lang="is">Gervigreind</span><span lang="en">AI</span></p>
-      <h1 lang="is">Gervigreind sem spyr fyrst. <span class="metal">Þú ræður.</span></h1>
-      <h1 lang="en">AI that asks first. <span class="metal">You decide.</span></h1>
-      <p class="lead" lang="is">Claude eða ChatGPT vinnur með gögnum fyrirtækisins þíns, undirbýr verkin og svarar spurningum. Ekkert fer út nema þú samþykkir.</p>
-      <p class="lead" lang="en">Claude or ChatGPT works with your company's data, prepares the work and answers your questions. Nothing goes out unless you approve it.</p>
-      <div class="hero__cta">
-        <a class="btn btn--metal" href="verd.html" data-demo><span lang="is">Prófa kerfið</span><span lang="en">Try the system</span><svg><use href="#i-or"/></svg></a>
-        <a class="btn btn--ghost" href="verd.html" data-kynning=""><span lang="is">Bóka kynningu</span><span lang="en">Book a demo</span></a>
-      </div>
-      <p class="hero__note">
-        <span><svg><use href="#i-heili"/></svg><span lang="is">Claude eða ChatGPT</span><span lang="en">Claude or ChatGPT</span></span>
-        <span><svg><use href="#i-lykill"/></svg><span lang="is">Innifalið eða þinn lykill</span><span lang="en">Included or your own key</span></span>
-        <span><svg><use href="#i-skjoldur"/></svg><span lang="is">Ekkert án þíns samþykkis</span><span lang="en">Nothing without your approval</span></span>
-      </p>
-    </div>
-  </div>
-</section>
+<div aria-hidden="true" class="hero__fx"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
+<div class="wrap">
+<div class="hero__in">
+<svg aria-hidden="true" class="hero__mark gv-mark" fill="none" viewbox="8 7 103 70"><defs><lineargradient id="hm" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffffff"></stop><stop offset=".28" stop-color="#c9ced6"></stop><stop offset=".5" stop-color="#868e99"></stop><stop offset=".72" stop-color="#eceff3"></stop><stop offset="1" stop-color="#9aa2ad"></stop><animatetransform attributename="gradientTransform" dur="9s" repeatcount="indefinite" type="rotate" values="0 .5 .5;360 .5 .5"></animatetransform></lineargradient></defs><g stroke="url(#hm)" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"><path class="hm-heili" d="M34 66 C16 60 13 36 30 24 C44 12 74 10 90 24 C104 36 104 60 86 66 C70 72 50 72 34 66 Z" pathlength="1"></path><path class="hm-s" d="M46 40 C52 30 66 32 64 44 C62 54 76 56 80 46" pathlength="1"></path></g></svg>
+<p class="kicker"><span>AI</span></p>
 
+<h1>AI that asks first. <span class="metal">You decide.</span></h1>
+
+<p class="lead">Claude or ChatGPT works with your company's data, prepares the work and answers your questions. Nothing goes out unless you approve it.</p>
+<div class="hero__cta">
+<a class="btn btn--metal" data-demo="" href="verd.html"><span>Try the system</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--ghost" data-kynning="" href="verd.html"><span>Book a demo</span></a>
+</div>
+<p class="hero__note">
+<span><svg><use href="#i-heili"></use></svg><span>Claude or ChatGPT</span></span>
+<span><svg><use href="#i-lykill"></use></svg><span>Included or your own key</span></span>
+<span><svg><use href="#i-skjoldur"></use></svg><span>Nothing without your approval</span></span>
+</p>
+</div>
+</div>
+</section>
 <!-- ============ VAL: LÍKAN OG GREIÐSLA ============ -->
 <section class="sec" id="val">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="kicker"><span lang="is">Þú velur</span><span lang="en">Your choice</span></p>
-      <h2 lang="is">Claude eða ChatGPT. <span class="metal">Þú velur.</span></h2>
-      <h2 lang="en">Claude or ChatGPT. <span class="metal">Your call.</span></h2>
-      <p class="lead" lang="is">Bæði virka í X. Þú velur líkanið og hvernig þú greiðir fyrir það, og getur skipt í stillingum.</p>
-      <p class="lead" lang="en">Both work in X. You choose the model and how you pay for it, and you can switch in settings.</p>
-    </div>
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>Your choice</span></p>
 
-    <div class="gv-pay">
-      <article class="gv-pay__c edge rv">
-        <div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-heili"/></svg></span><span class="tag tag--ok" lang="is">Í fyrstu útgáfu</span><span class="tag tag--ok" lang="en">In the first release</span></div>
-        <h3 lang="is">Innifalið í áskriftinni</h3><h3 lang="en">Included in your plan</h3>
-        <p lang="is">Hver áskrift inniheldur gervigreind í hverjum mánuði. Við greiðum reikninginn hjá Anthropic eða OpenAI og þú þarft ekkert að setja upp. Stærri áskrift fylgir meiri gervigreind.</p>
-        <p lang="en">Every plan includes AI each month. We pay the bill with Anthropic or OpenAI, and there is nothing for you to set up. A bigger plan comes with more AI.</p>
-        <ul class="gv-ticks">
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Claude eða ChatGPT, þú velur</span><span lang="en">Claude or ChatGPT, your pick</span></li>
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Mælir sem sýnir notkun mánaðarins</span><span lang="en">A meter that shows this month's use</span></li>
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Þú færð að vita áður en hún klárast</span><span lang="en">You hear about it before it runs out</span></li>
-        </ul>
-      </article>
-      <article class="gv-pay__c edge rv">
-        <div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-lykill"/></svg></span><span class="tag tag--ok" lang="is">Í fyrstu útgáfu</span><span class="tag tag--ok" lang="en">In the first release</span></div>
-        <h3 lang="is">Eða þinn eigin lykill</h3><h3 lang="en">Or your own key</h3>
-        <p lang="is">Notarðu mikið? Límdu inn API lykil frá Anthropic (Claude) eða OpenAI (ChatGPT). Þá eru engin mörk frá okkur og þú greiðir þeim beint.</p>
-        <p lang="en">Heavy user? Paste in an API key from Anthropic (Claude) or OpenAI (ChatGPT). Then there are no limits from us and you pay them directly.</p>
-        <ul class="gv-ticks">
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Geymdur dulkóðaður og aðeins notaður á þjóninum</span><span lang="en">Stored encrypted and only used on the server</span></li>
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Gervigreindin sér lykilinn aldrei</span><span lang="en">The AI never sees the key</span></li>
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Leiðbeiningar um hvernig þú nærð í lykil</span><span lang="en">A guide to getting your key</span></li>
-        </ul>
-      </article>
-    </div>
-    <p class="fine gv-fine rv"><span lang="is">Claude Pro eða ChatGPT Plus áskrift er ekki API lykill og er ekki hægt að líma inn í X. Fyrir þau sem eru með slíka áskrift er <a href="#inni">X inni í Claude og ChatGPT</a> á leiðinni.</span><span lang="en">A Claude Pro or ChatGPT Plus subscription is not an API key and can't be pasted into X. For people with that kind of subscription, <a href="#inni">X inside Claude and ChatGPT</a> is on its way.</span></p>
-  </div>
+<h2>Claude or ChatGPT. <span class="metal">Your call.</span></h2>
+
+<p class="lead">Both work in X. You choose the model and how you pay for it, and you can switch in settings.</p>
+</div>
+<div class="gv-pay">
+<article class="gv-pay__c edge rv">
+<div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-heili"></use></svg></span><span class="tag tag--ok">In the first release</span></div>
+<h3>Included in your plan</h3>
+
+<p>Every plan includes AI each month. We pay the bill with Anthropic or OpenAI, and there is nothing for you to set up. A bigger plan comes with more AI.</p>
+<ul class="gv-ticks">
+<li><svg><use href="#i-hak"></use></svg><span>Claude or ChatGPT, your pick</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>A meter that shows this month's use</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>You hear about it before it runs out</span></li>
+</ul>
+</article>
+<article class="gv-pay__c edge rv">
+<div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-lykill"></use></svg></span><span class="tag tag--ok">In the first release</span></div>
+<h3>Or your own key</h3>
+
+<p>Heavy user? Paste in an API key from Anthropic (Claude) or OpenAI (ChatGPT). Then there are no limits from us and you pay them directly.</p>
+<ul class="gv-ticks">
+<li><svg><use href="#i-hak"></use></svg><span>Stored encrypted and only used on the server</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>The AI never sees the key</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>A guide to getting your key</span></li>
+</ul>
+</article>
+</div>
+<p class="fine gv-fine rv"><span>A Claude Pro or ChatGPT Plus subscription is not an API key and can't be pasted into X. For people with that kind of subscription, <a href="#inni">X inside Claude and ChatGPT</a> is on its way.</span></p>
+</div>
 </section>
-
 <!-- ============ MORGUNLISTINN ============ -->
 <section class="sec" id="morgunn">
-  <div class="wrap gv-split">
-    <div class="rv">
-      <div class="sec__head gv-head">
-        <p class="kicker"><span lang="is">Morgunlistinn</span><span lang="en">The morning list</span></p>
-        <h2 lang="is">Þrennt sem skiptir máli <span class="metal">í dag.</span></h2>
-        <h2 lang="en">Three things that matter <span class="metal">today.</span></h2>
-        <p class="lead" lang="is">Þegar þú opnar X á morgnana hefur gervigreindin farið yfir tilboð, verk og reikninga. Hún stingur upp á næstu skrefum og þú samþykkir með einum smelli.</p>
-        <p class="lead" lang="en">When you open X in the morning, the AI has already been through your quotes, jobs and invoices. It suggests the next steps and you approve with one click.</p>
-      </div>
-      <ul class="gv-ticks gv-ticks--lg">
-        <li><svg><use href="#i-tilbod"/></svg><span lang="is">Tilboð sem hafa ekki verið opnuð</span><span lang="en">Quotes nobody has opened</span></li>
-        <li><svg><use href="#i-reikningur"/></svg><span lang="is">Reikningsdrög sem bíða samþykkis</span><span lang="en">Invoice drafts waiting for your approval</span></li>
-        <li><svg><use href="#i-postur"/></svg><span lang="is">Nýjar fyrirspurnir sem bíða svars</span><span lang="en">New enquiries waiting for a reply</span></li>
-      </ul>
-      <p class="gv-status"><span class="tag tag--ok" lang="is">Í fyrstu útgáfu</span><span class="tag tag--ok" lang="en">In the first release</span></p>
-    </div>
+<div class="wrap gv-split">
+<div class="rv">
+<div class="sec__head gv-head">
+<p class="kicker"><span>The morning list</span></p>
 
-    <div class="gv-shot rv" aria-hidden="true" inert>
-      <div class="app gv-win">
-        <div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is/yfirlit</span></div>
-        <div class="gv-appr">
-          <div class="gv-appr__h">
-            <div><b lang="is">Góðan daginn, Sigrún</b><b lang="en">Good morning, Sigrún</b><small lang="is">Þrennt fyrir daginn í dag</small><small lang="en">Three things for today</small></div>
-            <span class="gv-appr__ai"><img src="assets/merki/merki.svg" alt="">X</span>
-          </div>
-          <div class="gv-item gv-item--done">
-            <span class="gv-item__ic"><svg><use href="#i-tilbod"/></svg></span>
-            <div class="gv-item__b">
-              <b lang="is">Tilboð 1047, pallur hjá Önnu</b><b lang="en">Quote 1047, Anna's deck</b>
-              <small lang="is">Ekki opnað í 5 daga. Áminning send.</small><small lang="en">Not opened in 5 days. Reminder sent.</small>
-            </div>
-            <span class="tag tag--ok gv-item__ok"><span lang="is">Samþykkt</span><span lang="en">Approved</span></span>
-          </div>
-          <div class="gv-item">
-            <span class="gv-item__ic"><svg><use href="#i-reikningur"/></svg></span>
-            <div class="gv-item__b">
-              <b lang="is">Áfangi 2, þak á Laugavegi</b><b lang="en">Stage 2, the Laugavegur roof</b>
-              <small lang="is">Lokið í gær. Reikningsdrög tilbúin fyrir Payday.</small><small lang="en">Finished yesterday. The invoice draft is ready for Payday.</small>
-            </div>
-            <div class="gv-act"><i><span lang="is">Samþykkja</span><span lang="en">Approve</span></i><i><span lang="is">Breyta</span><span lang="en">Edit</span></i><i><span lang="is">Sleppa</span><span lang="en">Skip</span></i></div>
-          </div>
-          <div class="gv-item">
-            <span class="gv-item__ic"><svg><use href="#i-postur"/></svg></span>
-            <div class="gv-item__b">
-              <b lang="is">Ný fyrirspurn frá Kára</b><b lang="en">New enquiry from Kári</b>
-              <small lang="is">Vill tilboð í nýja glugga. Drög að svari tilbúin.</small><small lang="en">Wants a quote for new windows. A draft reply is ready.</small>
-            </div>
-            <div class="gv-act"><i><span lang="is">Samþykkja</span><span lang="en">Approve</span></i><i><span lang="is">Breyta</span><span lang="en">Edit</span></i><i><span lang="is">Sleppa</span><span lang="en">Skip</span></i></div>
-          </div>
-          <p class="gv-appr__f"><svg><use href="#i-skjoldur"/></svg><span lang="is">Ekkert fer út fyrr en þú samþykkir. Allt er skráð.</span><span lang="en">Nothing goes out until you approve. Everything is logged.</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
+<h2>Three things that matter <span class="metal">today.</span></h2>
+
+<p class="lead">When you open X in the morning, the AI has already been through your quotes, jobs and invoices. It suggests the next steps and you approve with one click.</p>
+</div>
+<ul class="gv-ticks gv-ticks--lg">
+<li><svg><use href="#i-tilbod"></use></svg><span>Quotes nobody has opened</span></li>
+<li><svg><use href="#i-reikningur"></use></svg><span>Invoice drafts waiting for your approval</span></li>
+<li><svg><use href="#i-postur"></use></svg><span>New enquiries waiting for a reply</span></li>
+</ul>
+<p class="gv-status"><span class="tag tag--ok">In the first release</span></p>
+</div>
+<div aria-hidden="true" class="gv-shot rv" inert="">
+<div class="app gv-win">
+<div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is/yfirlit</span></div>
+<div class="gv-appr">
+<div class="gv-appr__h">
+<div><b>Good morning, Sigrún</b><small>Three things for today</small></div>
+<span class="gv-appr__ai"><img alt="" src="assets/merki/merki.svg"/>X</span>
+</div>
+<div class="gv-item gv-item--done">
+<span class="gv-item__ic"><svg><use href="#i-tilbod"></use></svg></span>
+<div class="gv-item__b">
+<b>Quote 1047, Anna's deck</b>
+<small>Not opened in 5 days. Reminder sent.</small>
+</div>
+<span class="tag tag--ok gv-item__ok"><span>Approved</span></span>
+</div>
+<div class="gv-item">
+<span class="gv-item__ic"><svg><use href="#i-reikningur"></use></svg></span>
+<div class="gv-item__b">
+<b>Stage 2, the Laugavegur roof</b>
+<small>Finished yesterday. The invoice draft is ready for Payday.</small>
+</div>
+<div class="gv-act"><i><span>Approve</span></i><i><span>Edit</span></i><i><span>Skip</span></i></div>
+</div>
+<div class="gv-item">
+<span class="gv-item__ic"><svg><use href="#i-postur"></use></svg></span>
+<div class="gv-item__b">
+<b>New enquiry from Kári</b>
+<small>Wants a quote for new windows. A draft reply is ready.</small>
+</div>
+<div class="gv-act"><i><span>Approve</span></i><i><span>Edit</span></i><i><span>Skip</span></i></div>
+</div>
+<p class="gv-appr__f"><svg><use href="#i-skjoldur"></use></svg><span>Nothing goes out until you approve. Everything is logged.</span></p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- ============ DRÖG ============ -->
 <section class="sec sec--tight" id="drog">
-  <div class="wrap">
-    <div class="sec__head sec__head--mid rv">
-      <p class="kicker"><span lang="is">Drög</span><span lang="en">Drafts</span></p>
-      <h2 lang="is">Gervigreindin skrifar. <span class="metal">Þú sendir.</span></h2>
-      <h2 lang="en">The AI writes. <span class="metal">You send.</span></h2>
-      <p class="lead" lang="is">Hún skrifar drög í þínum tón og lætur þau bíða eftir þér. Hún sendir, greiðir og eyðir engu sjálf.</p>
-      <p class="lead" lang="en">It writes drafts in your voice and leaves them waiting for you. It never sends, pays or deletes anything on its own.</p>
-    </div>
-    <ol class="gv-steps">
-      <li class="gv-step edge rv">
-        <div class="gv-step__top"><span class="mod__ic"><svg><use href="#i-heili"/></svg></span><span class="gv-step__n">01</span></div>
-        <h3 lang="is">X undirbýr</h3><h3 lang="en">X prepares</h3>
-        <p lang="is">Drög að tilboði, svari eða áminningu, byggð á gögnunum þínum.</p>
-        <p lang="en">A draft quote, reply or reminder, built from your own data.</p>
-      </li>
-      <li class="gv-step edge rv">
-        <div class="gv-step__top"><span class="mod__ic"><svg><use href="#i-pensill"/></svg></span><span class="gv-step__n">02</span></div>
-        <h3 lang="is">Þú lest yfir</h3><h3 lang="en">You read it</h3>
-        <p lang="is">Breyttu orðalagi, verði eða viðtakanda. Eða hentu drögunum.</p>
-        <p lang="en">Change the wording, the price or the recipient. Or bin the draft.</p>
-      </li>
-      <li class="gv-step edge rv">
-        <div class="gv-step__top"><span class="mod__ic"><svg><use href="#i-hak"/></svg></span><span class="gv-step__n">03</span></div>
-        <h3 lang="is">Þú samþykkir</h3><h3 lang="en">You approve</h3>
-        <p lang="is">Þá fyrst fer það út. Það er skráð hver samþykkti og hvenær.</p>
-        <p lang="en">Only then does it go out. Who approved it, and when, is logged.</p>
-      </li>
-    </ol>
-    <div class="gv-kinds edge rv">
-      <h3 lang="is">Hvað hún skrifar</h3><h3 lang="en">What it writes</h3>
-      <div class="chips">
-        <span class="chip"><span lang="is">Tilboð úr lýsingu</span><span lang="en">Quotes from a description</span></span>
-        <span class="chip"><span lang="is">Svör við fyrirspurnum</span><span lang="en">Replies to enquiries</span></span>
-        <span class="chip"><span lang="is">Áminningar og ítrekanir</span><span lang="en">Reminders and follow-ups</span></span>
-        <span class="chip"><span lang="is">Samantekt á viðskiptavini eða verki</span><span lang="en">A summary of a customer or a job</span></span>
-        <span class="chip soon"><span lang="is">Fréttabréf</span><span lang="en">Newsletters</span></span>
-        <span class="chip soon"><span lang="is">Færslur á samfélagsmiðla</span><span lang="en">Social media posts</span></span>
-      </div>
-      <p class="conn__legend"><span><i></i><span lang="is">Í fyrstu útgáfu</span><span lang="en">In the first release</span></span><span><i class="s"></i><span lang="is">Væntanlegt</span><span lang="en">Coming soon</span></span></p>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+<div class="sec__head sec__head--mid rv">
+<p class="kicker"><span>Drafts</span></p>
 
+<h2>The AI writes. <span class="metal">You send.</span></h2>
+
+<p class="lead">It writes drafts in your voice and leaves them waiting for you. It never sends, pays or deletes anything on its own.</p>
+</div>
+<ol class="gv-steps">
+<li class="gv-step edge rv">
+<div class="gv-step__top"><span class="mod__ic"><svg><use href="#i-heili"></use></svg></span><span class="gv-step__n">01</span></div>
+<h3>X prepares</h3>
+
+<p>A draft quote, reply or reminder, built from your own data.</p>
+</li>
+<li class="gv-step edge rv">
+<div class="gv-step__top"><span class="mod__ic"><svg><use href="#i-pensill"></use></svg></span><span class="gv-step__n">02</span></div>
+<h3>You read it</h3>
+
+<p>Change the wording, the price or the recipient. Or bin the draft.</p>
+</li>
+<li class="gv-step edge rv">
+<div class="gv-step__top"><span class="mod__ic"><svg><use href="#i-hak"></use></svg></span><span class="gv-step__n">03</span></div>
+<h3>You approve</h3>
+
+<p>Only then does it go out. Who approved it, and when, is logged.</p>
+</li>
+</ol>
+<div class="gv-kinds edge rv">
+<h3>What it writes</h3>
+<div class="chips">
+<span class="chip"><span>Quotes from a description</span></span>
+<span class="chip"><span>Replies to enquiries</span></span>
+<span class="chip"><span>Reminders and follow-ups</span></span>
+<span class="chip"><span>A summary of a customer or a job</span></span>
+<span class="chip soon"><span>Newsletters</span></span>
+<span class="chip soon"><span>Social media posts</span></span>
+</div>
+<p class="conn__legend"><span><i></i><span>In the first release</span></span><span><i class="s"></i><span>Coming soon</span></span></p>
+</div>
+</div>
+</section>
 <!-- ============ SPURÐU UM GÖGNIN ============ -->
 <section class="sec" id="spyrja">
-  <div class="wrap gv-split gv-split--flip">
-    <div class="rv">
-      <div class="sec__head gv-head">
-        <p class="kicker"><span lang="is">Spurðu</span><span lang="en">Ask</span></p>
-        <h2 lang="is">Spurðu um reksturinn. <span class="metal">Á mannamáli.</span></h2>
-        <h2 lang="en">Ask about your business. <span class="metal">In plain words.</span></h2>
-        <p class="lead" lang="is">Gervigreindin les gögnin í X og í kerfunum sem þú hefur tengt, til dæmis bókhaldinu og dagatalinu. Hún segir þér hvaðan svarið kemur.</p>
-        <p class="lead" lang="en">The AI reads the data in X and in the tools you have connected, like your accounting system and your calendar. It tells you where the answer comes from.</p>
-      </div>
-      <ul class="gv-qs">
-        <li><svg><use href="#i-spjall"/></svg><span lang="is">Hvaða samþykktu tilboð eru ekki komin á reikning?</span><span lang="en">Which accepted quotes haven't been invoiced?</span></li>
-        <li><svg><use href="#i-spjall"/></svg><span lang="is">Hvað er opið hjá Hótel Strönd?</span><span lang="en">What's open with Hótel Strönd?</span></li>
-        <li><svg><use href="#i-spjall"/></svg><span lang="is">Hvað sendum við marga reikninga í október?</span><span lang="en">How many invoices did we send in October?</span></li>
-        <li><svg><use href="#i-spjall"/></svg><span lang="is">Hvaða verk eru á dagskrá í næstu viku?</span><span lang="en">Which jobs are scheduled next week?</span></li>
-      </ul>
-      <p class="fine" lang="is">Gervigreindin sér aðeins gögn fyrirtækisins sem hún vinnur fyrir.</p>
-      <p class="fine" lang="en">The AI only sees the data of the company it works for.</p>
-    </div>
+<div class="wrap gv-split gv-split--flip">
+<div class="rv">
+<div class="sec__head gv-head">
+<p class="kicker"><span>Ask</span></p>
 
-    <div class="chat edge gv-chat rv" aria-hidden="true" inert>
-      <div class="chat__top"><img src="assets/merki/merki.svg" alt=""><b>X</b><div class="seg"><span class="on">Claude</span><span>ChatGPT</span></div></div>
-      <div class="msg msg--me"><span lang="is">Hvaða samþykktu tilboð eru ekki komin á reikning?</span><span lang="en">Which accepted quotes haven't been invoiced?</span></div>
-      <div class="msg"><span lang="is">Tvö. Tilboð 1040, gluggaskipti í Hraunbæ, og tilboð 1044, þakrennur í Hafnarfirði. Reikningsdrögin eru tilbúin. Viltu að ég sendi þau í Payday?</span><span lang="en">Two. Quote 1040, the windows in Hraunbær, and quote 1044, the gutters in Hafnarfjörður. The invoice drafts are ready. Shall I send them to Payday?</span>
-        <span class="gv-src"><span lang="is">Sótt úr</span><span lang="en">From</span> X · Payday</span>
-        <div class="msg__act"><button tabindex="-1"><span lang="is">Senda bæði</span><span lang="en">Send both</span></button><button tabindex="-1"><span lang="is">Skoða fyrst</span><span lang="en">Check first</span></button></div>
-      </div>
-      <div class="msg msg--me"><span lang="is">Hvað er opið hjá Hótel Strönd?</span><span lang="en">What's open with Hótel Strönd?</span></div>
-      <div class="msg"><span lang="is">Tilboð 1043 í baðherbergið var sent fyrir 5 dögum og hefur ekki verið opnað. Viltu að ég skrifi áminningu?</span><span lang="en">Quote 1043 for the bathroom went out 5 days ago and hasn't been opened. Shall I draft a reminder?</span>
-        <span class="gv-src"><span lang="is">Sótt úr</span><span lang="en">From</span> X</span>
-        <div class="msg__act"><button tabindex="-1"><span lang="is">Já, skrifa drög</span><span lang="en">Yes, draft it</span></button><button tabindex="-1"><span lang="is">Seinna</span><span lang="en">Later</span></button></div>
-      </div>
-      <div class="app__input"><span lang="is">Spurðu um reksturinn...</span><span lang="en">Ask about your business...</span><svg width="16" height="16"><use href="#i-or"/></svg></div>
-    </div>
-  </div>
+<h2>Ask about your business. <span class="metal">In plain words.</span></h2>
+
+<p class="lead">The AI reads the data in X and in the tools you have connected, like your accounting system and your calendar. It tells you where the answer comes from.</p>
+</div>
+<ul class="gv-qs">
+<li><svg><use href="#i-spjall"></use></svg><span>Which accepted quotes haven't been invoiced?</span></li>
+<li><svg><use href="#i-spjall"></use></svg><span>What's open with Hótel Strönd?</span></li>
+<li><svg><use href="#i-spjall"></use></svg><span>How many invoices did we send in October?</span></li>
+<li><svg><use href="#i-spjall"></use></svg><span>Which jobs are scheduled next week?</span></li>
+</ul>
+
+<p class="fine">The AI only sees the data of the company it works for.</p>
+</div>
+<div aria-hidden="true" class="chat edge gv-chat rv" inert="">
+<div class="chat__top"><img alt="" src="assets/merki/merki.svg"/><b>X</b><div class="seg"><span class="on">Claude</span><span>ChatGPT</span></div></div>
+<div class="msg msg--me"><span>Which accepted quotes haven't been invoiced?</span></div>
+<div class="msg"><span>Two. Quote 1040, the windows in Hraunbær, and quote 1044, the gutters in Hafnarfjörður. The invoice drafts are ready. Shall I send them to Payday?</span>
+<span class="gv-src"><span>From</span> X · Payday</span>
+<div class="msg__act"><button tabindex="-1"><span>Send both</span></button><button tabindex="-1"><span>Check first</span></button></div>
+</div>
+<div class="msg msg--me"><span>What's open with Hótel Strönd?</span></div>
+<div class="msg"><span>Quote 1043 for the bathroom went out 5 days ago and hasn't been opened. Shall I draft a reminder?</span>
+<span class="gv-src"><span>From</span> X</span>
+<div class="msg__act"><button tabindex="-1"><span>Yes, draft it</span></button><button tabindex="-1"><span>Later</span></button></div>
+</div>
+<div class="app__input"><span>Ask about your business...</span><svg height="16" width="16"><use href="#i-or"></use></svg></div>
+</div>
+</div>
 </section>
-
 <!-- ============ STJÓRN: SKRÁ OG MÆLIR ============ -->
 <section class="sec" id="stjorn">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="kicker"><span lang="is">Þú stjórnar</span><span lang="en">You're in control</span></p>
-      <h2 lang="is">Allt skráð. <span class="metal">Ekkert falið.</span></h2>
-      <h2 lang="en">Everything logged. <span class="metal">Nothing hidden.</span></h2>
-      <p class="lead" lang="is">Þú sérð hvað gervigreindin gerði, hver samþykkti og hversu mikið hún hefur verið notuð. Þú getur sett þak eða gert hlé hvenær sem er.</p>
-      <p class="lead" lang="en">You see what the AI did, who approved it and how much it has been used. You can set a cap or pause it at any time.</p>
-    </div>
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>You're in control</span></p>
 
-    <div class="gv-ctrl">
-      <article class="gv-ctrl__c edge rv">
-        <div class="gv-ctrl__t">
-          <div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-skyrsla"/></svg></span><span class="tag tag--ok" lang="is">Í fyrstu útgáfu</span><span class="tag tag--ok" lang="en">In the first release</span></div>
-          <h3 lang="is">Aðgerðaskrá</h3><h3 lang="en">Audit log</h3>
-          <p lang="is">Hver aðgerð er skráð: hvað gervigreindin las, hvað hún lagði til og hver samþykkti.</p>
-          <p lang="en">Every action is logged: what the AI read, what it suggested and who approved it.</p>
-        </div>
-        <div class="gv-log" aria-hidden="true">
-          <div class="gv-log__h"><b lang="is">Aðgerðaskrá</b><b lang="en">Audit log</b><span class="seg"><span class="on" lang="is">Allt</span><span class="on" lang="en">All</span><span>X</span><span lang="is">Fólk</span><span lang="en">People</span></span></div>
-          <div class="gv-log__r"><time>08:02</time><span><b>X</b> <span lang="is">bjó til morgunlistann</span><span lang="en">made the morning list</span></span><span class="tag" lang="is">Lesið</span><span class="tag" lang="en">Read</span></div>
-          <div class="gv-log__r"><time>08:14</time><span><b>Sigrún</b> <span lang="is">samþykkti áminningu, tilboð 1047</span><span lang="en">approved a reminder, quote 1047</span></span><span class="tag tag--ok" lang="is">Samþykkt</span><span class="tag tag--ok" lang="en">Approved</span></div>
-          <div class="gv-log__r"><time>08:14</time><span><b>X</b> <span lang="is">sendi áminningu til Önnu</span><span lang="en">sent a reminder to Anna</span></span><span class="tag tag--ok" lang="is">Sent</span><span class="tag tag--ok" lang="en">Sent</span></div>
-          <div class="gv-log__r"><time>09:40</time><span><b>X</b> <span lang="is">las reikninga úr Payday</span><span lang="en">read invoices from Payday</span></span><span class="tag" lang="is">Lesið</span><span class="tag" lang="en">Read</span></div>
-          <div class="gv-log__r"><time>10:05</time><span><b>X</b> <span lang="is">áminning til Hótel Strandar</span><span lang="en">reminder to Hótel Strönd</span></span><span class="tag tag--warn" lang="is">Bíður</span><span class="tag tag--warn" lang="en">Waiting</span></div>
-        </div>
-      </article>
+<h2>Everything logged. <span class="metal">Nothing hidden.</span></h2>
 
-      <article class="gv-ctrl__c edge rv">
-        <div class="gv-ctrl__t">
-          <div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-hond"/></svg></span><span class="tag tag--ok" lang="is">Í fyrstu útgáfu</span><span class="tag tag--ok" lang="en">In the first release</span></div>
-          <h3 lang="is">Notkunarmælir, þak og hlé</h3><h3 lang="en">Usage meter, cap and pause</h3>
-          <p lang="is">Sjáðu notkun mánaðarins. Settu þak, fáðu viðvörun nálægt mörkunum og gerðu hlé með einum rofa. Restin af kerfinu virkar áfram.</p>
-          <p lang="en">See this month's use. Set a cap, get a warning near the limit and pause with one switch. The rest of the system keeps working.</p>
-        </div>
-        <div class="gv-meter" aria-hidden="true">
-          <div class="gv-meter__h"><b lang="is">Gervigreind í nóvember</b><b lang="en">AI in November</b><small lang="is">Innifalið í áskrift</small><small lang="en">Included in plan</small></div>
-          <div class="gv-meter__bar"><i></i></div>
-          <div class="gv-meter__l"><span lang="is">Notað</span><span lang="en">Used</span><span lang="is">Mörk mánaðarins</span><span lang="en">Monthly limit</span></div>
-          <div class="gv-sw"><span lang="is">Viðvörun nálægt mörkunum</span><span lang="en">Warn me near the limit</span><i class="on"></i></div>
-          <div class="gv-sw"><span lang="is">Þak: stoppa við mörkin</span><span lang="en">Cap: stop at the limit</span><i class="on"></i></div>
-          <div class="gv-sw"><span lang="is">Gera hlé á gervigreindinni</span><span lang="en">Pause the AI</span><i></i></div>
-        </div>
-      </article>
-    </div>
-    <p class="fine gv-fine rv"><span lang="is">Ef gervigreindin klárast í mánuðinum færðu að vita það. Þá geturðu beðið til næsta mánaðar, farið í stærri áskrift eða tengt þinn eigin lykil.</span><span lang="en">If you use up the AI for the month, you'll be told. Then you can wait for next month, move to a bigger plan or connect your own key.</span></p>
-  </div>
+<p class="lead">You see what the AI did, who approved it and how much it has been used. You can set a cap or pause it at any time.</p>
+</div>
+<div class="gv-ctrl">
+<article class="gv-ctrl__c edge rv">
+<div class="gv-ctrl__t">
+<div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-skyrsla"></use></svg></span><span class="tag tag--ok">In the first release</span></div>
+<h3>Audit log</h3>
+
+<p>Every action is logged: what the AI read, what it suggested and who approved it.</p>
+</div>
+<div aria-hidden="true" class="gv-log">
+<div class="gv-log__h"><b>Audit log</b><span class="seg"><span class="on">All</span><span>X</span><span>People</span></span></div>
+<div class="gv-log__r"><time>08:02</time><span><b>X</b> <span>made the morning list</span></span><span class="tag">Read</span></div>
+<div class="gv-log__r"><time>08:14</time><span><b>Sigrún</b> <span>approved a reminder, quote 1047</span></span><span class="tag tag--ok">Approved</span></div>
+<div class="gv-log__r"><time>08:14</time><span><b>X</b> <span>sent a reminder to Anna</span></span><span class="tag tag--ok">Sent</span></div>
+<div class="gv-log__r"><time>09:40</time><span><b>X</b> <span>read invoices from Payday</span></span><span class="tag">Read</span></div>
+<div class="gv-log__r"><time>10:05</time><span><b>X</b> <span>reminder to Hótel Strönd</span></span><span class="tag tag--warn">Waiting</span></div>
+</div>
+</article>
+<article class="gv-ctrl__c edge rv">
+<div class="gv-ctrl__t">
+<div class="gv-pay__top"><span class="mod__ic"><svg><use href="#i-hond"></use></svg></span><span class="tag tag--ok">In the first release</span></div>
+<h3>Usage meter, cap and pause</h3>
+
+<p>See this month's use. Set a cap, get a warning near the limit and pause with one switch. The rest of the system keeps working.</p>
+</div>
+<div aria-hidden="true" class="gv-meter">
+<div class="gv-meter__h"><b>AI in November</b><small>Included in plan</small></div>
+<div class="gv-meter__bar"><i></i></div>
+<div class="gv-meter__l"><span>Used</span><span>Monthly limit</span></div>
+<div class="gv-sw"><span>Warn me near the limit</span><i class="on"></i></div>
+<div class="gv-sw"><span>Cap: stop at the limit</span><i class="on"></i></div>
+<div class="gv-sw"><span>Pause the AI</span><i></i></div>
+</div>
+</article>
+</div>
+<p class="fine gv-fine rv"><span>If you use up the AI for the month, you'll be told. Then you can wait for next month, move to a bigger plan or connect your own key.</span></p>
+</div>
 </section>
-
 <!-- ============ X INNI Í CLAUDE OG CHATGPT ============ -->
 <section class="sec sec--tight" id="inni">
-  <div class="wrap">
-    <div class="gv-inni edge rv">
-      <div class="gv-inni__t">
-        <p class="kicker"><span lang="is">Í spjallinu sem þú notar</span><span lang="en">In the chat you already use</span></p>
-        <h2 lang="is">X inni í Claude <span class="metal">og ChatGPT.</span></h2>
-        <h2 lang="en">X inside Claude <span class="metal">and ChatGPT.</span></h2>
-        <p class="gv-inni__tag"><span class="tag" lang="is">Væntanlegt</span><span class="tag" lang="en">Coming soon</span></p>
-        <p class="lead" lang="is">Greiðir þú nú þegar fyrir Claude eða ChatGPT? Tengdu X þar og spurðu um verkin þín beint úr spjallinu.</p>
-        <p class="lead" lang="en">Already paying for Claude or ChatGPT? Connect X there and ask about your work right from the chat.</p>
-        <ul class="gv-ticks">
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Sömu heimildir og í X</span><span lang="en">The same permissions as in X</span></li>
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Breytingar þurfa samþykki</span><span lang="en">Changes need approval</span></li>
-          <li><svg><use href="#i-hak"/></svg><span lang="is">Allt skráð í aðgerðaskrána</span><span lang="en">Everything goes in the audit log</span></li>
-        </ul>
-      </div>
-      <div class="gv-ext" aria-hidden="true" inert>
-        <div class="gv-ext__top"><b>Claude</b><span class="gv-ext__con"><img src="assets/merki/merki.svg" alt=""><span lang="is">Tengt: X</span><span lang="en">Connected: X</span></span></div>
-        <div class="msg msg--me"><span lang="is">Bættu við verki fyrir Jón: laga þakrennu á föstudag</span><span lang="en">Add a job for Jón: fix the gutter on Friday</span></div>
-        <div class="msg"><span lang="is">Ég bý til verkið í X og set það á föstudag. Á ég að halda áfram?</span><span lang="en">I'll create the job in X and put it on Friday. Shall I go ahead?</span>
-          <span class="gv-src">X · <span lang="is">bíður samþykkis</span><span lang="en">waiting for approval</span></span>
-          <div class="msg__act"><button tabindex="-1"><span lang="is">Samþykkja</span><span lang="en">Approve</span></button><button tabindex="-1"><span lang="is">Hætta við</span><span lang="en">Cancel</span></button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+<div class="gv-inni edge rv">
+<div class="gv-inni__t">
+<p class="kicker"><span>In the chat you already use</span></p>
 
+<h2>X inside Claude <span class="metal">and ChatGPT.</span></h2>
+<p class="gv-inni__tag"><span class="tag">Coming soon</span></p>
+
+<p class="lead">Already paying for Claude or ChatGPT? Connect X there and ask about your work right from the chat.</p>
+<ul class="gv-ticks">
+<li><svg><use href="#i-hak"></use></svg><span>The same permissions as in X</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Changes need approval</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Everything goes in the audit log</span></li>
+</ul>
+</div>
+<div aria-hidden="true" class="gv-ext" inert="">
+<div class="gv-ext__top"><b>Claude</b><span class="gv-ext__con"><img alt="" src="assets/merki/merki.svg"/><span>Connected: X</span></span></div>
+<div class="msg msg--me"><span>Add a job for Jón: fix the gutter on Friday</span></div>
+<div class="msg"><span>I'll create the job in X and put it on Friday. Shall I go ahead?</span>
+<span class="gv-src">X · <span>waiting for approval</span></span>
+<div class="msg__act"><button tabindex="-1"><span>Approve</span></button><button tabindex="-1"><span>Cancel</span></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- ============ GÖGNIN ============ -->
 <section class="sec" id="gogn">
-  <div class="wrap">
-    <div class="sec__head rv">
-      <p class="kicker"><span lang="is">Gögnin þín</span><span lang="en">Your data</span></p>
-      <h2 lang="is">Heiðarlega um <span class="metal">gögnin þín.</span></h2>
-      <h2 lang="en">Straight talk about <span class="metal">your data.</span></h2>
-      <p class="lead" lang="is">Hvar gögnin eru geymd og hvert þau fara þegar gervigreindin vinnur.</p>
-      <p class="lead" lang="en">Where your data is stored, and where it goes when the AI works.</p>
-    </div>
-    <div class="trust">
-      <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-hnottur"/></svg></span><h3 lang="is">Gagnagrunnurinn í Evrópu</h3><h3 lang="en">Database in Europe</h3><p lang="is">Gögn fyrirtækisins eru geymd í gagnagrunni í Evrópu.</p><p lang="en">Your company's data is stored in a database in Europe.</p></div>
-      <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-heili"/></svg></span><h3 lang="is">Gervigreindin vinnur annars staðar</h3><h3 lang="en">The AI runs elsewhere</h3><p lang="is">Þegar gervigreindin vinnur fara gögnin sem hún þarf til Anthropic (Claude) eða OpenAI (ChatGPT). Sú vinnsla er ekki bundin við Evrópu.</p><p lang="en">When the AI works, the data it needs goes to Anthropic (Claude) or OpenAI (ChatGPT). That processing is not limited to Europe.</p></div>
-      <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-skjol"/></svg></span><h3 lang="is">Þjálfun</h3><h3 lang="en">Training</h3><p lang="is">Samkvæmt skilmálum Anthropic og OpenAI eru gögn sem send eru um API þeirra sjálfgefið ekki notuð til að þjálfa líkönin. Lestu skilmálana: <a href="https://www.anthropic.com/legal" rel="noopener" target="_blank">Anthropic</a>, <a href="https://openai.com/policies/" rel="noopener" target="_blank">OpenAI</a>.</p><p lang="en">Under Anthropic's and OpenAI's terms, data sent through their APIs is not used to train their models by default. Read their terms: <a href="https://www.anthropic.com/legal" rel="noopener" target="_blank">Anthropic</a>, <a href="https://openai.com/policies/" rel="noopener" target="_blank">OpenAI</a>.</p></div>
-      <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lag"/></svg></span><h3 lang="is">Aðeins þitt fyrirtæki</h3><h3 lang="en">Only your company</h3><p lang="is">Gervigreindin sér aðeins gögn fyrirtækisins sem hún vinnur fyrir. Aðeins þitt fólk sér gögnin þín.</p><p lang="en">The AI only sees the data of the company it works for. Only your own people see your data.</p></div>
-      <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lykill"/></svg></span><h3 lang="is">Lyklar dulkóðaðir</h3><h3 lang="en">Keys encrypted</h3><p lang="is">Lyklar eru geymdir dulkóðaðir og gervigreindin sér þá aldrei.</p><p lang="en">Keys are stored encrypted and the AI never sees them.</p></div>
-      <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-tengi"/></svg></span><h3 lang="is">Aftengist með einum smelli</h3><h3 lang="en">Disconnect in one click</h3><p lang="is">Hver tenging aftengist með einum smelli og lyklunum er eytt.</p><p lang="en">Each connection disconnects in one click and its keys are deleted.</p></div>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>Your data</span></p>
 
+<h2>Straight talk about <span class="metal">your data.</span></h2>
+
+<p class="lead">Where your data is stored, and where it goes when the AI works.</p>
+</div>
+<div class="trust">
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-hnottur"></use></svg></span><h3>Database in Europe</h3><p>Your company's data is stored in a database in Europe.</p></div>
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-heili"></use></svg></span><h3>The AI runs elsewhere</h3><p>When the AI works, the data it needs goes to Anthropic (Claude) or OpenAI (ChatGPT). That processing is not limited to Europe.</p></div>
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-skjol"></use></svg></span><h3>Training</h3><p>Under Anthropic's and OpenAI's terms, data sent through their APIs is not used to train their models by default. Read their terms: <a href="https://www.anthropic.com/legal" rel="noopener" target="_blank">Anthropic</a>, <a href="https://openai.com/policies/" rel="noopener" target="_blank">OpenAI</a>.</p></div>
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lag"></use></svg></span><h3>Only your company</h3><p>The AI only sees the data of the company it works for. Only your own people see your data.</p></div>
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lykill"></use></svg></span><h3>Keys encrypted</h3><p>Keys are stored encrypted and the AI never sees them.</p></div>
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-tengi"></use></svg></span><h3>Disconnect in one click</h3><p>Each connection disconnects in one click and its keys are deleted.</p></div>
+</div>
+</div>
+</section>
 <!-- ============ LEIÐBEININGAR ============ -->
 <section class="sec sec--tight" id="leidbeiningar" style="padding-top:0">
-  <div class="wrap">
-    <div class="cguides gv-guides edge rv">
-      <div class="gv-guides__t">
-        <span class="mod__ic"><svg><use href="#i-bok"/></svg></span>
-        <div>
-          <h3 lang="is">Lærðu að nota gervigreind</h3><h3 lang="en">Learn to use AI</h3>
-          <p lang="is">Stuttur texti og myndbönd á mannamáli. Frá fyrstu skipuninni yfir í að láta Claude og ChatGPT vinna fyrir þig.</p>
-          <p lang="en">Short text and videos in plain language. From your first prompt to getting Claude and ChatGPT to work for you.</p>
-          <div class="chips chips--sm gv-guides__c"><span class="chip">Claude 101</span><span class="chip">ChatGPT 101</span><span class="chip"><span lang="is">Tilbúnar skipanir</span><span lang="en">Ready prompts</span></span></div>
-        </div>
-      </div>
-      <a class="tlink" href="leidbeiningar.html"><span lang="is">Skoða leiðbeiningar</span><span lang="en">View the guides</span><svg><use href="#i-or"/></svg></a>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+<div class="cguides gv-guides edge rv">
+<div class="gv-guides__t">
+<span class="mod__ic"><svg><use href="#i-bok"></use></svg></span>
+<div>
+<h3>Learn to use AI</h3>
 
+<p>Short text and videos in plain language. From your first prompt to getting Claude and ChatGPT to work for you.</p>
+<div class="chips chips--sm gv-guides__c"><span class="chip">Claude 101</span><span class="chip">ChatGPT 101</span><span class="chip"><span>Ready prompts</span></span></div>
+</div>
+</div>
+<a class="tlink" href="leidbeiningar.html"><span>View the guides</span><svg><use href="#i-or"></use></svg></a>
+</div>
+</div>
+</section>
 <!-- ============ SPURNINGAR ============ -->
 <section class="sec" id="spurningar" style="padding-top:40px">
-  <div class="wrap">
-    <div class="sec__head sec__head--mid rv">
-      <p class="kicker"><span lang="is">Spurningar</span><span lang="en">Questions</span></p>
-      <h2 lang="is">Um gervigreindina</h2>
-      <h2 lang="en">About the AI</h2>
-    </div>
-    <div class="faq rv">
-      <details><summary><span lang="is">Getur gervigreindin sent eða greitt eitthvað sjálf?</span><span lang="en">Can the AI send or pay for anything on its own?</span></summary><p lang="is">Nei. Hún undirbýr og þú samþykkir. Hún sendir, greiðir og eyðir engu án þíns samþykkis, og allt er skráð.</p><p lang="en">No. It prepares and you approve. It never sends, pays or deletes anything without your approval, and everything is logged.</p></details>
-      <details><summary><span lang="is">Get ég notað Claude Pro eða ChatGPT Plus áskriftina mína?</span><span lang="en">Can I use my Claude Pro or ChatGPT Plus subscription?</span></summary><p lang="is">Ekki sem lykil í X, því slík áskrift er ekki API lykill. Gervigreind er innifalin í X og þú getur tengt þinn eigin API lykil. X inni í Claude og ChatGPT er væntanlegt.</p><p lang="en">Not as a key in X, because that kind of subscription is not an API key. AI is included in X and you can connect your own API key. X inside Claude and ChatGPT is coming soon.</p></details>
-      <details><summary><span lang="is">Claude eða ChatGPT, hvort á ég að velja?</span><span lang="en">Claude or ChatGPT, which should I pick?</span></summary><p lang="is">Bæði virka í X. Ef þú notar annað nú þegar er eðlilegt að byrja þar. Þú getur skipt í stillingum.</p><p lang="en">Both work in X. If you already use one, it makes sense to start there. You can switch in settings.</p></details>
-      <details><summary><span lang="is">Hvað gerist ef gervigreindin klárast í mánuðinum?</span><span lang="en">What happens if I use up the AI for the month?</span></summary><p lang="is">Þú sérð notkunina á mælinum og færð að vita það. Þá geturðu beðið til næsta mánaðar, farið í stærri áskrift eða tengt þinn eigin lykil. Kerfið sjálft virkar áfram eins og áður.</p><p lang="en">You see your use on the meter and you'll be told. Then you can wait for next month, move to a bigger plan or connect your own key. The rest of the system keeps working as before.</p></details>
-      <details><summary><span lang="is">Hvar eru gögnin mín?</span><span lang="en">Where is my data?</span></summary><p lang="is">Gagnagrunnurinn er í Evrópu. Þegar gervigreindin vinnur fara gögnin sem hún þarf til Anthropic eða OpenAI, eftir því hvort þú velur Claude eða ChatGPT.</p><p lang="en">The database is in Europe. When the AI works, the data it needs goes to Anthropic or OpenAI, depending on whether you pick Claude or ChatGPT.</p></details>
-      <details><summary><span lang="is">Þarf ég að kunna á gervigreind?</span><span lang="en">Do I need to know about AI?</span></summary><p lang="is">Nei. Morgunlistinn og drögin koma af sjálfu sér. Ef þú vilt læra meira eru <a href="leidbeiningar.html">leiðbeiningarnar</a> á mannamáli.</p><p lang="en">No. The morning list and the drafts just show up. If you want to learn more, the <a href="leidbeiningar.html">guides</a> are in plain language.</p></details>
-    </div>
-  </div>
-</section>
+<div class="wrap">
+<div class="sec__head sec__head--mid rv">
+<p class="kicker"><span>Questions</span></p>
 
+<h2>About the AI</h2>
+</div>
+<div class="faq rv">
+<details><summary><span>Can the AI send or pay for anything on its own?</span></summary><p>No. It prepares and you approve. It never sends, pays or deletes anything without your approval, and everything is logged.</p></details>
+<details><summary><span>Can I use my Claude Pro or ChatGPT Plus subscription?</span></summary><p>Not as a key in X, because that kind of subscription is not an API key. AI is included in X and you can connect your own API key. X inside Claude and ChatGPT is coming soon.</p></details>
+<details><summary><span>Claude or ChatGPT, which should I pick?</span></summary><p>Both work in X. If you already use one, it makes sense to start there. You can switch in settings.</p></details>
+<details><summary><span>What happens if I use up the AI for the month?</span></summary><p>You see your use on the meter and you'll be told. Then you can wait for next month, move to a bigger plan or connect your own key. The rest of the system keeps working as before.</p></details>
+<details><summary><span>Where is my data?</span></summary><p>The database is in Europe. When the AI works, the data it needs goes to Anthropic or OpenAI, depending on whether you pick Claude or ChatGPT.</p></details>
+<details><summary><span>Do I need to know about AI?</span></summary><p>No. The morning list and the drafts just show up. If you want to learn more, the <a href="leidbeiningar.html">guides</a> are in plain language.</p></details>
+</div>
+</div>
+</section>
 <!-- ============ LOKAKALL ============ -->
 <section class="sec" style="padding-top:20px;padding-bottom:0">
-  <div class="wrap">
-    <div class="final edge rv">
-      <img src="assets/merki/merki.svg" alt="">
-      <h2 lang="is">Gervigreindin fylgir. <span class="metal">Í hverri áskrift.</span></h2>
-      <h2 lang="en">AI comes included. <span class="metal">In every plan.</span></h2>
-      <p class="lead" lang="is">Skoðaðu áskriftirnar og sjáðu hvað fylgir hverri, eða sjáðu hvaða kerfi gervigreindin getur lesið úr.</p>
-      <p class="lead" lang="en">Look at the plans and what comes with each, or see which tools the AI can read from.</p>
-      <div class="hero__cta">
-        <a class="btn btn--metal" href="verd.html"><span lang="is">Sjá verð</span><span lang="en">See pricing</span><svg><use href="#i-or"/></svg></a>
-        <a class="btn btn--ghost" href="tengingar.html"><span lang="is">Sjá tengingar</span><span lang="en">See connections</span></a>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="final edge rv">
+<img alt="" src="assets/merki/merki.svg"/>
+
+<h2>AI comes included. <span class="metal">In every plan.</span></h2>
+
+<p class="lead">Look at the plans and what comes with each, or see which tools the AI can read from.</p>
+<div class="hero__cta">
+<a class="btn btn--metal" href="verd.html"><span>See pricing</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--ghost" href="tengingar.html"><span>See connections</span></a>
+</div>
+</div>
+</div>
 </section>
-
 </main>
-
 <!-- ============ FÓTUR: eins á öllum síðum ============ -->
 <footer class="foot">
-  <div class="wrap foot__in">
-    <div class="foot__brand">
-      <a href="index.html" class="brand"><img class="brand__logo" src="assets/merki/x-logo-malmur.svg" alt="X" width="60" height="24"></a>
-      <span class="foot__line" lang="is">Þín verkfæri, tengd saman.</span><span class="foot__line" lang="en">Your tools, tied together.</span>
-    </div>
-    <nav class="foot__links" aria-label="Síður / Pages">
-      <a href="kerfid.html"><span lang="is">Kerfið</span><span lang="en">The system</span></a>
-      <a href="tengingar.html"><span lang="is">Tengingar</span><span lang="en">Connections</span></a>
-      <a href="gervigreind.html" aria-current="page"><span lang="is">Gervigreind</span><span lang="en">AI</span></a>
-      <a href="leidbeiningar.html"><span lang="is">Leiðbeiningar</span><span lang="en">Guides</span></a>
-      <a href="samstarf.html"><span lang="is">Samstarf</span><span lang="en">Partners</span></a>
-      <a href="verd.html"><span lang="is">Verð</span><span lang="en">Pricing</span></a>
-    </nav>
-    <p class="foot__copy">© <span data-ar>2026</span> X</p>
-  </div>
+<div class="wrap foot__in">
+<div class="foot__brand">
+<a class="brand" href="index.html"><img alt="X" class="brand__logo" height="24" src="assets/merki/x-logo-malmur.svg" width="60"/></a>
+<span class="foot__line">Your tools, tied together.</span>
+</div>
+<nav aria-label="Síður / Pages" class="foot__links">
+<a href="kerfid.html"><span>The system</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
+<a aria-current="page" href="gervigreind.html"><span>AI</span></a>
+<a href="leidbeiningar.html"><span>Guides</span></a>
+<a href="samstarf.html"><span>Partners</span></a>
+<a href="verd.html"><span>Pricing</span></a>
+</nav>
+<p class="foot__copy">© <span data-ar="">2026</span> X</p>
+</div>
 </footer>
-
-<script src="assets/js/site.js" defer></script>
+<script defer="" src="assets/js/site.js"></script>
 </body>
 </html>
