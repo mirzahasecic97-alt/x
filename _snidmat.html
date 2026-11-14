@@ -1,16 +1,16 @@
 <!doctype html>
 <!--
-  SNIÐMÁT FYRIR SÍÐU Á x.is
-  1. Afritaðu þessa skrá sem <síða>.html (kerfid, tengingar, gervigreind, leidbeiningar, samstarf, verd).
-  2. Settu titil og lýsingu í data-titill-is/en og data-lysing-is/en á <html>, og sama íslenska textann í <title> og meta description.
-  3. Settu aria-current="page" á tengil síðunnar í hausnum OG í fætinum.
-  4. Síðustíll: assets/css/<síða>.css (tengill undir site.css). Síðuskrifta: assets/js/<síða>.js (script á eftir site.js, með defer).
-  5. Allur sýnilegur texti á báðum málum: systkini með lang="is" og lang="en".
-  6. Hausinn, táknin og fóturinn eru eins á öllum síðum. Breyttu þeim ekki á einni síðu.
-  Þessi athugasemd má fara út á síðunum sjálfum.
+  PAGE TEMPLATE FOR x.is (English only, see SIDUR.md)
+  1. Copy this file to <page>.html.
+  2. Put the title and description in <title>, meta description and data-titill-en / data-lysing-en on <html>.
+  3. Put aria-current="page" on the page's link in the header AND in the footer.
+  4. Page CSS: assets/css/<page>.css (link under site.css). Page JS: assets/js/<page>.js (after site.js, with defer).
+  5. No lang attributes on elements. No language toggle.
+  6. Buttons: "Join the pilot" -> pilot.html (primary), "Book a 15 min call" -> pilot.html?call=1 (secondary). No other CTA labels.
+  7. Near the top of the page, once: "Everything here is planned for the first release unless marked Coming soon."
+  8. Header, icons and footer are the same on every page. Do not change them on one page only.
+  This comment can be removed from the pages themselves.
 -->
-<!DOCTYPE html>
-
 <html data-lysing-en="[Description in English, one or two sentences.]" data-titill-en="[Page]: X" lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -68,18 +68,16 @@
 <header class="nav">
 <div class="wrap nav__in">
 <a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
-<nav aria-label="Valmynd / Menu" class="nav__links" id="valmynd">
+<nav aria-label="Menu" class="nav__links" id="valmynd">
 <a href="kerfid.html"><span>The system</span></a>
 <a href="tengingar.html"><span>Connections</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
 <a href="leidbeiningar.html"><span>Guides</span></a>
-<a href="samstarf.html"><span>Partners</span></a>
 <a href="verd.html"><span>Pricing</span></a>
 </nav>
 <div class="nav__right">
-
-<a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span>Get started</span></a>
-<button aria-controls="valmynd" aria-expanded="false" aria-label="Valmynd / Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<a class="btn btn--metal btn--sm nav__cta" href="pilot.html"><span>Join the pilot</span></a>
+<button aria-controls="valmynd" aria-expanded="false" aria-label="Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </div>
 </header>
@@ -98,18 +96,17 @@
 <h1>[Page headline.] <span class="metal">[Metal part.]</span></h1>
 
 <p class="lead">[One or two short sentences.]</p>
+<p class="planned">Everything here is planned for the first release unless marked <span class="tag">Coming soon</span></p>
 </div>
 </div>
 </section>
-<!-- Dæmi um kafla (eyða eða afrita):
-<section class="sec" id="kafli">
+<!-- Example section (delete or copy):
+<section class="sec" id="section">
   <div class="wrap">
     <div class="sec__head rv">
-      <p class="kicker"><span lang="is">...</span><span lang="en">...</span></p>
-      <h2 lang="is">... <span class="metal">...</span></h2>
-      <h2 lang="en">... <span class="metal">...</span></h2>
-      <p class="lead" lang="is">...</p>
-      <p class="lead" lang="en">...</p>
+      <p class="kicker"><span>...</span></p>
+      <h2>... <span class="metal">...</span></h2>
+      <p class="lead">...</p>
     </div>
   </div>
 </section>
@@ -122,13 +119,14 @@
 <a class="brand" href="index.html"><img alt="X" class="brand__logo" height="24" src="assets/merki/x-logo-malmur.svg" width="60"/></a>
 <span class="foot__line">Your tools, tied together.</span>
 </div>
-<nav aria-label="Síður / Pages" class="foot__links">
+<nav aria-label="Pages" class="foot__links">
 <a href="kerfid.html"><span>The system</span></a>
 <a href="tengingar.html"><span>Connections</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
 <a href="leidbeiningar.html"><span>Guides</span></a>
-<a href="samstarf.html"><span>Partners</span></a>
 <a href="verd.html"><span>Pricing</span></a>
+<a href="samstarf.html"><span>For software companies</span></a>
+<a href="pilot.html"><span>Join the pilot</span></a>
 </nav>
 <p class="foot__copy">© <span data-ar="">2026</span> X</p>
 </div>

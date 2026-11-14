@@ -6,17 +6,16 @@
 
 // Stillingar sem þarf að fylla út áður en vefurinn fer í loftið
 const STILLINGAR = {
-  // TODO: setja rétta slóð á prufukerfið þegar það er komið á x.is
-  demo: 'https://app.x.is/demo/',
-  // TODO: breyta í rétt x.is netfang. Hvert "Bóka kynningu" fer
-  netfang: 'hallo@x.is',
-  // TODO: breyta í rétt x.is netfang. Hvert "Ræðum samstarf" fer (fyrirtæki sem gera kerfi og vilja tengjast)
-  samstarf: 'samstarf@x.is',
+  // TODO: Formspree URL fyrir prufuhópinn (pilot.html), til dæmis 'https://formspree.io/f/xxxxxxx'.
+  // Meðan þetta er tómt er ekkert sent: síðan sýnir þakkirnar og skrifar í console.
+  formEndpoint: '',
+  // síðan sem allir "Join the pilot" og "Book a 15 min call" hnappar vísa á
+  pilot: 'pilot.html',
 };
 
 // Staða tenginga og eininga. Sama orðalag alls staðar á vefnum.
 const STADA = {
-  ok: { is: 'Í fyrstu útgáfu', en: 'In the first release', cls: 'tag--ok' },
+  ok: { is: 'Í fyrstu útgáfu', en: 'Planned for the first release', cls: 'tag--ok' },
   prof: { is: 'Í prófun', en: 'In testing', cls: 'tag--warn' },
   live: { is: 'Tilbúið', en: 'Live', cls: 'tag--ok' },
   soon: { is: 'Væntanlegt', en: 'Coming soon', cls: '' },
@@ -47,24 +46,15 @@ function setjaMal(m) {
   document.querySelectorAll('[data-ph-' + m + ']').forEach(el => { el.placeholder = el.getAttribute('data-ph-' + m); });
   document.querySelectorAll('[data-al-' + m + ']').forEach(el => { el.setAttribute('aria-label', el.getAttribute('data-al-' + m)); });
 
-  // prufukerfið
-  document.querySelectorAll('[data-demo]').forEach(a => {
-    let slod = STILLINGAR.demo;
-    try { const u = new URL(STILLINGAR.demo); if (m === 'en') u.searchParams.set('lang', 'en'); slod = u.href; } catch (e) {}
-    a.href = slod; a.target = '_blank'; a.rel = 'noopener';
-  });
-  // "Bóka kynningu": data-kynning="Teymi" bætir áskriftinni við efnislínuna
-  const efni = m === 'is' ? 'Kynning á X' : 'X demo';
-  // data-kynning-en gefur enska heitið í efnislínuna þegar enska er valin
+  // eldri krókar (data-demo, data-kynning, data-samstarf) vísa nú á pilot.html, engin mailto lengur.
+  // Nýr kóði notar venjulega tengla: href="pilot.html", "pilot.html?plan=team" eða "pilot.html?call=1".
+  const PLON = { solo: 'solo', team: 'team', business: 'business' };
+  document.querySelectorAll('[data-demo]').forEach(a => { a.href = STILLINGAR.pilot; a.removeAttribute('target'); });
   document.querySelectorAll('[data-kynning]').forEach(a => {
-    const heiti = (m === 'en' && a.dataset.kynningEn) || a.dataset.kynning;
-    a.href = 'mailto:' + STILLINGAR.netfang + '?subject=' + encodeURIComponent(efni + (heiti ? ' (' + heiti + ')' : ''));
+    const plan = PLON[(a.dataset.kynningEn || '').toLowerCase()];
+    a.href = STILLINGAR.pilot + (plan ? '?plan=' + plan : '?call=1');
   });
-  // fyrirtæki sem gera kerfi og vilja tengjast
-  const efniS = m === 'is' ? 'Samstarf um tengingu við X' : 'Building a connection to X';
-  document.querySelectorAll('[data-samstarf]').forEach(a => {
-    a.href = 'mailto:' + STILLINGAR.samstarf + '?subject=' + encodeURIComponent(efniS);
-  });
+  document.querySelectorAll('[data-samstarf]').forEach(a => { a.href = STILLINGAR.pilot + '?call=1'; });
 
   // ef vafrinn geymir ekki málið fylgir ?lang með innri tenglum
   if (!geymslaVirkar) {
@@ -123,6 +113,43 @@ addEventListener('scroll', () => { if (rvBidur) return; rvBidur = true; requestA
 addEventListener('load', birtaFramhja);
 
 document.querySelectorAll('[data-ar]').forEach(el => { el.textContent = new Date().getFullYear(); });
+
+// ---------- aðgerðastika neðst á síma ----------
+// Birtist undir 720px þegar hetjan er farin upp fyrir og felst nálægt fætinum. Ekki á pilot.html.
+const skraNafn = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+if (!/^pilot(\.html)?$/.test(skraNafn)) {
+  const stika = document.createElement('div');
+  stika.className = 'mbar';
+  stika.innerHTML = '<a class="btn btn--metal" href="' + STILLINGAR.pilot + '"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>';
+  stika.setAttribute('inert', '');
+  document.body.appendChild(stika);
+  const simi = matchMedia('(max-width:720px)');
+  // hetjuhnapparnir ef þeir eru til (forsíðuhetjan er há með skjámyndinni), annars öll hetjan
+  const hetjaE = document.querySelector('.hero .hero__cta') || document.querySelector('.hero');
+  // felst þegar lokakallið (.final, sem hefur sinn eigin hnapp) eða fóturinn sést
+  const nedst = [...document.querySelectorAll('.final, .foot')];
+  const sjaanleg = new Set();
+  let hetjaSest = !!hetjaE, foturSest = false;
+  const uppfaera = () => {
+    const syna = simi.matches && !hetjaSest && !foturSest && !(nav && nav.classList.contains('is-open'));
+    stika.classList.toggle('is-on', syna);
+    if (syna) stika.removeAttribute('inert'); else stika.setAttribute('inert', '');
+  };
+  if ('IntersectionObserver' in window) {
+    if (hetjaE) new IntersectionObserver(es => { hetjaSest = es[0].isIntersecting; uppfaera(); }).observe(hetjaE);
+    const ioN = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) sjaanleg.add(e.target); else sjaanleg.delete(e.target); });
+      foturSest = sjaanleg.size > 0; uppfaera();
+    }, { rootMargin: '0px 0px 80px 0px' });
+    nedst.forEach(el => ioN.observe(el));
+  } else {
+    addEventListener('scroll', () => { hetjaSest = scrollY < 500; uppfaera(); }, { passive: true });
+  }
+  if (!hetjaE) addEventListener('scroll', () => { hetjaSest = scrollY < 400; uppfaera(); }, { passive: true });
+  if (simi.addEventListener) simi.addEventListener('change', uppfaera);
+  if (valmynd) valmynd.addEventListener('click', uppfaera);
+  uppfaera();
+}
 
 // ---------- málmur og hetja ----------
 // hreyfimerkið stoppar ef notandinn vill minni hreyfingu

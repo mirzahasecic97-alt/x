@@ -138,3 +138,6 @@
 @media (max-width:400px){
   .sm-objs{grid-template-columns:1fr}
 }
+
+/* hetja: tengill við hlið aðalhnappsins */
+.hero__cta .sm-hero__link{align-self:center;margin-left:6px}

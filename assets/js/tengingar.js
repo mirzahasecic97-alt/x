@@ -29,10 +29,14 @@
         const nafnFrum = t.querySelector('.tool__name');
         const nafn = nafnFrum ? nafnFrum.cloneNode(true) : document.createElement('span');
         nafn.className = 'pick__name';
-        const merki = document.createElement('span'); merki.className = ('tag ' + st.cls).trim();
-        const merkiTxt = document.createElement('span'); merkiTxt.textContent = st.en || 'Coming soon';
-        merki.append(merkiTxt);
-        haus.append(nafn, merki);
+        haus.append(nafn);
+        // Staðan er sögð einu sinni efst á síðunni: aðeins það sem víkur frá fær merki (Coming soon, In testing)
+        if (t.dataset.st !== 'ok') {
+          const merki = document.createElement('span'); merki.className = ('tag ' + st.cls).trim();
+          const merkiTxt = document.createElement('span'); merkiTxt.textContent = st.en || 'Coming soon';
+          merki.append(merkiTxt);
+          haus.append(merki);
+        }
         li.append(haus);
         const lysingFrum = t.querySelector('.tool__does');
         if (lysingFrum) {

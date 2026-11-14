@@ -1,135 +1,166 @@
-# Síður á x.is: reglur fyrir þá sem smíða
+# Pages on x.is: rules for whoever builds them
 
-Þetta skjal er fyrir þá sem smíða síður vefsins. Það fer ekki í loftið. Ekki birta skrár sem byrja á `_` eða enda á `.md`.
+This file is for people building the site's pages. It does not go live. Never publish files that start with `_` or end in `.md`.
 
-## Skrár
+The site is **English only and global**. No `lang` attributes on elements, no IS/EN toggle, no Icelandic text, names, company IDs or amounts in kr, and no mention of Iceland or a country switch. (The ISK price switch on `verd.html` is the one exception: it only changes the currency.)
 
-| Skrá | Hvað |
+## Files
+
+| File | What |
 | --- | --- |
-| `index.html` | Forsíða. Stutt: hetja, flæðið, önnur leið, kort á hverja síðu, lokakall |
-| `kerfid.html`, `tengingar.html`, `gervigreind.html`, `leidbeiningar.html`, `samstarf.html`, `verd.html` | Undirsíður. Hver byrjar sem afrit af `_snidmat.html` |
-| `_snidmat.html` | Autt sniðmát: `<head>`, tákn, haus, hetja undirsíðu, tómt `<main>`, fótur |
-| `assets/css/site.css` | Sameiginlegur stíll. Ekki breyta honum fyrir eina síðu |
-| `assets/css/<síða>.css` | Stíll sem aðeins ein síða notar. Tengill undir `site.css` í `<head>` |
-| `assets/js/site.js` | Sameiginleg skrifta: mál, haus, birting við skrun, `data-demo`, `data-kynning`, `data-samstarf`, ár í fæti, hetjuáhrif |
-| `assets/js/<síða>.js` | Skrifta fyrir eina síðu, hlaðin á eftir `site.js`, báðar með `defer`. Settu allt inn í `(() => { ... })();` |
-| `assets/js/tengingar.js` | Tilbúið: "Hvað notar þú í dag?" valið (`[data-velja]`) fyrir `tengingar.html` |
-| `assets/merki/` | `x-logo-malmur.svg` (merki og X, í haus og fæti), `merki.svg` (aðeins merkið, skraut), `favicon.svg` |
+| `index.html` | Home page |
+| `kerfid.html`, `tengingar.html`, `gervigreind.html`, `leidbeiningar.html`, `samstarf.html`, `verd.html` | Sub pages. Each starts as a copy of `_snidmat.html` |
+| `pilot.html` | "Join the pilot": the one form every button leads to |
+| `_snidmat.html` | Blank template: `<head>`, icons, header, sub page hero, empty `<main>`, footer |
+| `assets/css/site.css` | Shared styles. Do not change it for one page |
+| `assets/css/<page>.css` | Styles only one page uses. Linked under `site.css` in `<head>` |
+| `assets/js/site.js` | Shared script: settings (`STILLINGAR`), header, reveal on scroll, the mobile action bar, year in the footer, hero effects |
+| `assets/js/<page>.js` | Script for one page, loaded after `site.js`, both with `defer`. Wrap everything in `(() => { ... })();` |
+| `assets/js/pilot.js` | The pilot form: prefill from the URL (or the industry saved in `localStorage` `x-grein` by the home page picker or `kerfid.html`), validation, sending |
+| `assets/js/tengingar.js` | The "What do you use today?" picker (`[data-velja]`) |
+| `assets/merki/` | `x-logo-malmur.svg` (mark and X, header and footer), `merki.svg` (mark only, decoration), `favicon.svg` |
 
-Slóðir eru alltaf afstæðar: `assets/...`, `kerfid.html`. Engin skástrik fremst.
+Paths are always relative: `assets/...`, `kerfid.html`. No leading slash.
 
-## Ný síða, skref fyrir skref
+## New page, step by step
 
-1. Afritaðu `_snidmat.html` í `<síða>.html`.
-2. Fylltu út `data-titill-is`, `data-titill-en`, `data-lysing-is`, `data-lysing-en` á `<html>`, og settu íslenska titilinn í `<title>` og íslensku lýsinguna í `meta description`. Titill: `Kerfið: X` / `The system: X`.
-3. Settu `aria-current="page"` á tengil síðunnar, bæði í `.nav__links` og `.foot__links`.
-4. Skrifaðu hetjuna (`.hero.hero--page`) og kaflana inn í `<main>`.
-5. Ef síðan þarf eigin stíl eða skriftu: afskrifaðu tenglana í `<head>` og neðst og búðu til skrárnar.
-6. Keyrðu athugunina neðst.
+1. Copy `_snidmat.html` to `<page>.html`.
+2. Fill in `<title>`, `meta description`, and `data-titill-en` / `data-lysing-en` on `<html>`. Title: `The system: X`.
+3. Put `aria-current="page"` on the page's link in both `.nav__links` and `.foot__links`.
+4. Write the hero (`.hero.hero--page`) and the sections inside `<main>`. Keep the status line (see Status).
+5. If the page needs its own styles or script: uncomment the links in `<head>` and at the bottom and create the files.
+6. Run the check at the bottom.
 
-Haus, tákn (`<svg>` með `<symbol>`) og fótur eru eins á öllum síðum. Ef eitthvað þarf að breytast þar, breyttu því á öllum síðum og í sniðmátinu.
+Header, icons (`<svg>` with `<symbol>`) and footer are the same on every page. If something there changes, change it on every page and in the template.
 
-## Tungumál
+## Header and footer
 
-Allur sýnilegur texti er til á báðum málum, sem systkini:
+- **Header links, in this order:** The system, Connections, AI, Guides, Pricing. Then the button "Join the pilot" (`pilot.html`). Partners is not in the header.
+- **Footer links:** the same five, then "For software companies" (`samstarf.html`) and "Join the pilot" (`pilot.html`), then `© 2026 X`.
+- No legal company name, ID or address in the footer until the owner decides.
+
+## Buttons (CTA)
+
+Only two labels exist on the whole site:
+
+| Label | Where it goes | Style |
+| --- | --- | --- |
+| **Join the pilot** | `pilot.html`, with `?plan=solo`, `?plan=team`, `?plan=business` or `?industry=contractors`, `cleaning`, `consultants`, `shops` when it helps | `btn btn--metal` (primary) |
+| **Book a 15 min call** | `pilot.html?call=1` | `btn btn--ghost` (secondary) |
+
+- No other button labels ("Get started", "Try the system", "Book a demo", "Talk to us", "See the plans" are gone).
+- No `mailto:` links, no `app.x.is/demo`. Never write an email address or URL in HTML.
+- Text links to other pages (`tlink`) are fine, for example "See the system".
+- On phones (below 720px) `site.js` adds a bottom bar with "Join the pilot" once the hero buttons scroll away, and hides it near the final section and footer. Not on `pilot.html`.
+- Old hooks `data-demo`, `data-kynning`, `data-samstarf` still work as a fallback (site.js points them at `pilot.html`), but do not use them in new markup.
+
+## The pilot offer
+
+Use this text, word for word, wherever the offer appears:
+
+> Pilot: the first 10 firms use X free for 3 months. In return: a short call every two weeks and honest feedback. After the pilot: 25% off for the first 12 months.
+
+No "seats left" counter.
+
+The form on `pilot.html` posts JSON to `STILLINGAR.formEndpoint` in `site.js` (Formspree). While it is empty nothing is sent: the page shows the thank-you state and logs to the console, and `?debug=1` shows the note "Form not connected yet".
+
+## Industries
+
+Always these four, in this order and with this wording:
+
+1. Contractors (trades and renovation)
+2. Cleaning and services
+3. Consultants
+4. Shops
+
+URL values: `contractors`, `cleaning`, `consultants`, `shops`.
+
+## Status
+
+Say it once, near the top of each page (the template has it in the hero):
 
 ```html
-<h2 lang="is">Frá tilboði til greiðslu. <span class="metal">Ekkert slegið inn tvisvar.</span></h2>
-<h2 lang="en">From quote to payment. <span class="metal">Nothing typed twice.</span></h2>
-
-<a href="verd.html"><span lang="is">Verð</span><span lang="en">Pricing</span></a>
+<p class="planned">Everything here is planned for the first release unless marked <span class="tag">Coming soon</span></p>
 ```
 
-- CSS felur málið sem er ekki valið (`html[lang]`). Ekki nota `hidden` eða stíl til þess.
-- Nöfn sem eru eins á báðum málum (DK, Payday, Claude) þurfa ekki `lang`.
-- `?lang=en` eða `?lang=is` í slóðinni velur málið. Valið geymist í `localStorage` undir `x-mal`.
-- `aria-label` sem breytist eftir máli: `data-al-is="..." data-al-en="..."`. Placeholder: `data-ph-is` / `data-ph-en`.
-- Skrifta síðu getur hlustað á málaskipti: `document.addEventListener('x:mal', e => e.detail)`. Núverandi mál: `window.X.mal()`.
-- Texti búinn til í JS: `window.X.malSpan('is', 'texti')` býr til `<span lang="is">`.
+After that, only mark what differs:
 
-## Klasar til að endurnota
+| Key | Label | Class | When |
+| --- | --- | --- | --- |
+| `soon` | Coming soon | `tag` | Planned, not ready |
+| `prof` | In testing | `tag--warn` | Being tested with users (only where already used) |
 
-Útlit: svart og málmur. Michroma aðeins í `h1` og `h2` (sjálfvirkt). Geist í öllu öðru, Geist Mono í kickerum, merkjum og tölum.
+Do not add "In the first release" tags. Chips without `soon` are in the first release by default (green dot); `chip soon` has a grey dot. The same list is in `window.X.STADA`.
 
-| Klasi | Til hvers |
+The system is built in stages. Show status honestly: if something is not ready, it is marked Coming soon.
+
+## Reusable classes
+
+Look: black and metal. Michroma only in `h1` and `h2` (automatic, letter-spacing 0). Geist for everything else, Geist Mono in kickers, tags and numbers.
+
+| Class | Use |
 | --- | --- |
-| `wrap` | Breidd og hliðarbil. Inni í hverjum kafla |
-| `sec`, `sec--tight` | Kafli (120px bil), þéttari kafli (88px) |
-| `sec__head`, `sec__head--mid` | Haus kafla: kicker, h2, lead. `--mid` miðjar |
-| `kicker` | Yfirskrift í Mono með málmstriki |
-| `lead` | Inngangstexti, ljósgrár |
-| `metal` | Málmtexti sem rennur. Notaðu í seinni hluta fyrirsagnar |
-| `edge` | Kort með málmbrún. Grunnur flestra korta |
-| `rv` | Birtist mjúklega við skrun. Settu á kort og kaflahausa |
-| `btn btn--metal` | Platínuhnappur (aðalaðgerð). Einn á hverjum stað |
-| `btn btn--ghost` | Hnappur með hringrennandi brún (aukaaðgerð) |
-| `btn--sm` | Minni hnappur |
-| `tlink` | Textatengill með striki og ör: `<a class="tlink" href="..."><span ...>...</span><svg><use href="#i-or"/></svg></a>` |
-| `chips`, `chip`, `chip soon`, `chip prof` | Tengingar og einingar sem pillur. Grænn punktur = í fyrstu útgáfu, grár (`soon`) = væntanlegt, gulur (`prof`, inni í `.conn`) = í prófun |
-| `chips--sm` | Minni pillur |
-| `tag`, `tag--ok`, `tag--warn` | Lítil stöðumerki í Mono |
-| `mod`, `mods`, `mod__ic` | Eining: kort með tákni í ramma. `mods` er grind (4 dálkar) |
-| `pt` | Atriði með tákni til vinstri (`mod__ic` + texti) |
-| `fstep`, `flow` | Skrefin frá tilboði til greiðslu |
-| `way`, `ways`, `way--x` | Samanburður í þremur dálkum. `way--x` er dálkurinn okkar |
-| `split`, `side`, `side--x`, `nos`, `no` | "X sér um / þín kerfi sjá um" |
-| `packs`, `pack`, `pack--big`, `recipes`, `qmock` | Greinapakkar (kerfið) |
-| `conn`, `conn__g`, `conn__legend` | Tengingalisti í hópum, með skýringu á litum |
-| `picker`, `pgroup`, `tool`, `picks` | "Hvað notar þú í dag?" (með `tengingar.js`) |
-| `ai`, `chat`, `msg`, `msg--me`, `msg__act`, `draft`, `seg` | Gervigreind og spjall |
-| `guides`, `guide`, `cguides` | Leiðbeiningar |
-| `partner`, `ways3`, `hub`, `pcards`, `pcard` | Samstarf |
-| `tiers`, `tier`, `tier--hot`, `price`, `tiers__note` | Verð |
-| `trust`, `faq`, `people`, `support`, `wl`, `brands` | Gögn, spurningar, fólk, þitt merki |
-| `final` | Lokakall neðst á síðu |
-| `fine` | Smátt letur (fyrirvarar, vörumerki) |
-| `sr` | Aðeins fyrir skjálesara |
+| `wrap` | Width and side padding. Inside every section |
+| `sec`, `sec--tight` | Section (120px spacing), tighter section (88px) |
+| `sec__head`, `sec__head--mid` | Section head: kicker, h2, lead. `--mid` centres it |
+| `kicker` | Mono overline with a metal dash |
+| `lead` | Intro text, light grey |
+| `metal` | Metal text. Use in the second part of a heading. It shimmers once when it appears |
+| `planned` | The status line near the top of the page |
+| `edge` | Card with a metal edge. Base of most cards |
+| `rv` | Fades in on scroll. Put on cards and section heads |
+| `btn btn--metal` | Platinum button (primary). One per place. The light sweep plays on hover |
+| `btn btn--ghost` | Button with a metal border (secondary). The border spins on hover |
+| `btn--sm` | Smaller button |
+| `tlink` | Text link with underline and arrow: `<a class="tlink" href="..."><span>...</span><svg><use href="#i-or"/></svg></a>` |
+| `chips`, `chip`, `chip soon`, `chip prof` | Connections and modules as pills. Green dot = first release, grey (`soon`) = coming soon, yellow (`prof`, inside `.conn`) = in testing |
+| `chips--sm` | Smaller pills |
+| `tag`, `tag--ok`, `tag--warn` | Small Mono status labels |
+| `mod`, `mods`, `mod__ic` | Module: card with an icon in a frame. `mods` is a 4 column grid |
+| `pt` | Point with an icon on the left (`mod__ic` + text) |
+| `fstep`, `flow` | The steps from quote to payment |
+| `way`, `ways`, `way--x` | Comparison in columns. `way--x` is our column |
+| `split`, `side`, `side--x`, `nos`, `no` | "X handles / your systems handle" |
+| `packs`, `pack`, `pack--big`, `recipes`, `qmock` | Industry packs (the system) |
+| `conn`, `conn__g`, `conn__legend` | Connection list in groups, with a colour legend |
+| `picker`, `pgroup`, `tool`, `picks` | "What do you use today?" (with `tengingar.js`) |
+| `ai`, `chat`, `msg`, `msg--me`, `msg__act`, `draft`, `seg` | AI and chat |
+| `app`, `app__ai` | App mockup. The AI panel stacks under the dashboard below 1060px, it is never hidden |
+| `guides`, `guide`, `cguides` | Guides |
+| `partner`, `ways3`, `hub`, `pcards`, `pcard` | For software companies (`samstarf.html`) |
+| `tiers`, `tier`, `tier--hot`, `price`, `tiers__note` | Pricing |
+| `trust`, `faq`, `people`, `support`, `wl`, `brands` | Data, questions, people, your brand |
+| `final` | Final call to action at the bottom of a page |
+| `fine` | Small print (disclaimers, trademarks) |
+| `sr` | Screen readers only |
 
-Skjámyndir og skraut fá `aria-hidden="true"` (og `inert` ef þar eru hnappar). Myndir sem eru skraut: `alt=""`.
+Mockups and decoration get `aria-hidden="true"` (and `inert` if they contain buttons). Decorative images: `alt=""`. No keyboard shortcuts such as "⌘K" in mockups.
 
-Tákn: `<svg><use href="#i-tilbod"/></svg>`. Til eru: `i-yfirlit i-folk i-sala i-tilbod i-verk i-dagatal i-postur i-samfelag i-reikningur i-vorur i-skjol i-gatt i-sjalfvirkni i-heili i-skyrsla i-tengi i-bok i-lykill i-skjoldur i-hnottur i-nidur i-lag i-hond i-hak i-or i-pensill i-x i-greidsla i-verslun i-skipti i-spjall`. `i-heili` er merkið okkar (heilinn). `i-x` er kross (nei), ekki nafnið.
+Icons: `<svg><use href="#i-tilbod"/></svg>`. Available: `i-yfirlit i-folk i-sala i-tilbod i-verk i-dagatal i-postur i-samfelag i-reikningur i-vorur i-skjol i-gatt i-sjalfvirkni i-heili i-skyrsla i-tengi i-bok i-lykill i-skjoldur i-hnottur i-nidur i-lag i-hond i-hak i-or i-pensill i-x i-greidsla i-verslun i-skipti i-spjall`. `i-heili` is our mark. `i-x` is a cross (no), not the name.
 
-## Hnappar og tenglar sem JS fyllir út
+## Placeholders
 
-- `data-demo`: opnar prufukerfið í nýjum flipa (`STILLINGAR.demo`). Settu `href` á síðu sem virkar ef JS keyrir ekki, til dæmis `verd.html`.
-- `data-kynning="Teymi" data-kynning-en="Team"`: tölvupóstur til að bóka kynningu. Gildið fer í efnislínuna (má vera tómt). `data-kynning-en` er notað þegar enska er valin.
-- `data-samstarf`: tölvupóstur um samstarf.
-- `data-ar`: núverandi ár.
+Values only the owner can fill in are written in square brackets, for example `[number]` working days and `[Month]`. Search for `\[` in the HTML before going live.
 
-Netföngin og slóðin eru aðeins í `STILLINGAR` efst í `site.js` (merkt `TODO`). Aldrei skrifa netfang eða slóð beint í HTML.
+## RULES
 
-## Stöðumerki
+1. The product and the company are called **X**. Never the old product name, in any form, and never the name of whoever builds the site. Nowhere: not in text, titles, alt text, comments, classes or file names. Do not say who makes X.
+2. Domain in examples and mockups: `x.is`, for example `app.x.is`.
+3. No em dashes or en dashes. Use a full stop, colon or comma.
+4. No invented numbers, customer counts, savings, testimonials or "trusted by". Examples in mockups are clearly made-up companies.
+5. Prices as on the site: Solo €49, Team €129, Business €299 a month excl. VAT (ISK switch on `verd.html`). Do not change who counts toward plan size.
+6. Never "the only", "the first", "never done before". Never say the AI runs only in Europe. "Database in Europe" is fine; the AI runs at Anthropic or OpenAI.
+7. Payday, DK, Repeat, Noona, Straumur, Teya and every other system are **connections** with an honest status, never partners. Names as plain text, no logos.
+8. English: plain, direct, short sentences.
+9. Logo: `assets/merki/x-logo-malmur.svg` in the header (28px high) and footer, `assets/merki/merki.svg` for decoration, `assets/merki/favicon.svg` as favicon.
+10. The look stays: black and metal, the metal flow, platinum buttons, the `hero__fx` flow in the hero, Michroma only in h1 and h2. Motion that loops forever on buttons and text is not allowed: shimmer once, sweep and spin on hover. Respect `prefers-reduced-motion`.
 
-Alltaf sama orðalag, á báðum málum. Sama listi er í `window.X.STADA`.
+## Check before you hand in
 
-| Lykill | Íslenska | Enska | Klasi | Hvenær |
-| --- | --- | --- | --- | --- |
-| `ok` | Í fyrstu útgáfu | In the first release | `tag--ok` | Fylgir fyrstu útgáfu |
-| `prof` | Í prófun | In testing | `tag--warn` | Verið að prófa með notendum |
-| `soon` | Væntanlegt | Coming soon | `tag` | Á áætlun, ekki tilbúið |
-| `live` | Tilbúið | Live | `tag--ok` | Aðeins þegar það virkar í alvöru |
-
-Kerfið er smíðað í áföngum. Sýndu stöðuna heiðarlega: ef eitthvað er ekki tilbúið er það merkt Væntanlegt.
-
-## REGLUR
-
-1. Varan og fyrirtækið heita **X**. Aldrei gamla vöruheitið, í neinni mynd eða beygingu, og aldrei nafn þeirra sem smíða vefinn. Hvergi: ekki í texta, titlum, alt texta, athugasemdum, klösum eða skráarnöfnum. Ekki segja hver gerir X.
-2. Lén í dæmum og skjámyndum: `x.is`, til dæmis `app.x.is`.
-3. Engin löng eða miðlungs strik (em dash, en dash). Notaðu punkt, tvípunkt eða kommu.
-4. Engar tölur, viðskiptavinafjöldi, sparnaður, umsagnir eða "treyst af" sem eru búnar til. Dæmi í skjámyndum eru augljóslega tilbúin fyrirtæki.
-5. Verð eru staðgenglar: `[verð]` / `[price]`.
-6. Aldrei "eina", "fyrsta", "ekkert þessu líkt", "alíslenskt", og aldrei að gervigreindin keyri aðeins í Evrópu. Gagnagrunnurinn er í Evrópu; gervigreindin vinnur hjá Anthropic eða OpenAI.
-7. Repeat, Torfi, Noona, Payday, Straumur, Teya, Pei, Taktikal og önnur kerfi eru aðeins **tengingar** með heiðarlegri stöðu, aldrei samstarfsaðilar. Nöfn sem venjulegur texti, engin merki (lógó).
-8. Íslenska: eðlileg og rétt, einföld, bein og hlý, stuttar setningar. Enska: trú íslenskunni og eðlileg.
-9. Merkið: `assets/merki/x-logo-malmur.svg` í haus (28px hátt) og fæti, `assets/merki/merki.svg` í skraut, `assets/merki/favicon.svg` sem favicon.
-10. Útlitið helst: svart og málmur, málmflæðið, platínuhnappar, `hero__fx` flæðið í hetjunni, Michroma aðeins í h1 og h2.
-
-## Athugun áður en þú skilar
-
-Keyrðu í `x-site` möppunni (hornklofarnir eru viljandi, svo skjalið sjálft innihaldi ekki orðin):
+Run in the `site` folder (the brackets are deliberate, so this file does not contain the words itself):
 
 ```sh
-grep -rniE 'h[u]g(ur|ar|i|inn)?([^a-zúíéáóöæðþý]|$)|t[v]eir|[—–]' --include='*.html' --include='*.css' --include='*.js' .
+grep -rniE 'h[u]g(ur|ar|i|inn)?([^a-zúíéáóöæðþý]|$)|t[v]eir|[—–]|mailto:|app\.x\.is/demo|lang="is"' --include='*.html' --include='*.css' --include='*.js' .
 ```
 
-Ekkert á að koma út. Athugaðu líka síðuna á 375px breidd (engin lárétt skrun) og á báðum málum (`?lang=en`).
+Nothing should come out. Also check every page at 375px width (no horizontal scroll, the bottom bar appears after the hero) and that every button says "Join the pilot" or "Book a 15 min call".

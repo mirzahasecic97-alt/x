@@ -62,18 +62,16 @@
 <a aria-current="page" href="tengingar.html"><span>Connections</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
 <a href="leidbeiningar.html"><span>Guides</span></a>
-<a href="samstarf.html"><span>Partners</span></a>
 <a href="verd.html"><span>Pricing</span></a>
 </nav>
 <div class="nav__right">
-
-<a class="btn btn--metal btn--sm nav__cta" href="verd.html"><span>Get started</span></a>
+<a class="btn btn--metal btn--sm nav__cta" href="pilot.html"><span>Join the pilot</span></a>
 <button aria-controls="valmynd" aria-expanded="false" aria-label="Menu" class="nav__menu" type="button"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </div>
 </header>
 <!-- ============ EFNI: Tengingar ============
-     Merkingar: grænt = í fyrstu útgáfu, gult = í prófun, grátt = væntanlegt. "Tilbúið" / "Live" aðeins þegar tenging virkar í alvöru.
+     Staða: sagt einu sinni í hetjunni. Eftir það aðeins "Coming soon" merki (grár punktur). Grænn punktur = fyrsta útgáfa.
      Sumar tengingar kosta hjá öðrum (Payday Premium, DK eftir gagnamagni, eigin samningur við færsluhirði). Engin verð annarra fyrirtækja á síðunni. -->
 <main id="efni" tabindex="-1">
 <!-- ============ HETJA ============ -->
@@ -85,16 +83,45 @@
 
 <h1>Connected to what <span class="metal">you already use.</span></h1>
 
-<p class="lead">Your accounting, email, calendar and payments stay where they are. X sends the data there and reads the status back where the connection allows. Every connection is marked with its real status.</p>
+<p class="lead tg-help"><b>Not technical? We set up your accounting connection with you on a call.</b></p>
+<p class="lead">Your accounting, email, calendar and payments stay where they are. X sends the data there and reads the status back where the connection allows.</p>
 <div class="hero__cta">
-<a class="btn btn--metal" href="#verkfaeri"><span>What do you use?</span><svg><use href="#i-or"></use></svg></a>
-<a class="btn btn--ghost" href="#allar"><span>All connections</span></a>
+<a class="btn btn--metal" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--ghost" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
 </div>
-<p class="hero__note">
-<span><svg><use href="#i-lykill"></use></svg><span>Keys stored encrypted</span></span>
-<span><svg><use href="#i-skjoldur"></use></svg><span>The AI never sees your keys</span></span>
-<span><svg><use href="#i-tengi"></use></svg><span>Disconnect in one click</span></span>
-</p>
+<p class="planned">Everything here is planned for the first release unless marked <span class="tag">Coming soon</span></p>
+</div>
+</div>
+</section>
+<!-- ============ SVONA TENGIST ÞÚ ============ -->
+<section class="sec sec--tight" id="svona">
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>How connecting works</span></p>
+
+<h2>Do it yourself, <span class="metal">or with us on a call.</span></h2>
+
+<p class="lead">No code. Every connection comes with a step-by-step guide. If you would rather not do it alone, we connect it together with you.</p>
+</div>
+<div class="steps">
+<div class="step edge rv">
+<span class="step__n"><b>01</b></span>
+<h3>Book a short call</h3>
+
+<p>Tell us what you use. We go through it with you, share the screen and connect your accounting together.</p>
+</div>
+<div class="step edge rv">
+<span class="step__n"><b>02</b></span>
+<h3>Sign in or paste a key</h3>
+
+<p>For Google and Microsoft you click Connect and sign in with them. For DK, Payday and WooCommerce you create a key there and paste it in. The guide shows you where.</p>
+</div>
+<div class="step edge rv">
+<span class="step__n"><b>03</b></span>
+<h3>A green dot</h3>
+
+<p>When the connection works, a green dot lights up. If it breaks, you get an email and see what to fix.</p>
+</div>
 </div>
 </div>
 </section>
@@ -106,17 +133,17 @@
 
 <h2>What do you use <span class="metal">today?</span></h2>
 
-<p class="lead">Tick the tools you use. We show what X does with them and where each connection stands.</p>
+<p class="lead">Tick the tools you use. We show what X does with them and which ones are coming soon.</p>
 </div>
 <div class="picker" data-velja="">
 <div class="picker__groups">
 <div aria-label="Accounting" class="pgroup edge rv" role="group">
 <h3><span>Accounting</span></h3>
 <div class="tools">
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">DK</span><span class="tool__does" hidden=""><span>An accepted quote becomes an invoice in DK. You create a key there and paste it in.</span></span></button>
+<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">DK</span><span class="tool__does" hidden=""><span>An accepted quote becomes an invoice in DK. You create a key there and paste it in, or we do it with you on a call.</span></span></button>
 <button aria-pressed="true" class="tool" data-st="ok" type="button"><span class="tool__name">Payday</span><span class="tool__does" hidden=""><span>An accepted quote becomes an invoice in Payday. Needs Payday Premium or higher.</span></span></button>
 <button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Torfi</span><span class="tool__does" hidden=""><span>Invoices go to Torfi when the connection is ready. Until then, they go out as a file.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Something else</span></span><span class="tool__does" hidden=""><span>Invoices go out as a file your bookkeeper imports. Zapier and Make connect the rest.</span></span></button>
+<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Something else</span></span><span class="tool__does" hidden=""><span>Invoices go out as a file your bookkeeper imports. Tell us what you use and we look at it with you.</span></span></button>
 </div>
 <p class="conn__rest"><span>More local systems for each country we open in.</span></p>
 </div>
@@ -146,8 +173,8 @@
 <div aria-label="Webshop" class="pgroup edge rv" role="group">
 <h3><span>Webshop</span></h3>
 <div class="tools">
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">WooCommerce</span><span class="tool__does" hidden=""><span>Customers and orders from your store come into X. You paste in a key from WooCommerce.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Shopify</span><span class="tool__does" hidden=""><span>Customers and orders from your store come into X. Your store creates an app and pastes in the keys. We help you.</span></span></button>
+<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">WooCommerce</span><span class="tool__does" hidden=""><span>Customers and orders from your store come into X.</span></span></button>
+<button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Shopify</span><span class="tool__does" hidden=""><span>Customers and orders from your store come into X. We help you set it up.</span></span></button>
 </div>
 </div>
 <div aria-label="Bookings and signing" class="pgroup edge rv" role="group">
@@ -167,9 +194,8 @@
 <div aria-label="Other tools" class="pgroup edge rv" role="group">
 <h3><span>Other tools</span></h3>
 <div class="tools">
-<button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Mailchimp</span><span class="tool__does" hidden=""><span>Contacts and mailing lists with an API key. A ready template for Mailchimp does the rest.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">Zapier</span><span class="tool__does" hidden=""><span>Missing a connection? Zapier connects the rest, on your own Zapier account.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">Make</span><span class="tool__does" hidden=""><span>Missing a connection? Make connects the rest, on your own Make account.</span></span></button>
+<button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Mailchimp</span><span class="tool__does" hidden=""><span>Contacts and mailing lists come into X and stay in sync.</span></span></button>
+<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Not on the list</span></span><span class="tool__does" hidden=""><span>Tell us what you use when you join the pilot. We look for the best route with you.</span></span></button>
 </div>
 </div>
 </div>
@@ -177,11 +203,43 @@
 <h3><img alt="" src="assets/merki/merki.svg"/><span>How X works with your tools</span></h3>
 <ul aria-live="polite" class="picks" data-velja-ut=""></ul>
 <p class="picker__empty" data-velja-tomt="" hidden=""><span>Tick a tool to see what X does with it.</span></p>
-<div class="legend"><span><i></i><span>In the first release</span></span><span><i class="s"></i><span>Coming soon</span></span></div>
+<div class="legend"><span><i></i><span>Planned for the first release</span></span><span><i class="s"></i><span>Coming soon</span></span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ ALLAR TENGINGAR ============ -->
+<section class="sec" id="allar">
+<div class="wrap">
+<div class="sec__head rv">
+<p class="kicker"><span>All connections</span></p>
+
+<h2>Every connection, <span class="metal">with its real status.</span></h2>
+
+<p class="lead">The system is built in stages. A green dot is planned for the first release. Grey is coming soon. A connection is marked Live only when it really works.</p>
+</div>
+<div class="conn">
+<div class="conn__g edge rv"><h3><span>Accounting</span></h3><div class="chips"><span class="chip">DK</span><span class="chip">Payday <small>Premium or higher</small></span><span class="chip soon">Torfi</span></div><p class="conn__rest"><span>More local systems for each country we open in.</span></p></div>
+<div class="conn__g edge rv"><h3><span>Payments</span></h3><div class="chips"><span class="chip soon">Repeat</span><span class="chip soon">Straumur</span><span class="chip soon">Teya</span><span class="chip soon">Pei <small>instalments</small></span></div></div>
+<div class="conn__g edge rv"><h3><span>Email and calendar</span></h3><div class="chips"><span class="chip">Gmail <small>send</small></span><span class="chip">Google Calendar</span><span class="chip"><span>Outlook and Microsoft 365</span></span><span class="chip soon">Gmail <small>read</small></span></div></div>
+<div class="conn__g edge rv"><h3><span>AI</span></h3><div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip soon"><span>X in Claude</span></span><span class="chip soon"><span>X in ChatGPT</span></span></div></div>
+<div class="conn__g edge rv"><h3><span>Webshop</span></h3><div class="chips"><span class="chip">WooCommerce</span><span class="chip soon">Shopify</span></div></div>
+<div class="conn__g edge rv"><h3><span>Data in</span></h3><div class="chips"><span class="chip"><span>Web form</span></span><span class="chip"><span>Excel and CSV</span></span><span class="chip"><span>Forwarding address (jobs@)</span></span></div></div>
+<div class="conn__g edge rv"><h3><span>Signing and bookings</span></h3><div class="chips"><span class="chip soon">Taktikal</span><span class="chip soon">Noona</span></div></div>
+<div class="conn__g edge rv"><h3><span>Files, chat and social</span></h3><div class="chips"><span class="chip soon"><span>Google Drive and OneDrive</span></span><span class="chip soon"><span>Slack and Microsoft Teams</span></span><span class="chip soon"><span>Facebook and Instagram</span></span><span class="chip soon"><span>Google reviews</span></span></div></div>
+</div>
+<div class="conn__legend"><span><i></i><span>Planned for the first release</span></span><span><i class="s"></i><span>Coming soon</span></span></div>
+
+<!-- rafrænir reikningar: X gefur ekki út reikninga sjálft -->
+<div class="pt edge rv tg-einv">
+<span class="mod__ic"><svg><use href="#i-reikningur"></use></svg></span>
+<div>
+<h3>E-invoicing</h3>
+<p>In countries with mandatory e-invoicing, X does not issue or fiscalise invoices itself. It prepares the invoice and hands it to your accounting system or certified e-invoice provider.</p>
 </div>
 </div>
 
-<p class="fine rv">Names are trademarks of their owners. A listed connection does not mean a partnership.</p>
+<p class="fine">Names are trademarks of their owners. A listed connection does not mean a partnership.</p>
 </div>
 </section>
 <!-- ============ INNI Í KERFINU: tengingasíðan (skjámynd, skraut) ============ -->
@@ -197,7 +255,7 @@
 <div class="shot tg-shot rv">
 <div class="shot__glow"></div>
 <div aria-hidden="true" class="app tg-app" inert="">
-<div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is/tengingar</span></div>
+<div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is/connections</span></div>
 <div class="app__body">
 <aside class="app__side">
 <div class="app__co"><b>N</b>Northside Builders</div>
@@ -217,13 +275,13 @@
 <div class="app__hi"><span>Connections</span></div>
 <div class="app__date"><span>4 connected · all working</span></div>
 </div>
-<div class="tg-add"><svg><use href="#i-lykill"></use></svg><span>Connect with a key</span></div>
+<div class="tg-add"><svg><use href="#i-tengi"></use></svg><span>Add a connection</span></div>
 </div>
 <div class="app__list">
 <h4><span>Connected</span></h4>
 <div class="tg-row on">
 <span class="tg-ic"><svg><use href="#i-reikningur"></use></svg></span>
-<span class="tg-nm"><b>Payday</b><small>Invoices from accepted quotes</small></span>
+<span class="tg-nm"><b>DK</b><small>Invoices from accepted quotes</small></span>
 <span class="tag tag--ok"><span>Connected</span></span>
 </div>
 <div class="tg-row">
@@ -246,7 +304,7 @@
 <h4><span>Ready to connect</span></h4>
 <div class="tg-row">
 <span class="tg-ic"><svg><use href="#i-reikningur"></use></svg></span>
-<span class="tg-nm"><b>DK</b><small>Paste a key from DK</small></span>
+<span class="tg-nm"><b>Payday</b><small>Invoices from accepted quotes</small></span>
 <span class="tg-btn"><span>Connect</span></span>
 </div>
 <div class="tg-row">
@@ -264,11 +322,11 @@
 <aside class="tg-det">
 <div class="tg-det__h">
 <span class="tg-ic"><svg><use href="#i-reikningur"></use></svg></span>
-<b>Payday</b>
+<b>DK</b>
 <span class="tag tag--ok"><span>Connected</span></span>
 </div>
 <dl class="tg-dl">
-<div><dt>What X does</dt><dd>An accepted quote becomes an invoice in Payday.</dd></div>
+<div><dt>What X does</dt><dd>An accepted quote becomes an invoice in DK.</dd></div>
 <div><dt>Last used</dt><dd>Invoice 1042 · 4 min ago</dd></div>
 <div><dt>Key</dt><dd><span class="tg-mask">•••• •••• 7f2c</span> <span class="tg-lock"><svg><use href="#i-lykill"></use></svg><span>Encrypted</span></span></dd></div>
 <div><dt>The AI</dt><dd>Sees the data, never the key. Asks before it sends.</dd></div>
@@ -281,110 +339,12 @@
 </div>
 </div>
 </div>
-</div>
-</section>
-<!-- ============ ALLAR TENGINGAR ============ -->
-<section class="sec" id="allar">
-<div class="wrap">
-<div class="sec__head rv">
-<p class="kicker"><span>All connections</span></p>
-
-<h2>Every connection, <span class="metal">with its real status.</span></h2>
-
-<p class="lead">The system is built in phases. Green comes with the first release. Grey is planned and will be marked live when it really works.</p>
-</div>
-<div class="conn">
-<div class="conn__g edge rv"><h3><span>Accounting</span></h3><div class="chips"><span class="chip">DK</span><span class="chip">Payday <small>Premium or higher</small></span><span class="chip soon">Torfi</span></div><p class="conn__rest"><span>More local systems for each country we open in.</span></p></div>
-<div class="conn__g edge rv"><h3><span>Payments</span></h3><div class="chips"><span class="chip soon">Repeat</span><span class="chip soon">Straumur</span><span class="chip soon">Teya</span><span class="chip soon">Pei <small>instalments</small></span></div></div>
-<div class="conn__g edge rv"><h3><span>Email and calendar</span></h3><div class="chips"><span class="chip">Gmail <small>send</small></span><span class="chip">Google Calendar</span><span class="chip"><span>Outlook and Microsoft 365</span></span><span class="chip soon">Gmail <small>read</small></span></div></div>
-<div class="conn__g edge rv"><h3><span>AI</span></h3><div class="chips"><span class="chip">Claude</span><span class="chip">ChatGPT</span><span class="chip soon"><span>X in Claude</span></span><span class="chip soon"><span>X in ChatGPT</span></span></div></div>
-<div class="conn__g edge rv"><h3><span>Webshop</span></h3><div class="chips"><span class="chip">WooCommerce</span><span class="chip soon">Shopify</span></div></div>
-<div class="conn__g edge rv"><h3><span>Data in</span></h3><div class="chips"><span class="chip"><span>Web form</span></span><span class="chip"><span>Excel and CSV</span></span><span class="chip"><span>Forwarding address (jobs@)</span></span></div></div>
-<div class="conn__g edge rv"><h3><span>Signing and bookings</span></h3><div class="chips"><span class="chip soon">Taktikal</span><span class="chip soon">Noona</span></div></div>
-<div class="conn__g edge rv"><h3><span>Files, chat and social</span></h3><div class="chips"><span class="chip soon"><span>Google Drive and OneDrive</span></span><span class="chip soon"><span>Slack and Microsoft Teams</span></span><span class="chip soon"><span>Facebook and Instagram</span></span><span class="chip soon"><span>Google reviews</span></span></div></div>
-</div>
-<div class="conn__legend"><span><i></i><span>In the first release</span></span><span><i class="p"></i><span>In testing</span></span><span><i class="s"></i><span>Coming soon</span></span></div>
-
-<p class="fine">A label changes to "Live" when the connection works. Names are trademarks of their owners. A listed connection does not mean a partnership.</p>
-</div>
-</section>
-<!-- ============ TENGJA MEÐ API LYKLI ============ -->
-<section class="sec sec--tight" id="lykill">
-<div class="wrap">
-<div class="conn__g--lykill tg-key edge rv">
-<div class="tg-key__txt">
-<p class="kicker"><span>Missing a tool?</span></p>
-
-<h2>Connect with <span class="metal">an API key.</span></h2>
-
-<p class="tg-key__p">For tools that issue API keys. You create a key there and paste it in, and a ready template for that tool does the rest. We add templates as we go.</p>
-<p class="pack__lbl"><span>With a key in the first release</span></p>
-<div class="chips chips--sm"><span class="chip">DK</span><span class="chip">Payday</span><span class="chip">WooCommerce</span><span class="chip">Claude</span><span class="chip">ChatGPT</span></div>
-<p class="pack__lbl"><span>Next templates</span></p>
-<div class="chips chips--sm"><span class="chip soon">Mailchimp</span><span class="chip soon">Brevo</span><span class="chip soon">monday.com</span><span class="chip soon">Notion</span><span class="chip soon">Typeform</span><span class="chip soon">Twilio</span></div>
-<p class="conn__rest"><span>Not on the list? Zapier and Make connect the rest, on your own account.</span></p>
-<div class="chips chips--sm"><span class="chip">Zapier</span><span class="chip">Make</span></div>
-</div>
-<!-- skjámynd: lykill límdur inn (skraut) -->
-<div aria-hidden="true" class="tg-dlg" inert="">
-<div class="tg-dlg__h">
-<span class="tg-ic"><svg><use href="#i-lykill"></use></svg></span>
-<div><b>Connect with an API key</b><small>Step 2 of 3</small></div>
-</div>
-<div class="tg-fld"><label>Tool</label><div class="tg-in tg-in--sel">WooCommerce<i class="tg-chev"></i></div></div>
-<div class="tg-fld"><label>Consumer key</label><div class="tg-in tg-in--key">ck_••••••••••••••••••••3a9e</div></div>
-<div class="tg-fld"><label>Consumer secret</label><div class="tg-in tg-in--key tg-in--on">cs_••••••••••••••••••••b71d<i class="tg-caret"></i></div></div>
-<div class="tg-perm">
-<p>The template only uses this:</p>
-<span><svg><use href="#i-hak"></use></svg><span>Read orders</span></span>
-<span><svg><use href="#i-hak"></use></svg><span>Read customers</span></span>
-<span><svg><use href="#i-hak"></use></svg><span>Read products</span></span>
-</div>
-<div class="tg-safe"><svg><use href="#i-skjoldur"></use></svg><span>The key is stored encrypted and never shown again. The AI never sees it.</span></div>
-<div class="tg-dlg__act">
-<span class="tg-btn tg-btn--ghost"><span>Cancel</span></span>
-<span class="tg-btn tg-btn--metal"><span>Connect</span></span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- ============ SVONA TENGIST ÞÚ ============ -->
-<section class="sec" id="svona">
-<div class="wrap">
-<div class="sec__head rv">
-<p class="kicker"><span>How connecting works</span></p>
-
-<h2>You connect it yourself. <span class="metal">You stay in control.</span></h2>
-
-<p class="lead">No code and no technician. Every connection comes with step-by-step guides.</p>
-</div>
-<div class="steps">
-<div class="step edge rv">
-<span class="step__n"><b>01</b></span>
-<h3>Sign in</h3>
-
-<p>For Google and Microsoft you click Connect and sign in with them. X never gets your password.</p>
-</div>
-<div class="step edge rv">
-<span class="step__n"><b>02</b></span>
-<h3>Or paste a key</h3>
-
-<p>For DK, Payday and WooCommerce you create a key there and paste it in. The guide shows you where.</p>
-</div>
-<div class="step edge rv">
-<span class="step__n"><b>03</b></span>
-<h3>A green dot</h3>
-
-<p>When the connection works, a green dot lights up. If it breaks, you get an email and see what to fix.</p>
-</div>
-</div>
 <div class="trust tg-trust">
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lykill"></use></svg></span><h3>Encrypted keys</h3><p>Keys are stored encrypted and only used on the server. They are never shown again.</p></div>
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-heili"></use></svg></span><h3>Never shown to the AI</h3><p>Claude and ChatGPT work with the data, never with the keys.</p></div>
 <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-hak"></use></svg></span><h3>Always asks first</h3><p>Anything the AI does in another system waits for your approval and is logged.</p></div>
 <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-tengi"></use></svg></span><h3>Disconnect any time</h3><p>One click and the connection is cut. The keys are deleted.</p></div>
 <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lag"></use></svg></span><h3>Only what is needed</h3><p>A ready template for each tool. The connection only does what the template allows.</p></div>
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lykill"></use></svg></span><h3>Encrypted keys</h3><p>Keys are stored encrypted and only used on the server. They are never shown again.</p></div>
+<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-heili"></use></svg></span><h3>Never shown to the AI</h3><p>Claude and ChatGPT work with the data, never with the keys.</p></div>
 <div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-hnottur"></use></svg></span><h3>Database in Europe</h3><p>Every company is kept separate. The AI runs with Anthropic or OpenAI.</p></div>
 </div>
 </div>
@@ -426,22 +386,63 @@
 <span class="tg-cost__who">Anthropic or OpenAI</span>
 </div>
 <div class="tg-cost__row">
-<b><span>Zapier and Make</span></b>
-<p>Your own account with them. Their prices apply.</p>
-<span class="tg-cost__who">Zapier or Make</span>
-</div>
-<div class="tg-cost__row">
 <b><span>Google and Microsoft 365</span></b>
 <p>Uses the plan you already have.</p>
 <span class="tg-cost__who">Nothing new</span>
+</div>
+<div class="tg-cost__row">
+<b><span>Zapier and Make</span></b>
+<p>Your own account with them. Their prices apply.</p>
+<span class="tg-cost__who">Zapier or Make</span>
 </div>
 </div>
 
 <p class="fine rv">Other companies' prices and terms can change. Always check with them.</p>
 </div>
 </section>
+<!-- ============ TENGJA MEÐ API LYKLI (neðar á síðunni, fyrir þá sem vilja gera það sjálfir) ============ -->
+<section class="sec sec--tight" id="lykill">
+<div class="wrap">
+<div class="conn__g--lykill tg-key edge rv">
+<div class="tg-key__txt">
+<p class="kicker"><span>Missing a tool?</span></p>
+
+<h2>Connect with <span class="metal">an API key.</span></h2>
+
+<p class="tg-key__p">For tools that issue API keys. You create a key there and paste it in, and a ready template for that tool does the rest. We add templates as we go.</p>
+<p class="pack__lbl"><span>Templates with a key</span></p>
+<div class="chips chips--sm"><span class="chip">DK</span><span class="chip">Payday</span><span class="chip">WooCommerce</span><span class="chip">Claude</span><span class="chip">ChatGPT</span></div>
+<p class="pack__lbl"><span>Next templates</span></p>
+<div class="chips chips--sm"><span class="chip soon">Mailchimp</span><span class="chip soon">Brevo</span><span class="chip soon">monday.com</span><span class="chip soon">Notion</span><span class="chip soon">Typeform</span><span class="chip soon">Twilio</span></div>
+<p class="conn__rest"><span>Not on the list? Zapier and Make connect the rest, on your own account.</span></p>
+<div class="chips chips--sm"><span class="chip">Zapier</span><span class="chip">Make</span></div>
+</div>
+<!-- skjámynd: lykill límdur inn (skraut) -->
+<div aria-hidden="true" class="tg-dlg" inert="">
+<div class="tg-dlg__h">
+<span class="tg-ic"><svg><use href="#i-lykill"></use></svg></span>
+<div><b>Connect with an API key</b><small>Step 2 of 3</small></div>
+</div>
+<div class="tg-fld"><label>Tool</label><div class="tg-in tg-in--sel">WooCommerce<i class="tg-chev"></i></div></div>
+<div class="tg-fld"><label>Consumer key</label><div class="tg-in tg-in--key">ck_••••••••••••••••••••3a9e</div></div>
+<div class="tg-fld"><label>Consumer secret</label><div class="tg-in tg-in--key tg-in--on">cs_••••••••••••••••••••b71d<i class="tg-caret"></i></div></div>
+<div class="tg-perm">
+<p>The template only uses this:</p>
+<span><svg><use href="#i-hak"></use></svg><span>Read orders</span></span>
+<span><svg><use href="#i-hak"></use></svg><span>Read customers</span></span>
+<span><svg><use href="#i-hak"></use></svg><span>Read products</span></span>
+</div>
+<div class="tg-safe"><svg><use href="#i-skjoldur"></use></svg><span>The key is stored encrypted and never shown again. The AI never sees it.</span></div>
+<div class="tg-dlg__act">
+<span class="tg-btn tg-btn--ghost"><span>Cancel</span></span>
+<span class="tg-btn tg-btn--metal"><span>Connect</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- ============ SPURNINGAR ============ -->
-<section class="sec" id="spurningar" style="padding-top:40px">
+<section class="sec" id="spurningar">
 <div class="wrap">
 <div class="sec__head sec__head--mid rv">
 <p class="kicker"><span>Questions</span></p>
@@ -449,29 +450,31 @@
 <h2>About connections</h2>
 </div>
 <div class="faq rv">
+<details><summary><span>I'm not technical. Who sets it up?</span></summary><p>We do it with you on a call. You sign in to your accounting system, we show you where the key is and stay on until the green dot lights up.</p></details>
 <details><summary><span>Do I have to leave Payday or DK?</span></summary><p>No. X sends the invoices there. Your bookkeeper keeps working as before.</p></details>
-<details><summary><span>What if my tool is not on the list?</span></summary><p>If it issues API keys, it can come as a ready template. Until then, Zapier and Make connect the rest. Tell us what you use.</p></details>
+<details><summary><span>Does X send e-invoices?</span></summary><p>X prepares the invoice and hands it to your accounting system or certified e-invoice provider, which issues it. X does not fiscalise invoices itself.</p></details>
+<details><summary><span>What if my tool is not on the list?</span></summary><p>Tell us what you use. If it issues API keys, it can come as a ready template. Until then, Zapier and Make connect the rest.</p></details>
 <details><summary><span>What happens if a connection breaks?</span></summary><p>The dot turns red and you get an email about what to fix. The rest of the system keeps working.</p></details>
 <details><summary><span>I have a Shopify store. Does it work?</span></summary><p>It's coming soon. You create an app in your store and paste the keys into X. We help you.</p></details>
-<details><summary><span>Are Repeat and Torfi connected?</span></summary><p>Not yet. The connections are coming and will be marked live when they work. The Torfi connection comes when Torfi opens an API. Until then, invoices go to Torfi as a file.</p></details>
-<details><summary><span>Can I use my Claude Pro or ChatGPT Plus subscription?</span></summary><p>Not as a key in the system. AI is included in X and you can connect your own key. A connector inside Claude and ChatGPT is coming.</p></details>
-<details><summary><span>I make software. Can I connect to X?</span></summary><p>Yes. Read about <a href="samstarf.html">building a connection</a>, or write to us and we'll send you the description.</p></details>
+<details><summary><span>Are Repeat and Torfi connected?</span></summary><p>Not yet. The connections are coming and will be marked Live when they work. The Torfi connection comes when Torfi opens an API. Until then, invoices go to Torfi as a file.</p></details>
+<details><summary><span>I make software. Can I connect to X?</span></summary><p>Yes. Read about <a href="samstarf.html">building a connection to X</a>.</p></details>
 </div>
 </div>
 </section>
 <!-- ============ LOKAKALL ============ -->
-<section class="sec" style="padding-top:20px;padding-bottom:0">
+<section class="sec tg-final">
 <div class="wrap">
 <div class="final edge rv">
 <img alt="" src="assets/merki/merki.svg"/>
 
 <h2>You own the tools. <span class="metal">X ties them together.</span></h2>
 
-<p class="lead">See what each plan includes, or read the guide for the connection you need.</p>
+<p class="lead">Pilot: the first 10 firms use X free for 3 months. In return: a short call every two weeks and honest feedback. After the pilot: 25% off for the first 12 months.</p>
 <div class="hero__cta">
-<a class="btn btn--metal" href="verd.html"><span>See pricing</span><svg><use href="#i-or"></use></svg></a>
-<a class="btn btn--ghost" href="leidbeiningar.html"><span>Guides</span></a>
+<a class="btn btn--metal" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--ghost" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
 </div>
+<p class="final__sw"><span>Want the details first?</span> <a class="tlink" href="leidbeiningar.html"><span>Read the connection guides</span><svg><use href="#i-or"></use></svg></a></p>
 </div>
 </div>
 </section>
@@ -488,8 +491,9 @@
 <a aria-current="page" href="tengingar.html"><span>Connections</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
 <a href="leidbeiningar.html"><span>Guides</span></a>
-<a href="samstarf.html"><span>Partners</span></a>
 <a href="verd.html"><span>Pricing</span></a>
+<a href="samstarf.html"><span>For software companies</span></a>
+<a href="pilot.html"><span>Join the pilot</span></a>
 </nav>
 <p class="foot__copy">© <span data-ar="">2026</span> X</p>
 </div>

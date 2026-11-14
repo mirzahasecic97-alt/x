@@ -27,7 +27,7 @@
 })();
 
 // Verð: upphæðir, gjaldmiðill (EUR / ISK) og mánaðarlega / árlega.
-// Allar upphæðir eru hér og hvergi annars staðar. Excl. VAT. Valid from 1 December 2026.
+// Allar upphæðir eru hér og hvergi annars staðar. Excl. VAT.
 (() => {
   const VERD = {
     solo:     { m: { eur: 49,  isk: 12900 }, y: { eur: 490,  isk: 129000 } },
@@ -83,7 +83,7 @@
       if (!p) return;
       el.textContent = per === 'y'
         ? 'Pay for 10 months, get 12. Monthly: ' + fmt(p.m[cur], cur) + '.'
-        : 'or ' + fmt(p.y[cur], cur) + ' a year, 2 months free';
+        : 'or ' + fmt(p.y[cur], cur) + ' a year';
     });
     document.querySelectorAll('[data-vd-pp]').forEach(el => {
       const p = VERD[el.dataset.vdPp];

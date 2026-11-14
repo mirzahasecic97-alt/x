@@ -1,0 +1,94 @@
+/* pilot.html: skráning í prufuhópinn. Aðeins þessi síða. */
+.pl-hero .lead.pl-offer{max-width:720px;color:var(--text)}
+.pl-sec{padding-top:40px}
+.pl-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:48px;align-items:start}
+
+/* hvað gerist næst */
+.pl-next{display:grid;gap:18px;position:sticky;top:100px}
+.pl-next h2{font-size:clamp(24px,2.6vw,32px)}
+.pl-steps{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:10px}
+.pl-steps li{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:18px 20px}
+.pl-steps__n{font-family:var(--mono);font-size:14px;font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;padding-top:2px}
+.pl-steps h3{font-size:16.5px}
+.pl-steps p{color:var(--muted);font-size:14.5px;margin-top:4px}
+
+/* formið */
+.pl-box{padding:32px;background:radial-gradient(120% 60% at 100% 0%,rgba(200,206,214,.09),transparent 60%),var(--surface)}
+.pl-form{display:grid;gap:22px}
+.pl-req{font-size:13px;color:var(--dim);margin:-4px 0 -6px}
+.pl-req span,.pl-f label span[aria-hidden],.pl-set legend span[aria-hidden]{color:var(--muted)}
+.pl-row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.pl-f{display:grid;gap:7px;align-content:start}
+.pl-f label,.pl-set legend{font-size:14.5px;font-weight:500;color:var(--text)}
+.pl-opt{color:var(--dim);font-weight:400}
+.pl-f input,.pl-f textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:#0e0f12;border:1px solid var(--line-2);border-radius:12px;padding:0 14px;height:48px;transition:border-color .2s,box-shadow .2s}
+.pl-f textarea{height:auto;min-height:110px;padding:12px 14px;resize:vertical;line-height:1.5}
+.pl-f input:hover,.pl-f textarea:hover{border-color:rgba(255,255,255,.26)}
+.pl-f input:focus,.pl-f textarea:focus{outline:0;border-color:rgba(255,255,255,.6);box-shadow:0 0 0 3px rgba(255,255,255,.08)}
+.pl-hint{font-size:13px;color:var(--dim);line-height:1.45}
+.pl-err{font-size:13px;color:#ff8f87;line-height:1.4;min-height:0}
+.pl-err:empty{display:none}
+.pl-f input[aria-invalid="true"],.pl-f textarea[aria-invalid="true"]{border-color:#ff8f87}
+
+/* hópar: grein, stærð, verkfæri, áskrift */
+.pl-set{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
+.pl-set[hidden]{display:none}
+.pl-set legend{padding:0;margin-bottom:10px}
+.pl-set legend + .pl-hint{margin-top:-8px}
+.pl-set[aria-invalid="true"] .pl-card__b,.pl-set[aria-invalid="true"] .pl-pill span{border-color:rgba(255,143,135,.6)}
+.pl-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pl-card,.pl-pill,.pl-plan,.pl-call{position:relative;cursor:pointer}
+.pl-card input,.pl-pill input,.pl-plan input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.pl-card__b{display:flex;align-items:flex-start;gap:12px;height:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);transition:background .2s,border-color .2s}
+.pl-card__b svg{width:20px;height:20px;flex:none;color:#dfe2e7;margin-top:1px}
+.pl-card__b b{display:block;font-weight:500;font-size:15px;line-height:1.35}
+.pl-card__b small{display:block;color:var(--muted);font-size:13px;line-height:1.4;margin-top:2px}
+.pl-pills{display:flex;flex-wrap:wrap;gap:8px}
+.pl-pill span{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:8px 16px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);font-size:14.5px;line-height:1.25;transition:background .2s,border-color .2s}
+.pl-pills--check .pl-pill span::before{content:"";width:14px;height:14px;flex:none;border-radius:4px;border:1.5px solid #5d6068}
+.pl-plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.pl-plan span{display:grid;gap:2px;height:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);transition:background .2s,border-color .2s}
+.pl-plan b{font-weight:500;font-size:15px}
+.pl-plan small{color:var(--muted);font-size:13px}
+.pl-card:hover .pl-card__b,.pl-pill:hover span,.pl-plan:hover span{background:rgba(255,255,255,.07)}
+.pl-card input:checked + .pl-card__b,.pl-pill input:checked + span,.pl-plan input:checked + span{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.6);box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.pl-pills--check .pl-pill input:checked + span::before{background:var(--metal);border-color:transparent}
+.pl-card input:focus-visible + .pl-card__b,.pl-pill input:focus-visible + span,.pl-plan input:focus-visible + span{outline:2px solid #c9ced6;outline-offset:2px}
+
+/* hringja frekar */
+.pl-call{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);font-size:15px}
+.pl-call input{width:20px;height:20px;flex:none;margin:0;accent-color:#dfe2e7;cursor:pointer}
+.pl-call:has(input:checked){background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
+
+/* gildra fyrir ruslpóst, ósýnileg */
+.pl-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.pl-send{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.pl-send .btn{min-width:200px}
+.pl-send .btn[aria-busy="true"]{opacity:.7;pointer-events:none}
+.pl-status{font-size:14px;color:var(--muted)}
+.pl-status.is-err{color:#ff8f87}
+.pl-fine{margin-top:-6px}
+
+/* takk */
+.pl-thanks{display:grid;justify-items:center;text-align:center;gap:16px;padding:48px 8px}
+.pl-thanks[hidden]{display:none}
+.pl-thanks:focus{outline:0}
+.pl-thanks__ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--metal);color:#0a0b0d;animation:inn .7s cubic-bezier(.2,.7,.2,1) both}
+.pl-thanks__ic svg{width:26px;height:26px}
+.pl-thanks h2{font-size:clamp(26px,3vw,36px)}
+.pl-debug{font-family:var(--mono);font-size:12px;color:var(--warn);background:rgba(240,182,90,.1);border-radius:8px;padding:4px 10px}
+.pl-debug[hidden]{display:none}
+
+@media (max-width:1060px){.pl-plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:960px){
+  .pl-grid{grid-template-columns:1fr;gap:36px}
+  .pl-next{position:relative;top:auto}
+}
+@media (max-width:600px){
+  .pl-box{padding:22px 16px}
+  .pl-row2{grid-template-columns:1fr}
+  .pl-cards{grid-template-columns:1fr}
+  .pl-send .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.pl-thanks__ic{animation:none}}
