@@ -1,0 +1,152 @@
+/* Gervigreind: stíll sem aðeins gervigreind.html notar. Allir klasar byrja á gv- */
+
+.gv-mark{width:76px}
+
+/* ---------- val: innifalið eða eigin lykill ---------- */
+.gv-pay{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.gv-pay__c{padding:28px;display:flex;flex-direction:column;gap:12px;transition:background .25s}
+.gv-pay__c:hover{background:var(--surface-2)}
+.gv-pay__top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+.gv-pay__top .mod__ic{margin:0}
+.gv-pay__c h3,.gv-ctrl__t h3{font-size:21px}
+.gv-pay__c p,.gv-ctrl__t p{color:var(--muted);font-size:15px;line-height:1.55}
+.gv-ticks{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:9px}
+.gv-ticks li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#d6d7db;line-height:1.45}
+.gv-ticks svg{width:16px;height:16px;flex:none;margin-top:2px;color:#dfe2e7}
+.gv-ticks--lg{gap:8px;margin:0}
+.gv-ticks--lg li{font-size:15.5px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--line);align-items:center}
+.gv-ticks--lg svg{margin-top:0;width:18px;height:18px}
+.gv-fine{max-width:none}
+.gv-fine a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.gv-fine a:hover{color:var(--text)}
+@media (max-width:760px){.gv-pay{grid-template-columns:1fr}.gv-pay__c{padding:22px}}
+
+/* ---------- kaflar með texta og skjámynd hlið við hlið ---------- */
+.gv-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.gv-split--flip{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.gv-split--flip > :first-child{order:2}
+.gv-head{margin-bottom:28px}
+.gv-status{margin-top:20px}
+@media (max-width:960px){
+  .gv-split,.gv-split--flip{grid-template-columns:minmax(0,1fr);gap:40px}
+  .gv-split--flip > :first-child{order:0}
+}
+
+/* ---------- morgunlistinn: samþykktarlisti ---------- */
+.gv-appr{padding:20px;display:grid;gap:10px}
+.gv-appr__h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-bottom:6px}
+.gv-appr__h b{display:block;font-size:18px;font-weight:600;letter-spacing:-.02em}
+.gv-appr__h small{display:block;color:var(--dim);font-size:12.5px;margin-top:2px}
+.gv-appr__ai{flex:none;display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:4px 11px 4px 6px}
+.gv-appr__ai img{width:18px}
+.gv-item{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 12px;padding:14px;border-radius:12px;background:#131418;border:1px solid var(--line);align-items:start}
+.gv-item__ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--line-2);background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.02))}
+.gv-item__ic svg{width:16px;height:16px;color:#dfe2e7}
+.gv-item__b{min-width:0}
+.gv-item__b b{display:block;font-weight:500;font-size:14px}
+.gv-item__b small{display:block;color:var(--muted);font-size:12.5px;margin-top:1px}
+.gv-act{grid-column:2;display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.gv-act i{font-style:normal;font-size:12px;border-radius:8px;padding:4px 10px;border:1px solid var(--line-2);color:var(--muted)}
+.gv-act i:first-child{background:var(--metal);color:#111;border-color:transparent;font-weight:500}
+.gv-item--done{grid-template-columns:34px minmax(0,1fr) auto;background:#101114}
+.gv-item--done .gv-item__b{opacity:.7}
+.gv-item--done .gv-item__ic{background:var(--metal);border-color:transparent}
+.gv-item--done .gv-item__ic svg{color:#111}
+.gv-item__ok{align-self:center}
+.gv-appr__f{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:12.5px;padding-top:6px}
+.gv-appr__f svg{width:14px;height:14px;flex:none}
+/* listinn raðast inn við skrun */
+.gv-shot .gv-item{opacity:0}
+.gv-shot.in .gv-item{animation:msgInn .6s cubic-bezier(.2,.7,.2,1) forwards}
+.gv-shot.in .gv-item:nth-of-type(3){animation-delay:.25s}
+.gv-shot.in .gv-item:nth-of-type(4){animation-delay:.5s}
+.gv-shot .gv-item__ok{opacity:0}
+.gv-shot.in .gv-item__ok{animation:msgInn .5s 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+@media (max-width:480px){.gv-appr{padding:14px}.gv-item{padding:12px;gap:4px 10px}.gv-item--done{grid-template-columns:34px minmax(0,1fr)}.gv-item__ok{grid-column:2;justify-self:start;margin-top:6px}}
+
+/* ---------- drög: þrjú skref ---------- */
+.gv-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gv-step{padding:24px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,background .25s}
+.gv-step:hover{background:var(--surface-2)}
+.gv-step__top{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.gv-step__top .mod__ic{margin:0}
+.gv-step__n{font-family:var(--mono);font-size:12px;color:var(--dim)}
+.gv-step h3{font-size:18px}
+.gv-step p{color:var(--muted);font-size:14.5px;line-height:1.5}
+.gv-kinds{margin-top:14px;padding:24px;display:grid;gap:14px}
+.gv-kinds h3{font-size:16px}
+.gv-kinds .conn__legend{margin-top:2px}
+@media (max-width:860px){.gv-steps{grid-template-columns:1fr}}
+
+/* ---------- spurðu um gögnin ---------- */
+.gv-qs{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:8px}
+.gv-qs li{display:flex;gap:10px;align-items:center;padding:11px 14px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--line);font-size:15px;color:#d6d7db;line-height:1.4}
+.gv-qs svg{width:16px;height:16px;flex:none;color:var(--muted)}
+.gv-chat{box-shadow:0 40px 100px -50px rgba(0,0,0,.9)}
+.gv-src{display:block;margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.gv-chat .app__input{margin-top:4px}
+.gv-chat .app__input svg{flex:none;color:var(--dim)}
+.gv-chat .msg{opacity:0}
+.gv-chat.in .msg{animation:msgInn .7s cubic-bezier(.2,.7,.2,1) forwards}
+.gv-chat.in .msg:nth-of-type(2){animation-delay:.1s}
+.gv-chat.in .msg:nth-of-type(3){animation-delay:.8s}
+.gv-chat.in .msg:nth-of-type(4){animation-delay:1.6s}
+.gv-chat.in .msg:nth-of-type(5){animation-delay:2.3s}
+@media (max-width:480px){.gv-chat{padding:16px}}
+
+/* ---------- stjórn: aðgerðaskrá og notkunarmælir ---------- */
+.gv-ctrl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.gv-ctrl__c{padding:26px;display:flex;flex-direction:column;gap:22px}
+.gv-ctrl__t{display:grid;gap:10px}
+.gv-log,.gv-meter{margin-top:auto;border-radius:14px;background:#0e0f12;border:1px solid var(--line-2);font-size:13px;overflow:hidden}
+.gv-log__h{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line)}
+.gv-log__h b{font-weight:500;font-size:13px}
+.gv-log__h .seg{margin-left:0;font-size:11px}
+.gv-log__h .seg span{padding:3px 8px}
+.gv-log__r{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+.gv-log__r:last-child{border-bottom:0}
+.gv-log__r time{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
+.gv-log__r > span:nth-child(2){color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gv-log__r b{color:var(--text);font-weight:500}
+.gv-meter{padding:16px 16px 4px}
+.gv-meter__h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.gv-meter__h b{font-weight:500;font-size:13.5px}
+.gv-meter__h small{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.gv-meter__bar{height:8px;border-radius:999px;background:rgba(255,255,255,.07);margin:14px 0 8px;overflow:hidden}
+.gv-meter__bar i{display:block;height:100%;width:62%;border-radius:inherit;background:var(--metal-flow);background-size:200% 100%;animation:glans 6s linear infinite;transform-origin:left;transform:scaleX(0);transition:transform 1.4s .3s cubic-bezier(.2,.7,.2,1)}
+.gv-ctrl__c.in .gv-meter__bar i{transform:none}
+.gv-meter__l{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:11px;color:var(--dim);margin-bottom:8px}
+.gv-sw{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid var(--line);color:#d6d7db}
+.gv-sw i{flex:none;width:34px;height:20px;border-radius:999px;background:rgba(255,255,255,.1);position:relative}
+.gv-sw i::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#6c6e75}
+.gv-sw i.on{background:var(--metal)}
+.gv-sw i.on::after{transform:translateX(14px);background:#0e0f12}
+@media (max-width:860px){.gv-ctrl{grid-template-columns:1fr}}
+@media (max-width:480px){.gv-ctrl__c{padding:20px}.gv-log__r{grid-template-columns:38px minmax(0,1fr) auto;gap:8px;padding:9px 12px}}
+
+/* ---------- X inni í Claude og ChatGPT ---------- */
+.gv-inni{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center;padding:48px;overflow:hidden;background:radial-gradient(70% 120% at 100% 0%,rgba(200,206,214,.10),transparent 60%),var(--surface)}
+.gv-inni__t{display:grid;gap:16px;justify-items:start}
+.gv-inni h2{font-size:clamp(26px,3.4vw,40px)}
+.gv-ext{display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:16px;background:#0e0f12;border:1px solid var(--line-2);font-size:14px;box-shadow:0 30px 80px -40px rgba(0,0,0,.9)}
+.gv-ext__top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.gv-ext__top b{font-weight:600;font-size:14px}
+.gv-ext__con{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--muted);border:1px solid var(--line-2);border-radius:999px;padding:3px 10px 3px 5px}
+.gv-ext__con img{width:16px}
+@media (max-width:960px){.gv-inni{grid-template-columns:minmax(0,1fr);gap:36px;padding:36px 28px}}
+@media (max-width:520px){.gv-inni{padding:28px 16px}}
+
+/* ---------- leiðbeiningar ---------- */
+.gv-guides__t{display:flex;gap:16px;align-items:flex-start;flex:1 1 420px;min-width:0}
+.gv-guides__t .mod__ic{margin:0;flex:none}
+.gv-guides__c{margin-top:12px}
+.gv-guides__c .chip::before{display:none}
+@media (max-width:480px){.gv-guides__t{flex-direction:column;gap:12px}}
+
+/* fyrirsagnir með löngum íslenskum orðum á mjóum skjá */
+@media (max-width:420px){#efni .sec h2{font-size:27px}}
+
+@media (prefers-reduced-motion:reduce){
+  .gv-shot .gv-item,.gv-shot .gv-item__ok,.gv-chat .msg{opacity:1}
+  .gv-meter__bar i{transform:none}
+}
