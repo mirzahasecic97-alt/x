@@ -2,7 +2,7 @@
 // Markup: <div class="xflow" data-flow="contractors-service"></div>
 // Load after site.js, both with defer. Styles: assets/css/flow.css. Icons come from the page's <svg> sprite.
 // Every company, person and amount below is made up. Status follows SIDUR.md:
-// crew chat, the work diary, quality photos, supplier matching and store data are Coming soon.
+// tasks on the crew's phones, the work diary, quality photos, supplier matching and store data are Coming soon.
 (() => {
   'use strict';
 
@@ -50,29 +50,29 @@
           mo: { k: 'card', title: 'Job 1042 · Harbor Hotel, room 214', rows: [['Client photos', '2'], ['Past visits', '3'], ['Checklist', 'Access, shut-off valve, parts'], ['Estimate', '1 h']] },
         },
         send: {
-          t: 'Marek\'s task', s: 'In Polish · WhatsApp', ic: 'i-hnottur', tag: 'soon', chip: '3 briefs',
-          cap: 'Marek gets his task in Polish.',
-          in: 'Job 1042 and its brief, in English.',
-          does: 'X writes the task in Marek\'s language. Sarah checks it before it goes out.',
-          out: 'The task on Marek\'s phone, in Polish.',
-          mo: { k: 'msg', x: 1, from: 'Northside Builders', via: 'WhatsApp', time: '07:05', lang: 'Polish', lines: ['Pilne: przeciek w Harbor Hotel, pokój 214.', 'Szacowany czas: 1 godz.', 'Sprawdź: dostęp, zawór odcinający, części.'] },
-          note: 'On WhatsApp once Meta approves X. Until then a text message with a private link, no app and no login.',
+          t: 'Marek\'s task', s: 'By link or WhatsApp', ic: 'i-spjall', tag: 'soon', chip: '3 briefs',
+          cap: 'Marek gets his task and the brief on his phone.',
+          in: 'Job 1042 and its brief.',
+          does: 'X sends the task to Marek\'s phone with the brief. Sarah checks it before it goes out.',
+          out: 'The task on Marek\'s phone.',
+          mo: { k: 'msg', x: 1, from: 'Northside Builders', via: 'Text message link', time: '07:05', lines: ['Urgent: leak at Harbor Hotel, room 214.', 'Estimate: 1 h.', 'Check: access, shut-off valve, parts.'] },
+          note: 'A text message with a private link, no app and no login. On WhatsApp once Meta approves X.',
         },
         reply: {
-          t: 'Marek replies', s: 'Voice note and photo', ic: 'i-spjall', tag: 'soon', chip: 'Polish',
-          cap: 'Marek answers in Polish, with a voice note and a photo.',
-          in: 'The task, in Polish.',
-          does: 'Marek answers the way he likes: text, a voice note or a photo.',
-          out: 'A voice note in Polish and a photo of the wall.',
-          mo: { k: 'msg', from: 'Marek', via: 'WhatsApp', time: '11:50', lang: 'Polish', voice: '0:12', photo: 'Wall behind the shower', lines: ['Przeciek jest w ścianie za prysznicem. Muszę zdjąć panel.'] },
+          t: 'Marek on the job', s: 'Started, note and photo', ic: 'i-verk', tag: 'soon', chip: 'Task',
+          cap: 'Marek taps Started, then sends a voice note and a photo.',
+          in: 'The task on his phone.',
+          does: 'Marek taps Started when he begins and answers the way he likes: text, a voice note or a photo.',
+          out: 'Started at 08:10, a voice note and a photo of the wall.',
+          mo: { k: 'msg', from: 'Marek', via: 'Text message link', time: '11:50', voice: '0:12', photo: 'Wall behind the shower', lines: ['The leak is inside the wall behind the shower. I have to take off a panel.'] },
         },
         back: {
-          t: 'Back in English', s: 'Work diary and hours', ic: 'i-bok', tag: 'soon', chip: 'Voice + photo',
-          cap: 'X translates the answer and fills in the work diary and hours.',
-          in: 'Marek\'s voice note and photo.',
-          does: 'X writes out the voice note, translates it for Sarah and keeps the work diary and the hours per worker.',
-          out: 'The answer in English, and Marek\'s day in the diary.',
-          mo: { k: 'diary', from: 'Marek', quote: 'The leak is inside the wall behind the shower. I have to take off a panel.', rows: [['1042', 'Started 08:10', '3 h 40 min so far'], ['Marek', 'End of day, 08:00 to 15:30', '7 h 30 min']] },
+          t: 'Work diary and hours', s: 'Start, finish, photos', ic: 'i-bok', tag: 'soon', chip: 'Started + photo',
+          cap: 'X fills in the work diary and the hours.',
+          in: 'Marek\'s start time, his voice note and his photo.',
+          does: 'X writes out the voice note and keeps the work diary per job and the hours per worker.',
+          out: 'Marek\'s day in the diary, with his hours.',
+          mo: { k: 'diary', rows: [['1042', 'Started 08:10, photo', '3 h 40 min so far'], ['Marek', 'End of day, 08:00 to 15:30', '7 h 30 min']] },
           note: 'Sarah approves the hours. X does not track location.',
         },
         over: {
@@ -210,21 +210,21 @@
           mo: { k: 'rows', rows: [['Thu 3 Dec', 'Park Lane Offices', '07:00', 'Ana'], ['Thu 10 Dec', 'Park Lane Offices', '07:00', 'Ana'], ['Thu 17 Dec', 'Park Lane Offices', '07:00', 'Ana']] },
         },
         check: {
-          t: 'Ana\'s checklist', s: 'In Romanian', ic: 'i-hnottur', tag: 'soon', chip: '52 visits',
-          cap: 'Ana gets the checklist for the visit in Romanian.',
-          in: 'The visit and the checklist for this office, in English.',
-          does: 'X sends the checklist in the cleaner\'s own language.',
-          out: 'The checklist on Ana\'s phone, in Romanian.',
-          mo: { k: 'msg', x: 1, from: 'Brightway Cleaning', via: 'Text message link', time: '06:30', lang: 'Romanian', lines: ['Park Lane Offices, joi 07:00.', 'Birouri, bucătărie, toalete, gunoi.'] },
-          note: 'Each language pair is tested with native speakers before it is offered.',
+          t: 'Ana\'s checklist', s: 'Today\'s list', ic: 'i-spjall', tag: 'soon', chip: '52 visits',
+          cap: 'Ana gets the visit and its checklist on her phone.',
+          in: 'The visit and the checklist for this office.',
+          does: 'X sends the visit and its checklist to the cleaner\'s phone.',
+          out: 'The checklist on Ana\'s phone.',
+          mo: { k: 'msg', x: 1, from: 'Brightway Cleaning', via: 'Text message link', time: '06:30', lines: ['Park Lane Offices, Thursday 07:00.', 'Offices, kitchen, toilets, bins.'] },
+          note: 'A text message with a private link, no app and no login.',
         },
         visit: {
-          t: 'Done with photos', s: 'Quality check', ic: 'i-verk', tag: 'soon', chip: 'Romanian',
+          t: 'Done with photos', s: 'Quality check', ic: 'i-verk', tag: 'soon', chip: 'Today\'s list',
           cap: 'Ana marks the visit done and adds photos.',
           in: 'The checklist, ticked off.',
-          does: 'Ana ticks the list and adds photos. X puts them on the right contract, ready if the client asks.',
+          does: 'Ana ticks the list and adds photos. X puts them on the right contract, ready if the client asks, and keeps her hours in the work diary.',
           out: 'Visit done, with 3 photos.',
-          mo: { k: 'msg', from: 'Ana', via: 'Text message link', time: '08:40', lang: 'Romanian', photo: 'Kitchen, after', lines: ['Gata. Totul curat.'] },
+          mo: { k: 'msg', from: 'Ana', via: 'Text message link', time: '08:40', photo: 'Kitchen, after', lines: ['Done. All clean.'] },
         },
         first: {
           t: 'Invoices on the 1st', s: 'Every contract', ic: 'i-reikningur', chip: 'Visit done',
@@ -452,7 +452,7 @@
   const rowsHTML = rows => `<div class="xf-rows">${rows.map(r => `<div class="xf-row">${r[0] ? `<span class="xf-row__k">${esc(r[0])}</span>` : ''}<span class="xf-row__t">${esc(r[1])}</span>${r[2] ? `<span class="xf-row__m">${esc(r[2])}</span>` : ''}${r[3] ? `<span class="tag${r[4] ? ' tag--' + r[4] : ''}">${esc(r[3])}</span>` : ''}</div>`).join('')}</div>`;
 
   function msgHTML(m) {
-    const head = `<div class="xf-msg__h"><b>${esc(m.from)}</b><span>${esc([m.via, m.time].filter(Boolean).join(' · '))}</span>${m.lang ? `<em class="xf-lang">${esc(m.lang)}</em>` : ''}</div>`;
+    const head = `<div class="xf-msg__h"><b>${esc(m.from)}</b><span>${esc([m.via, m.time].filter(Boolean).join(' · '))}</span></div>`;
     const voice = m.voice ? `<div class="xf-voice"><span class="xf-voice__b">${I_PLAY}</span><span class="xf-wave">${WAVE.map(h => `<i style="height:${h}px"></i>`).join('')}</span><em>${esc(m.voice)}</em></div>` : '';
     const photo = m.photo ? `<div class="xf-photo"><span>Photo · ${esc(m.photo)}</span></div>` : '';
     return `<div class="xf-msg${m.x ? ' xf-msg--x' : ''}">${head}${voice}${photo}${(m.lines || []).map(l => `<p>${esc(l)}</p>`).join('')}</div>`;
@@ -480,7 +480,7 @@
         h = `<div class="xf-split">${['yes', 'no'].map(c => `<div class="${m.take === c ? 'is-on' : ''}"><span class="xf-cond">${c}</span><span>${esc(m[c])}</span>${m.take === c ? ico('i-hak') : ''}</div>`).join('')}</div>`;
         break;
       case 'diary':
-        h = `${msgHTML({ from: m.from, via: 'Translated by X', lang: 'English', x: 1, lines: [m.quote] })}<p class="xf-k xf-k--sub">Work diary</p>${rowsHTML(m.rows)}`;
+        h = `${m.quote ? msgHTML({ from: m.from, via: m.via, x: 1, lines: [m.quote] }) : ''}<p class="xf-k xf-k--sub">Work diary</p>${rowsHTML(m.rows)}`;
         break;
       default: h = '';
     }
@@ -576,12 +576,25 @@
 
       this.load(root.dataset.flow);
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this.relayout());
+
+      // Another script can switch the flow by changing data-flow (or with XFlow.set). It restarts at step 1.
+      if ('MutationObserver' in window) {
+        this.mo = new MutationObserver(() => {
+          const k = root.dataset.flow;
+          if (k && k !== this.key && FLOWS[k]) this.load(k, true);
+        });
+        this.mo.observe(root, { attributes: true, attributeFilter: ['data-flow'] });
+      }
     }
 
     node(id) { return this.f.nodes[id]; }
 
     // Switch to another flow. user = true when someone picked it, so it plays at once.
     load(key, user) {
+      // stop the old run first: no frame, tween or packet from the old flow may draw on the new one
+      if (this.raf) { cancelAnimationFrame(this.raf); this.raf = 0; }
+      this.last = 0;
+      if (this.followT) { clearTimeout(this.followT); this.followT = 0; }
       this.key = FLOWS[key] ? key : 'contractors-service';
       this.f = FLOWS[this.key];
       this.g = graph(this.f);
@@ -1150,7 +1163,9 @@
     // phones: after Next or Back, bring the active step into view if it moved off screen
     follow() {
       if (!this.v) return;
-      setTimeout(() => {
+      clearTimeout(this.followT);
+      this.followT = setTimeout(() => {
+        this.followT = 0;
         const n = this.nodeEl[this.shown()];
         if (!n) return;
         const r = n.getBoundingClientRect(), vh = window.innerHeight;
@@ -1196,7 +1211,15 @@
     });
   }
 
+  // Switch an embedded flow from another script: XFlow.set(el, 'cleaning'). Same as changing data-flow.
+  function set(el, key) {
+    if (!el || !FLOWS[key]) return null;
+    if (!el.xflow) { el.dataset.flow = key; return mount(el); }
+    if (el.xflow.key !== key) el.xflow.load(key, true);
+    return el.xflow;
+  }
+
   wirePickers();
   document.querySelectorAll('.xflow[data-flow]').forEach(mount);
-  window.XFlow = { FLOWS, mount };
+  window.XFlow = { FLOWS, mount, set };
 })();

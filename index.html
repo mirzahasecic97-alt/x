@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html data-lysing-en="For firms with 1 to 20 people. Tasks to your crew in their language, quotes followed up, and the work diary, hours and invoices kept for you. One price for the whole team." data-titill-en="X: less admin, more work done" lang="en">
+<html data-lysing-en="For firms with 1 to 20 people. We connect the tools you already use and build the workflows for your industry: quotes followed up, jobs, hours and invoices. One price for the whole team." data-titill-en="X: less admin, more work done" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <title>X: less admin, more work done</title>
-<meta content="For firms with 1 to 20 people. Tasks to your crew in their language, quotes followed up, and the work diary, hours and invoices kept for you. One price for the whole team." name="description"/>
+<meta content="For firms with 1 to 20 people. We connect the tools you already use and build the workflows for your industry: quotes followed up, jobs, hours and invoices. One price for the whole team." name="description"/>
 <meta content="#08090a" name="theme-color"/>
 <meta content="noindex" name="robots"/>
 <link href="assets/merki/favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -13,6 +13,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Michroma&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/site.css" rel="stylesheet"/>
+<link href="assets/css/flow.css" rel="stylesheet"/>
 <link href="assets/css/index.css" rel="stylesheet"/>
 </head>
 <body>
@@ -82,7 +83,7 @@
 
 <h1 class="ix-h1">Less admin.<br/> <span class="metal">More work done.</span></h1>
 
-<p class="lead">One simple system for your customers, jobs, crew and invoices. Set up for the way your industry works.</p>
+<p class="lead">We connect the tools you already use and build the workflows for your industry.</p>
 <div class="hero__cta">
 <a class="btn btn--metal" data-ix-cta="" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
 <a class="btn btn--ghost" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
@@ -128,116 +129,23 @@
 </div>
 <ul class="ix-sols" data-l="sols"></ul>
 
+<!-- verkflæðið fyrir greinina: lifandi, úr flow.js. index.js skiptir um flæði þegar greinin breytist -->
+<div class="ix-wf">
 <div class="ix-try">
-<h3 data-l="dh">See it work</h3>
-<p data-l="dp"></p>
+<h3>Your workflow</h3>
+<p>We build it between the tools you already use. Tap a step to see what goes in and what comes out.</p>
+</div>
+<div class="xflow" data-flow="contractors-service" id="ix-flow"></div>
+<p class="fine ix-wf__fine">Example. Companies, people and amounts are made up. Nothing goes out until you approve it.</p>
 </div>
 
-<!-- dæmi A: vinnuflokkurinn á sínu tungumáli (verktakar og ræstingar). Tilbúnar þýðingar, ekkert er sent -->
-<div class="cw-demo edge" hidden="" id="crew">
-<div class="cw-top">
-<p class="ix-ex"><i aria-hidden="true"></i><span>Example. The system is in development.</span></p>
-<span class="tag">Coming soon</span>
-</div>
-<div class="cw-langs">
-<div aria-labelledby="cw-own-l" class="cw-lang" role="group">
-<p class="cw-lang__l" id="cw-own-l">You write in</p>
-<div class="cw-pills">
-<button aria-pressed="true" class="cw-pill" data-cw-own="en" type="button">English</button>
-<button aria-pressed="false" class="cw-pill" data-cw-own="is" type="button">Icelandic</button>
-<button aria-pressed="false" class="cw-pill" data-cw-own="hr" type="button">Croatian</button>
-</div>
-</div>
-<div aria-labelledby="cw-wrk-l" class="cw-lang" role="group">
-<p class="cw-lang__l" id="cw-wrk-l">Marek reads in</p>
-<div class="cw-pills">
-<button aria-pressed="true" class="cw-pill" data-cw-wrk="pl" type="button">Polish</button>
-<button aria-pressed="false" class="cw-pill" data-cw-wrk="lt" type="button">Lithuanian</button>
-<button aria-pressed="false" class="cw-pill" data-cw-wrk="ro" type="button">Romanian</button>
-<button aria-pressed="false" class="cw-pill" data-cw-wrk="uk" type="button">Ukrainian</button>
-<button aria-pressed="false" class="cw-pill" data-cw-wrk="es" type="button">Spanish</button>
-</div>
-</div>
-</div>
-<div class="cw-play">
+<!-- litla dæmið, falið undir "Try it" -->
+<div class="ix-tryit">
+<button aria-controls="ix-tryit-p" aria-expanded="false" class="ix-tryit__b" type="button"><span data-l="dh">Try it</span><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></button>
+<div class="ix-tryit__p" hidden="" id="ix-tryit-p">
+<p class="ix-tryit__d" data-l="dp"></p>
 
-<!-- síminn hjá eigandanum -->
-<div class="cw-col">
-<p class="ix-lbl"><span>Your phone</span></p>
-<div class="cw-phone">
-<div class="cw-screen">
-<div class="cw-head"><span class="cw-ava cw-ava--x"><img alt="" src="assets/merki/merki.svg"/></span><span><b>X</b><small>Crew chat</small></span><span class="cw-nat" data-cw-t="own-nat">English</span></div>
-<div class="cw-chat">
-<div class="cw-b cw-b--out"><span data-cw-t="task-own"></span><small class="cw-time" data-cw-t="t1"></small></div>
-<div class="cw-conf">
-<p class="cw-ask">Send to Marek in <span data-cw-t="wrk-name">Polish</span>, job <span data-cw-t="job"></span>?</p>
-<button class="cw-send" type="button"><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Send</span></button>
-<p class="cw-sent" tabindex="-1"><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Sent to Marek in <span data-cw-t="wrk-name">Polish</span></span></p>
-</div>
-<div class="cw-b cw-b--in" data-s="2">
-<small class="cw-tr">Marek · translated from <span data-cw-t="wrk-name">Polish</span></small>
-<span data-cw-t="start-own"></span>
-<small class="cw-orig"><b>Original</b> <span data-cw-t="start-wrk"></span></small>
-<small class="cw-time" data-cw-t="t2"></small>
-</div>
-<div class="cw-b cw-b--in" data-s="3">
-<small class="cw-tr">Marek · voice note, translated from <span data-cw-t="wrk-name">Polish</span></small>
-<span aria-hidden="true" class="cw-voice"><span class="cw-voice__p"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"></path></svg></span><span class="cw-wave"><i style="height:30%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:35%"></i><i style="height:85%"></i><i style="height:55%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:25%"></i></span><small>0:12</small></span>
-<span data-cw-t="done-own"></span>
-<small class="cw-orig"><b>Original</b> <span data-cw-t="done-wrk"></span></small>
-<span class="cw-photo"><span>Photo: <span data-cw-t="photo"></span></span></span>
-<small class="cw-time" data-cw-t="t3"></small>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- síminn hjá starfsmanninum -->
-<div class="cw-col">
-<p class="ix-lbl"><span>Marek's phone</span></p>
-<div class="cw-phone">
-<div class="cw-screen">
-<div class="cw-head"><span class="cw-ava" data-cw-t="ini">N</span><span><b data-cw-t="firm"></b><small>via X</small></span><span class="cw-nat" data-cw-t="wrk-nat">Polski</span></div>
-<div class="cw-chat">
-<p class="cw-empty">Marek gets the task here, in <span data-cw-t="wrk-name">Polish</span>, once you tap Send.</p>
-<div class="cw-b cw-b--in" data-s="1">
-<small class="cw-tr"><span data-cw-t="owner"></span> · translated from <span data-cw-t="own-name">English</span></small>
-<span data-cw-t="task-wrk"></span>
-<small class="cw-orig"><b>Original</b> <span data-cw-t="task-own"></span></small>
-<small class="cw-time" data-cw-t="t1"></small>
-</div>
-<div class="cw-b cw-b--out" data-s="2"><span data-cw-t="start-wrk"></span><small class="cw-time" data-cw-t="t2"></small></div>
-<div class="cw-b cw-b--out" data-s="3">
-<span aria-hidden="true" class="cw-voice"><span class="cw-voice__p"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"></path></svg></span><span class="cw-wave"><i style="height:30%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:35%"></i><i style="height:85%"></i><i style="height:55%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:25%"></i></span><small>0:12</small></span>
-<span class="sr">Voice note: <span data-cw-t="done-wrk"></span></span>
-<span class="cw-photo"><span>Photo</span></span>
-<small class="cw-time" data-cw-t="t3"></small>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<!-- það sem gerist í X: dagbókin fyllist (línurnar koma úr GREINAR) -->
-<div class="cw-col cw-col--diary">
-<p class="ix-lbl"><img alt="" src="assets/merki/merki.svg"/><span>In your X</span></p>
-<div class="cw-diary">
-<div class="cw-diary__h"><span class="mod__ic"><svg><use href="#i-bok"></use></svg></span><span><b>Work diary</b><small>Fills in from Marek's messages</small></span></div>
-<dl data-cw-diary=""></dl>
-</div>
-</div>
-</div>
-<p aria-live="polite" class="sr" id="cw-say"></p>
-<div class="cw-foot"><button class="ix-reset" hidden="" type="button"><span>Start over</span></button></div>
-<div class="cw-notes">
-<p><svg aria-hidden="true"><use href="#i-spjall"></use></svg><span><b>On WhatsApp</b> once Meta approves X. Until then, a text message with a private link opens the task in the worker's language. No app and no login.</span></p>
-<p><svg aria-hidden="true"><use href="#i-hnottur"></use></svg><span><b>Languages:</b> these are examples. Each language pair is tested with native speakers before we offer it.</span></p>
-<p><svg aria-hidden="true"><use href="#i-skjoldur"></use></svg><span><b>You stay in charge.</b> You check each task before it goes out and approve the hours. X does not track where your workers are.</span></p>
-</div>
-</div>
-
-<!-- dæmi B: tilboð eða pöntun verður verk og reikningsdrög (ráðgjafar, verslanir, heildsala) -->
+<!-- dæmið: tilboð, samningur eða pöntun verður verk og reikningsdrög (allar greinar) -->
 <div class="ix-demo edge" hidden="" id="ix-demo">
 <p class="ix-ex"><i aria-hidden="true"></i><span>Example. The system is in development.</span></p>
 <div class="ix-play">
@@ -297,6 +205,8 @@
 </div>
 <p aria-live="polite" class="sr" id="ix-say"></p>
 </div>
+</div>
+</div>
 
 <!-- áætlunin sem passar greininni -->
 <div class="ix-plan edge">
@@ -323,8 +233,8 @@
 </div>
 <div class="steps">
 <div class="step edge rv"><span class="step__n"><b>01</b></span><h3>Choose your industry.</h3><p>X comes set up for the way your industry works.</p></div>
-<div class="step edge rv"><span class="step__n"><b>02</b></span><h3>We connect the tools you already use.</h3><p>Your accounting, email and calendar stay where they are.</p></div>
-<div class="step edge rv"><span class="step__n"><b>03</b></span><h3>Start with your system ready.</h3><p>Your customers, price list and templates are in place when you start.</p></div>
+<div class="step edge rv"><span class="step__n"><b>02</b></span><h3>We connect your accounts and tools.</h3><p>Your accounting, email and calendar stay where they are.</p></div>
+<div class="step edge rv"><span class="step__n"><b>03</b></span><h3>We build your workflows and hand them over.</h3><p>Your customers, price list and templates are in place when you start.</p></div>
 </div>
 <p class="ix-how__more rv"><a class="tlink" href="tengingar.html"><span>How we connect your tools</span><svg><use href="#i-or"></use></svg></a></p>
 </div>
@@ -412,6 +322,7 @@
 </div>
 </footer>
 <script defer="" src="assets/js/site.js"></script>
+<script defer="" src="assets/js/flow.js"></script>
 <script defer="" src="assets/js/index.js"></script>
 </body>
 </html>

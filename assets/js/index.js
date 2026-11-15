@@ -8,18 +8,6 @@ const evra = n => '€' + Math.round(n).toLocaleString('en-US');
 const evra2 = n => '€' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const kyrrt = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ---------- tungumálin í dæminu um vinnuflokkinn ----------
-const MAL = {
-  en: { name: 'English', nat: 'English' },
-  is: { name: 'Icelandic', nat: 'Íslenska' },
-  hr: { name: 'Croatian', nat: 'Hrvatski' },
-  pl: { name: 'Polish', nat: 'Polski' },
-  lt: { name: 'Lithuanian', nat: 'Lietuvių' },
-  ro: { name: 'Romanian', nat: 'Română' },
-  uk: { name: 'Ukrainian', nat: 'Українська' },
-  es: { name: 'Spanish', nat: 'Español' },
-};
-
 // heildsala: pöntunarlínur af verðlista búðarinnar (dæmagögn)
 const PANTUN = [
   ['Oat crackers 200 g', 24, 2.10],
@@ -38,83 +26,78 @@ const PLON = {
 };
 
 // ---------- greinarnar fimm: allt efni hlutans "Solutions for ..." ----------
-// intro: vandinn í einni setningu, í annarri persónu og án gæsalappa (ekki umsögn). sol: vandi (p) og hvað X gerir (x), soon = Coming soon. demo: 'cw' (vinnuflokkurinn) eða 'q' (tilboð eða pöntun).
+// intro: vandinn í einni setningu, í annarri persónu og án gæsalappa (ekki umsögn). sol: vandi (p) og hvað X gerir (x), soon = Coming soon. demo: 'q' (tilboð, samningur eða pöntun).
 // Fyrirtæki, fólk og upphæðir eru tilbúin dæmi.
 const GREINAR = {
   contractors: {
     for: 'contractors',
-    intro: 'Your crew does not speak your language, quotes go unanswered, and you write the diary and hours at night.',
+    intro: 'A quick job runs over, quotes go unanswered, and you write the diary and hours at night.',
     sol: [
-      { i: 'i-spjall', p: 'You explain the same task three times in bad English. It still gets done wrong.', x: 'Write the task in your language. Each worker reads it in theirs and answers the same way.', soon: true },
+      { i: 'i-verk', p: 'A job gets called a quick one. It takes the whole afternoon.', x: 'A short brief before each job: past visits, photos, a checklist and an estimate. X flags a job that runs over the estimate.' },
       { i: 'i-tilbod', p: 'You sent the quote on Friday. No answer, and nobody followed it up.', x: 'Good, Better and Best from your price list. X drafts a reminder after 3 and 7 days. You tap yes.' },
-      { i: 'i-bok', p: 'At night you write the work diary and everyone\'s hours in a notebook at home.', x: 'The diary and the hours fill in from your crew\'s messages. You check and approve.', soon: true },
+      { i: 'i-bok', p: 'At night you write the work diary and everyone\'s hours in a notebook at home.', x: 'Each worker taps Started and Done on the job and adds photos. The diary and the hours fill in. You check and approve.', soon: true },
       { i: 'i-reikningur', p: 'The invoice waits until the job is long done.', x: 'Each stage done: an invoice draft waits for your yes, then goes to your accounting.' },
     ],
     plan: 'team', who: 'For a firm of 2 to 5 people. One price for the whole team.',
-    demo: 'cw', dh: 'Try it: crew chat in their language',
-    dp: 'Write a task in your language. Marek reads it in his and answers in his. X keeps the work diary and the hours.',
-    cw: {
-      owner: 'Sarah', firm: 'Northside Builders', job: 'Bathroom at 12 Elm Road',
-      t: ['07:12', '08:00', '15:30'], hours: '7 h 30 min', photo: 'old tiles off',
-      txt: {
-        en: { task: 'Marek, today: the bathroom at 12 Elm Road. Take off the old tiles. Send a photo when you finish.', start: 'Starting now.', done: 'Finished. The old tiles are off and the skip is full. Tomorrow I need 4 bags of tile adhesive.' },
-        is: { task: 'Marek, í dag: baðherbergið á 12 Elm Road. Taktu gömlu flísarnar af. Sendu mynd þegar þú klárar.', start: 'Byrja núna.', done: 'Búinn. Gömlu flísarnar eru farnar og gámurinn er fullur. Á morgun þarf ég 4 poka af flísalími.' },
-        hr: { task: 'Marek, danas: kupaonica na 12 Elm Road. Skini stare pločice. Pošalji fotografiju kad završiš.', start: 'Počinjem sada.', done: 'Gotovo. Stare pločice su skinute i kontejner je pun. Sutra trebam 4 vreće ljepila za pločice.' },
-        pl: { task: 'Marek, dzisiaj: łazienka przy 12 Elm Road. Zdejmij stare płytki. Wyślij zdjęcie, jak skończysz.', start: 'Zaczynam.', done: 'Skończone. Stare płytki zdjęte, kontener pełny. Jutro potrzebuję 4 worki kleju do płytek.' },
-        lt: { task: 'Marekai, šiandien: vonios kambarys, 12 Elm Road. Nuimk senas plyteles. Atsiųsk nuotrauką, kai baigsi.', start: 'Pradedu.', done: 'Baigta. Senos plytelės nuimtos, konteineris pilnas. Rytoj reikės 4 maišų plytelių klijų.' },
-        ro: { task: 'Marek, azi: baia de la 12 Elm Road. Scoate plăcile vechi. Trimite o poză când termini.', start: 'Încep acum.', done: 'Gata. Plăcile vechi sunt scoase și containerul e plin. Mâine am nevoie de 4 saci de adeziv pentru plăci.' },
-        uk: { task: 'Мареку, сьогодні: ванна кімната на 12 Elm Road. Зніми стару плитку. Надішли фото, коли закінчиш.', start: 'Починаю.', done: 'Готово. Стару плитку знято, контейнер повний. Завтра потрібно 4 мішки клею для плитки.' },
-        es: { task: 'Marek, hoy: el baño de 12 Elm Road. Quita los azulejos viejos. Manda una foto cuando termines.', start: 'Empiezo ahora.', done: 'Terminado. Los azulejos viejos están fuera y el contenedor está lleno. Mañana necesito 4 sacos de adhesivo para azulejos.' },
-      },
-      // dagbókin: [heiti, gildi, stig sem fyllir línuna, tegund]
-      diary: [
-        ['Job', 'Bathroom at 12 Elm Road', 0],
-        ['Worker', 'Marek', 0],
-        ['Start', '08:00', 2],
-        ['Finish', '15:30', 3],
-        ['Hours', '7 h 30 min', 3, 'hours'],
-        ['Done', 'Old tiles off. Skip full.', 3],
-        ['Needs', '4 bags of tile adhesive for tomorrow', 3],
-        ['Photo', 'Old tiles off', 3, 'photo'],
+    demo: 'q', dh: 'Try it: a quote your client accepts',
+    dp: 'Accept the quote as your client would. See it become a job in stages and an invoice draft.',
+    q: {
+      firm: 'Northside Builders', cust: 'Hannah Reid', no: '1051', what: 'Bathroom at 12 Elm Road',
+      vat: 'Total, excl. VAT', per: '', rec: 1,
+      doc: 'Quote', lbl: 'Your client\'s phone', acc: 'Accept as your client', who: 'client',
+      jk: 'Job in stages', jw: 'Becomes a job when your client accepts.', sayJ: 'A job with three stages was created. ',
+      iw: 'Made from the job. Nothing typed twice.',
+      qwait: 'Sent. Reminder after 3 and 7 days if there is no answer.',
+      opts: [
+        { n: 'Good', p: 6400, li: ['Retile', 'New fittings'] },
+        { n: 'Better', p: 8900, li: ['Everything in Good', 'A walk-in shower'] },
+        { n: 'Best', p: 11200, li: ['Everything in Better', 'A heated floor'] },
       ],
+      job: o => ({
+        t: 'Job: bathroom at 12 Elm Road', s: 'Hannah Reid · ' + o.n,
+        li: ['Stage 1: strip out and plumbing, 30%', 'Stage 2: tiling, 50%', 'Stage 3: fittings and finish, 20%', 'A brief and a checklist for the crew'],
+      }),
+      inv: o => ({
+        t: 'Invoice, stage 1 of 3', s: 'Hannah Reid · when stage 1 is done',
+        lines: [['Stage 1: strip out and plumbing, 30%', o.p * 0.3]],
+        tot: 'Total, excl. VAT',
+      }),
     },
   },
 
   cleaning: {
     for: 'cleaning and services',
-    intro: 'You type the same invoices every month, and your team reads tasks in a language they barely know.',
+    intro: 'You type the same invoices every month, and you chase everyone\'s hours at the end of it.',
     sol: [
       { i: 'i-skjol', p: 'Every month you type the same contract invoices again.', x: 'Recurring contracts with a fixed monthly price. On the 1st every invoice is drafted. Approve them all at once.' },
-      { i: 'i-dagatal', p: 'The visit plan lives in your head and on sticky notes.', x: 'Each contract fills the visit schedule for the months ahead. Move a visit and the rest stays.' },
-      { i: 'i-spjall', p: 'Your team reads the checklist in a language they barely know.', x: 'Send the task and checklist in your language. Each cleaner reads it in theirs and answers with a photo.', soon: true },
+      { i: 'i-dagatal', p: 'The visit plan lives in your head and on sticky notes.', x: 'Each contract fills the visit schedule for the months ahead, with the checklist for each place. Move a visit and the rest stays.' },
+      { i: 'i-bok', p: 'At the end of the month you chase everyone for their hours.', x: 'Each cleaner taps Started and Done at the visit and adds a photo. The work diary and the hours fill in. You approve.', soon: true },
       { i: 'i-tilbod', p: 'An office asks for a price and you answer days later.', x: 'Weekly, twice a week and daily side by side, from your price list. The customer picks one online.' },
     ],
     plan: 'team', who: 'For a team of 2 to 5 people. One price for the whole team.',
-    demo: 'cw', dh: 'Try it: the visit in their language',
-    dp: 'Send tonight\'s visit and checklist in your language. Marek reads it in his and answers in his. X keeps the work diary and the hours.',
-    cw: {
-      owner: 'Emma', firm: 'Brightway Cleaning', job: 'Office cleaning, 3rd floor',
-      t: ['17:40', '18:00', '21:00'], hours: '3 h', photo: 'office, 3rd floor',
-      txt: {
-        en: { task: 'Marek, today at 18:00: office cleaning at Lakeside Dental, 3rd floor. Follow the checklist. Send a photo when you finish.', start: 'Starting now.', done: 'Finished. Everything on the checklist is done. The toilets need more hand soap.' },
-        is: { task: 'Marek, í dag klukkan 18:00: skrifstofuþrif hjá Lakeside Dental, 3. hæð. Fylgdu gátlistanum. Sendu mynd þegar þú klárar.', start: 'Byrja núna.', done: 'Búinn. Allt á gátlistanum er klárt. Það vantar meiri handsápu á salernin.' },
-        hr: { task: 'Marek, danas u 18:00: čišćenje ureda u Lakeside Dental, 3. kat. Prati popis zadataka. Pošalji fotografiju kad završiš.', start: 'Počinjem sada.', done: 'Gotovo. Sve s popisa je napravljeno. U toaletima treba još sapuna za ruke.' },
-        pl: { task: 'Marek, dzisiaj o 18:00: sprzątanie biura w Lakeside Dental, 3. piętro. Trzymaj się listy kontrolnej. Wyślij zdjęcie, jak skończysz.', start: 'Zaczynam.', done: 'Skończone. Wszystko z listy zrobione. W toaletach brakuje mydła do rąk.' },
-        lt: { task: 'Marekai, šiandien 18:00: biuro valymas Lakeside Dental, 3 aukštas. Laikykis kontrolinio sąrašo. Atsiųsk nuotrauką, kai baigsi.', start: 'Pradedu.', done: 'Baigta. Viskas iš sąrašo padaryta. Tualetuose trūksta rankų muilo.' },
-        ro: { task: 'Marek, azi la 18:00: curățenie la birourile Lakeside Dental, etajul 3. Urmează lista de verificare. Trimite o poză când termini.', start: 'Încep acum.', done: 'Gata. Tot ce era pe listă e făcut. La toalete mai trebuie săpun de mâini.' },
-        uk: { task: 'Мареку, сьогодні о 18:00: прибирання офісу в Lakeside Dental, 3-й поверх. Дотримуйся чек-листа. Надішли фото, коли закінчиш.', start: 'Починаю.', done: 'Готово. Усе з чек-листа зроблено. У туалетах треба більше мила для рук.' },
-        es: { task: 'Marek, hoy a las 18:00: limpieza de oficina en Lakeside Dental, 3.ª planta. Sigue la lista de control. Manda una foto cuando termines.', start: 'Empiezo ahora.', done: 'Terminado. Todo lo de la lista está hecho. En los baños falta jabón de manos.' },
-      },
-      diary: [
-        ['Job', 'Office cleaning, 3rd floor, Lakeside Dental', 0],
-        ['Worker', 'Marek', 0],
-        ['Start', '18:00', 2],
-        ['Finish', '21:00', 3],
-        ['Hours', '3 h', 3, 'hours'],
-        ['Checklist', ['Floors', 'Bins and kitchen', 'Toilets and sinks'], 3, 'list'],
-        ['Needs', 'Hand soap for the toilets', 3],
-        ['Photo', 'Office, 3rd floor', 3, 'photo'],
+    demo: 'q', dh: 'Try it: a cleaning contract',
+    dp: 'Accept the contract as your customer would. See it become visits with a checklist and a monthly invoice draft.',
+    q: {
+      firm: 'Brightway Cleaning', cust: 'Lakeside Dental', no: '2207', what: 'Office cleaning, 3rd floor',
+      vat: 'Monthly, excl. VAT', per: ' a month', rec: 0,
+      doc: 'Contract', lbl: 'Your customer\'s phone', pick: 'Choose how often', acc: 'Accept as your customer', who: 'customer',
+      qic: 'i-skjol', jic: 'i-dagatal', jk: 'Visits and checklist', jw: 'Becomes a visit schedule when your customer accepts.', sayJ: 'The visits are on the schedule, each with its checklist. ',
+      iw: 'Drafted on the 1st of each month. Nothing typed twice.',
+      qwait: 'Sent. Reminder after 3 and 7 days if there is no answer.',
+      opts: [
+        { n: 'Weekly', p: 390, v: 'Every Thursday at 18:00', li: ['Once a week', 'Thursdays'] },
+        { n: 'Twice a week', p: 740, v: 'Mondays and Thursdays at 18:00', li: ['Mondays', 'Thursdays'] },
+        { n: 'Daily', p: 1650, v: 'Monday to Friday at 18:00', li: ['Monday to Friday'] },
       ],
+      job: o => ({
+        t: 'Visits: ' + o.n.toLowerCase(), s: 'Lakeside Dental · ' + o.v,
+        li: ['On the schedule for the months ahead', 'Checklist: floors, kitchen, toilets, bins', 'Each visit on the cleaner\'s list for the day', 'Move one visit and the rest stays'],
+      }),
+      inv: o => ({
+        t: 'Monthly invoice', s: 'Lakeside Dental · drafted on the 1st',
+        lines: [['Office cleaning, ' + o.n.toLowerCase(), o.p]],
+        tot: 'Total, excl. VAT',
+      }),
     },
   },
 
@@ -239,87 +222,7 @@ function hak(t) { const li = el('li'); li.append(ikon('i-hak'), el('span', '', t
 function geyma(k) { try { localStorage.setItem(GEYMSLA, k); } catch (e) { /* geymsla lokuð: síðan virkar samt */ } }
 
 // =====================================================================
-// Dæmi A: vinnuflokkurinn á sínu tungumáli (#crew). Þýðingarnar eru skrifaðar fyrirfram.
-// =====================================================================
-const cw = (() => {
-  const demo = $('#crew');
-  if (!demo) return null;
-  const send = $('.cw-send', demo), sent = $('.cw-sent', demo), reset = $('.ix-reset', demo);
-  const say = $('#cw-say'), dagbok = $('[data-cw-diary]', demo);
-  let d = null, own = 'en', wrk = 'pl', stig = 0, timar = [];
-
-  const hreinsa = () => { timar.forEach(clearTimeout); timar = []; };
-  const textar = () => {
-    if (!d) return;
-    const o = d.txt[own], w = d.txt[wrk];
-    const t = {
-      'own-name': MAL[own].name, 'own-nat': MAL[own].nat, 'wrk-name': MAL[wrk].name, 'wrk-nat': MAL[wrk].nat,
-      'task-own': o.task, 'task-wrk': w.task, 'start-own': o.start, 'start-wrk': w.start, 'done-own': o.done, 'done-wrk': w.done,
-      owner: d.owner, firm: d.firm, ini: d.firm[0], job: d.job, photo: d.photo, t1: d.t[0], t2: d.t[1], t3: d.t[2],
-    };
-    $$('[data-cw-t]', demo).forEach(e => { const v = t[e.dataset.cwT]; if (v !== undefined) e.textContent = v; });
-  };
-  const teiknaDagbok = () => {
-    if (!dagbok || !d) return;
-    dagbok.replaceChildren(...d.diary.map(([k, v, s, teg]) => {
-      const row = el('div', 'cw-row');
-      if (s) row.dataset.s = s;
-      const dd = el('dd');
-      const val = el('span', 'cw-val');
-      if (teg === 'hours') { val.append(el('b', '', v), ' ', merki('Waits for your OK', 'tag--warn')); }
-      else if (teg === 'photo') { const p = el('span', 'cw-photo cw-photo--sm'); p.append(el('span', '', v)); val.append(p); }
-      else if (teg === 'list') { const ul = el('ul', 'cw-list'); v.forEach(x => ul.append(hak(x))); val.append(ul); }
-      else val.textContent = v;
-      if (s) dd.append(el('span', 'cw-wait', 'Waiting'));
-      dd.append(val);
-      row.append(el('dt', '', k), dd);
-      return row;
-    }));
-  };
-  // stig 0: bíður eftir Send, 1: verkefnið farið, 2: Marek byrjaði, 3: búinn, dagbókin full
-  const syna = n => {
-    stig = n;
-    $$('[data-s]', demo).forEach(e => e.classList.toggle('on', Number(e.dataset.s) <= n));
-    $$('.cw-row:not([data-s])', demo).forEach(e => e.classList.add('on'));
-    demo.classList.toggle('is-sent', n >= 1);
-    demo.classList.toggle('is-done', n >= 3);
-    if (reset) reset.hidden = n < 3;
-  };
-  const segja = n => {
-    if (!say || !d) return;
-    const w = MAL[wrk].name;
-    say.textContent = [
-      '',
-      'Sent. Marek got the task in ' + w + '.',
-      'Marek replied in ' + w + ' that he started at ' + d.t[1] + '. You read it in ' + MAL[own].name + '.',
-      'Marek sent a voice note and a photo at ' + d.t[2] + '. The work diary shows ' + d.hours + ', waiting for your OK.',
-    ][n];
-  };
-  if (send) send.addEventListener('click', () => {
-    if (stig || !d) return;
-    syna(1); segja(1);
-    if (sent) sent.focus({ preventScroll: true });
-    if (kyrrt) { syna(3); segja(3); return; }
-    timar.push(setTimeout(() => { syna(2); segja(2); }, 1500));
-    timar.push(setTimeout(() => { syna(3); segja(3); }, 3300));
-  });
-  if (reset) reset.addEventListener('click', () => {
-    hreinsa(); syna(0); if (say) say.textContent = '';
-    if (send) send.focus({ preventScroll: true });
-  });
-  const veljaMal = (attr, gildi) => $$('[' + attr + ']', demo).forEach(b => b.setAttribute('aria-pressed', String(b.getAttribute(attr) === gildi)));
-  $$('[data-cw-own]', demo).forEach(b => b.addEventListener('click', () => { own = b.dataset.cwOwn; veljaMal('data-cw-own', own); textar(); }));
-  $$('[data-cw-wrk]', demo).forEach(b => b.addEventListener('click', () => { wrk = b.dataset.cwWrk; veljaMal('data-cw-wrk', wrk); textar(); }));
-
-  return {
-    el: demo,
-    setja(gogn) { hreinsa(); d = gogn; teiknaDagbok(); textar(); syna(0); if (say) say.textContent = ''; },
-    stoppa() { hreinsa(); },
-  };
-})();
-
-// =====================================================================
-// Dæmi B: tilboð eða pöntun sem gesturinn samþykkir og sér verða að verki og reikningsdrögum (#ix-demo)
+// Dæmið: tilboð, samningur eða pöntun sem gesturinn samþykkir og sér verða að verki og reikningsdrögum (#ix-demo)
 // =====================================================================
 const qd = (() => {
   const demo = $('#ix-demo');
@@ -436,6 +339,18 @@ const hvatning = $('#ix-prompt');
 const L = n => hluti ? hluti.querySelector('[data-l="' + n + '"]') : null;
 let valin = null;
 
+// greinin og verkflæðið hennar í flow.js
+const FLAEDI = { contractors: 'contractors-service', cleaning: 'cleaning', consultants: 'consultants', shops: 'shops', wholesale: 'wholesale' };
+
+// "Try it": litla dæmið er falið þar til gesturinn opnar það
+const tryit = (() => {
+  const b = $('.ix-tryit__b'), p = $('#ix-tryit-p');
+  if (!b || !p) return null;
+  const opna = (ja) => { b.setAttribute('aria-expanded', String(ja)); p.hidden = !ja; };
+  b.addEventListener('click', () => opna(b.getAttribute('aria-expanded') !== 'true'));
+  return { wrap: b.parentElement, opna };
+})();
+
 function lesa() {
   const q = (new URLSearchParams(location.search).get('industry') || '').toLowerCase();
   const k = GREINAR[q] ? q : SAMHEITI[q];
@@ -467,11 +382,13 @@ function teiknaLausnir(k) {
     return li;
   }));
 
-  // eitt dæmi sem passar greininni
-  const syna = g.demo === 'cw' ? cw : qd, fela = g.demo === 'cw' ? qd : cw;
-  if (fela) { fela.stoppa(); fela.el.hidden = true; }
-  if (syna) { syna.setja(g.demo === 'cw' ? g.cw : g.q); syna.el.hidden = false; }
-  const tryEl = $('.ix-try', hluti); if (tryEl) tryEl.hidden = !syna;
+  // verkflæðið fyrir greinina (flow.js): skiptir um flæði og byrjar á skrefi 1. Spilar bara þegar það sést
+  const fl = $('#ix-flow');
+  if (fl) { if (window.XFlow && XFlow.set) XFlow.set(fl, FLAEDI[k]); else fl.dataset.flow = FLAEDI[k]; }
+
+  // eitt lítið dæmi sem passar greininni, undir "Try it"
+  if (qd) { qd.stoppa(); qd.setja(g.q); qd.el.hidden = false; }
+  if (tryit) tryit.wrap.hidden = !qd;
 }
 
 function velja(k, { vista = true, skruna = false } = {}) {
@@ -506,11 +423,9 @@ if (aftur) aftur.addEventListener('click', () => {
 });
 
 // byrjun: ?industry=, svo vistuð grein. Annars er ekkert valið og hvatningin sést.
-// index.html#crew (tengill af verd.html) opnar dæmið um vinnuflokkinn hjá verktökum.
+// gamli tengillinn index.html#crew opnar verktaka.
 const byrjun = lesa();
-const crewHash = location.hash === '#crew';
-if (crewHash && !(byrjun && GREINAR[byrjun.k].demo === 'cw')) velja('contractors', { vista: false });
+if (location.hash === '#crew' && !(byrjun && byrjun.ur)) velja('contractors', { vista: false, skruna: true });
 else if (byrjun) velja(byrjun.k, { vista: !!byrjun.ur });
-if (crewHash && cw && !cw.el.hidden) requestAnimationFrame(() => cw.el.scrollIntoView({ block: 'start' }));
 
 })();

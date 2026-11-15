@@ -337,13 +337,13 @@
 .kf-mail__out .row > .kf-av{flex:none}
 }
 
-/* crew chat: skilaboð í símanum */
+/* crew tasks: verkefnið í símanum */
 .kf-crew__fine{font-size:13px!important;color:var(--dim)!important;line-height:1.55}
 .kf-phone__msg{justify-self:start;max-width:92%;padding:8px 11px;border-radius:14px 14px 14px 5px;background:#17181c;border:1px solid var(--line);font-size:12.5px;line-height:1.45;color:#e6e7ea}
 .kf-phone__msg--me{justify-self:end;border-radius:14px 14px 5px 14px;background:#2a2d33;border-color:rgba(255,255,255,.1)}
 .kf-phone__msg small{display:block;text-align:right;font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:2px}
 
-/* service contracts: compact block under crew chat in #verk */
+/* service contracts: compact block under crew tasks in #verk */
 .kf-svc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start;margin-top:56px;padding-top:44px;border-top:1px solid var(--line);scroll-margin-top:72px}
 .kf-svc__txt{display:grid;gap:12px;justify-items:start}
 .kf-svc__txt h3{font-size:20px}
@@ -353,3 +353,4 @@
 .kf-svc__list .tag{margin-left:4px;vertical-align:1px}
 @media (max-width:1000px){.kf-svc{grid-template-columns:minmax(0,1fr);gap:20px}}
 @media (max-width:600px){.kf-svc{margin-top:44px;padding-top:36px}}
+.kf-flows{margin-top:22px}

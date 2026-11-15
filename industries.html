@@ -12,6 +12,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Michroma&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/site.css" rel="stylesheet"/>
+<link href="assets/css/flow.css" rel="stylesheet"/>
 <link href="assets/css/industries.css" rel="stylesheet"/>
 </head>
 <body>
@@ -152,7 +153,22 @@
 <div aria-hidden="true" class="app in-app" data-in-app="" inert=""></div>
 </div>
 <p class="fine in-note" data-in-note="" hidden=""></p>
+
+<!-- the industry's workflow, live from flow.js. industries.js switches it with the industry -->
+<div class="in-wf" id="workflow">
+<div class="in-wf__head">
+<h3>How your workflow runs</h3>
+<p>We build it between the tools you already use. Tap a step to see what goes in and what comes out.</p>
+</div>
+<div aria-label="Choose a workflow" class="xf-picks in-wf__picks" data-in-flows="" hidden="" role="group">
+<button aria-pressed="true" data-in-flow="contractors-service" type="button">Service jobs</button>
+<button aria-pressed="false" data-in-flow="contractors-quote" type="button">Quotes</button>
+</div>
+<div class="xflow" data-flow="contractors-service" id="in-flow"></div>
+<p class="fine in-wf__fine">Example. Companies, people and amounts are made up. Nothing goes out until you approve it.</p>
+</div>
 <div class="in-hl" data-in-hl=""></div>
+<p class="fine in-ask" data-in-ask="" hidden=""></p>
 
 <!-- service contracts (contractors only): solutions and the day list demo, rendered from G.contractors.svc -->
 <div class="in-svc" data-in-svc="" hidden="" id="service-contracts"></div>
@@ -229,6 +245,7 @@
 </div>
 </footer>
 <script defer="" src="assets/js/site.js"></script>
+<script defer="" src="assets/js/flow.js"></script>
 <script defer="" src="assets/js/industries.js"></script>
 </body>
 </html>

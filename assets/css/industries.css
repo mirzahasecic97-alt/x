@@ -201,3 +201,15 @@ html:not(.in-js) .in-match,html:not(.in-js) .in-show{display:none}
 }
 @media (prefers-reduced-motion:reduce){.in-task,.in-svc__out.is-later .in-task__over,.in-svc__out.is-later .in-task__sup{animation:none}}
 .in-svc{scroll-margin-top:72px}
+
+/* ---------- the live workflow (flow.js), near the top of the showcase ---------- */
+.in-wf{margin:72px 0 40px;scroll-margin-top:72px}
+.in-wf__head{display:grid;gap:8px;justify-items:center;text-align:center;max-width:640px;margin:0 auto 22px}
+.in-wf__head h3{font-size:clamp(19px,1.8vw,22px)}
+.in-wf__head p{color:var(--muted);font-size:15.5px}
+.in-wf__picks[hidden]{display:none}
+.in-wf__fine{text-align:center;margin:14px auto 0}
+@media (max-width:720px){.in-wf{margin:56px 0 28px}}
+/* translation on request: one short line under the highlights */
+.in-ask{text-align:center;margin:18px auto 0}
+.in-ask[hidden]{display:none}

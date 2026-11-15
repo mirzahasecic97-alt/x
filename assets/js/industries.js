@@ -28,7 +28,7 @@
     mailchimp: { label: 'Mailchimp', conn: { n: 'Mailchimp', st: 'soon' } },
     social: { label: 'Facebook or Instagram', conn: { n: 'Facebook and Instagram', st: 'soon' } },
     pos: { label: 'A till or POS system', conn: { n: 'Store and POS systems', note: 'more to come', st: 'soon' } },
-    whatsapp: { label: 'WhatsApp with the crew', conn: { n: 'WhatsApp', note: 'crew chat', st: 'soon' } },
+    whatsapp: { label: 'WhatsApp with the crew', conn: { n: 'WhatsApp', note: 'crew tasks', st: 'soon' } },
   };
   const AI = { n: 'Claude or ChatGPT', st: 'ok' };
 
@@ -47,15 +47,15 @@
       name: 'Contractors', full: 'Contractors (trades and renovation)',
       h2: ['Contractors.', 'Your morning in X.'],
       dayh: 'From the first enquiry',
-      lead: 'Tasks to your crew in their own language, and the work diary and hours kept from their replies. Quotes in three versions, jobs in stages and an invoice for each stage.',
-      why: 'the contractor pack takes every job from the first quote to the last staged invoice, with crew chat in each worker\'s language coming soon',
+      lead: 'The day\'s list sent once, a brief before each job, planned against actual, and the work diary and hours. Quotes in three versions, jobs in stages and an invoice for each stage.',
+      why: 'the contractor pack takes every job from the day\'s list or the first quote to the last staged invoice, with the work diary and hours coming soon',
       app: {
         co: 'Northside Builders', user: 'Sarah', date: 'Monday · 6 jobs this week',
         nav: [['i-yfirlit', 'Overview'], ['i-folk', 'Customers'], ['i-sala', 'Sales', 2], ['i-tilbod', 'Quotes', 4], ['i-verk', 'Jobs', 6], ['i-reikningur', 'Invoices'], ['i-heili', 'AI'], ['i-tengi', 'Connections']],
         stats: [['Quotes awaiting reply', '2'], ['Accepted this week', '1'], ['Ready to invoice', '€4,860']],
         list: 'Today',
         rows: [
-          { t: 'Crew chat: Marek finished at 12 Elm Road, 7 h 30 min', tag: ['Coming soon', ''] },
+          { t: 'Work diary: Marek finished at 12 Elm Road, 7 h 30 min', tag: ['Coming soon', ''] },
           { t: 'Cladding at Birch Lane: stage 3', s: '08:00', done: true },
           { t: 'Measure Anna Miller\'s kitchen, 12 Elm Road', s: '10:30' },
           { t: 'Quote 1043: Harbor Hotel bathroom', tag: ['Not opened', 'warn'] },
@@ -63,28 +63,28 @@
           { t: 'Oak Street roof: stage 2 invoice, €2,480', tag: ['Draft', ''] },
         ],
         ai: [
-          { m: 'Marek wrote in Polish: the old tiles at 12 Elm Road are off and he needs 4 bags of tile adhesive tomorrow. His 7 h 30 min are in the work diary. Approve them?', act: ['Approve', 'Check first'], soon: true },
+          { m: 'Marek finished at 12 Elm Road: the old tiles are off and he needs 4 bags of tile adhesive tomorrow. His 7 h 30 min are in the work diary. Approve them?', act: ['Approve', 'Check first'], soon: true },
           { me: 'And Harbor Hotel?' },
           { m: 'Quote 1043 has not been opened in 7 days. I drafted a short reminder. Send it?', act: ['Send reminder', 'Later'] },
         ],
       },
       hl: [
-        { i: 'i-spjall', h: 'Crew chat in their language', p: 'You write in your language, each worker reads in theirs and answers by text, voice note or photo. On WhatsApp once Meta approves X, a text message link until then.', soon: true },
-        { i: 'i-bok', h: 'Work diary and hours', p: 'Start, finish, what was done and the photos fill in from your crew\'s replies. You check and approve the hours.', soon: true },
-        { i: 'i-tilbod', h: 'Good, Better, Best', p: 'Three versions of one quote, side by side. Your customer picks one and accepts online.' },
+        { i: 'i-verk', h: 'The day\'s list, sent once', p: 'Paste the list or send it to your jobs address. X splits it into tasks for each worker, most urgent first.' },
+        { i: 'i-skjol', h: 'A job brief first', p: 'Past visits, client photos, a checklist and an estimate, before anyone calls it a quick one.' },
+        { i: 'i-hond', h: 'Planned against actual', p: 'A job that runs over is flagged, with a short note to the client for your OK.' },
+        { i: 'i-bok', h: 'Work diary and hours', p: 'Each worker taps Started and Done and adds photos. The diary and the hours fill in. You approve the hours.', soon: true },
         { i: 'i-reikningur', h: 'Staged invoices', p: 'Deposit, stages and the final invoice from one quote. Each one waits for your yes.' },
-        { i: 'i-skipti', h: 'Change orders', p: 'Extra work is priced and accepted on the job, then lands on the next invoice.' },
       ],
       day: [
         { i: 'i-sala', h: 'The enquiry', p: 'A web enquiry for a bathroom lands in Sales with the customer\'s details.' },
         { i: 'i-tilbod', h: 'Quote in three versions', p: 'X drafts Good, Better and Best from your price list. You check and send.' },
         { i: 'i-hak', h: 'Accepted online', p: 'The customer picks Better. A job is created with its stages.' },
         { i: 'i-verk', h: 'The morning list', p: 'The day\'s list goes into X once. Each worker sees his own tasks, most urgent first.' },
-        { i: 'i-spjall', h: 'Tasks to the crew', p: 'You write the tasks in your language. Each worker gets them in their own, on WhatsApp or by text message.', soon: true },
-        { i: 'i-bok', h: 'Diary and hours', p: 'Replies, photos, start and finish fill the work diary. You approve the hours.', soon: true },
+        { i: 'i-spjall', h: 'Tasks to the crew', p: 'Each worker gets his tasks and the job brief on his phone, by a text message link. On WhatsApp once Meta approves X.', soon: true },
+        { i: 'i-bok', h: 'Diary and hours', p: 'Started, Done, notes and photos fill the work diary. You approve the hours.', soon: true },
         { i: 'i-reikningur', h: 'The invoice', p: 'Each stage done: the invoice waits for your yes, then goes to DK or Payday.' },
       ],
-      mods: [['Overview'], ['Customers'], ['Sales'], ['Quotes in three versions'], ['Jobs'], ['Crew chat', 1, 'team'], ['Work diary and hours', 1, 'team'], ['Staged invoices'], ['Change orders'], ['Documents', 1], ['Client portal', 1]],
+      mods: [['Overview'], ['Customers'], ['Sales'], ['Quotes in three versions'], ['Jobs'], ['Work diary and hours', 1, 'team'], ['Staged invoices'], ['Change orders'], ['Documents', 1], ['Client portal', 1]],
       autos: [
         ['A worker sends "done" with a photo: the hours and the photo go in the work diary.', 1],
         ['Quote not opened in 3 days: a reminder on the morning list.'],
@@ -93,8 +93,9 @@
         ['A job runs over its estimate: a short note to the client waits for your OK.'],
       ],
       tools: ['whatsapp', 'payday', 'dk', 'gmail', 'outlook', 'gcal', 'wordquotes'],
+      ask: 'Crew speaks another language? We can turn on translation for your tasks.',
       // Service contracts: from a plumber interview (docs/customer-interviews/2026-11-15-plumber.md).
-      // Status: the day's list in each worker's language follows crew chat (Coming soon),
+      // Status: each worker's list on his phone follows crew tasks (Coming soon),
       // the supplier invoice match is Coming soon. The rest is planned for the first release.
       svc: {
         kicker: 'Service contracts',
@@ -103,25 +104,25 @@
         msg: { from: 'Sarah', time: '06:50', lines: ['Today:', '1. Leak at Harbor Hotel room 214, urgent.', '2. Replace water heater at 40 Hill Road.', '3. Check radiators at Westgate Market.'] },
         tasks: [
           {
-            job: '1042', pri: ['Urgent', 'warn'], t: 'Leak at Harbor Hotel, room 214', who: ['MA', 'Marek', 'Polish'],
+            job: '1042', pri: ['Urgent', 'warn'], t: 'Leak at Harbor Hotel, room 214', who: ['MA', 'Marek'],
             brief: 'Job brief: 2 client photos, 3 past visits, checklist, estimate 1 h',
             later: ['Started 08:10', ''],
             over: { h: 'Over estimate: 1 h planned, 3 h 40 min so far', to: 'Draft note to Harbor Hotel', note: 'The leak is inside the wall behind the shower, so a panel had to come off. Photo attached.', ok: 'Waits for your OK' },
           },
           {
-            job: '1043', pri: ['Today', ''], t: 'Replace water heater at 40 Hill Road', who: ['TO', 'Tomas', 'Lithuanian'],
+            job: '1043', pri: ['Today', ''], t: 'Replace water heater at 40 Hill Road', who: ['TO', 'Tomas'],
             brief: 'Job brief: photo of the old heater, model from the last visit, estimate 3 h',
             later: ['Done, 2 photos', 'ok'],
             sup: 'Supplier invoice 77812, job 1043: €186 materials matched',
           },
           {
-            job: '1044', pri: ['Routine', ''], t: 'Check radiators at Westgate Market', who: ['AN', 'Ana', 'Romanian'],
+            job: '1044', pri: ['Routine', ''], t: 'Check radiators at Westgate Market', who: ['AN', 'Ana'],
             brief: 'Job brief: last check in March, 6 radiators, estimate 2 h',
             later: ['Waiting for parts', 'warn'],
           },
         ],
         items: [
-          { i: 'i-verk', h: 'The day\'s list, sent once', p: 'Paste or type the list in X, or send it to your jobs address. X splits it into tasks, most urgent first, and puts each one on the right worker\'s list.', more: 'Forward it to X on WhatsApp, and each worker reads his list in his own language. A text message link until Meta approves X.', moreSoon: true, fine: 'Apps cannot read personal Messenger chats, so the list is forwarded or typed in.' },
+          { i: 'i-verk', h: 'The day\'s list, sent once', p: 'Paste or type the list in X, or send it to your jobs address. X splits it into tasks, most urgent first, and puts each one on the right worker\'s list.', more: 'Each worker gets his list on his phone, by a text message link. Forward the list to X on WhatsApp once Meta approves X.', moreSoon: true, fine: 'Apps cannot read personal Messenger chats, so the list is forwarded or typed in.' },
           { i: 'i-tilbod', h: 'A job brief first', p: 'Before anyone calls it a quick one: the client\'s photos, past visits to the same address and the same kind of job, a short checklist (access, shut-off valves, parts) and an estimate.' },
           { i: 'i-hond', h: 'Planned against actual', p: 'The worker taps Started, so X knows how long a job has run. When it runs over, X flags it and drafts a short note to the client with the reason and a photo, for you to approve. Over time you see which kinds of job always take longer than planned.' },
           { i: 'i-reikningur', h: 'Materials on the job', p: 'The worker gives the job number at the supplier\'s counter, so it is printed on the supplier\'s invoice. When that invoice reaches DK or Payday, X matches it to the job by the number. Hours and materials sit on the same job, so you invoice the client in full.', soon: true, fine: 'Depends on reading supplier invoices through the accounting connection.' },
@@ -173,6 +174,7 @@
         ['New web enquiry: a draft reply and a task for you.'],
       ],
       tools: ['payday', 'dk', 'gcal', 'outlook', 'excel', 'noona'],
+      ask: 'Your team speaks another language? We can turn on translation for your tasks.',
     },
 
     consultants: {
@@ -379,7 +381,7 @@
       '<div class="in-task__top">' + TAG(k.pri[0], k.pri[1]) + '<small>Job ' + esc(k.job) + '</small>' +
         '<span class="in-task__st"><span class="in-task__now">' + TAG('Not started') + '</span><span class="in-task__later">' + TAG(k.later[0], k.later[1]) + '</span></span></div>' +
       '<b class="in-task__t">' + esc(k.t) + '</b>' +
-      '<div class="in-task__who"><span class="in-task__av" aria-hidden="true">' + esc(k.who[0]) + '</span><span>' + esc(k.who[1]) + '</span><small>list in ' + esc(k.who[2]) + '</small></div>' +
+      '<div class="in-task__who"><span class="in-task__av" aria-hidden="true">' + esc(k.who[0]) + '</span><span>' + esc(k.who[1]) + '</span></div>' +
       '<p class="in-task__brief">' + ic('i-tilbod') + '<span>' + esc(k.brief) + '</span></p>' +
       (k.over ? '<div class="in-task__later in-task__over"><p class="in-task__flag">' + ic('i-hond') + '<b>' + esc(k.over.h) + '</b></p>' +
         '<div class="in-task__note"><small>' + esc(k.over.to) + '</small><p>' + esc(k.over.note) + '</p>' + TAG(k.over.ok, 'warn') + '</div></div>' : '') +
@@ -406,7 +408,7 @@
           '<div class="in-svc__empty"><span>Press Send to X. The list becomes tasks here, one list per worker.</span><i></i><i></i><i></i></div>' +
         '</div>' +
       '</div>' +
-      '<p class="in-svc__fine">Each worker\'s list in his own language comes with crew chat ' + SOON + '. The supplier invoice match is Coming soon too. Names, jobs and amounts are made up.</p>' +
+      '<p class="in-svc__fine">Lists on each worker\'s phone are ' + SOON + '. The supplier invoice match is Coming soon too. Names, jobs and amounts are made up.</p>' +
     '</div>' +
     '<div class="in-svc__items">' + s.items.map(h => '<div class="mod edge"><span class="mod__ic">' + ic(h.i) + '</span><h3>' + esc(h.h) + '</h3><p>' + esc(h.p) + '</p>' +
       (h.more ? '<p class="in-svc__more">' + esc(h.more) + (h.moreSoon ? ' ' + SOON : '') + '</p>' : '') +
@@ -440,8 +442,23 @@
     });
   }
 
+  // ---------- the live workflow (flow.js): one per industry, contractors also has quotes ----------
+  const FLOWS = { contractors: ['contractors-service', 'contractors-quote'], cleaning: ['cleaning'], consultants: ['consultants'], shops: ['shops'], wholesale: ['wholesale'] };
+  const flowEl = document.getElementById('in-flow'), flowPick = document.querySelector('[data-in-flows]');
+  const setFlow = key => {
+    if (!flowEl) return;
+    if (window.XFlow && window.XFlow.set) window.XFlow.set(flowEl, key); else flowEl.dataset.flow = key;
+    if (flowPick) flowPick.querySelectorAll('[data-in-flow]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.inFlow === key)));
+  };
+  if (flowPick) flowPick.addEventListener('click', e => {
+    const b = e.target.closest('[data-in-flow]');
+    if (b) setFlow(b.dataset.inFlow);
+  });
+
   const renderShow = g => {
     const d = G[g];
+    if (flowPick) flowPick.hidden = FLOWS[g].length < 2;
+    setFlow(FLOWS[g][0]);
     if (svcBox) {
       clearTimeout(svcTimer);
       svcBox.hidden = !d.svc;
@@ -454,6 +471,8 @@
     $('[data-in-app]').innerHTML = renderApp(d.app);
     const note = $('[data-in-note]');
     note.hidden = !d.note; note.textContent = d.note || '';
+    const ask = $('[data-in-ask]');
+    if (ask) { ask.hidden = !d.ask; ask.textContent = d.ask || ''; }
     $('[data-in-hl]').innerHTML = d.hl.map(h => '<div class="mod edge"><span class="mod__ic">' + ic(h.i) + '</span><h3>' + esc(h.h) + '</h3><p>' + esc(h.p) + '</p>' + (h.soon ? SOON : '') + '</div>').join('');
     const steps = $('[data-in-steps]');
     steps.style.setProperty('--n', d.day.length);
@@ -477,7 +496,7 @@
     $('[data-in-why]').textContent = p.key
       ? p.who + ', so ' + p.why + ', and ' + d.why + '.'
       : p.who + ', so ' + p.why + '. ' + d.why.charAt(0).toUpperCase() + d.why.slice(1) + '.';
-    // crew chat and the work diary come with Team and Business, so Solo does not list them
+    // the work diary and hours come with Team and Business, so Solo does not list them
     $('[data-in-rmods]').innerHTML = d.mods.filter(m => !(m[2] === 'team' && p.key === 'solo')).map(m => chip(m[0], m[1])).join('');
     const valin = Array.from(toolsBox.querySelectorAll('input:checked')).map(i => i.value);
     const sed = new Set();

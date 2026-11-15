@@ -127,7 +127,6 @@
 .xf-msg__h{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-family:var(--mono);font-size:10.5px;color:var(--dim);white-space:nowrap;min-width:0}
 .xf-msg__h b{font-family:var(--sans);font-weight:600;font-size:12.5px;color:var(--text)}
 .xf-msg__h span{overflow:hidden;text-overflow:ellipsis}
-.xf-lang{margin-left:auto;font-style:normal;font-size:10px;padding:0 6px;border-radius:5px;background:rgba(255,255,255,.08);color:var(--muted)}
 .xf-voice{display:flex;align-items:center;gap:8px;margin:2px 0 8px}
 .xf-voice__b{width:24px;height:24px;flex:none;border-radius:50%;background:var(--metal);display:grid;place-items:center}
 .xf-voice__b svg{width:11px;height:11px;color:#0a0b0d;display:block}
