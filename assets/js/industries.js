@@ -28,7 +28,7 @@
     mailchimp: { label: 'Mailchimp', conn: { n: 'Mailchimp', st: 'soon' } },
     social: { label: 'Facebook or Instagram', conn: { n: 'Facebook and Instagram', st: 'soon' } },
     pos: { label: 'A till or POS system', conn: { n: 'Store and POS systems', note: 'more to come', st: 'soon' } },
-    whatsapp: { label: 'WhatsApp with the crew', conn: { n: 'WhatsApp', note: 'crew tasks', st: 'soon' } },
+    whatsapp: { label: 'Messenger or WhatsApp with the crew', conn: { n: 'SMS or WhatsApp', note: 'new task alerts only', st: 'soon' } },
   };
   const AI = { n: 'Claude or ChatGPT', st: 'ok' };
 
@@ -47,7 +47,7 @@
       name: 'Contractors', full: 'Contractors (trades and renovation)',
       h2: ['Contractors.', 'Your morning in X.'],
       dayh: 'From the first enquiry',
-      lead: 'The day\'s list sent once, a brief before each job, planned against actual, and the work diary and hours. Quotes in three versions, jobs in stages and an invoice for each stage.',
+      lead: 'Your own system and crew app, the day planned once, a brief before each job, planned against actual, and the work diary and hours. Quotes in three versions, jobs in stages and an invoice for each stage.',
       why: 'the contractor pack takes every job from the day\'s list or the first quote to the last staged invoice, with the work diary and hours coming soon',
       app: {
         co: 'Northside Builders', user: 'Sarah', date: 'Monday · 6 jobs this week',
@@ -69,24 +69,24 @@
         ],
       },
       hl: [
-        { i: 'i-verk', h: 'The day\'s list, sent once', p: 'Paste the list or send it to your jobs address. X splits it into tasks for each worker, most urgent first.' },
+        { i: 'i-verk', h: 'The day planned once', p: 'Plan the day in your own system. X splits it into tasks for each worker, most urgent first. You decide who gets which job.' },
         { i: 'i-skjol', h: 'A job brief first', p: 'Past visits, client photos, a checklist and an estimate, before anyone calls it a quick one.' },
         { i: 'i-hond', h: 'Planned against actual', p: 'A job that runs over is flagged, with a short note to the client for your OK.' },
-        { i: 'i-bok', h: 'Work diary and hours', p: 'Each worker taps Started and Done and adds photos. The diary and the hours fill in. You approve the hours.', soon: true },
+        { i: 'i-bok', h: 'Crew app and work diary', p: 'Your crew use your own app, with your logo. Not Messenger or WhatsApp. They tap Started and Done and add photos. The diary and the hours fill in. You approve the hours.', soon: true },
         { i: 'i-reikningur', h: 'Staged invoices', p: 'Deposit, stages and the final invoice from one quote. Each one waits for your yes.' },
       ],
       day: [
         { i: 'i-sala', h: 'The enquiry', p: 'A web enquiry for a bathroom lands in Sales with the customer\'s details.' },
         { i: 'i-tilbod', h: 'Quote in three versions', p: 'X drafts Good, Better and Best from your price list. You check and send.' },
         { i: 'i-hak', h: 'Accepted online', p: 'The customer picks Better. A job is created with its stages.' },
-        { i: 'i-verk', h: 'The morning list', p: 'The day\'s list goes into X once. Each worker sees his own tasks, most urgent first.' },
-        { i: 'i-spjall', h: 'Tasks to the crew', p: 'Each worker gets his tasks and the job brief on his phone, by a text message link. On WhatsApp once Meta approves X.', soon: true },
+        { i: 'i-verk', h: 'The morning plan', p: 'You plan the day once in your own system. Each worker sees his own tasks, most urgent first.' },
+        { i: 'i-spjall', h: 'Tasks to the crew', p: 'Each worker gets his tasks and the job brief in your own app on his phone, with your logo. You decide who sees what.', soon: true },
         { i: 'i-bok', h: 'Diary and hours', p: 'Started, Done, notes and photos fill the work diary. You approve the hours.', soon: true },
         { i: 'i-reikningur', h: 'The invoice', p: 'Each stage done: the invoice waits for your yes, then goes to DK or Payday.' },
       ],
       mods: [['Overview'], ['Customers'], ['Sales'], ['Quotes in three versions'], ['Jobs'], ['Work diary and hours', 1, 'team'], ['Staged invoices'], ['Change orders'], ['Documents', 1], ['Client portal', 1]],
       autos: [
-        ['A worker sends "done" with a photo: the hours and the photo go in the work diary.', 1],
+        ['A worker taps Done in your app and adds a photo: the hours and the photo go in the work diary.', 1],
         ['Quote not opened in 3 days: a reminder on the morning list.'],
         ['Quote accepted: a job is created and the deposit invoice is drafted.'],
         ['Stage done: the invoice for that stage waits for your yes.'],
@@ -99,7 +99,7 @@
       // the supplier invoice match is Coming soon. The rest is planned for the first release.
       svc: {
         kicker: 'Service contracts',
-        h: ['Service contracts.', 'One list for the day.'],
+        h: ['Service contracts.', 'One plan for the day.'],
         lead: 'For plumbers, electricians and maintenance crews who work for companies on service agreements.',
         msg: { from: 'Sarah', time: '06:50', lines: ['Today:', '1. Leak at Harbor Hotel room 214, urgent.', '2. Replace water heater at 40 Hill Road.', '3. Check radiators at Westgate Market.'] },
         tasks: [
@@ -122,7 +122,7 @@
           },
         ],
         items: [
-          { i: 'i-verk', h: 'The day\'s list, sent once', p: 'Paste or type the list in X, or send it to your jobs address. X splits it into tasks, most urgent first, and puts each one on the right worker\'s list.', more: 'Each worker gets his list on his phone, by a text message link. Forward the list to X on WhatsApp once Meta approves X.', moreSoon: true, fine: 'Apps cannot read personal Messenger chats, so the list is forwarded or typed in.' },
+          { i: 'i-verk', h: 'The day planned once', p: 'Type or paste the day\'s jobs in your own system. X splits them into tasks, most urgent first, and suggests a worker for each. You decide who gets which job.', more: 'Each worker sees his own list in your app on his phone, with your logo. Not Messenger or WhatsApp. If you want, a text or WhatsApp message tells him a new task is waiting.', moreSoon: true },
           { i: 'i-tilbod', h: 'A job brief first', p: 'Before anyone calls it a quick one: the client\'s photos, past visits to the same address and the same kind of job, a short checklist (access, shut-off valves, parts) and an estimate.' },
           { i: 'i-hond', h: 'Planned against actual', p: 'The worker taps Started, so X knows how long a job has run. When it runs over, X flags it and drafts a short note to the client with the reason and a photo, for you to approve. Over time you see which kinds of job always take longer than planned.' },
           { i: 'i-reikningur', h: 'Materials on the job', p: 'The worker gives the job number at the supplier\'s counter, so it is printed on the supplier\'s invoice. When that invoice reaches DK or Payday, X matches it to the job by the number. Hours and materials sit on the same job, so you invoice the client in full.', soon: true, fine: 'Depends on reading supplier invoices through the accounting connection.' },
@@ -397,18 +397,18 @@
       '<div class="in-svc__grid">' +
         '<div class="in-svc__in">' +
           '<div class="in-svc__chat">' +
-            '<div class="in-svc__head"><span class="in-task__av" aria-hidden="true">' + esc(s.msg.from.charAt(0)) + '</span><span><b>' + esc(s.msg.from) + '</b><small>The day\'s list, as sent on Messenger</small></span><small>' + esc(s.msg.time) + '</small></div>' +
+            '<div class="in-svc__head"><span class="in-task__av" aria-hidden="true">' + esc(s.msg.from.charAt(0)) + '</span><span><b>' + esc(s.msg.from) + '</b><small>Plan for today, in Northside Builders</small></span><small>' + esc(s.msg.time) + '</small></div>' +
             '<p class="in-svc__bubble">' + s.msg.lines.map(esc).join('<br/>') + '</p>' +
           '</div>' +
-          '<div class="in-svc__acts"><button class="in-svc__send" data-svc-send="" type="button"><span>Send to X</span>' + ic('i-or') + '</button>' +
+          '<div class="in-svc__acts"><button class="in-svc__send" data-svc-send="" type="button"><span>Split into tasks</span>' + ic('i-or') + '</button>' +
             '<button class="in-svc__again" data-svc-again="" hidden="" type="button"><span>Start over</span></button></div>' +
-          '<p class="in-svc__how">Pasted, typed or sent to your jobs address.</p>' +
+          '<p class="in-svc__how">Typed or pasted in your own system.</p>' +
         '</div>' +
         '<div class="in-svc__out" aria-live="polite" data-svc-out="">' +
-          '<div class="in-svc__empty"><span>Press Send to X. The list becomes tasks here, one list per worker.</span><i></i><i></i><i></i></div>' +
+          '<div class="in-svc__empty"><span>Press Split into tasks. The plan becomes tasks here, one list per worker.</span><i></i><i></i><i></i></div>' +
         '</div>' +
       '</div>' +
-      '<p class="in-svc__fine">Lists on each worker\'s phone are ' + SOON + '. The supplier invoice match is Coming soon too. Names, jobs and amounts are made up.</p>' +
+      '<p class="in-svc__fine">Each worker\'s list in your app on his phone is ' + SOON + '. The supplier invoice match is Coming soon too. Names, jobs and amounts are made up.</p>' +
     '</div>' +
     '<div class="in-svc__items">' + s.items.map(h => '<div class="mod edge"><span class="mod__ic">' + ic(h.i) + '</span><h3>' + esc(h.h) + '</h3><p>' + esc(h.p) + '</p>' +
       (h.more ? '<p class="in-svc__more">' + esc(h.more) + (h.moreSoon ? ' ' + SOON : '') + '</p>' : '') +

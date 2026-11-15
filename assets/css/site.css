@@ -28,7 +28,6 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid #c9ced6;outline-offset:3px;border-radius:6px}
 
-
 .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
 @media (max-width:600px){.wrap{padding:0 16px}}
 
@@ -67,9 +66,7 @@ p{margin:0}
 .nav__links{display:flex;gap:26px;margin-left:12px;font-size:14.5px;color:var(--muted)}
 .nav__links a:hover{color:var(--text)}
 .nav__right{margin-left:auto;display:flex;align-items:center;gap:12px}
-.lang{display:flex;border:1px solid var(--line-2);border-radius:999px;padding:3px;font-family:var(--mono);font-size:12px}
-.lang button{background:none;border:0;padding:5px 10px;border-radius:999px;cursor:pointer;color:var(--muted)}
-.lang button[aria-pressed="true"]{background:rgba(255,255,255,.1);color:var(--text)}
+
 .nav__menu{display:none;background:none;border:1px solid var(--line-2);border-radius:10px;width:40px;height:40px;cursor:pointer}
 .nav__menu svg{width:18px;height:18px;margin:auto}
 @media (max-width:960px){
@@ -156,14 +153,13 @@ p{margin:0}
 /* ---------- þrjú skref ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
 .step{padding:30px 26px;display:flex;flex-direction:column;gap:12px}
-.step__n{font-family:var(--mono);font-size:13px;color:var(--dim)}
-.step__n b{font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:15px}
+
 .step p{color:var(--muted);font-size:15.5px}
 @media (max-width:860px){.steps{grid-template-columns:1fr}}
 
 /* ---------- gervigreind ---------- */
 .ai{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.ai__pts{display:grid;gap:12px;margin-top:34px}
+
 .pt{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:16px 18px}
 .pt .mod__ic{margin:0;width:38px;height:38px}
 .pt h3{font-size:16.5px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
@@ -198,7 +194,7 @@ p{margin:0}
 .guides{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .guide{padding:24px;display:flex;flex-direction:column;gap:10px;min-height:190px}
 .guide p{color:var(--muted);font-size:14.5px}
-.guide__meta{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:12px;color:var(--dim)}
+
 @media (max-width:960px){.guides{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.guides{grid-template-columns:1fr}}
 
@@ -209,15 +205,7 @@ p{margin:0}
 .wl__list svg{width:18px;height:18px;flex:none;margin-top:4px;color:#dfe2e7}
 .wl__list b{color:var(--text);font-weight:500}
 .brands{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.bcard{border-radius:14px;overflow:hidden;background:#fff;color:#16181d;box-shadow:0 20px 60px -30px rgba(0,0,0,.9);font-size:12px}
-.bcard__top{height:34px;display:flex;align-items:center;gap:7px;padding:0 10px;color:#fff;font-weight:600}
-.bcard__top i{width:16px;height:16px;border-radius:5px;background:rgba(255,255,255,.9)}
-.bcard__b{padding:12px 10px;display:grid;gap:7px}
-.bcard__b div{height:8px;border-radius:4px;background:#e8eaee}
-.bcard__b div:nth-child(2){width:70%}
-.bcard__b div:nth-child(3){width:85%}
-.bcard__btn{height:22px;border-radius:6px;margin-top:4px}
-.bcard small{display:block;padding:0 10px 10px;color:#6b7080}
+
 @media (max-width:960px){.wl{grid-template-columns:1fr;gap:40px}}
 
 /* ---------- verð ---------- */
@@ -225,7 +213,7 @@ p{margin:0}
 .tier{padding:30px 26px;display:flex;flex-direction:column;gap:18px}
 .tier--hot{background:radial-gradient(120% 70% at 50% 0%,rgba(200,206,214,.14),transparent 60%),var(--surface-2)}
 .tier--hot::before{background:var(--metal)!important;opacity:.9}
-.tier__badge{position:absolute;top:-12px;left:26px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--metal);color:#0b0c0e;border-radius:999px;padding:4px 10px}
+
 .tier h3{font-size:22px}
 .tier__for{color:var(--muted);font-size:14.5px;margin-top:-10px}
 .price{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
@@ -391,45 +379,21 @@ body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none
 .fstep:hover .fstep__n{background:var(--surface-2)}
 .fstep h3{font-size:16px;line-height:1.35}
 .fstep p{color:var(--muted);font-size:14px;line-height:1.5}
-.fstep .fstep__via{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+
 .fstep .tag{align-self:flex-start;margin-top:auto}
 .flow__line{margin:34px auto 0;text-align:center;color:var(--muted);font-size:clamp(16px,1.5vw,18px);max-width:640px}
 @media (max-width:1060px){.flow{grid-template-columns:repeat(3,minmax(0,1fr))}.flow::before,.flow::after{display:none}}
 @media (max-width:640px){.flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.fstep{padding:18px 14px}}
 @media (max-width:420px){.flow{grid-template-columns:1fr}}
 
-/* hvað notar þú í dag */
-.picker{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:start}
-.picker__groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.pgroup{padding:20px}
-.pgroup h3,.side h3,.pcard h3{font-size:13px;font-family:var(--mono);font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.tools{display:flex;flex-wrap:wrap;gap:8px}
-.tool{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.04);cursor:pointer;font-size:14.5px;line-height:1.2;color:var(--text);transition:background .2s,border-color .2s,transform .15s}
-.tool::before{content:"";width:6px;height:6px;border-radius:50%;flex:none;background:var(--ok);box-shadow:0 0 8px rgba(95,211,154,.6)}
-.tool[data-st="soon"]::before{background:var(--soon);box-shadow:none}
-.tool[data-st="prof"]::before{background:var(--warn);box-shadow:0 0 8px rgba(240,182,90,.5)}
-.tool:hover{background:rgba(255,255,255,.08)}
-.tool:active{transform:scale(.97)}
-.tool[aria-pressed="true"]{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(255,255,255,.12),0 6px 20px -10px rgba(220,226,234,.5)}
-.tool[aria-pressed="true"]::after{content:"";width:12px;height:12px;flex:none;background:#fff;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/contain no-repeat}
-.picker__out{padding:24px;position:sticky;top:96px;background:radial-gradient(120% 70% at 100% 0%,rgba(200,206,214,.1),transparent 60%),var(--surface)}
-.picker__out h3{display:flex;align-items:center;gap:10px;font-size:17px}
-.picker__out h3 img{width:28px}
-.picks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
-.picks li{padding:12px 14px;border-radius:12px;background:#16171b;border:1px solid var(--line);animation:msgInn .45s cubic-bezier(.2,.7,.2,1) both}
-.pick__h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
-.pick__name{font-weight:500}
-.pick__p{display:block;color:var(--muted);font-size:14.5px;line-height:1.5}
-.picker__empty{color:var(--dim);font-size:14.5px;margin-top:16px}
-.legend,.conn__legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--dim)}
-.legend{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
-.legend span,.conn__legend span{display:inline-flex;align-items:center;gap:8px}
-.legend i,.conn__legend i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
-.legend i.s,.conn__legend i.s{background:var(--soon)}
-.legend i.p,.conn__legend i.p{background:var(--warn)}
+/* smáfyrirsagnir og litaskýring */
+.side h3,.pcard h3{font-size:13px;font-family:var(--mono);font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.conn__legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--dim)}
+.conn__legend span{display:inline-flex;align-items:center;gap:8px}
+.conn__legend i{width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.conn__legend i.s{background:var(--soon)}
+.conn__legend i.p{background:var(--warn)}
 .fine{font-size:12.5px;color:var(--dim);margin-top:18px;max-width:860px}
-@media (max-width:960px){.picker{grid-template-columns:1fr}.picker__out{position:relative;top:auto}}
-@media (max-width:560px){.picker__groups{grid-template-columns:1fr}}
 
 /* þriðja leiðin */
 .ways{display:grid;grid-template-columns:1fr 1fr 1.12fr;gap:14px;align-items:stretch}
@@ -452,11 +416,7 @@ body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none
 .split{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch}
 .side{padding:26px}
 .side--x{background:radial-gradient(120% 90% at 0% 0%,rgba(200,206,214,.1),transparent 60%),var(--surface)}
-.chip--m,.chip--p{font-size:14.5px}
-.chip--m{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.26);color:#fff}
-.chip--m::before{background:var(--metal);box-shadow:none}
-.chip--p{color:var(--muted)}
-.chip--p::before{background:transparent;border:1px solid var(--dim);width:5px;height:5px;box-shadow:none}
+
 .split__mid{display:grid;align-content:center;justify-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
 .split__mid svg{width:30px;height:30px;color:#dfe2e7;animation:svif 4s ease-in-out infinite}
 .nos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}
@@ -464,7 +424,7 @@ body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none
 .no h3{font-size:16px;display:flex;gap:10px;align-items:flex-start}
 .no h3 svg{width:20px;height:20px;flex:none;padding:3px;border-radius:50%;border:1px solid var(--line-2);color:#dfe2e7;margin-top:1px}
 .no p{color:var(--muted);font-size:14.5px;margin-top:8px}
-.closing{text-align:center;margin:40px auto 0;font-size:clamp(18px,2vw,22px);max-width:640px}
+
 @media (max-width:860px){.split{grid-template-columns:1fr}.split__mid{grid-auto-flow:column;justify-content:center;gap:12px;padding:4px 0}.split__mid svg{transform:rotate(90deg);animation:none}}
 @media (max-width:960px){.nos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.nos{grid-template-columns:1fr}}
@@ -479,7 +439,7 @@ body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none
 .pack--big::before{background:var(--metal)!important;opacity:.75}
 .pack__main{display:flex;flex-direction:column;gap:14px}
 .pack--big h3{font-size:28px}
-.pack__row{display:grid;gap:14px;margin-top:auto}
+
 .pack__lbl{font-family:var(--mono);font-size:11.5px!important;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)!important;margin-top:4px}
 .chips--sm{gap:6px}
 .chips--sm .chip{font-size:13px;padding:5px 10px}
@@ -490,16 +450,6 @@ body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none
 @media (max-width:1060px){.packs{grid-template-columns:1fr 1fr}.pack--big{grid-template-columns:1fr}.packs > .pack:last-child{grid-column:1/-1}}
 @media (max-width:700px){.packs{grid-template-columns:1fr}.pack--big{padding:24px}.packs > .pack:last-child{grid-column:auto}}
 
-/* allar einingar, faldar */
-.allmods{margin-top:44px}
-.allmods summary{list-style:none;cursor:pointer;display:flex;width:max-content;max-width:100%;margin:0 auto;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.04);font-size:15px;color:var(--text)}
-.allmods summary::-webkit-details-marker{display:none}
-.allmods summary::after{content:"+";font-family:var(--mono);color:var(--muted);transition:transform .2s}
-.allmods[open] summary::after{transform:rotate(45deg)}
-.allmods summary:hover{background:rgba(255,255,255,.08)}
-.allmods__note{color:var(--dim);font-size:13.5px;margin:22px 0 16px;text-align:center}
-.allmods[open] .mods{animation:msgInn .5s cubic-bezier(.2,.7,.2,1) both}
-
 /* tengingar: smáatriði */
 .conn__g--lykill{grid-column:1/-1}
 .chip small{font-family:var(--mono);font-size:11px;color:var(--dim)}
@@ -508,14 +458,13 @@ body::before{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none
 
 /* local connections: partners */
 .partner{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
-.partner__why{color:var(--muted);font-size:15.5px;max-width:600px}
+
 .ways3{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:10px}
 .ways3 li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:16px 18px}
 .w__n{font-family:var(--mono);font-size:14px;font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;padding-top:1px}
 .ways3 h3{font-size:16px}
 .ways3 p{color:var(--muted);font-size:14.5px;margin-top:3px}
-.partner__cta{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:26px}
-.partner__no{font-size:13.5px;color:var(--dim)}
+
 .hub{position:relative;aspect-ratio:1;width:100%;max-width:520px;margin:0 auto}
 .hub__lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .hub__base line{stroke:rgba(255,255,255,.16);stroke-width:.3}
@@ -626,64 +575,11 @@ main:focus{outline:none}
 /* forsíða: stutt fyrirsögn yfir köflum */
 .sec--tight{padding:88px 0}
 @media (max-width:700px){.sec--tight{padding:64px 0}}
-.fstep--short p{font-size:13.5px}
-
-/* forsíða: stór kort sem vísa á hverja síðu */
-.teasers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.teaser{display:flex;flex-direction:column;overflow:hidden;transition:transform .25s,background .25s}
-.teaser:hover{transform:translateY(-3px);background:var(--surface-2)}
-.teaser.rv.in:hover{transform:translateY(-3px)}
-.teaser__vis{position:relative;height:168px;display:grid;place-items:center;padding:20px;border-bottom:1px solid var(--line);background:radial-gradient(90% 120% at 50% 0%,rgba(200,206,214,.09),transparent 65%),#0e0f12;overflow:hidden}
-.teaser__b{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
-.teaser h3{font-size:21px;display:flex;align-items:center;gap:10px}
-.teaser p{color:var(--muted);font-size:15px;line-height:1.5}
-.teaser__go{margin-top:auto;align-self:flex-start;padding-top:10px;border-bottom:0}
-.teaser__go > span{border-bottom:1px solid var(--line-2);padding-bottom:1px;transition:border-color .2s}
-.teaser:hover .teaser__go > span{border-color:#fff}
-.teaser__go::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:2}
-.teaser__go:focus-visible{outline:0}
-.teaser:has(.teaser__go:focus-visible){outline:2px solid #c9ced6;outline-offset:3px}
-@media (max-width:1060px){.teasers{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.teasers{grid-template-columns:1fr}.teaser__vis{height:150px}}
-
-/* smámyndir í kortunum (allt skraut, aria-hidden) */
-.tv-mods{display:grid;grid-template-columns:repeat(2,auto);gap:8px}
-.tv-mods > span{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:10px;background:#16171b;border:1px solid var(--line);font-size:12.5px;color:var(--muted)}
-.tv-mods svg{width:14px;height:14px;color:#dfe2e7;flex:none}
-.tv-mods > span:nth-child(-n+3){color:var(--text);border-color:var(--line-2)}
-.tv-chips{justify-content:center;max-width:300px}
-.tv-chat{display:grid;gap:8px;width:100%;max-width:280px;font-size:12.5px;line-height:1.4}
-.tv-chat .msg{padding:9px 11px;font-size:12.5px}
-.tv-chat .msg--me{justify-self:end}
-.tv-act{display:flex;gap:6px;margin-top:8px}
-.tv-act i{font-style:normal;font-size:11.5px;border-radius:7px;padding:3px 9px;border:1px solid var(--line-2);color:var(--muted)}
-.tv-act i:first-child{background:var(--metal);color:#111;border:0;font-weight:500}
-.tv-guides{display:grid;gap:7px;width:100%;max-width:260px}
-.tv-guides > span{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;background:#16171b;border:1px solid var(--line);font-size:12.5px;color:var(--muted)}
-.tv-guides svg{width:14px;height:14px;color:#dfe2e7;flex:none}
-.tv-guides b{margin-left:auto;font-family:var(--mono);font-weight:400;font-size:10.5px;color:var(--dim)}
-.tv-hub{display:flex;align-items:center;width:100%;max-width:300px}
-.tv-hub__n{flex:none;padding:6px 11px;border-radius:999px;background:#131418;border:1px solid var(--line-2);font-size:12px;white-space:nowrap}
-.tv-hub__n--du{border-style:dashed;border-color:rgba(255,255,255,.4);color:var(--muted)}
-.tv-hub__l{flex:1;height:1px;min-width:14px;position:relative;background:rgba(255,255,255,.18);overflow:hidden}
-.tv-hub__l::after{content:"";position:absolute;top:0;left:-40%;width:40%;height:1px;background:linear-gradient(90deg,transparent,#fff,transparent);animation:tvferd 2.6s ease-in-out infinite}
-.tv-hub__l + .tv-hub__c + .tv-hub__l::after{animation-delay:1.3s}
-@keyframes tvferd{to{left:100%}}
-.tv-hub__c{flex:none;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 32% 26%,#2a2c31,#0e0f12 70%);box-shadow:0 0 0 1px rgba(255,255,255,.16),0 0 40px -8px rgba(200,206,214,.4)}
-.tv-hub__c img{width:34px}
-.tv-price{display:grid;justify-items:center;gap:10px;text-align:center}
-.tv-price .price{justify-content:center}
-.tv-price .price b{font-size:34px}
-@media (prefers-reduced-motion:reduce){.tv-hub__l::after{display:none}}
 
 /* fótur: tenglar á allar síður */
 .foot__links a[aria-current="page"]{color:var(--text)}
 .foot__copy{margin:0}
 @media (max-width:700px){.foot__in{flex-direction:column;align-items:flex-start}}
-.teaser__vis .conn__legend{margin-top:12px;justify-content:center;font-size:11.5px;gap:14px}
-.tv-conn{display:grid;justify-items:center}
-.tv-price .price b{color:var(--dim)}
-.tv-price .tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
 
 /* ================= PRUFUHÓPUR: aðgerðastika á síma (site.js býr hana til) ================= */
 .mbar{display:none}
@@ -695,5 +591,13 @@ main:focus{outline:none}
 @media (prefers-reduced-motion:reduce){.mbar,.mbar.is-on{transition:none}}
 
 /* staðan, einu sinni efst á hverri síðu: "Everything here is planned for the first release unless marked Coming soon" */
-.planned{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;font-size:13.5px;color:var(--dim)}
-.planned .tag{font-size:11px}
+.planned{display:block;max-width:100%;text-align:center;text-wrap:balance;font-size:13.5px;line-height:1.7;color:var(--dim)}
+.planned .tag{font-size:11px;margin-left:6px;vertical-align:1px}
+
+/* "Have a workflow problem?": one short block with "Book a 15 min call" (index.html, flow.html, tengingar.html) */
+.wfp-sec{padding:88px 0 0}
+.wfp{max-width:1040px;margin:0 auto;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap}
+.wfp h2{font-family:var(--sans);font-weight:600;letter-spacing:-.015em;line-height:1.25;font-size:clamp(22px,2.4vw,28px);margin:0 0 6px}
+.wfp p{margin:0;font-size:17px;line-height:1.55;color:var(--muted)}
+.wfp .btn{flex:none}
+@media (max-width:600px){.wfp-sec{padding-top:64px}.wfp{padding:24px 20px}.wfp .btn{width:100%;justify-content:center}}

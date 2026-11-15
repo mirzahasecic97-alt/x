@@ -58,12 +58,9 @@
 <div class="wrap nav__in">
 <a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
 <nav aria-label="Menu" class="nav__links" id="valmynd">
-<a href="industries.html"><span>Industries</span></a>
-<a href="kerfid.html"><span>The system</span></a>
-<a href="tengingar.html"><span>Connections</span></a>
-<a href="gervigreind.html"><span>AI</span></a>
-<a href="leidbeiningar.html"><span>Guides</span></a>
+<a href="index.html"><span>Workflows</span></a>
 <a aria-current="page" href="verd.html"><span>Pricing</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
 </nav>
 <div class="nav__right">
 <a class="btn btn--metal btn--sm nav__cta" href="pilot.html"><span>Join the pilot</span></a>
@@ -73,76 +70,25 @@
 </header>
 <main id="efni" tabindex="-1">
 <!-- ============ HETJA ============ -->
-<section class="hero hero--page">
+<section class="hero hero--page vd-hero">
 <div aria-hidden="true" class="hero__fx"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
 <div class="wrap">
 <div class="hero__in">
-<p class="kicker"><span>Pricing</span></p>
-
 <h1>One price for <span class="metal">the whole team.</span></h1>
-
-<p class="lead">Three plans by team size, from <span data-vd-amt="solo.m">€49</span> a month. No price per user. Pay monthly and stop any time, or pay yearly.</p>
+<p class="lead">Three plans by team size. No price per user. Pay monthly and stop any time, or pay yearly and get 2 months free.</p>
 <div class="hero__cta">
 <a class="btn btn--metal" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
 <a class="btn btn--ghost" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
 </div>
-<p class="hero__note">
-<span><svg><use href="#i-hak"></use></svg><span>Free for pilot firms. 14-day free trial when we open.</span></span>
-<span><svg><use href="#i-hak"></use></svg><span>No lock-in</span></span>
-<span><svg><use href="#i-hak"></use></svg><span>Your data goes with you</span></span>
-</p>
 <p class="planned">Everything here is planned for the first release unless marked <span class="tag">Coming soon</span></p>
-</div>
-</div>
-</section>
-<!-- ============ PRUFUHÓPUR: sami texti og á pilot.html ============ -->
-<section class="sec sec--tight vd-pilot-sec" id="pilot">
-<div class="wrap">
-<div class="vd-pilot edge rv">
-<div class="vd-pilot__t">
-<p class="kicker"><span>The pilot</span></p>
-<h2>Help shape X. <span class="metal">Use it free for 3 months.</span></h2>
-<p class="lead">Pilot: the first 10 firms use X free for 3 months. In return: a short call every two weeks and honest feedback. After the pilot: 25% off for the first 12 months.</p>
-</div>
-<div class="vd-pilot__cta">
-<a class="btn btn--metal" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
-</div>
 </div>
 </div>
 </section>
 <!-- ============ ÁSKRIFTIR ============
      Upphæðirnar eru í VERD efst í assets/js/verd.js. HTML sýnir evrur á mánuði ef JS keyrir ekki. -->
-<section class="sec" id="askriftir">
+<section class="vd-plans" id="askriftir">
 <div class="wrap">
-<div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>Plans</span></p>
-
-<h2>Pick by size. <span class="metal">Not by seats.</span></h2>
-
-<p class="lead">Everyone on the team gets access. The price stays the same when you add someone, as long as you stay within the plan's size.</p>
-</div>
-<div class="vd-size edge rv" data-vd-size="">
-<div class="vd-size__top">
-<label class="vd-size__q" for="vd-fjoldi"><span>How many are on your team?</span></label>
-<output class="vd-size__n" data-vd-n="" for="vd-fjoldi">3</output>
-</div>
-<input class="vd-size__range" data-vd-range="" id="vd-fjoldi" max="20" min="1" step="1" type="range" value="3"/>
-<div aria-hidden="true" class="vd-dots" data-vd-dots="">
-<i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-</div>
-<div aria-hidden="true" class="vd-segs">
-<span class="vd-seg vd-seg--1" data-vd-seg="einyrki"><span class="vd-seg__l"><span>Solo</span></span><span class="vd-seg__s">1</span></span>
-<span class="vd-seg vd-seg--2 on" data-vd-seg="teymi"><span>Team</span></span>
-<span class="vd-seg vd-seg--3" data-vd-seg="fyrirtaeki"><span>Business</span></span>
-</div>
-<p aria-live="polite" class="vd-size__out">
-<span data-vd-plan="einyrki" hidden=""><span><b>Solo</b> fits. One person, one price.</span></span>
-<span data-vd-plan="teymi"><span><b>Team</b> fits. Up to 5 people at the same price.</span></span>
-<span data-vd-plan="fyrirtaeki" hidden=""><span><b>Business</b> fits. Up to 20 people at the same price.</span></span>
-</p>
-<p class="vd-size__more"><span>More than 20?</span> <a class="tlink" href="pilot.html?call=1"><span>Book a 15 min call</span><svg><use href="#i-or"></use></svg></a></p>
-</div>
-<div class="vd-ctl rv">
+<div class="vd-ctl">
 <div aria-label="Billing period" class="vd-tog" role="group">
 <button aria-pressed="true" data-vd-period="m" type="button"><span>Monthly</span></button>
 <button aria-pressed="false" data-vd-period="y" type="button"><span>Yearly</span> <span class="vd-tog__save">2 months free</span></button>
@@ -153,267 +99,123 @@
 </div>
 </div>
 <div class="tiers">
-<div class="tier edge rv" data-vd-tier="einyrki">
+<div class="tier edge">
 <h3>Solo</h3>
-<p class="tier__for">For people running a business on their own.</p>
+<p class="tier__for">For one person running the business.</p>
 <div class="vd-pr">
 <div class="price"><b data-vd-amt="solo">€49</b><small data-vd-unit="">per month excl. VAT</small></div>
 <p class="vd-alt" data-vd-alt="solo">or €490 a year</p>
 </div>
+<ul class="vd-own">
+<li><svg aria-hidden="true"><use href="#i-pensill"></use></svg><span>Your own system with your logo</span></li>
+<li><svg aria-hidden="true"><use href="#i-lykill"></use></svg><span>You control who sees what</span></li>
+</ul>
 <ul>
-<li><svg><use href="#i-hak"></use></svg><span>1 user</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Customers, sales, quotes, jobs and invoices to your accounting</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Set up for your industry, with quote follow-up</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>AI included, with a monthly allowance</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Your logo and colours</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>1 person</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Quotes, jobs and invoices to your accounting</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Set up for your industry</span></li>
 <li><svg><use href="#i-hak"></use></svg><span>Email support</span></li>
 </ul>
 <a class="btn btn--metal" href="pilot.html?plan=solo"><span>Join the pilot</span></a>
 </div>
-<div class="tier tier--hot edge rv" data-vd-tier="teymi">
-<span class="tier__badge">Fits 2 to 5 people</span>
+<div class="tier tier--hot edge">
 <h3>Team</h3>
-<p class="tier__for">For small teams of up to 5 people.</p>
+<p class="tier__for">For teams of 2 to 5 people.</p>
 <div class="vd-pr">
 <div class="price"><b data-vd-amt="team">€129</b><small data-vd-unit="">per month excl. VAT</small></div>
 <p class="vd-alt" data-vd-alt="team">or €1,290 a year</p>
-<p class="vd-pp" data-vd-pp="team">About €26 a month per person when the team is full.</p>
 </div>
+<ul class="vd-own">
+<li><svg aria-hidden="true"><use href="#i-pensill"></use></svg><span>Your own system with your logo</span></li>
+<li><svg aria-hidden="true"><use href="#i-lykill"></use></svg><span>You control who sees what</span></li>
+</ul>
 <ul>
 <li><svg><use href="#i-hak"></use></svg><span>Everything in Solo</span></li>
 <li><svg><use href="#i-hak"></use></svg><span>Up to 5 people, same price</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Every module, as each one arrives</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Client portal <span class="tag">Coming soon</span></span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Work diary and hours <span class="tag">Coming soon</span></span></li>
-<li><svg><use href="#i-hak"></use></svg><span>More AI each month</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Every new feature as it arrives</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Crew app with your logo: tasks, work diary and hours <span class="tag">Coming soon</span></span></li>
 <li><svg><use href="#i-hak"></use></svg><span>Email and chat support</span></li>
 </ul>
 <a class="btn btn--metal" href="pilot.html?plan=team"><span>Join the pilot</span></a>
 </div>
-<div class="tier edge rv" data-vd-tier="fyrirtaeki">
+<div class="tier edge">
 <h3>Business</h3>
 <p class="tier__for">For companies of up to 20 people.</p>
 <div class="vd-pr">
 <div class="price"><b data-vd-amt="business">€299</b><small data-vd-unit="">per month excl. VAT</small></div>
 <p class="vd-alt" data-vd-alt="business">or €2,990 a year</p>
-<p class="vd-pp" data-vd-pp="business">About €15 a month per person when the team is full.</p>
 </div>
+<ul class="vd-own">
+<li><svg aria-hidden="true"><use href="#i-pensill"></use></svg><span>Your own system with your logo</span></li>
+<li><svg aria-hidden="true"><use href="#i-lykill"></use></svg><span>You control who sees what</span></li>
+</ul>
 <ul>
 <li><svg><use href="#i-hak"></use></svg><span>Everything in Team</span></li>
 <li><svg><use href="#i-hak"></use></svg><span>Up to 20 people, same price</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Quick start setup included</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Your own domain, no X branding <span class="tag">Coming soon</span></span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Most AI each month</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Priority and a named contact</span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Your own web address, no X branding <span class="tag">Coming soon</span></span></li>
+<li><svg><use href="#i-hak"></use></svg><span>Quick start setup and a named contact</span></li>
 <li><svg><use href="#i-hak"></use></svg><span>Pay by invoice on a 12-month agreement</span></li>
 </ul>
 <a class="btn btn--metal" href="pilot.html?plan=business"><span>Join the pilot</span></a>
 </div>
 </div>
-
-<p class="tiers__note">Free for pilot firms. 14-day free trial when we open. You keep paying your accounting system directly. On every plan you can connect your own Claude or OpenAI key.</p>
-<p class="tiers__note vd-note">Using Payday? The connection needs Payday Premium or higher.</p>
-<p class="tiers__note vd-note">Prices excl. VAT. Your local VAT is added.</p>
-<p class="tiers__note vd-note">Tasks to your crew go on WhatsApp once Meta approves X, and WhatsApp charges per message. Those fees may be added at cost. We will confirm this before launch.</p>
+<p class="tiers__note">Prices excl. VAT. Your local VAT is added. More than 20 people? <a href="pilot.html?call=1">Book a 15 min call</a>.</p>
+</div>
+</section>
+<!-- ============ Í ÖLLUM ÁSKRIFTUM ============ -->
+<section aria-labelledby="vd-inc-h" class="vd-band">
+<div class="wrap vd-narrow">
+<h2 id="vd-inc-h">Included in every plan</h2>
+<ul class="vd-list">
+<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>We connect the tools you already use.</span></li>
+<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Workflows built for your industry.</span></li>
+<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>AI included, with a monthly allowance.</span></li>
+<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Your own system, with your name, logo and colours.</span></li>
+<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Your data in a database in Europe. Take all of it with you any time.</span></li>
+<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>No lock-in on monthly plans.</span></li>
+</ul>
 </div>
 </section>
 <!-- ============ UPPSETNING MEÐ OKKUR ============
      Upphæðirnar eru í VERD í assets/js/verd.js. -->
-<section class="sec" id="uppsetning">
-<div class="wrap vd-setup">
-<div class="rv">
-<div class="sec__head" style="margin-bottom:0">
-<p class="kicker"><span>Setup with us</span></p>
-
-<h2>Want us to <span class="metal">set it up?</span></h2>
-
-<p class="lead">When we open, you can start on your own. If you'd rather have help, pick a package. Each one is optional and paid once.</p>
-</div>
-<div class="vd-pkgs edge">
-<ul>
-<li class="vd-pkg"><div><b>Quick start</b><small>We set up your industry pack, your quote template and your connections with you, and show you around.</small><span class="tag tag--ok vd-pkg__inc">Included in Business</span></div><span class="vd-pkg__p"><b data-vd-amt="quick">€290</b></span></li>
-<li class="vd-pkg"><div><b>Standard setup</b><small>Quick start, plus your customers and price list moved in.</small></div><span class="vd-pkg__p"><b data-vd-amt="standard">€790</b></span></li>
-<li class="vd-pkg"><div><b>Full migration</b><small>We move your data from your old system and get the team going. The price depends on how much there is.</small></div><span class="vd-pkg__p"><small>from</small> <b data-vd-amt="full">€1,790</b></span></li>
-<li class="vd-pkg"><div><b>Extra training session</b><small>One more session for you or the team.</small></div><span class="vd-pkg__p"><b data-vd-amt="training">€190</b></span></li>
-<li class="vd-pkg"><div><b>Custom work</b><small>Anything else you need, billed by the hour.</small></div><span class="vd-pkg__p"><b data-vd-amt="hourly">€95</b> <small>an hour</small></span></li>
+<section aria-labelledby="vd-setup-h" class="vd-band" id="uppsetning">
+<div class="wrap vd-narrow">
+<h2 id="vd-setup-h">Want help setting up?</h2>
+<p class="vd-sub">Optional, paid once. In the pilot, setting up your tools is included.</p>
+<ul class="vd-rows">
+<li><span><b>Quick start.</b> We set up your industry and your tools with you, and show you around. Included in Business.</span><span class="vd-rows__p" data-vd-amt="quick">€290</span></li>
+<li><span><b>Standard setup.</b> Quick start, plus your customers and price list moved in.</span><span class="vd-rows__p" data-vd-amt="standard">€790</span></li>
+<li><span><b>Full move.</b> We move everything from your old system.</span><span class="vd-rows__p"><small>from</small> <span data-vd-amt="full">€1,790</span></span></li>
+<li><span><b>Extra training.</b> One more session for you or the team.</span><span class="vd-rows__p" data-vd-amt="training">€190</span></li>
+<li><span><b>Anything else.</b> Billed by the hour.</span><span class="vd-rows__p"><span data-vd-amt="hourly">€95</span> <small>an hour</small></span></li>
 </ul>
-<p class="vd-pkgs__note">One-off prices, excl. VAT.</p>
-<a class="btn btn--ghost btn--sm" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
-</div>
-</div>
-<div aria-hidden="true" class="vd-check rv">
-<div class="vd-check__h">
-<div><b>Setup</b><small>Northside Builders</small></div>
-<span class="tag"><span>4 of 6</span></span>
-</div>
-<div class="vd-check__bar"><i style="width:66%"></i></div>
-<div class="app__list">
-<h4>What we do with you</h4>
-<div class="row"><i class="tick done"></i><span>A call about your business</span></div>
-<div class="row"><i class="tick done"></i><span>Your industry picked, system set up</span></div>
-<div class="row"><i class="tick done"></i><span>Customers and price list moved in</span></div>
-<div class="row"><i class="tick done"></i><span>Accounting and email connected</span></div>
-<div class="row vd-now"><i class="tick"></i><span>Quote template with your brand</span><small>today</small></div>
-<div class="row"><i class="tick"></i><span>A short walkthrough for the team</span></div>
-</div>
-</div>
-</div>
-</section>
-<!-- ============ SAMANBURÐUR ============ -->
-<section class="sec" id="samanburdur" style="padding-top:40px">
-<div class="wrap">
-<div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>Compare</span></p>
-
-<h2>The plans, <span class="metal">side by side.</span></h2>
-</div>
-<div class="vd-cmp edge rv">
-<table class="vd-tbl">
-<caption class="sr"><span>Plan comparison</span></caption>
-<thead>
-<tr>
-<th scope="col"><span class="sr"><span>Feature</span></span></th>
-<th scope="col"><span>Solo</span></th>
-<th class="vd-hot" scope="col"><span>Team</span></th>
-<th scope="col"><span>Business</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="vd-g"><th colspan="4" scope="rowgroup"><span>Basics</span></th></tr>
-<tr><th scope="row"><span>Users</span></th><td>1</td><td class="vd-hot"><span>Up to 5</span></td><td><span>Up to 20</span></td></tr>
-<tr><th scope="row"><span>Price per month excl. VAT</span></th><td class="vd-p"><span data-vd-amt="solo.m">€49</span></td><td class="vd-p vd-hot"><span data-vd-amt="team.m">€129</span></td><td class="vd-p"><span data-vd-amt="business.m">€299</span></td></tr>
-<tr><th scope="row"><span>Price per year excl. VAT</span></th><td class="vd-p"><span data-vd-amt="solo.y">€490</span></td><td class="vd-p vd-hot"><span data-vd-amt="team.y">€1,290</span></td><td class="vd-p"><span data-vd-amt="business.y">€2,990</span></td></tr>
-<tr><th scope="row"><span>Per person a month, team full</span></th><td class="vd-p"><span data-vd-amt="solo.m">€49</span></td><td class="vd-p vd-hot"><span><small>about</small> <span data-vd-amt="team.pp">€26</span></span></td><td class="vd-p"><span><small>about</small> <span data-vd-amt="business.pp">€15</span></span></td></tr>
-<tr><th scope="row"><span>Free trial, when we open</span></th><td><span>14 days</span></td><td class="vd-hot"><span>14 days</span></td><td><span>14 days</span></td></tr>
-<tr class="vd-g"><th colspan="4" scope="rowgroup"><span>The system</span></th></tr>
-<tr><th scope="row"><span>Customers, sales, quotes, jobs and invoices</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr><th scope="row"><span>Products and price list</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr><th scope="row"><span>Every module, as each one arrives</span></th><td><span>Core modules</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr><th scope="row"><span>Client portal</span></th><td><i class="vd-n"></i><span class="sr">No</span></td><td class="vd-hot"><span class="tag"><span>Coming soon</span></span></td><td><span class="tag"><span>Coming soon</span></span></td></tr>
-<tr><th scope="row"><span>Work diary and hours</span></th><td><i class="vd-n"></i><span class="sr">No</span></td><td class="vd-hot"><span class="tag"><span>Coming soon</span></span></td><td><span class="tag"><span>Coming soon</span></span></td></tr>
-<tr><th scope="row"><span>Automations</span></th><td><span>Ready recipes</span></td><td class="vd-hot"><span>Ready recipes</span><br/><span class="tag"><span>Your own: Coming soon</span></span></td><td><span>Ready recipes</span><br/><span class="tag"><span>Your own: Coming soon</span></span></td></tr>
-<tr class="vd-g"><th colspan="4" scope="rowgroup"><span>AI</span></th></tr>
-<tr><th scope="row"><span>AI allowance each month</span></th><td><span>Base</span></td><td class="vd-hot"><span>More</span></td><td><span>Most</span></td></tr>
-<tr><th scope="row"><span>Your own Claude or OpenAI key</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr class="vd-g"><th colspan="4" scope="rowgroup"><span>Your brand</span></th></tr>
-<tr><th scope="row"><span>Logo and colours</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr><th scope="row"><span>Your own domain, no X branding</span></th><td><i class="vd-n"></i><span class="sr">No</span></td><td class="vd-hot"><i class="vd-n"></i><span class="sr">No</span></td><td><span class="tag"><span>Coming soon</span></span></td></tr>
-<tr class="vd-g"><th colspan="4" scope="rowgroup"><span>Help</span></th></tr>
-<tr><th scope="row"><span>Quick start setup</span></th><td><span>Optional</span></td><td class="vd-hot"><span>Optional</span></td><td><span>Included</span></td></tr>
-<tr><th scope="row"><span>Guides</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr><th scope="row"><span>Support</span></th><td><span>Email</span></td><td class="vd-hot"><span>Email and chat</span></td><td><span>Priority and a named contact</span></td></tr>
-<tr class="vd-g"><th colspan="4" scope="rowgroup"><span>Payment</span></th></tr>
-<tr><th scope="row"><span>Monthly or yearly by card</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr><th scope="row"><span>Invoice, 12-month agreement</span></th><td><i class="vd-n"></i><span class="sr">No</span></td><td class="vd-hot"><i class="vd-n"></i><span class="sr">No</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr class="vd-g"><th colspan="4" scope="rowgroup"><span>Your data</span></th></tr>
-<tr><th scope="row"><span>Export all your data any time</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-<tr><th scope="row"><span>No lock-in on monthly plans</span></th><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td class="vd-hot"><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td><td><svg class="vd-y"><use href="#i-hak"></use></svg><span class="sr">Yes</span></td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<!-- ============ ÞITT MERKI ============ -->
-<section class="sec" id="merki">
-<div class="wrap wl">
-<div class="rv">
-<div class="sec__head" style="margin-bottom:0">
-<p class="kicker"><span>Your brand</span></p>
-
-<h2>Your name on the system, <span class="metal">not ours.</span></h2>
-
-<p class="lead">The system takes on your logo and your colours. Your customers see your brand.</p>
-</div>
-<ul class="wl__list">
-<li><svg><use href="#i-pensill"></use></svg><span><b>Logo and colours</b> on every plan.</span></li>
-<li><svg><use href="#i-gatt"></use></svg><span><b>Client portal</b> under your name, on Team and Business. <span class="tag">Coming soon</span></span></li>
-<li><svg><use href="#i-hnottur"></use></svg><span><b>Your own domain</b>, for example app.yourcompany.com, on the Business plan. <span class="tag">Coming soon</span></span></li>
-</ul>
-</div>
-<div aria-hidden="true" class="brands rv">
-<div class="bcard"><div class="bcard__top" style="background:#b34a16"><i></i>Northside</div><div class="bcard__b"><div></div><div></div><div></div><span class="bcard__btn" style="background:#b34a16"></span></div><small>Contractors</small></div>
-<div class="bcard" style="margin-top:28px"><div class="bcard__top" style="background:#a83c6e"><i></i>Bloom &amp; Co</div><div class="bcard__b"><div></div><div></div><div></div><span class="bcard__btn" style="background:#a83c6e"></span></div><small>Shops</small></div>
-<div class="bcard" style="margin-top:56px"><div class="bcard__top" style="background:#117566"><i></i>Clearwater</div><div class="bcard__b"><div></div><div></div><div></div><span class="bcard__btn" style="background:#117566"></span></div><small>Cleaning and services</small></div>
-</div>
-</div>
-</section>
-<!-- ============ GÖGNIN ÞÍN ============ -->
-<section class="sec" id="gogn" style="padding-top:40px">
-<div class="wrap">
-<div class="sec__head rv">
-<p class="kicker"><span>Your data</span></p>
-
-<h2>Your data <span class="metal">is yours.</span></h2>
-</div>
-<div class="trust">
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-hnottur"></use></svg></span><h3>Database in Europe</h3><p>Your company's data is stored in a database in Europe.</p></div>
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lag"></use></svg></span><h3>Every company separate</h3><p>Only your own people see your data. We only get access with your permission, and it is logged.</p></div>
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-tengi"></use></svg></span><h3>Disconnect in one click</h3><p>Each connection disconnects in one click and its keys are deleted.</p></div>
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-lykill"></use></svg></span><h3>Keys encrypted</h3><p>Keys are stored encrypted and the AI never sees them.</p></div>
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-nidur"></use></svg></span><h3>Take it all with you</h3><p>You can export all your data at any time, including when you leave.</p></div>
-<div class="pt edge rv"><span class="mod__ic"><svg><use href="#i-heili"></use></svg></span><h3>The AI</h3><p>The AI runs with Anthropic or OpenAI. See their terms: <a href="https://www.anthropic.com/legal" rel="noopener" target="_blank">Anthropic</a>, <a href="https://openai.com/policies/" rel="noopener" target="_blank">OpenAI</a>.</p></div>
-</div>
-</div>
-</section>
-<!-- ============ LOFORÐ: gilda þegar við opnum, ekki í prufuhópnum ============ -->
-<section class="sec" id="loford" style="padding-top:40px">
-<div class="wrap">
-<div class="sec__head rv">
-<p class="kicker"><span>Our promises (when we open)</span></p>
-<h2>Three promises <span class="metal">you can hold us to.</span></h2>
-<p class="lead">They apply to paid plans from the first release, not to the pilot.</p>
-</div>
-<ol class="vd-prom">
-<li class="edge rv"><span class="vd-prom__n">01</span><h3>Nothing slips</h3><p>If an accepted quote or finished stage slips off your list before it is invoiced or dismissed, that month is free.</p></li>
-<li class="edge rv"><span class="vd-prom__n">02</span><h3>Your first quote, day one</h3><p>Your first quote goes out the day you start, or we send it together with you on a call.</p></li>
-<li class="edge rv"><span class="vd-prom__n">03</span><h3>Leaving is easy</h3><p>If you leave, you get a full export, and your customers' quote links keep working for a period you choose.</p></li>
-</ol>
+<p class="vd-small">One-off prices, excl. VAT.</p>
 </div>
 </section>
 <!-- ============ SPURNINGAR ============ -->
-<section class="sec" id="spurningar" style="padding-top:40px">
+<section aria-labelledby="vd-faq-h" class="vd-band" id="spurningar">
 <div class="wrap">
-<div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>Questions</span></p>
-
-<h2>Common questions</h2>
-</div>
-<div class="faq rv">
-<details><summary><span>Is there a free trial?</span></summary><p>Free for pilot firms. 14-day free trial when we open. Pilot firms use X free for 3 months. For everyone else, every plan starts with 14 days free before the first charge goes on your card.</p></details>
-<details><summary><span>Is there a setup fee?</span></summary><p>No. You can start on your own. Setup with us is optional and paid once, from <span data-vd-amt="quick">€290</span> for a quick start. On Business the quick start is included. There are no add-on fees either: no price per module or per user.</p></details>
-<details><summary><span>How do I pay?</span></summary><p>By card, monthly with no commitment, or yearly: pay for 10 months and get 12, so 2 months free. On Business you can also pay by invoice with a 12-month agreement. Prices are excl. VAT, and your local VAT is added. If a payment doesn't go through, you're told and can update your card.</p></details>
-<details><summary><span>What does each plan cost?</span></summary><p>Solo is <span data-vd-amt="solo.m">€49</span>, Team <span data-vd-amt="team.m">€129</span> and Business <span data-vd-amt="business.m">€299</span> a month, excl. VAT. Yearly it is <span data-vd-amt="solo.y">€490</span>, <span data-vd-amt="team.y">€1,290</span> and <span data-vd-amt="business.y">€2,990</span>.</p></details>
-<details><summary><span>Does the price go up when I hire?</span></summary><p>Not within your plan's size. Team covers up to 5 people and Business up to 20, at the same price. When the team grows past that, you move to a bigger plan, and your data and settings come along.</p></details>
-<details><summary><span>We are more than 20. What then?</span></summary><p>We'll work it out together. <a href="pilot.html?call=1">Book a 15 min call</a>.</p></details>
-<details><summary><span>Who sets up the connections?</span></summary><p>We do, with you. You tell us what you use, we connect it and test it with you. Setup of connections is included in the pilot and in Quick start. <a href="tengingar.html">How we connect your tools</a>.</p></details>
-<details><summary><span>Do the connections cost extra?</span></summary><p>You keep paying for the systems you connect, directly to them. Some charge separately for access. For example, the Payday connection needs Payday Premium or higher.</p></details>
-<details><summary><span>How do the work diary and hours work?</span></summary><p>Each worker gets his tasks on his phone, by a text message link with no app and no login, or on WhatsApp once Meta approves X. He taps Started and Done and adds photos. X files it all under the job, so the work diary and the hours fill in, and you approve the hours. X does not track where your workers are. Coming soon on Team and Business. WhatsApp charges per message, and those fees may be added at cost.</p></details>
+<h2 class="vd-mid" id="vd-faq-h">Common questions</h2>
+<div class="faq">
+<details><summary><span>Is there a free trial?</span></summary><p>Pilot firms use X free for 3 months. When we open, every plan starts with 14 days free.</p></details>
+<details><summary><span>Does the price go up when I hire?</span></summary><p>Not within your plan. Team covers up to 5 people and Business up to 20, at the same price. If you grow past that, you move up a plan and everything comes with you.</p></details>
+<details><summary><span>Who connects my tools, and do they cost extra?</span></summary><p>We do, with you. Your accounting system stays where it is. You keep paying for your own tools directly. Some only allow a connection on certain plans, for example Payday Premium or higher. We tell you before we start.</p></details>
+<details><summary><span>How do the work diary and hours work?</span></summary><p>Your crew use your own app on their phones, with your name and logo. Not Messenger or WhatsApp. You decide who gets which jobs, and each worker sees only his own. He taps Started and Done and adds photos, hours and materials. The work diary fills in, and you approve the hours. X does not track where your workers are. Coming soon on Team and Business. If you want, a text or WhatsApp message can tell a worker a new task is waiting. Those are charged per message and may be added at cost. We will confirm this before launch.</p></details>
+<details><summary><span>Do you handle service contracts?</span></summary><p>Yes, for contractors who work for companies on service agreements. You plan the day once in your own system and X turns it into tasks for each worker, most urgent first. Each job gets a short brief, and X flags a job that runs over. No extra fee. <a href="industries.html?industry=contractors#service-contracts">See the example</a>.</p></details>
 <details><summary><span>Can tasks be translated for my crew?</span></summary><p>Yes, on request.</p></details>
-<details><summary><span>Do you handle service contracts?</span></summary><p>Yes, in the contractor pack, for crews that work for companies on service agreements. The day's list goes into X once and becomes tasks for each worker, most urgent first. Each job gets a short brief and an estimate, and X flags a job that runs over. Each worker's list on his phone comes with the work diary and hours on Team and Business, which is coming soon. Matching supplier invoices to the job by its number is coming soon too. No extra fee. <a href="industries.html?industry=contractors#service-contracts">See the example</a>.</p></details>
-<details><summary><span>Do I have to leave my accounting system?</span></summary><p>No. X sends the invoices there. Your bookkeeper keeps working as before.</p></details>
-<details><summary><span>How soon can I start?</span></summary><p>You can join the pilot now. The first release opens in [Month], and pilot firms start then. On your first day you pick your industry, add your price list and send your first quote.</p></details>
-<details><summary><span>I have a Shopify store. Does it work?</span></summary><p>It's coming soon. You approve access in your store, and we connect it and test it with you.</p></details>
-<details><summary><span>What happens if I use up the AI for the month?</span></summary><p>You'll be told, and the AI pauses until next month. Everything else in the system keeps working as before. If you need more, move to a bigger plan or connect your own Claude or OpenAI key.</p></details>
-<details><summary><span>Am I locked in?</span></summary><p>No. Monthly plans have no commitment and you can cancel any time. Yearly plans run for the year you paid. Either way, you take all your data with you if you leave.</p></details>
-<details><summary><span>Do I need to be good with computers or code?</span></summary><p>No. You pick your industry and we set up your connections with you. The guides walk you through the rest. If anything gets stuck, you get an answer from us.</p></details>
-<details><summary><span>I make software. Can I connect to X?</span></summary><p>Yes. Read about <a href="samstarf.html">building a connection</a> for software companies.</p></details>
 </div>
 </div>
 </section>
-<!-- ============ LOKAKALL ============ -->
-<section class="sec" style="padding-top:20px;padding-bottom:0">
+<!-- ============ PRUFUHÓPURINN ============ -->
+<section class="vd-band vd-pilot">
 <div class="wrap">
 <div class="final edge rv">
 <img alt="" src="assets/merki/merki.svg"/>
-
-<h2>Start small. <span class="metal">Grow when you need to.</span></h2>
-
-<p class="lead">Join the pilot and use X free for 3 months, or book a 15 min call and we'll go through which plan fits you.</p>
+<h2>Join the <span class="metal">pilot.</span></h2>
+<p class="lead">Pilot: the first 10 firms use X free for 3 months. In return: a short call every two weeks and honest feedback. After the pilot: 25% off for the first 12 months.</p>
 <div class="hero__cta">
 <a class="btn btn--metal" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
-<a class="btn btn--ghost" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
 </div>
-<p class="final__sw"><span>Want to see what's in the system first?</span> <a class="tlink" href="kerfid.html"><span>See the system</span><svg><use href="#i-or"></use></svg></a></p>
 </div>
 </div>
 </section>
@@ -426,14 +228,16 @@
 <span class="foot__line">Your tools, tied together.</span>
 </div>
 <nav aria-label="Pages" class="foot__links">
-<a href="industries.html"><span>Industries</span></a>
-<a href="kerfid.html"><span>The system</span></a>
+<a href="index.html"><span>Workflows</span></a>
+<a aria-current="page" href="verd.html"><span>Pricing</span></a>
 <a href="tengingar.html"><span>Connections</span></a>
+<a href="pilot.html"><span>Join the pilot</span></a>
+<a href="kerfid.html"><span>The system</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
 <a href="leidbeiningar.html"><span>Guides</span></a>
-<a aria-current="page" href="verd.html"><span>Pricing</span></a>
+<a href="industries.html"><span>Industries</span></a>
 <a href="samstarf.html"><span>For software companies</span></a>
-<a href="pilot.html"><span>Join the pilot</span></a>
+<a href="flow.html"><span>All workflows</span></a>
 </nav>
 <p class="foot__copy">© <span data-ar="">2026</span> X</p>
 </div>

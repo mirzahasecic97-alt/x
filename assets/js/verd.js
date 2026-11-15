@@ -1,38 +1,10 @@
-// Verð: "Hve mörg eruð þið?" sýnir hvaða áskrift passar. Aðeins fyrir verd.html, hlaðið á eftir site.js.
-(() => {
-  const box = document.querySelector('[data-vd-size]');
-  if (!box) return;
-  const range = box.querySelector('[data-vd-range]');
-  const out = box.querySelector('[data-vd-n]');
-  const dots = [...box.querySelectorAll('[data-vd-dots] i')];
-  const segs = [...box.querySelectorAll('[data-vd-seg]')];
-  const plans = [...box.querySelectorAll('[data-vd-plan]')];
-  const tiers = [...document.querySelectorAll('[data-vd-tier]')];
-
-  const askrift = n => (n <= 1 ? 'einyrki' : n <= 5 ? 'teymi' : 'fyrirtaeki');
-
-  function syna() {
-    const n = Math.min(20, Math.max(1, parseInt(range.value, 10) || 1));
-    const a = askrift(n);
-    out.textContent = n;
-    range.style.setProperty('--vd-fill', ((n - 1) / 19) * 100 + '%');
-    dots.forEach((d, i) => d.classList.toggle('on', i < n));
-    segs.forEach(s => s.classList.toggle('on', s.dataset.vdSeg === a));
-    plans.forEach(p => { p.hidden = p.dataset.vdPlan !== a; });
-    tiers.forEach(t => t.classList.toggle('vd-pick', t.dataset.vdTier === a));
-  }
-
-  range.addEventListener('input', syna);
-  syna();
-})();
-
 // Verð: upphæðir, gjaldmiðill (EUR / ISK) og mánaðarlega / árlega.
 // Allar upphæðir eru hér og hvergi annars staðar. Excl. VAT.
 (() => {
   const VERD = {
     solo:     { m: { eur: 49,  isk: 12900 }, y: { eur: 490,  isk: 129000 } },
-    team:     { m: { eur: 129, isk: 29900 }, y: { eur: 1290, isk: 299000 }, pp: { eur: 26, isk: 6000 } },
-    business: { m: { eur: 299, isk: 69900 }, y: { eur: 2990, isk: 699000 }, pp: { eur: 15, isk: 3500 } },
+    team:     { m: { eur: 129, isk: 29900 }, y: { eur: 1290, isk: 299000 } },
+    business: { m: { eur: 299, isk: 69900 }, y: { eur: 2990, isk: 699000 } },
     quick:    { eur: 290,  isk: 49900 },
     standard: { eur: 790,  isk: 129900 },
     full:     { eur: 1790, isk: 299900 },
@@ -84,10 +56,6 @@
       el.textContent = per === 'y'
         ? 'Pay for 10 months, get 12. Monthly: ' + fmt(p.m[cur], cur) + '.'
         : 'or ' + fmt(p.y[cur], cur) + ' a year';
-    });
-    document.querySelectorAll('[data-vd-pp]').forEach(el => {
-      const p = VERD[el.dataset.vdPp];
-      if (p && p.pp) el.textContent = 'About ' + fmt(p.pp[cur], cur) + ' a month per person when the team is full.';
     });
     document.querySelectorAll('[data-vd-cur]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.vdCur === cur)));
     document.querySelectorAll('[data-vd-period]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.vdPeriod === per)));

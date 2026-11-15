@@ -39,7 +39,7 @@
     const SAMHEITI = {
       'gmail': 'Gmail', 'google': 'Gmail', 'google workspace': 'Gmail',
       'outlook': 'Outlook', 'microsoft 365': 'Outlook', 'office 365': 'Outlook', 'microsoft': 'Outlook',
-      'messenger': 'Messenger or WhatsApp', 'whatsapp': 'Messenger or WhatsApp',
+      'messenger': 'Messenger or WhatsApp', 'whatsapp': 'Messenger or WhatsApp', 'messenger or whatsapp with the crew': 'Messenger or WhatsApp', 'whatsapp with the crew': 'Messenger or WhatsApp',
       'word or excel': 'Quotes in Word or Excel',
     };
     const kassar = [...form.querySelectorAll('input[name="tools"]')];
@@ -62,6 +62,31 @@
     fela(document.getElementById('pl-size'));
     ['tools', 'plan'].forEach(n => { const i = form.querySelector('input[name="' + n + '"]'); fela(i && i.closest('fieldset')); });
   }
+  // ?topic=workflow: "Have a workflow problem?" (index.html, flow.html, tengingar.html). Reiturinn "Describe your workflow problem"
+  // birtist og er skyldur, símtalið er valið, áskriftin og skilaboðin eru falin. Hnappurinn heitir "Book a 15 min call".
+  const vandi = (q.get('topic') || '').toLowerCase() === 'workflow';
+  const vandiReitur = document.getElementById('pl-problem');
+  if (vandi && !tenging) {
+    document.querySelectorAll('[data-pl-wf]').forEach(el => { el.hidden = false; });
+    if (vandiReitur) vandiReitur.required = true;
+    document.getElementById('pl-call').checked = true;
+    const h1 = document.querySelector('[data-pl-h]');
+    if (h1) h1.innerHTML = 'Have a workflow <span class="metal">problem?</span>';
+    const tilbod = document.querySelector('.pl-offer');
+    if (tilbod) tilbod.hidden = true;
+    const skref = document.querySelectorAll('.pl-steps li span');
+    if (skref[0]) skref[0].textContent = 'You describe the problem.';
+    if (skref[2]) skref[2].textContent = 'Within a week, we come back with the solution.';
+    const planSet = form.querySelector('input[name="plan"]');
+    if (planSet && planSet.closest('fieldset')) planSet.closest('fieldset').hidden = true;
+    const msg = document.getElementById('pl-msg-wrap');
+    if (msg) msg.hidden = true;
+    const send = form.querySelector('[data-pl-send]');
+    if (send) send.textContent = 'Book a 15 min call';
+    const fine = form.querySelector('.pl-fine');
+    if (fine) fine.textContent = 'We use your details only to contact you about your workflow problem.';
+    document.title = 'Workflow problem: X';
+  }
   const debug = q.get('debug') === '1';
 
   // ---------- villur ----------
@@ -73,6 +98,7 @@
     country: 'Please enter your country.',
     industry: 'Please pick your industry.',
     team_size: 'Please pick your team size.',
+    problem: 'Please describe your workflow problem in a few words.',
   };
   const villa = (el, errEl, texti) => {
     if (errEl) errEl.textContent = texti || '';
@@ -94,7 +120,7 @@
     villa(set, document.getElementById(setId + '-e'), ok ? '' : SKILABOD[nafn]);
     return ok;
   };
-  const reitir = [...form.querySelectorAll('.pl-f input[required]')];
+  const reitir = [...form.querySelectorAll('.pl-f input[required], .pl-f textarea[required]')];
   reitir.forEach(i => {
     i.addEventListener('blur', () => { if (i.value.trim()) athugaReit(i); });
     i.addEventListener('input', () => { if (i.getAttribute('aria-invalid') === 'true') athugaReit(i); });
@@ -124,12 +150,13 @@
       country: (f.get('country') || '').toString().trim(),
       tools: tenging ? '' : f.getAll('tools').join(', '),
       tools_other: tenging ? '' : (f.get('tools_other') || '').toString().trim(),
-      plan: tenging ? '' : merki('plan'),
+      plan: tenging || vandi ? '' : merki('plan'),
       call_instead: f.get('call') ? 'Yes' : 'No',
-      message: (f.get('message') || '').toString().trim(),
-      topic: tenging ? 'Connection (software company)' : 'Pilot',
+      message: vandi ? '' : (f.get('message') || '').toString().trim(),
+      problem: vandi ? (f.get('problem') || '').toString().trim() : '',
+      topic: tenging ? 'Connection (software company)' : vandi ? 'Workflow problem' : 'Pilot',
       page: location.pathname + location.search,
-      _subject: (tenging ? 'X connection: ' : 'X pilot: ') + (fyrirtaeki || 'new signup'),
+      _subject: (tenging ? 'X connection: ' : vandi ? 'X workflow problem: ' : 'X pilot: ') + (fyrirtaeki || 'new signup'),
       _gotcha: (f.get('_gotcha') || '').toString(),
     };
   };

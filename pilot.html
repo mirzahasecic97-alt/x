@@ -57,12 +57,9 @@
 <div class="wrap nav__in">
 <a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
 <nav aria-label="Menu" class="nav__links" id="valmynd">
-<a href="industries.html"><span>Industries</span></a>
-<a href="kerfid.html"><span>The system</span></a>
-<a href="tengingar.html"><span>Connections</span></a>
-<a href="gervigreind.html"><span>AI</span></a>
-<a href="leidbeiningar.html"><span>Guides</span></a>
+<a href="index.html"><span>Workflows</span></a>
 <a href="verd.html"><span>Pricing</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
 </nav>
 <div class="nav__right">
 <a aria-current="page" class="btn btn--metal btn--sm nav__cta" href="pilot.html"><span>Join the pilot</span></a>
@@ -75,26 +72,22 @@
 <div aria-hidden="true" class="hero__fx"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
 <div class="wrap">
 <div class="hero__in">
-<p class="kicker"><span>Join the pilot</span></p>
-<h1>Help shape X. <span class="metal">Use it free for 3 months.</span></h1>
+<h1 data-pl-h="">Join the <span class="metal">pilot.</span></h1>
+<p class="lead pl-wf-lead" data-pl-wf="" hidden="">Contact us and we will find the solution within a week. Tell us below and book a 15 min call.</p>
 <p class="lead pl-offer">Pilot: the first 10 firms use X free for 3 months. In return: a short call every two weeks and honest feedback. After the pilot: 25% off for the first 12 months.</p>
 <p class="planned">Everything here is planned for the first release unless marked <span class="tag">Coming soon</span></p>
 </div>
 </div>
 </section>
 
-<section class="sec pl-sec" id="form">
-<div class="wrap pl-grid">
+<section class="pl-sec" id="form">
+<div class="wrap pl-wrap">
 
-<div class="pl-next">
-<p class="kicker"><span>What happens next</span></p>
-<h2>Three steps. <span class="metal">No card needed.</span></h2>
-<ol class="pl-steps">
-<li class="edge rv"><span class="pl-steps__n">01</span><div><h3>You send the form</h3><p>Tell us about your firm and the tools you use today.</p></div></li>
-<li class="edge rv"><span class="pl-steps__n">02</span><div><h3>We call you within [number] working days</h3><p>A short call to see if X fits the way you work, and which tools to connect.</p></div></li>
-<li class="edge rv"><span class="pl-steps__n">03</span><div><h3>You start when the first release opens in [Month]</h3><p>We connect your tools and test them with you first. Free for 3 months. After the pilot: 25% off for the first 12 months.</p></div></li>
+<ol aria-label="What happens next" class="pl-steps">
+<li><b>1</b><span>You send the form.</span></li>
+<li><b>2</b><span>We call you within [number] working days.</span></li>
+<li><b>3</b><span>You start when the first release opens in [Month].</span></li>
 </ol>
-</div>
 
 <div class="pl-box edge">
 <form class="pl-form" id="pilot-form" novalidate="">
@@ -108,6 +101,8 @@
 <div class="pl-f"><label for="pl-email">Email <span aria-hidden="true">*</span></label><input aria-describedby="pl-email-e" autocomplete="email" id="pl-email" inputmode="email" name="email" required="" type="email"/><p class="pl-err" id="pl-email-e"></p></div>
 <div class="pl-f"><label for="pl-phone">Phone <span aria-hidden="true">*</span></label><input aria-describedby="pl-phone-h pl-phone-e" autocomplete="tel" id="pl-phone" inputmode="tel" name="phone" required="" type="tel"/><p class="pl-hint" id="pl-phone-h">With country code. We call you, so we need a number.</p><p class="pl-err" id="pl-phone-e"></p></div>
 </div>
+
+<div class="pl-f pl-problem" data-pl-wf="" hidden=""><label for="pl-problem">Describe your workflow problem <span aria-hidden="true">*</span></label><textarea aria-describedby="pl-problem-h pl-problem-e" id="pl-problem" maxlength="3000" name="problem" rows="5"></textarea><p class="pl-hint" id="pl-problem-h">What takes too long, or keeps going wrong? A few lines is enough.</p><p class="pl-err" id="pl-problem-e"></p></div>
 
 <fieldset aria-describedby="pl-industry-e" class="pl-set" id="pl-industry">
 <legend>Industry <span aria-hidden="true">*</span></legend>
@@ -144,7 +139,7 @@
 <label class="pl-pill"><input name="tools" type="checkbox" value="Quotes in Word or Excel"/><span>Quotes in Word or Excel</span></label>
 <label class="pl-pill"><input name="tools" type="checkbox" value="Gmail"/><span>Gmail</span></label>
 <label class="pl-pill"><input name="tools" type="checkbox" value="Outlook"/><span>Outlook</span></label>
-<label class="pl-pill"><input name="tools" type="checkbox" value="Messenger or WhatsApp"/><span>Messenger or WhatsApp</span></label>
+<label class="pl-pill"><input name="tools" type="checkbox" value="Messenger or WhatsApp"/><span>Messenger or WhatsApp with the crew</span></label>
 <label class="pl-pill"><input name="tools" type="checkbox" value="A bookkeeper does it"/><span>A bookkeeper does it</span></label>
 <label class="pl-pill"><input name="tools" type="checkbox" value="Something else"/><span>Something else</span></label>
 </div>
@@ -164,12 +159,12 @@
 
 <label class="pl-call"><input id="pl-call" name="call" type="checkbox" value="yes"/><span>I would rather book a 15 min call</span></label>
 
-<div class="pl-f"><label for="pl-msg">Message <span class="pl-opt">(optional)</span></label><textarea id="pl-msg" name="message" rows="4"></textarea></div>
+<div class="pl-f" id="pl-msg-wrap"><label for="pl-msg">Message <span class="pl-opt">(optional)</span></label><textarea id="pl-msg" name="message" rows="4"></textarea></div>
 
 <div aria-hidden="true" class="pl-hp"><label for="pl-gotcha">Leave this empty</label><input autocomplete="off" id="pl-gotcha" name="_gotcha" tabindex="-1" type="text"/></div>
 
 <div class="pl-send">
-<button class="btn btn--metal" type="submit"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></button>
+<button class="btn btn--metal" type="submit"><span data-pl-send="">Join the pilot</span><svg><use href="#i-or"></use></svg></button>
 <p aria-live="polite" class="pl-status" id="pl-status" role="status"></p>
 </div>
 <p class="fine pl-fine">We use your details only to contact you about the pilot.</p>
@@ -194,14 +189,16 @@
 <span class="foot__line">Your tools, tied together.</span>
 </div>
 <nav aria-label="Pages" class="foot__links">
-<a href="industries.html"><span>Industries</span></a>
-<a href="kerfid.html"><span>The system</span></a>
+<a href="index.html"><span>Workflows</span></a>
+<a href="verd.html"><span>Pricing</span></a>
 <a href="tengingar.html"><span>Connections</span></a>
+<a aria-current="page" href="pilot.html"><span>Join the pilot</span></a>
+<a href="kerfid.html"><span>The system</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
 <a href="leidbeiningar.html"><span>Guides</span></a>
-<a href="verd.html"><span>Pricing</span></a>
+<a href="industries.html"><span>Industries</span></a>
 <a href="samstarf.html"><span>For software companies</span></a>
-<a aria-current="page" href="pilot.html"><span>Join the pilot</span></a>
+<a href="flow.html"><span>All workflows</span></a>
 </nav>
 <p class="foot__copy">© <span data-ar="">2026</span> X</p>
 </div>

@@ -25,19 +25,19 @@
       path: ['list', 'split', 'brief', 'send', 'reply', 'back', 'over', { yes: 'note', no: 'done', take: 'yes' }, 'supplier', 'invoice'],
       nodes: {
         list: {
-          t: 'Day list in', s: 'Pasted from Messenger', ic: 'i-spjall', trig: 1,
-          cap: 'Sarah sends X the day\'s list.',
-          in: 'Sarah\'s list for the day, written in Messenger.',
-          mi: { k: 'msg', from: 'Sarah', via: 'Messenger', time: '06:50', lines: ['Today:', '1. Leak at Harbor Hotel room 214, urgent.', '2. Replace water heater at 40 Hill Road.', '3. Check radiators at Westgate Market.'] },
-          does: 'Sarah pastes the list into X, or sends it to her jobs address. Once, for the whole crew.',
-          out: 'One message with three jobs in it.',
-          note: 'Apps cannot read personal Messenger chats, so the list is pasted or forwarded.',
+          t: 'Boss plans the day', s: 'In Northside\'s own system', ic: 'i-yfirlit', trig: 1,
+          cap: 'Sarah plans the day in Northside Builders\' own system.',
+          in: 'Today\'s jobs, typed or pasted in by Sarah.',
+          mi: { k: 'app', co: 'Northside Builders', who: 'Sarah · Plan for today', rows: [['Leak at Harbor Hotel, room 214', '', 'Urgent', 'warn'], ['Water heater, 40 Hill Road'], ['Radiators, Westgate Market']] },
+          does: 'Sarah puts the day\'s jobs in once, in her own system with the Northside name and logo. She decides who sees what.',
+          out: 'Three jobs for today.',
+          note: 'Your own system, with your name, logo and colours. Not a group chat.',
         },
         split: {
-          t: 'Split by urgency', s: 'One task per job', ic: 'i-lag', chip: '1 message',
-          cap: 'X splits the list into tasks, most urgent first.',
-          in: 'Sarah\'s message, as she wrote it.',
-          does: 'X makes one task per job, sorts them by urgency and puts each one on the right worker\'s list.',
+          t: 'Split by urgency', s: 'One task per job', ic: 'i-lag', chip: '3 jobs',
+          cap: 'X splits the day into tasks, most urgent first.',
+          in: 'Sarah\'s plan for the day.',
+          does: 'X makes one task per job, sorts them by urgency and suggests a worker for each. Sarah decides who gets which job.',
           out: 'Three tasks, each with a job number and a worker.',
           mo: { k: 'rows', rows: [['1042', 'Leak at Harbor Hotel, room 214', 'Marek', 'Urgent', 'warn'], ['1043', 'Water heater, 40 Hill Road', 'Tomas', 'Today'], ['1044', 'Radiators, Westgate Market', 'Ana', 'Routine']] },
         },
@@ -50,27 +50,27 @@
           mo: { k: 'card', title: 'Job 1042 · Harbor Hotel, room 214', rows: [['Client photos', '2'], ['Past visits', '3'], ['Checklist', 'Access, shut-off valve, parts'], ['Estimate', '1 h']] },
         },
         send: {
-          t: 'Marek\'s task', s: 'By link or WhatsApp', ic: 'i-spjall', tag: 'soon', chip: '3 briefs',
-          cap: 'Marek gets his task and the brief on his phone.',
+          t: 'Marek\'s task', s: 'In the Northside app', ic: 'i-verk', tag: 'soon', chip: '3 briefs',
+          cap: 'Marek sees his task and the brief in the Northside app on his phone.',
           in: 'Job 1042 and its brief.',
-          does: 'X sends the task to Marek\'s phone with the brief. Sarah checks it before it goes out.',
-          out: 'The task on Marek\'s phone.',
-          mo: { k: 'msg', x: 1, from: 'Northside Builders', via: 'Text message link', time: '07:05', lines: ['Urgent: leak at Harbor Hotel, room 214.', 'Estimate: 1 h.', 'Check: access, shut-off valve, parts.'] },
-          note: 'A text message with a private link, no app and no login. On WhatsApp once Meta approves X.',
+          does: 'Sarah OKs the task and it shows up in the Northside app on Marek\'s phone. He sees his own jobs, nothing else.',
+          out: 'The task in Marek\'s app.',
+          mo: { k: 'app', co: 'Northside Builders', who: 'Marek · Today', rows: [['Leak at Harbor Hotel, room 214', '', 'Urgent', 'warn'], ['Estimate', '1 h'], ['Check', 'Access, shut-off valve, parts']], acts: ['Started', 'Done'] },
+          note: 'Your own app with your logo, not Messenger or WhatsApp. If you want, a text or WhatsApp just says a new task is waiting.',
         },
         reply: {
-          t: 'Marek on the job', s: 'Started, note and photo', ic: 'i-verk', tag: 'soon', chip: 'Task',
-          cap: 'Marek taps Started, then sends a voice note and a photo.',
-          in: 'The task on his phone.',
-          does: 'Marek taps Started when he begins and answers the way he likes: text, a voice note or a photo.',
-          out: 'Started at 08:10, a voice note and a photo of the wall.',
-          mo: { k: 'msg', from: 'Marek', via: 'Text message link', time: '11:50', voice: '0:12', photo: 'Wall behind the shower', lines: ['The leak is inside the wall behind the shower. I have to take off a panel.'] },
+          t: 'Marek on the job', s: 'Started, photos, materials', ic: 'i-hond', tag: 'soon', chip: 'Task',
+          cap: 'Marek taps Started, then adds a photo and the materials he used.',
+          in: 'The task in his app.',
+          does: 'Marek taps Started when he begins. He adds photos, a short note or a voice note, and the materials he used.',
+          out: 'Started at 08:10, a photo of the wall and the materials.',
+          mo: { k: 'app', co: 'Northside Builders', who: 'Marek · Job 1042', st: 'Started 08:10', photo: 'Wall behind the shower', rows: [['Note', 'Leak inside the wall. A panel has to come off.'], ['Materials', '1 wall panel, fittings']] },
         },
         back: {
           t: 'Work diary and hours', s: 'Start, finish, photos', ic: 'i-bok', tag: 'soon', chip: 'Started + photo',
           cap: 'X fills in the work diary and the hours.',
-          in: 'Marek\'s start time, his voice note and his photo.',
-          does: 'X writes out the voice note and keeps the work diary per job and the hours per worker.',
+          in: 'Marek\'s start time, his photo, note and materials.',
+          does: 'X keeps the work diary per job and the hours per worker. Only Sarah and the people she picks see them.',
           out: 'Marek\'s day in the diary, with his hours.',
           mo: { k: 'diary', rows: [['1042', 'Started 08:10, photo', '3 h 40 min so far'], ['Marek', 'End of day, 08:00 to 15:30', '7 h 30 min']] },
           note: 'Sarah approves the hours. X does not track location.',
@@ -79,14 +79,14 @@
           t: 'Over estimate?', s: 'Planned against actual', ic: 'i-sala', dec: 1, chip: '3 h 40',
           cap: 'X checks the time on the job against the estimate.',
           in: 'Job 1042: 1 h planned, 3 h 40 min so far.',
-          does: 'Over the estimate: X flags it and drafts a note. Within it: the job is marked done.',
+          does: 'Over the estimate: X flags it to Sarah and drafts a note. Within it: the job is marked done.',
           out: 'Yes. 2 h 40 min over.',
           mo: { k: 'split', yes: 'Draft a note to the client', no: 'Mark the job done', take: 'yes' },
         },
         note: {
-          t: 'Note to client', s: 'Harbor Hotel', ic: 'i-postur', tag: 'ok', chip: '+2 h 40',
-          cap: 'X drafts a note to Harbor Hotel. It waits for your OK.',
-          in: 'The overrun, Marek\'s answer and his photo.',
+          t: 'Note to client', s: 'Waits for Sarah\'s OK', ic: 'i-postur', tag: 'ok', chip: '+2 h 40',
+          cap: 'X drafts a note to Harbor Hotel. It waits for the boss\'s OK.',
+          in: 'The overrun, Marek\'s note and his photo.',
           does: 'X drafts a short note with the reason and the photo. Nothing goes out until Sarah says yes.',
           out: 'A draft, waiting for Sarah.',
           mo: { k: 'draft', to: 'Harbor Hotel', text: 'The leak is inside the wall behind the shower, so a panel had to come off. Photo attached.', act: ['Approve', 'Edit'] },
@@ -99,7 +99,7 @@
           out: 'The job on the board as done.',
         },
         supplier: {
-          t: 'Supplier invoice', s: 'Matched by job number', ic: 'i-vorur', tag: 'soon', chip: 'Invoice 77812',
+          t: 'Supplier invoice matched', s: 'By job number', ic: 'i-vorur', tag: 'soon', chip: 'Invoice 77812',
           cap: 'A supplier invoice is matched to its job by the job number.',
           in: 'Supplier invoice 77812. Tomas gave job number 1043 at the counter.',
           does: 'When the invoice reaches DK or Payday, X reads the job number on it and puts the materials on that job.',
@@ -109,7 +109,7 @@
         },
         invoice: {
           t: 'Invoice draft', s: 'To DK or Payday', ic: 'i-reikningur', tag: 'ok', chip: '€186',
-          cap: 'The invoice for job 1043 waits for your OK, then goes to DK or Payday.',
+          cap: 'The invoice for job 1043 waits for the boss\'s OK, then goes to DK or Payday.',
           in: 'Hours and materials on job 1043.',
           does: 'X drafts the client invoice with hours and materials together, so nothing is left out. Sarah approves it.',
           out: 'An invoice draft, waiting for Sarah.',
@@ -210,21 +210,21 @@
           mo: { k: 'rows', rows: [['Thu 3 Dec', 'Park Lane Offices', '07:00', 'Ana'], ['Thu 10 Dec', 'Park Lane Offices', '07:00', 'Ana'], ['Thu 17 Dec', 'Park Lane Offices', '07:00', 'Ana']] },
         },
         check: {
-          t: 'Ana\'s checklist', s: 'Today\'s list', ic: 'i-spjall', tag: 'soon', chip: '52 visits',
-          cap: 'Ana gets the visit and its checklist on her phone.',
+          t: 'Ana\'s checklist', s: 'In the Brightway app', ic: 'i-verk', tag: 'soon', chip: '52 visits',
+          cap: 'Ana sees the visit and its checklist in the Brightway app on her phone.',
           in: 'The visit and the checklist for this office.',
-          does: 'X sends the visit and its checklist to the cleaner\'s phone.',
-          out: 'The checklist on Ana\'s phone.',
-          mo: { k: 'msg', x: 1, from: 'Brightway Cleaning', via: 'Text message link', time: '06:30', lines: ['Park Lane Offices, Thursday 07:00.', 'Offices, kitchen, toilets, bins.'] },
-          note: 'A text message with a private link, no app and no login.',
+          does: 'X puts the visit and its checklist in the Brightway app on Ana\'s phone. She sees her own visits, nothing else.',
+          out: 'The checklist in Ana\'s app.',
+          mo: { k: 'app', co: 'Brightway Cleaning', who: 'Ana · Thursday', rows: [['Park Lane Offices', '07:00'], ['Checklist', 'Offices, kitchen, toilets, bins']], acts: ['Started', 'Done'] },
+          note: 'Your own app with your logo, not Messenger or WhatsApp. Emma decides who sees which contracts.',
         },
         visit: {
-          t: 'Done with photos', s: 'Quality check', ic: 'i-verk', tag: 'soon', chip: 'Today\'s list',
+          t: 'Done with photos', s: 'Quality check', ic: 'i-hond', tag: 'soon', chip: 'Checklist',
           cap: 'Ana marks the visit done and adds photos.',
-          in: 'The checklist, ticked off.',
+          in: 'The checklist, ticked off in her app.',
           does: 'Ana ticks the list and adds photos. X puts them on the right contract, ready if the client asks, and keeps her hours in the work diary.',
           out: 'Visit done, with 3 photos.',
-          mo: { k: 'msg', from: 'Ana', via: 'Text message link', time: '08:40', photo: 'Kitchen, after', lines: ['Done. All clean.'] },
+          mo: { k: 'app', co: 'Brightway Cleaning', who: 'Ana · Park Lane Offices', st: 'Done 08:40', photo: 'Kitchen, after', rows: [['Checklist', '4 of 4 done'], ['Photos', '3']] },
         },
         first: {
           t: 'Invoices on the 1st', s: 'Every contract', ic: 'i-reikningur', chip: 'Visit done',
@@ -432,7 +432,8 @@
 
   // ---------- helpers ----------
   const TAG = { soon: ['Coming soon', 'xf-tag--soon'], ok: ['Waits for your OK', 'xf-tag--ok'] };
-  const TRAVEL = 1150, RUN = 480, DWELL = 3500, END = 2600, TWEEN = 380;
+  // Calm pace: the packet glides for 1.5 s, the step works for 0.6 s, then rests for about 3 s so the caption can be read.
+  const TRAVEL = 1500, RUN = 600, DWELL = 3000, END = 3200, TWEEN = 420;
   const NS = 'http://www.w3.org/2000/svg';
   const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c]));
   const ico = id => `<svg aria-hidden="true" focusable="false"><use href="#${id}"></use></svg>`;
@@ -458,6 +459,16 @@
     return `<div class="xf-msg${m.x ? ' xf-msg--x' : ''}">${head}${voice}${photo}${(m.lines || []).map(l => `<p>${esc(l)}</p>`).join('')}</div>`;
   }
 
+  // The firm's own app: its name and logo letter on top, then the rows. Brand colour per firm.
+  const BRAND = { 'Northside Builders': '#d9a35b', 'Brightway Cleaning': '#6cc4c0' };
+  function appHTML(m) {
+    const st = m.st ? `<span class="tag tag--ok">${esc(m.st)}</span>` : '';
+    const photo = m.photo ? `<div class="xf-photo"><span>Photo · ${esc(m.photo)}</span></div>` : '';
+    const rows = (m.rows || []).map(r => `<div class="xf-app__r"><span>${esc(r[0])}</span>${r[1] ? `<em>${esc(r[1])}</em>` : ''}${r[2] ? `<span class="tag${r[3] ? ' tag--' + r[3] : ''}">${esc(r[2])}</span>` : ''}</div>`).join('');
+    const acts = m.acts ? `<div class="xf-app__acts">${m.acts.map((a, k) => `<span${k ? '' : ' class="is-main"'}>${esc(a)}</span>`).join('')}</div>` : '';
+    return `<div class="xf-app" style="--brand:${BRAND[m.co] || '#c9ced6'}"><div class="xf-app__h"><span class="xf-app__logo">${esc(String(m.co || 'X').charAt(0))}</span><span><b>${esc(m.co)}</b><small>${esc(m.who || '')}</small></span>${st}</div>${photo}${rows}${acts}</div>`;
+  }
+
   function mock(m) {
     if (!m) return '';
     let h = '';
@@ -479,6 +490,7 @@
       case 'split':
         h = `<div class="xf-split">${['yes', 'no'].map(c => `<div class="${m.take === c ? 'is-on' : ''}"><span class="xf-cond">${c}</span><span>${esc(m[c])}</span>${m.take === c ? ico('i-hak') : ''}</div>`).join('')}</div>`;
         break;
+      case 'app': h = appHTML(m); break;
       case 'diary':
         h = `${m.quote ? msgHTML({ from: m.from, via: m.via, x: 1, lines: [m.quote] }) : ''}<p class="xf-k xf-k--sub">Work diary</p>${rowsHTML(m.rows)}`;
         break;
@@ -620,15 +632,15 @@
         const tag = n.tag ? `<span class="xf-tag ${TAG[n.tag][1]}">${TAG[n.tag][0]}</span>` : '';
         // the label carries the step caption, so moving focus says it all and the live region stays quiet
         const label = `${pre}${n.t}. ${n.cap}${n.tag ? ' ' + TAG[n.tag][0] + '.' : ''}`;
-        return `<button type="button" class="${cls}" data-id="${esc(id)}" tabindex="-1" aria-label="${esc(label)}"><span class="xf-node__box">${n.trig && !fed ? `<span class="xf-node__bolt">${ico('i-sjalfvirkni')}</span>` : ''}<span class="xf-node__tile">${ico(n.ic)}</span><span class="xf-node__ok">${ico('i-hak')}</span></span><span class="xf-node__txt"><b>${esc(n.t)}</b><small>${esc(n.s)}</small>${tag}</span></button>`;
+        return `<button type="button" class="${cls}" data-id="${esc(id)}" tabindex="-1" aria-label="${esc(label)}"><span class="xf-node__box">${n.trig && !fed ? `<span class="xf-node__bolt">${ico('i-sjalfvirkni')}</span>` : ''}${k >= 0 ? `<span class="xf-node__n" aria-hidden="true">${k + 1}</span>` : ''}<span class="xf-node__tile">${ico(n.ic)}</span><span class="xf-node__ok">${ico('i-hak')}</span></span><span class="xf-node__txt"><b>${esc(n.t)}</b><small>${esc(n.s)}</small>${tag}</span></button>`;
       };
       const panelHTML = id => {
         const n = this.node(id);
         const tags = [n.tag && `<span class="xf-tag ${TAG[n.tag][1]}">${TAG[n.tag][0]}</span>`, g.alts.has(id) && '<span class="xf-tag xf-tag--alt">Not in this run</span>'].filter(Boolean).join('');
         return `<div class="xf-panel" data-id="${esc(id)}">
-          <div class="xf-pane xf-pane--in"><p class="xf-k">In</p><p>${esc(n.in)}</p>${mock(n.mi)}</div>
-          <div class="xf-pane xf-pane--node"><div class="xf-ph"><span class="xf-ph__ic">${ico(n.ic)}</span><span><b>${esc(n.t)}</b><small>${esc(n.s)}</small></span></div>${tags ? `<div class="xf-tags">${tags}</div>` : ''}<p class="xf-does">${esc(n.does)}</p>${n.note ? `<p class="xf-note">${esc(n.note)}</p>` : ''}</div>
-          <div class="xf-pane xf-pane--out"><p class="xf-k">Out</p><p>${esc(n.out)}</p>${mock(n.mo)}</div>
+          <div class="xf-pane xf-pane--in"><p class="xf-k">What comes in</p><p>${esc(n.in)}</p>${mock(n.mi)}</div>
+          <div class="xf-pane xf-pane--node"><p class="xf-k">What X does</p><div class="xf-ph"><span class="xf-ph__ic">${ico(n.ic)}</span><span><b>${esc(n.t)}</b><small>${esc(n.s)}</small></span></div>${tags ? `<div class="xf-tags">${tags}</div>` : ''}<p class="xf-does">${esc(n.does)}</p>${n.note ? `<p class="xf-note">${esc(n.note)}</p>` : ''}</div>
+          <div class="xf-pane xf-pane--out"><p class="xf-k">What goes out</p><p>${esc(n.out)}</p>${mock(n.mo)}</div>
         </div>`;
       };
 
@@ -761,9 +773,9 @@
       const g = this.g, W = this.W, pos = {};
       if (!this.v) {
         const M = 20, n = g.slots.length;
-        const maxC = Math.max(2, Math.floor((W - 2 * M) / 168));
+        const maxC = Math.max(2, Math.floor((W - 2 * M) / 196));
         const rows = Math.ceil(n / maxC), C = Math.ceil(n / rows);
-        const colW = (W - 2 * M) / C, LW = Math.floor(Math.min(172, colW - 14));
+        const colW = (W - 2 * M) / C, LW = Math.floor(Math.min(200, colW - 14));
         if (!this.hs) { const w = {}; g.nav.forEach(id => { w[id] = LW; }); this.hs = this.measure(w); }
         const hs = this.hs;
         let top = 54;
@@ -782,7 +794,7 @@
         return { pos, H: Math.round(top - 46 + 30), ins: null };
       }
       // phones: one column, a branch side by side, the details open under the active step
-      const M = 14, CW = Math.min(W - 2 * M, 520), x0 = Math.round((W - CW) / 2), GAP = 10, VG = 46;
+      const M = 14, CW = Math.min(W - 2 * M, 520), x0 = Math.round((W - CW) / 2), GAP = 10, VG = 54;
       const rows = [];
       g.slots.forEach(s => { if (s.side) rows.push([s.side]); rows.push(s.alt ? [s.main, s.alt] : [s.main]); });
       const half = (CW - GAP) / 2;
@@ -877,7 +889,7 @@
         e.p1.setAttribute('cx', p1.x); e.p1.setAttribute('cy', p1.y);
         e.p2.setAttribute('cx', p2.x); e.p2.setAttribute('cy', p2.y);
         if (e.lab) {
-          const m = e.base.getPointAtLength(L * (this.v ? 0.5 : (e.labT || 0.5)));
+          const m = e.base.getPointAtLength(L * (this.v ? 0.4 : (e.labT || 0.5)));
           if (!e.labW) e.labW = e.lab.offsetWidth || 60;
           const x = Math.max(e.labW / 2 + 4, Math.min(this.W - e.labW / 2 - 4, m.x));
           e.lab.style.transform = `translate(${x.toFixed(1)}px,${m.y.toFixed(1)}px) translate(-50%,-50%)`;
@@ -908,7 +920,7 @@
       if (ph === 'run') return this.rm ? 0 : RUN;
       if (ph === 'end') return END;
       const n = this.node(this.g.order[this.s.i]);
-      return (this.rm ? 5200 : DWELL) + (n.tag === 'ok' ? 900 : 0) + (this.v ? 500 : 0);
+      return (this.rm ? 5200 : DWELL) + (n.tag === 'ok' ? 800 : 0) + (this.v ? 600 : 0);
     }
 
     going() {
@@ -1191,23 +1203,57 @@
     return el.xflow;
   }
 
-  // A picker for several flows: <div data-xflow-pick="id-of-the-xflow"><button data-flow="cleaning">...</button></div>
+  // ---------- industry picker ----------
+  // Chips that choose the industry, plus a small switch for contractors (service jobs or quotes):
+  //   <div role="group" data-xflow-ind="wf"><button type="button" data-ind="cleaning" aria-pressed="false">Cleaning</button>...</div>
+  //   <div role="group" data-xflow-sub="wf" data-for="contractors"><button type="button" data-flow="contractors-quote">Quotes</button>...</div>
+  // "wf" is the id of the .xflow. Start: ?industry=, then ?flow=, then the industry saved in localStorage 'x-grein', else contractors.
+  // A click saves 'x-grein' and sets ?industry= (and ?flow= for quotes). Each change fires 'xflow:pick' on the .xflow
+  // with { industry, flow }, and the .xflow carries data-industry, so a page script can follow it.
+  const IND = {
+    contractors: ['contractors-service', 'contractors-quote'], cleaning: ['cleaning'], consultants: ['consultants'],
+    shops: ['shops'], wholesale: ['wholesale'],
+  };
+  const ALIAS = { contractor: 'contractors', trades: 'contractors', renovation: 'contractors', cleaners: 'cleaning', services: 'cleaning', service: 'cleaning', consultant: 'consultants', shop: 'shops', retail: 'shops', wholesaler: 'wholesale', distributor: 'wholesale', distribution: 'wholesale', b2b: 'wholesale' };
+  const SAVE = 'x-grein';
+  const indOf = flow => Object.keys(IND).find(k => IND[k].indexOf(flow) >= 0);
+
   function wirePickers() {
-    let want = '';
-    try { want = new URLSearchParams(location.search).get('flow') || ''; } catch (e) { want = ''; }
-    document.querySelectorAll('[data-xflow-pick]').forEach(group => {
-      const target = document.getElementById(group.getAttribute('data-xflow-pick'));
+    const qs = new URLSearchParams(location.search);
+    const qi = (qs.get('industry') || '').toLowerCase(), qf = qs.get('flow') || '';
+    let saved = '';
+    try { saved = localStorage.getItem(SAVE) || ''; } catch (e) { saved = ''; }
+    document.querySelectorAll('[data-xflow-ind]').forEach(group => {
+      const id = group.getAttribute('data-xflow-ind'), target = document.getElementById(id);
       if (!target) return;
-      const btns = Array.from(group.querySelectorAll('button[data-flow]'));
-      const mark = key => btns.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.flow === key)));
-      if (FLOWS[want]) target.dataset.flow = want;
-      mark(target.dataset.flow);
-      btns.forEach(b => b.addEventListener('click', () => {
-        mark(b.dataset.flow);
-        const inst = mount(target);
-        inst.load(b.dataset.flow, true);
-        try { const u = new URL(location.href); u.searchParams.set('flow', b.dataset.flow); history.replaceState(null, '', u); } catch (e) { /* no history */ }
-      }));
+      const chips = Array.from(group.querySelectorAll('button[data-ind]'));
+      const subs = Array.from(document.querySelectorAll(`[data-xflow-sub="${id}"]`));
+      const choose = (ind, flow, user) => {
+        if (!IND[ind]) ind = 'contractors';
+        if (IND[ind].indexOf(flow) < 0) flow = IND[ind][0];
+        chips.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ind === ind)));
+        subs.forEach(g => {
+          g.hidden = g.dataset.for !== ind;
+          g.querySelectorAll('button[data-flow]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.flow === flow)));
+        });
+        target.dataset.industry = ind;
+        if (target.xflow) { if (target.xflow.key !== flow) target.xflow.load(flow, user); }
+        else target.dataset.flow = flow;
+        if (user) {
+          try { localStorage.setItem(SAVE, ind); } catch (e) { /* storage blocked */ }
+          try {
+            const u = new URL(location.href);
+            u.searchParams.set('industry', ind);
+            if (flow !== IND[ind][0]) u.searchParams.set('flow', flow); else u.searchParams.delete('flow');
+            history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+          } catch (e) { /* opened from a file: the address stays, the choice still works */ }
+        }
+        target.dispatchEvent(new CustomEvent('xflow:pick', { detail: { industry: ind, flow } }));
+      };
+      chips.forEach(b => b.addEventListener('click', () => choose(b.dataset.ind, null, true)));
+      subs.forEach(g => g.querySelectorAll('button[data-flow]').forEach(b => b.addEventListener('click', () => choose(target.dataset.industry, b.dataset.flow, true))));
+      const ind = IND[qi] ? qi : ALIAS[qi] || indOf(qf) || (IND[saved] ? saved : 'contractors');
+      choose(ind, qf, false);
     });
   }
 
@@ -1221,5 +1267,5 @@
 
   wirePickers();
   document.querySelectorAll('.xflow[data-flow]').forEach(mount);
-  window.XFlow = { FLOWS, mount, set };
+  window.XFlow = { FLOWS, IND, mount, set };
 })();

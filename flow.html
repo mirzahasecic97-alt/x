@@ -1,10 +1,10 @@
 <!doctype html>
-<html data-lysing-en="Watch an example workflow run step by step: what comes in, what X does and what goes out. Example data, the system is in development." data-titill-en="Live workflow: X" lang="en">
+<html data-lysing-en="Every X workflow, one industry at a time: what comes in, what X does and what goes out. Example data." data-titill-en="All workflows: X" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<title>Live workflow: X</title>
-<meta content="Watch an example workflow run step by step: what comes in, what X does and what goes out. Example data, the system is in development." name="description"/>
+<title>All workflows: X</title>
+<meta content="Every X workflow, one industry at a time: what comes in, what X does and what goes out. Example data." name="description"/>
 <meta content="#08090a" name="theme-color"/>
 <meta content="noindex" name="robots"/>
 <link href="assets/merki/favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -57,12 +57,9 @@
 <div class="wrap nav__in">
 <a class="brand" href="index.html"><img alt="X" class="brand__logo" height="28" src="assets/merki/x-logo-malmur.svg" width="70"/></a>
 <nav aria-label="Menu" class="nav__links" id="valmynd">
-<a href="industries.html"><span>Industries</span></a>
-<a href="kerfid.html"><span>The system</span></a>
-<a href="tengingar.html"><span>Connections</span></a>
-<a href="gervigreind.html"><span>AI</span></a>
-<a href="leidbeiningar.html"><span>Guides</span></a>
+<a href="index.html"><span>Workflows</span></a>
 <a href="verd.html"><span>Pricing</span></a>
+<a href="tengingar.html"><span>Connections</span></a>
 </nav>
 <div class="nav__right">
 <a class="btn btn--metal btn--sm nav__cta" href="pilot.html"><span>Join the pilot</span></a>
@@ -76,28 +73,43 @@
 <div aria-hidden="true" class="hero__fx"><i class="b1"></i><i class="b2"></i><i class="b3"></i><span class="spot"></span></div>
 <div class="wrap">
 <div class="hero__in">
-<p class="kicker"><span>Live workflow</span></p>
-
-<h1>Watch the work <span class="metal">move through X.</span></h1>
-
-<p class="lead">Pick a flow. Each step shows what comes in, what X does and what goes out.</p>
+<h1>All <span class="metal">workflows.</span></h1>
+<p class="lead">Pick your industry. See what X does, step by step.</p>
 <p class="planned">Everything here is planned for the first release unless marked <span class="tag">Coming soon</span></p>
 </div>
 </div>
 </section>
-<section class="sec sec--tight" id="flow">
+<section class="fl-gal" id="flow">
 <div class="wrap">
-<div aria-label="Choose a workflow" class="xf-picks" data-xflow-pick="xflow-demo" role="group">
-<button aria-pressed="true" data-flow="contractors-service" type="button">Contractors: service jobs</button>
-<button aria-pressed="false" data-flow="contractors-quote" type="button">Contractors: quotes</button>
-<button aria-pressed="false" data-flow="cleaning" type="button">Cleaning</button>
-<button aria-pressed="false" data-flow="consultants" type="button">Consultants</button>
-<button aria-pressed="false" data-flow="shops" type="button">Shops</button>
-<button aria-pressed="false" data-flow="wholesale" type="button">Wholesale</button>
+<div aria-label="Your industry" class="xf-chips" data-xflow-ind="xflow-demo" role="group">
+<button aria-pressed="true" data-ind="contractors" type="button"><svg aria-hidden="true"><use href="#i-verk"></use></svg><span>Contractors</span></button>
+<button aria-pressed="false" data-ind="cleaning" type="button"><svg aria-hidden="true"><use href="#i-dagatal"></use></svg><span>Cleaning</span></button>
+<button aria-pressed="false" data-ind="consultants" type="button"><svg aria-hidden="true"><use href="#i-bok"></use></svg><span>Consultants</span></button>
+<button aria-pressed="false" data-ind="shops" type="button"><svg aria-hidden="true"><use href="#i-verslun"></use></svg><span>Shops</span></button>
+<button aria-pressed="false" data-ind="wholesale" type="button"><svg aria-hidden="true"><use href="#i-vorur"></use></svg><span>Wholesale</span></button>
 </div>
-<p class="xf-demo">Example. The system is in development.</p>
+<div class="fl-sub">
+<div aria-label="Contractors workflow" class="xf-sub" data-for="contractors" data-xflow-sub="xflow-demo" role="group">
+<button aria-pressed="true" data-flow="contractors-service" type="button">Service jobs</button>
+<button aria-pressed="false" data-flow="contractors-quote" type="button">Quotes</button>
+</div>
+</div>
+</div>
+<div class="wrap fl-wide">
 <div class="xflow" data-flow="contractors-service" id="xflow-demo"></div>
-<p class="fine">Companies, people and amounts are made up. Steps marked Coming soon are not in the first release. Nothing is sent to a client, a worker or your accounting until you approve it.</p>
+<p class="fine fl-fine">Example. Companies, people and amounts are made up. Nothing goes out until you approve it.</p>
+</div>
+</section>
+<!-- ============ VERKFLÆÐISVANDI: ein stutt lína og "Book a 15 min call" ============ -->
+<section aria-labelledby="wfp-h" class="wfp-sec">
+<div class="wrap">
+<div class="wfp edge rv">
+<div>
+<h2 id="wfp-h">Have a workflow problem?</h2>
+<p>Contact us and we will find the solution within a week.</p>
+</div>
+<a class="btn btn--ghost" href="pilot.html?call=1&amp;topic=workflow"><span>Book a 15 min call</span></a>
+</div>
 </div>
 </section>
 </main>
@@ -109,14 +121,16 @@
 <span class="foot__line">Your tools, tied together.</span>
 </div>
 <nav aria-label="Pages" class="foot__links">
-<a href="industries.html"><span>Industries</span></a>
-<a href="kerfid.html"><span>The system</span></a>
+<a href="index.html"><span>Workflows</span></a>
+<a href="verd.html"><span>Pricing</span></a>
 <a href="tengingar.html"><span>Connections</span></a>
+<a href="pilot.html"><span>Join the pilot</span></a>
+<a href="kerfid.html"><span>The system</span></a>
 <a href="gervigreind.html"><span>AI</span></a>
 <a href="leidbeiningar.html"><span>Guides</span></a>
-<a href="verd.html"><span>Pricing</span></a>
+<a href="industries.html"><span>Industries</span></a>
 <a href="samstarf.html"><span>For software companies</span></a>
-<a href="pilot.html"><span>Join the pilot</span></a>
+<a aria-current="page" href="flow.html"><span>All workflows</span></a>
 </nav>
 <p class="foot__copy">© <span data-ar="">2026</span> X</p>
 </div>

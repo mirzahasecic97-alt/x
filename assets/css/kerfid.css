@@ -308,7 +308,7 @@
 .kf-crew__pts li{display:flex;gap:10px;align-items:center;font-size:14.5px;color:#d6d7db}
 .kf-crew__pts svg{width:16px;height:16px;flex:none;color:#dfe2e7}
 .kf-crew__vis{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center;font-size:13px}
-.kf-sms{border-radius:18px 18px 18px 6px;background:#1b1d22;border:1px solid var(--line-2);padding:12px 14px;display:grid;gap:6px;box-shadow:0 24px 60px -30px rgba(0,0,0,.9)}
+.kf-sms{border-radius:16px;background:#1b1d22;border:1px solid var(--line-2);padding:12px 14px;display:grid;gap:6px;box-shadow:0 24px 60px -30px rgba(0,0,0,.9)}
 .kf-sms__l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
 .kf-sms__b{color:#e6e7ea;font-size:13px;line-height:1.45;overflow-wrap:anywhere}
 .kf-sms__b u{text-decoration-color:rgba(255,255,255,.4);text-underline-offset:2px}
@@ -335,13 +335,13 @@
 .kf-mail__in p small{width:auto;min-width:46px;white-space:nowrap}
 .kf-mail__out .row > span:not(.kf-av){white-space:normal}
 .kf-mail__out .row > .kf-av{flex:none}
-}
 
 /* crew tasks: verkefnið í símanum */
 .kf-crew__fine{font-size:13px!important;color:var(--dim)!important;line-height:1.55}
-.kf-phone__msg{justify-self:start;max-width:92%;padding:8px 11px;border-radius:14px 14px 14px 5px;background:#17181c;border:1px solid var(--line);font-size:12.5px;line-height:1.45;color:#e6e7ea}
-.kf-phone__msg--me{justify-self:end;border-radius:14px 14px 5px 14px;background:#2a2d33;border-color:rgba(255,255,255,.1)}
-.kf-phone__msg small{display:block;text-align:right;font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:2px}
+.kf-phone__task{display:grid;gap:3px;padding:10px 12px;border-radius:12px;background:#17181c;border:1px solid var(--line);border-left:3px solid #d9a35b;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.kf-phone__task b{color:#e6e7ea;font-weight:600;font-size:13px}
+.kf-phone__acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kf-phone__st{display:flex;align-items:center;justify-content:center;border-radius:12px;padding:9px 12px;border:1px solid var(--line-2);color:var(--muted);font-size:12.5px}
 
 /* service contracts: compact block under crew tasks in #verk */
 .kf-svc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:start;margin-top:56px;padding-top:44px;border-top:1px solid var(--line);scroll-margin-top:72px}
@@ -354,3 +354,6 @@
 @media (max-width:1000px){.kf-svc{grid-template-columns:minmax(0,1fr);gap:20px}}
 @media (max-width:600px){.kf-svc{margin-top:44px;padding-top:36px}}
 .kf-flows{margin-top:22px}
+/* the crew phone: the firm's own app, its logo letter and colour */
+.kf-phone__brand{display:flex;align-items:center;gap:9px;min-width:0}
+.kf-phone__brand .kf-p__logo{flex:none;background:#d9a35b;color:#0a0b0d}

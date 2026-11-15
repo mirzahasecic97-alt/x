@@ -21,30 +21,16 @@ const STADA = {
   soon: { is: 'Væntanlegt', en: 'Coming soon', cls: '' },
 };
 
-const GEYMSLA = 'x-mal';
-let geymslaVirkar = true;
-
-function lesaMal() {
-  // vefurinn er eingöngu á ensku
-  return 'en';
-}
-function geyma(m) { try { localStorage.setItem(GEYMSLA, m); } catch (e) { geymslaVirkar = false; } }
-
-function malSpan(m, t) { const s = document.createElement('span'); s.lang = m; s.textContent = t; return s; }
-
-function setjaMal(m) {
+// Vefurinn er eingöngu á ensku. Titill og lýsing koma úr data-titill-en og data-lysing-en á <html>,
+// og aria-label úr data-al-en.
+(() => {
   const html = document.documentElement;
-  html.lang = m;
-  // titill og lýsing hverrar síðu: data-titill-is/en og data-lysing-is/en á <html>
-  const titill = html.getAttribute('data-titill-' + m);
+  const titill = html.getAttribute('data-titill-en');
   if (titill) document.title = titill;
-  const lysing = html.getAttribute('data-lysing-' + m);
+  const lysing = html.getAttribute('data-lysing-en');
   const d = document.querySelector('meta[name="description"]');
   if (d && lysing) d.content = lysing;
-
-  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mal === m)));
-  document.querySelectorAll('[data-ph-' + m + ']').forEach(el => { el.placeholder = el.getAttribute('data-ph-' + m); });
-  document.querySelectorAll('[data-al-' + m + ']').forEach(el => { el.setAttribute('aria-label', el.getAttribute('data-al-' + m)); });
+  document.querySelectorAll('[data-al-en]').forEach(el => { el.setAttribute('aria-label', el.getAttribute('data-al-en')); });
 
   // eldri krókar (data-demo, data-kynning, data-samstarf) vísa nú á pilot.html, engin mailto lengur.
   // Nýr kóði notar venjulega tengla: href="pilot.html", "pilot.html?plan=team" eða "pilot.html?call=1".
@@ -55,25 +41,10 @@ function setjaMal(m) {
     a.href = STILLINGAR.pilot + (plan ? '?plan=' + plan : '?call=1');
   });
   document.querySelectorAll('[data-samstarf]').forEach(a => { a.href = STILLINGAR.pilot + '?call=1'; });
-
-  // ef vafrinn geymir ekki málið fylgir ?lang með innri tenglum
-  if (!geymslaVirkar) {
-    document.querySelectorAll('a[href$=".html"], a[href*=".html?"], a[href*=".html#"]').forEach(a => {
-      const h = a.getAttribute('href');
-      if (/^[a-z]+:/i.test(h)) return;
-      const [slod, hash] = h.split('#');
-      const grunnur = slod.replace(/[?&]lang=(is|en)/, '').replace(/\?$/, '');
-      a.setAttribute('href', grunnur + (grunnur.includes('?') ? '&' : '?') + 'lang=' + m + (hash ? '#' + hash : ''));
-    });
-  }
-
-  document.dispatchEvent(new CustomEvent('x:mal', { detail: m }));
-}
-
-setjaMal(lesaMal());
+})();
 
 // opið fyrir skriftur einstakra síðna
-window.X = { STILLINGAR, STADA, malSpan, mal: () => document.documentElement.lang };
+window.X = { STILLINGAR, STADA };
 
 // ---------- haus ----------
 const nav = document.querySelector('.nav');
