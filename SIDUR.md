@@ -10,13 +10,15 @@ The site is **English only and global**. No `lang` attributes on elements, no IS
 | --- | --- |
 | `index.html` | Home page |
 | `kerfid.html`, `tengingar.html`, `gervigreind.html`, `leidbeiningar.html`, `samstarf.html`, `verd.html` | Sub pages. Each starts as a copy of `_snidmat.html` |
+| `industries.html` | Industries: pick an industry, two questions, a recommendation and a showcase of X for that industry (see Industries) |
 | `pilot.html` | "Join the pilot": the one form every button leads to |
 | `_snidmat.html` | Blank template: `<head>`, icons, header, sub page hero, empty `<main>`, footer |
 | `assets/css/site.css` | Shared styles. Do not change it for one page |
 | `assets/css/<page>.css` | Styles only one page uses. Linked under `site.css` in `<head>` |
 | `assets/js/site.js` | Shared script: settings (`STILLINGAR`), header, reveal on scroll, the mobile action bar, year in the footer, hero effects |
 | `assets/js/<page>.js` | Script for one page, loaded after `site.js`, both with `defer`. Wrap everything in `(() => { ... })();` |
-| `assets/js/pilot.js` | The pilot form: prefill from the URL (or the industry saved in `localStorage` `x-grein` by the home page picker or `kerfid.html`), validation, sending |
+| `assets/js/pilot.js` | The pilot form: prefill from the URL (or the industry saved in `localStorage` `x-grein` by the home page picker, `industries.html` or `kerfid.html`), validation, sending |
+| `assets/js/industries.js` | `industries.html`: all content for the five industries in one data object (`G`), the connection list with status (`T`), the plans (`PLANS`), and the rendering |
 | `assets/js/tengingar.js` | The "What do you use today?" picker (`[data-velja]`) |
 | `assets/merki/` | `x-logo-malmur.svg` (mark and X, header and footer), `merki.svg` (mark only, decoration), `favicon.svg` |
 
@@ -35,8 +37,8 @@ Header, icons (`<svg>` with `<symbol>`) and footer are the same on every page. I
 
 ## Header and footer
 
-- **Header links, in this order:** The system, Connections, AI, Guides, Pricing. Then the button "Join the pilot" (`pilot.html`). Partners is not in the header.
-- **Footer links:** the same five, then "For software companies" (`samstarf.html`) and "Join the pilot" (`pilot.html`), then `© 2026 X`.
+- **Header links, in this order:** Industries, The system, Connections, AI, Guides, Pricing. Then the button "Join the pilot" (`pilot.html`). Partners is not in the header.
+- **Footer links:** the same six, then "For software companies" (`samstarf.html`) and "Join the pilot" (`pilot.html`), then `© 2026 X`.
 - No legal company name, ID or address in the footer until the owner decides.
 
 ## Buttons (CTA)
@@ -45,7 +47,7 @@ Only two labels exist on the whole site:
 
 | Label | Where it goes | Style |
 | --- | --- | --- |
-| **Join the pilot** | `pilot.html`, with `?plan=solo`, `?plan=team`, `?plan=business` or `?industry=contractors`, `cleaning`, `consultants`, `shops` when it helps | `btn btn--metal` (primary) |
+| **Join the pilot** | `pilot.html`, with `?plan=solo`, `?plan=team`, `?plan=business` and/or `?industry=contractors`, `cleaning`, `consultants`, `shops`, `wholesale` when it helps | `btn btn--metal` (primary) |
 | **Book a 15 min call** | `pilot.html?call=1` | `btn btn--ghost` (secondary) |
 
 - No other button labels ("Get started", "Try the system", "Book a demo", "Talk to us", "See the plans" are gone).
@@ -66,14 +68,25 @@ The form on `pilot.html` posts JSON to `STILLINGAR.formEndpoint` in `site.js` (F
 
 ## Industries
 
-Always these four, in this order and with this wording:
+Always these five, in this order and with this wording:
 
 1. Contractors (trades and renovation)
 2. Cleaning and services
 3. Consultants
 4. Shops
+5. Wholesale (selling to shops)
 
-URL values: `contractors`, `cleaning`, `consultants`, `shops`.
+URL values: `contractors`, `cleaning`, `consultants`, `shops`, `wholesale`. The chosen one is saved in `localStorage` `x-grein` and read by `index.html`, `industries.html`, `kerfid.html` and `pilot.html`. The home page demo has all five tabs (in Wholesale you accept a shop's order).
+
+Wholesale is the newest pack and the research is still running. Never claim that store data (stock or sell-through per store) is available today: it is Coming soon and only where the store or chain shares it, depending on agreements. Reorder suggestions, webshop stock sync and store or POS connections are Coming soon. Shopify, WooCommerce, DK, Payday and store systems are named as plain text connections.
+
+### industries.html
+
+- Hero: "Pick your industry. See your X." and five cards (`.in-card`, buttons with `aria-pressed`). The industry comes from `?industry=`, then `x-grein`, otherwise contractors. Choosing one re-renders the page without reloading, sets `?industry=` with `history.replaceState` and saves `x-grein`.
+- Two questions (team size 1 / 2 to 5 / 6 to 20 / More than 20, and "What do you use today?" with tools for that industry) drive "Recommended for you": plan and price, modules, connections with status, one sentence why. 1 is Solo, 2 to 5 is Team, 6 to 20 is Business, more than 20 is "Let's talk" with "Book a 15 min call" instead of a plan. Everything runs in the browser; nothing is sent.
+- Showcase, rendered from `G` in `industries.js`: an Overview mockup made for the industry (`.app` classes from `site.css`, `aria-hidden` and `inert`), highlights, "A day with X", modules, example automations and connections.
+- Every "Join the pilot" on the page points to `pilot.html?industry=<slug>&plan=<recommended>&size=<size>` (no `plan` for more than 20), and every "Book a 15 min call" to `pilot.html?call=1&` plus the same. `pilot.html` preselects industry, plan and team size from these.
+- To change an industry's wording, sample data or status, edit `G` (and `T` for connections) in `industries.js`. Statuses must match `tengingar.html` and `kerfid.html`. Sample companies and people are made up and neutral English.
 
 ## Status
 

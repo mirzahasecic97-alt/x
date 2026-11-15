@@ -8,7 +8,7 @@
   const LYKILL = 'x-grein';
 
   // sömu samheiti og á forsíðunni og pilot.html
-  const SAMHEITI = { contractor: 'contractors', trades: 'contractors', renovation: 'contractors', cleaners: 'cleaning', services: 'cleaning', service: 'cleaning', consultant: 'consultants', shop: 'shops', retail: 'shops' };
+  const SAMHEITI = { contractor: 'contractors', trades: 'contractors', renovation: 'contractors', cleaners: 'cleaning', services: 'cleaning', service: 'cleaning', consultant: 'consultants', shop: 'shops', retail: 'shops', wholesaler: 'wholesale', distributor: 'wholesale', distribution: 'wholesale', b2b: 'wholesale' };
   const lesa = () => {
     let q = (new URLSearchParams(location.search).get('industry') || '').toLowerCase();
     q = SAMHEITI[q] || q;

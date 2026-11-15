@@ -15,18 +15,23 @@
     cleaning: 'cleaning', services: 'cleaning', service: 'cleaning',
     consultants: 'consultants', consultant: 'consultants',
     shops: 'shops', shop: 'shops', retail: 'shops',
+    wholesale: 'wholesale', wholesaler: 'wholesale', distributor: 'wholesale', distribution: 'wholesale', b2b: 'wholesale',
   };
   const PLON = ['solo', 'team', 'business'];
   const velja = (nafn, gildi) => {
     const el = form.querySelector('input[name="' + nafn + '"][value="' + gildi + '"]');
     if (el) el.checked = true;
   };
-  // ?industry= í slóðinni, annars greinin sem gesturinn valdi á forsíðunni eða kerfid.html (localStorage 'x-grein')
+  // ?industry= í slóðinni, annars greinin sem gesturinn valdi á forsíðunni, industries.html eða kerfid.html (localStorage 'x-grein')
   let grein = GREINAR[(q.get('industry') || '').toLowerCase()];
   if (!grein) { try { grein = GREINAR[(localStorage.getItem('x-grein') || '').toLowerCase()]; } catch (e) { /* lokuð geymsla */ } }
   if (grein) velja('industry', grein);
   const plan = (q.get('plan') || '').toLowerCase();
   if (PLON.includes(plan)) velja('plan', plan);
+  // ?size= frá industries.html: 1, 2-5, 6-20 eða 20+ ("+" getur komið sem bil í slóðinni)
+  const STAERDIR = { '1': '1', '2-5': '2-5', '6-20': '6-20', '20+': '20+', '20': '20+' };
+  const staerd = STAERDIR[(q.get('size') || '').trim()];
+  if (staerd) velja('team_size', staerd);
   if (q.get('call') === '1') document.getElementById('pl-call').checked = true;
   // ?topic=connection: hugbúnaðarfyrirtæki (samstarf.html). Grein, stærð, verkfæri og áskrift eiga ekki við.
   const tenging = (q.get('topic') || '').toLowerCase() === 'connection';

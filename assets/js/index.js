@@ -5,6 +5,25 @@
 
 const GEYMSLA = 'x-grein';
 const evra = n => '€' + Math.round(n).toLocaleString('en-US');
+const evra2 = n => '€' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+// textar sem eru eins í flestum greinum; grein getur skrifað yfir þá
+const STD = {
+  lbl: 'Your customer\'s phone', pick: 'Choose a version', acc: 'Accept as your customer', doc: 'Quote',
+  qic: 'i-tilbod', jic: 'i-verk', jk: 'Job', jw: 'Becomes a job when your customer accepts.',
+  iw: 'Made from the job. Nothing typed twice.', sayJ: 'A job was created. ',
+  qwait: 'Sent. Reminder after 3 and 7 days if there is no answer.',
+};
+
+// heildsala: pöntunarlínur af verðlista búðarinnar (dæmagögn)
+const PANTUN = [
+  ['Oat crackers 200 g', 24, 2.10],
+  ['Rye bread 500 g', 30, 2.80],
+  ['Apple juice 1 l', 36, 1.90],
+  ['Granola 400 g', 18, 3.40],
+  ['Butter 250 g', 40, 2.25],
+];
+const PANTUN_ALLS = PANTUN.reduce((s, [, q, e]) => s + q * e, 0);
 
 // dæmagögn: tilbúin fyrirtæki, ekki raunverulegir viðskiptavinir
 const GREINAR = {
@@ -105,9 +124,38 @@ const GREINAR = {
     ],
     soon: 2, // þriðja línan er "Coming soon"
   },
+  wholesale: {
+    for: 'wholesalers',
+    firm: 'Westgate Market', cust: 'Delivery Tuesday · minimum order €250', no: '3321', what: 'Weekly reorder',
+    vat: 'Total, excl. VAT', per: '', rec: 0, cents: true,
+    lbl: 'A shop\'s reorder, on your phone', pick: 'From their own price list', acc: 'Accept order', doc: 'Order',
+    qic: 'i-gatt', jic: 'i-vorur', jk: 'Picking list and delivery', jw: 'Becomes a picking list when you accept.',
+    iw: 'Made from the order. Nothing typed twice.', sayJ: 'A picking list and a delivery were created. ',
+    qwait: 'Reordered in your ordering portal. Above your €250 minimum.',
+    qacc: o => 'Accepted by you: ' + o.n + ', ' + evra2(o.p) + '. On Tuesday\'s run.',
+    lines: PANTUN, side: true,
+    opts: [{ n: PANTUN.length + ' lines', p: PANTUN_ALLS }],
+    job: () => ({
+      t: 'Picking list, order 3321', s: 'Westgate Market · Tuesday delivery run',
+      li: [PANTUN.length + ' lines from their price list', 'Picking list for the warehouse', 'On Tuesday\'s run, 06:30', 'Delivery note for Westgate Market'],
+    }),
+    inv: () => ({
+      t: 'Invoice, order 3321', s: 'Westgate Market · drafted on delivery',
+      lines: PANTUN.map(([t, q, e]) => [t + ' × ' + q, q * e]),
+      tot: 'Total, excl. VAT',
+    }),
+    sets: [
+      'An ordering portal where each shop reorders from its own price list.',
+      'Your minimum order and delivery days, checked before you accept.',
+      'Reorder suggestions before a shop runs out, always with your approval.',
+    ],
+    soon: 2,
+  },
 };
+Object.values(GREINAR).forEach(g => { Object.keys(STD).forEach(k => { if (g[k] === undefined) g[k] = STD[k]; }); });
+const upph = g => g.cents ? evra2 : evra;
 const LYKLAR = Object.keys(GREINAR);
-const SAMHEITI = { contractor: 'contractors', trades: 'contractors', cleaners: 'cleaning', services: 'cleaning', service: 'cleaning', consultant: 'consultants', shop: 'shops', retail: 'shops' };
+const SAMHEITI = { contractor: 'contractors', trades: 'contractors', cleaners: 'cleaning', services: 'cleaning', service: 'cleaning', consultant: 'consultants', shop: 'shops', retail: 'shops', wholesaler: 'wholesale', distributor: 'wholesale', distribution: 'wholesale', b2b: 'wholesale' };
 
 const demo = document.getElementById('ix-demo');
 if (!demo) return;
@@ -118,6 +166,7 @@ const optsEl = demo.querySelector('.ix-opts');
 const accept = demo.querySelector('.ix-accept');
 const reset = demo.querySelector('.ix-reset');
 const say = document.getElementById('ix-say');
+const full = document.querySelector('[data-ix-full]');
 const wire = demo.querySelector('.ix-wire');
 const stepQ = demo.querySelector('.ix-step--q');
 const stepJ = demo.querySelector('.ix-step--job');
@@ -150,23 +199,38 @@ function seinna(fn, ms) { if (kyrrt) fn(); else timar.push(setTimeout(fn, ms)); 
 
 function teiknaVal() {
   const g = GREINAR[grein];
-  [...optsEl.children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === val)));
-  texti('total', evra(g.opts[val].p) + g.per);
+  if (!g.lines) [...optsEl.children].forEach((b, i) => b.setAttribute('aria-pressed', String(i === val)));
+  texti('total', upph(g)(g.opts[val].p) + g.per);
 }
 
 function teikna() {
   const g = GREINAR[grein];
   hreinsa();
   demo.classList.remove('is-acc', 'is-job', 'is-inv');
-  texti('ini', g.firm[0]); texti('firm', g.firm); texti('qno', 'Quote ' + g.no);
-  texti('what', g.what); texti('cust', 'For ' + g.cust); texti('vat', g.vat);
+  const sala = g.lines ? g.firm : g.cust; // í heildsölu er búðin sú sem pantar
+  texti('ini', g.firm[0]); texti('firm', g.firm); texti('qno', g.doc + ' ' + g.no);
+  texti('what', g.what); texti('cust', g.lines ? g.cust : 'For ' + g.cust); texti('vat', g.vat);
   texti('thanks', 'Thank you. ' + g.firm + ' has been told.');
-  texti('qline', 'Quote ' + g.no + ' · ' + g.cust);
-  texti('qstate', 'Sent. Reminder after 3 and 7 days if there is no answer.');
+  texti('qline', g.doc + ' ' + g.no + ' · ' + sala);
+  texti('qstate', g.qwait);
+  ['lbl', 'pick', 'jk', 'jw', 'iw'].forEach(k => texti(k, g[k]));
+  f('qic').setAttribute('href', '#' + g.qic); f('jic').setAttribute('href', '#' + g.jic);
+  f('side').hidden = !g.side;
   const qtag = f('qtag'); qtag.textContent = 'Waiting'; qtag.className = 'tag tag--warn';
   texti('for', g.for);
 
-  optsEl.replaceChildren(...g.opts.map((o, i) => {
+  if (g.lines) optsEl.replaceChildren(...g.lines.map(([t, q, e]) => {
+    // pöntunarlínur: ekki val, bara það sem búðin bað um
+    const d = document.createElement('div'); d.className = 'ix-opt ix-opt--line';
+    const h = document.createElement('span'); h.className = 'ix-opt__h';
+    const n = document.createElement('b'); n.textContent = t;
+    const p = document.createElement('span'); p.className = 'ix-opt__p'; p.textContent = evra2(q * e);
+    h.append(n, p);
+    const li = document.createElement('span'); li.className = 'ix-opt__li'; li.textContent = q + ' × ' + evra2(e);
+    d.append(h, li);
+    return d;
+  }));
+  else optsEl.replaceChildren(...g.opts.map((o, i) => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'ix-opt';
     const h = document.createElement('span'); h.className = 'ix-opt__h';
@@ -187,8 +251,9 @@ function teikna() {
     return li;
   });
   f('cta').href = 'pilot.html?industry=' + grein;
+  if (full) { full.href = 'industries.html?industry=' + grein; full.querySelector('span').textContent = 'See the full setup for ' + g.for; }
   f('jl').replaceChildren(); f('il').replaceChildren();
-  accept.disabled = false; accept.querySelector('span').textContent = 'Accept as your customer';
+  accept.disabled = false; accept.querySelector('span').textContent = g.acc;
   reset.hidden = true;
   say.textContent = '';
 }
@@ -196,31 +261,31 @@ function teikna() {
 function senda() {
   if (demo.classList.contains('is-acc')) return;
   const g = GREINAR[grein], o = g.opts[val];
-  const j = g.job(o), inv = g.inv(o);
+  const j = g.job(o), inv = g.inv(o), kr = upph(g);
   accept.disabled = true; accept.querySelector('span').textContent = 'Accepted';
   demo.classList.add('is-acc');
   const qtag = f('qtag'); qtag.textContent = 'Accepted'; qtag.className = 'tag tag--ok';
-  texti('qstate', 'Accepted on your customer\'s phone: ' + o.n + ', ' + evra(o.p) + g.per + '.');
-  texti('thanks', o.n + ', ' + evra(o.p) + g.per + '. ' + g.firm + ' has been told.');
+  texti('qstate', g.qacc ? g.qacc(o) : 'Accepted on your customer\'s phone: ' + o.n + ', ' + kr(o.p) + g.per + '.');
+  texti('thanks', o.n + ', ' + kr(o.p) + g.per + '. ' + g.firm + ' has been told.');
   say.textContent = 'Accepted: ' + o.n + '. ';
   hlaupa();
 
   // verkið
   texti('jt', j.t); texti('js', j.s);
   lista(f('jl'), j.li, t => hak(t));
-  seinna(() => { demo.classList.add('is-job'); say.textContent += 'A job was created. '; hlaupa(); if (!kyrrt) skruna(stepJ); }, 700);
+  seinna(() => { demo.classList.add('is-job'); say.textContent += g.sayJ; hlaupa(); if (!kyrrt) skruna(stepJ); }, 700);
 
   // reikningsdrögin
   texti('it', inv.t); texti('is', inv.s);
   const linur = inv.lines.map(([t, a]) => {
     const li = document.createElement('li');
     const s = document.createElement('span'); s.textContent = t;
-    const b = document.createElement('b'); b.textContent = evra(a);
+    const b = document.createElement('b'); b.textContent = kr(a);
     li.append(s, b); return li;
   });
   const tot = document.createElement('li'); tot.className = 'ix-lines__tot';
   const ts = document.createElement('span'); ts.textContent = inv.tot;
-  const tb = document.createElement('b'); tb.textContent = evra(inv.lines.reduce((s, l) => s + l[1], 0));
+  const tb = document.createElement('b'); tb.textContent = kr(inv.lines.reduce((s, l) => s + l[1], 0));
   tot.append(ts, tb); linur.push(tot);
   f('il').replaceChildren(...linur);
   seinna(() => {

@@ -18,7 +18,7 @@
 @media (max-width:900px){.ix-pains{grid-template-columns:1fr;max-width:620px;margin:0 auto}}
 
 /* ---------- Pick your industry ---------- */
-.ix-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.ix-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}
 .ix-tab{display:flex;align-items:center;gap:12px;padding:14px 16px;min-height:64px;border-radius:14px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);cursor:pointer;text-align:left;color:var(--muted);transition:background .2s,border-color .2s,color .2s,transform .15s}
 .ix-tab svg{width:22px;height:22px;flex:none;color:#dfe2e7}
 .ix-tab b{display:block;font-weight:500;font-size:15.5px;line-height:1.3;color:var(--text)}
@@ -26,7 +26,9 @@
 .ix-tab:hover{background:rgba(255,255,255,.07)}
 .ix-tab:active{transform:scale(.98)}
 .ix-tab[aria-selected="true"]{background:radial-gradient(120% 120% at 0% 0%,rgba(200,206,214,.16),transparent 65%),var(--surface-2);border-color:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(255,255,255,.1),0 10px 30px -16px rgba(220,226,234,.5)}
-@media (max-width:860px){.ix-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* fimm flipar: 3 + 2 á miðlungsskjá, 2 + 2 + 1 á síma */
+@media (max-width:1060px){.ix-tabs{grid-template-columns:repeat(6,minmax(0,1fr))}.ix-tab{grid-column:span 2}.ix-tab:nth-child(n+4){grid-column:span 3}}
+@media (max-width:600px){.ix-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.ix-tab,.ix-tab:nth-child(n+4){grid-column:auto}.ix-tab:last-child{grid-column:1/-1}}
 @media (max-width:420px){.ix-tab{padding:12px;gap:10px}.ix-tab b{font-size:14.5px}.ix-tab svg{width:19px;height:19px}}
 
 .ix-demo{padding:28px;background:radial-gradient(90% 60% at 50% 0%,rgba(200,206,214,.08),transparent 60%),var(--surface)}
@@ -56,6 +58,11 @@
 .ix-opt__h .tag{font-size:10px}
 .ix-opt__p{font-family:var(--mono);font-size:13px;white-space:nowrap}
 .ix-opt__li{font-size:12.5px;line-height:1.45;color:var(--muted)}
+/* heildsala: pöntunarlínur, ekki val */
+.ix-opt--line{cursor:default;padding:8px 12px;gap:2px}
+.ix-opt--line:hover{border-color:var(--line)}
+.ix-opt--line .ix-opt__h b{font-size:14px}
+.ix-opt--line .ix-opt__li{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
 .ix-opt[aria-pressed="true"] .ix-opt__h b::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--metal);flex:none}
 .ix-q__tot{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
 .ix-q__tot b{font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--text)}
@@ -112,6 +119,13 @@
 .ix-ready small{color:var(--dim);font-size:12.5px;line-height:1.45}
 .is-inv .ix-ready .tag{animation:ixPop .6s cubic-bezier(.2,1.4,.4,1) .35s both}
 @keyframes ixPop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+/* heildsala: lagerstaða á búð kemur seinna */
+.ix-side{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:12px;border:1px dashed var(--line-2);font-size:13.5px;color:var(--muted);line-height:1.45}
+.ix-side[hidden]{display:none}
+.ix-side svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--soon)}
+.ix-side b{font-weight:500;color:var(--text)}
+.ix-side .tag{margin-left:4px;vertical-align:1px}
+.ix-side small{display:block;color:var(--dim);font-size:12.5px;margin-top:2px}
 .ix-reset{align-self:flex-start;margin-top:4px;background:none;border:0;padding:4px 0;cursor:pointer;color:var(--text);font-size:14.5px;border-bottom:1px solid var(--line-2);transition:border-color .2s}
 .ix-reset:hover{border-color:#fff}
 .ix-reset[hidden]{display:none}
@@ -148,6 +162,10 @@
   .ix-checks{grid-template-columns:1fr}
   .ix-sets .btn{width:100%}
 }
+
+/* tengill á alla uppsetninguna fyrir greinina */
+.ix-full{margin-top:22px;text-align:center}
+.ix-full .tlink{font-size:15.5px}
 
 /* ---------- flæðið: þéttara ---------- */
 .ix-flow .fstep{gap:8px;padding:20px 16px}
