@@ -216,4 +216,6 @@
 .ix-pick .sec__head,#leidin .sec__head{max-width:940px}
 .ix-pilot h2{font-size:clamp(24px,2.5vw,32px)}
 @media (max-width:600px){.ix-pick h2 br,#leidin h2 br,#flaedi h2 br{display:none}}
+.ix-tools__send{margin-top:18px}
+.ix-tools__send + .ix-tools__all{margin-top:10px}
 .ix-tools__all{margin-top:18px}

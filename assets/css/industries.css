@@ -112,3 +112,4 @@ html:not(.in-js) .in-match,html:not(.in-js) .in-show{display:none}
   .in-steps .fstep__n{padding:0;background:none}
 }
 @media (max-width:420px){.in-app .stat b{font-size:17px}}
+.in-rec__set{color:var(--muted);font-size:14px;margin-top:-4px}

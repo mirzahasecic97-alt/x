@@ -369,7 +369,10 @@
     $('[data-in-rconns]').innerHTML = conns.map(connChip).join('') +
       (valin.length ? '' : '<span class="in-rec__hint">Tick what you use today to see what to connect.</span>');
     // every button on the page carries the industry, the plan and the size to pilot.html
-    const extra = 'industry=' + grein + (p.key ? '&plan=' + p.key : '') + '&size=' + encodeURIComponent(staerd());
+    // and the ticked tools as ?tools=, which pilot.html ticks or puts in "Other tools"
+    const verkf = [...new Set(valin.map(t => T[t].label))];
+    const extra = 'industry=' + grein + (p.key ? '&plan=' + p.key : '') + '&size=' + encodeURIComponent(staerd()) +
+      (verkf.length ? '&tools=' + verkf.map(encodeURIComponent).join(',') : '');
     $$('[data-in-cta]').forEach(a => { a.href = 'pilot.html?' + extra; });
     $$('[data-in-call]').forEach(a => { a.href = 'pilot.html?call=1&' + extra; });
     // more than 20: the call is the next step in the recommendation

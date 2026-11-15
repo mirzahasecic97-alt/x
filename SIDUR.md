@@ -17,9 +17,9 @@ The site is **English only and global**. No `lang` attributes on elements, no IS
 | `assets/css/<page>.css` | Styles only one page uses. Linked under `site.css` in `<head>` |
 | `assets/js/site.js` | Shared script: settings (`STILLINGAR`), header, reveal on scroll, the mobile action bar, year in the footer, hero effects |
 | `assets/js/<page>.js` | Script for one page, loaded after `site.js`, both with `defer`. Wrap everything in `(() => { ... })();` |
-| `assets/js/pilot.js` | The pilot form: prefill from the URL (or the industry saved in `localStorage` `x-grein` by the home page picker, `industries.html` or `kerfid.html`), validation, sending |
+| `assets/js/pilot.js` | The pilot form: prefill from the URL (or the industry saved in `localStorage` `x-grein` by the home page picker, `industries.html` or `kerfid.html`), `?tools=` ticks matching tools and puts the rest in "Other tools", validation, sending |
 | `assets/js/industries.js` | `industries.html`: all content for the five industries in one data object (`G`), the connection list with status (`T`), the plans (`PLANS`), and the rendering |
-| `assets/js/tengingar.js` | The "What do you use today?" picker (`[data-velja]`) |
+| `assets/js/tengingar.js` | The "What do you use today?" picker (`[data-velja]`). On `tengingar.html` and the home page it builds the start of a pilot request: `[data-velja-send]` links to `pilot.html?tools=A,B,C` with the ticked tools and `[data-velja-annad]` |
 | `assets/merki/` | `x-logo-malmur.svg` (mark and X, header and footer), `merki.svg` (mark only, decoration), `favicon.svg` |
 
 Paths are always relative: `assets/...`, `kerfid.html`. No leading slash.
@@ -85,7 +85,7 @@ Wholesale is the newest pack and the research is still running. Never claim that
 - Hero: "Pick your industry. See your X." and five cards (`.in-card`, buttons with `aria-pressed`). The industry comes from `?industry=`, then `x-grein`, otherwise contractors. Choosing one re-renders the page without reloading, sets `?industry=` with `history.replaceState` and saves `x-grein`.
 - Two questions (team size 1 / 2 to 5 / 6 to 20 / More than 20, and "What do you use today?" with tools for that industry) drive "Recommended for you": plan and price, modules, connections with status, one sentence why. 1 is Solo, 2 to 5 is Team, 6 to 20 is Business, more than 20 is "Let's talk" with "Book a 15 min call" instead of a plan. Everything runs in the browser; nothing is sent.
 - Showcase, rendered from `G` in `industries.js`: an Overview mockup made for the industry (`.app` classes from `site.css`, `aria-hidden` and `inert`), highlights, "A day with X", modules, example automations and connections.
-- Every "Join the pilot" on the page points to `pilot.html?industry=<slug>&plan=<recommended>&size=<size>` (no `plan` for more than 20), and every "Book a 15 min call" to `pilot.html?call=1&` plus the same. `pilot.html` preselects industry, plan and team size from these.
+- Every "Join the pilot" on the page points to `pilot.html?industry=<slug>&plan=<recommended>&size=<size>` (no `plan` for more than 20, plus `&tools=` with the ticked tools), and every "Book a 15 min call" to `pilot.html?call=1&` plus the same. `pilot.html` preselects industry, plan and team size from these.
 - To change an industry's wording, sample data or status, edit `G` (and `T` for connections) in `industries.js`. Statuses must match `tengingar.html` and `kerfid.html`. Sample companies and people are made up and neutral English.
 
 ## Status

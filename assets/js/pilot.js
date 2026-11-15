@@ -33,6 +33,27 @@
   const staerd = STAERDIR[(q.get('size') || '').trim()];
   if (staerd) velja('team_size', staerd);
   if (q.get('call') === '1') document.getElementById('pl-call').checked = true;
+  // ?tools=DK,Payday,Shopify frá tengingar.html og forsíðunni (index.html): merkt við það sem passar, restin fer í "Other tools"
+  const verkfaeriQ = (q.get('tools') || '').split(',').map(s => s.replace(/\s+/g, ' ').trim().slice(0, 60)).filter(Boolean).slice(0, 30);
+  if (verkfaeriQ.length) {
+    const SAMHEITI = {
+      'gmail': 'Gmail', 'google': 'Gmail', 'google workspace': 'Gmail',
+      'outlook': 'Outlook', 'microsoft 365': 'Outlook', 'office 365': 'Outlook', 'microsoft': 'Outlook',
+      'messenger': 'Messenger or WhatsApp', 'whatsapp': 'Messenger or WhatsApp',
+      'word or excel': 'Quotes in Word or Excel',
+    };
+    const kassar = [...form.querySelectorAll('input[name="tools"]')];
+    const annad = [];
+    verkfaeriQ.forEach(n => {
+      const lyk = n.toLowerCase();
+      const gildi = (SAMHEITI[lyk] || n).toLowerCase();
+      const kassi = kassar.find(k => k.value.toLowerCase() === gildi);
+      if (kassi) kassi.checked = true;
+      else if (!annad.some(a => a.toLowerCase() === lyk)) annad.push(n);
+    });
+    const annadReitur = document.getElementById('pl-tools-other');
+    if (annadReitur && annad.length) annadReitur.value = annad.join(', ');
+  }
   // ?topic=connection: hugbúnaðarfyrirtæki (samstarf.html). Grein, stærð, verkfæri og áskrift eiga ekki við.
   const tenging = (q.get('topic') || '').toLowerCase() === 'connection';
   if (tenging) {
@@ -102,6 +123,7 @@
       team_size: tenging ? '' : merki('team_size'),
       country: (f.get('country') || '').toString().trim(),
       tools: tenging ? '' : f.getAll('tools').join(', '),
+      tools_other: tenging ? '' : (f.get('tools_other') || '').toString().trim(),
       plan: tenging ? '' : merki('plan'),
       call_instead: f.get('call') ? 'Yes' : 'No',
       message: (f.get('message') || '').toString().trim(),
