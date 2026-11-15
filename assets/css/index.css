@@ -1,36 +1,70 @@
 /* Forsíðan (index.html). Aðeins þessi síða. */
 
-/* hetjan: þrjár stuttar línur, hver á sinni línu á breiðum skjá */
+/* hetjan: stutt, ekkert skjáskot */
 .hero h1.ix-h1{font-size:clamp(28px,4.3vw,58px);max-width:1100px;line-height:1.22}
 .hero .planned{margin-top:-6px}
-/* stutt fyrirsögn: tvær línur líka á síma */
-.hero{padding-bottom:64px}
+.hero{padding-bottom:40px}
 
-/* skjámyndin á síma: gervigreindin og Send / Later fyrst */
-@media (max-width:720px){.shot .app__ai{order:-1;border-top:0;border-bottom:1px solid var(--line)}}
+/* falið þar til grein er valin */
+.ix-sol[hidden],.ix-try[hidden],.cw-demo[hidden],.ix-demo[hidden]{display:none}
 
-/* ---------- Sound familiar? ---------- */
-.ix-pains{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.ix-pain__c{padding:28px 26px 24px;display:flex;flex-direction:column;gap:22px}
-.ix-pain__q{font-size:clamp(18px,1.7vw,21px);line-height:1.45;color:var(--text);position:relative;padding-top:34px}
-.ix-pain__q::before{content:"\201C";position:absolute;top:-14px;left:-2px;font-family:var(--display);font-size:54px;line-height:1;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
-.ix-pain__a{margin-top:auto;display:flex;gap:10px;align-items:flex-start;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px;line-height:1.5}
-.ix-pain__a img{width:22px;flex:none;margin-top:2px}
-@media (max-width:900px){.ix-pains{grid-template-columns:1fr;max-width:620px;margin:0 auto}}
+/* ---------- 1. What do you do? ---------- */
+.sec.ix-pick{padding-top:40px;padding-bottom:40px}
+.sec.ix-pp-sec{padding-top:24px}
+.ix-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.ix-card{display:flex;flex-direction:column;align-items:flex-start;gap:12px;text-align:left;padding:24px 20px 22px;border:0;cursor:pointer;color:var(--muted);font:inherit;transition:transform .25s,background .25s,color .2s}
+.ix-card .mod__ic{margin:0;width:46px;height:46px}
+.ix-card .mod__ic svg{width:21px;height:21px}
+.ix-card__t b{display:block;font-weight:600;font-size:17.5px;line-height:1.3;color:var(--text)}
+.ix-card__t small{display:block;font-size:12.5px;color:var(--dim);line-height:1.35;margin-top:1px}
+.ix-card__l{font-size:14px;line-height:1.45}
+.ix-card:hover{transform:translateY(-3px);background:var(--surface-2)}
+.ix-card:active{transform:scale(.98)}
+.ix-card[aria-pressed="true"]{color:var(--text);background:radial-gradient(120% 90% at 0% 0%,rgba(200,206,214,.16),transparent 60%),var(--surface-2)}
+.ix-card[aria-pressed="true"]::before{background:var(--metal);opacity:.85}
+.ix-card[aria-pressed="true"] .mod__ic{background:var(--metal);border-color:transparent}
+.ix-card[aria-pressed="true"] .mod__ic svg{color:#0a0b0d}
+.ix-card:focus-visible{outline:2px solid #dfe2e7;outline-offset:3px}
+.ix-prompt{margin-top:22px;text-align:center;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--dim)}
+@media (max-width:1060px){.ix-cards{grid-template-columns:repeat(6,minmax(0,1fr))}.ix-card{grid-column:span 2}.ix-card:nth-child(n+4){grid-column:span 3}}
+@media (max-width:600px){
+  .sec.ix-pick{padding-top:24px;padding-bottom:24px}
+  .ix-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .ix-card,.ix-card:nth-child(n+4){grid-column:auto}
+  .ix-card:last-child{grid-column:1/-1}
+  .ix-card{padding:16px 14px;gap:9px}
+  .ix-card .mod__ic{width:36px;height:36px}
+  .ix-card .mod__ic svg{width:17px;height:17px}
+  .ix-card__t b{font-size:15px}
+  .ix-card__l{font-size:13px}
+}
 
-/* ---------- Pick your industry ---------- */
-.ix-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-bottom:14px}
-.ix-tab{display:flex;align-items:center;gap:12px;padding:14px 16px;min-height:64px;border-radius:14px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);cursor:pointer;text-align:left;color:var(--muted);transition:background .2s,border-color .2s,color .2s,transform .15s}
-.ix-tab svg{width:22px;height:22px;flex:none;color:#dfe2e7}
-.ix-tab b{display:block;font-weight:500;font-size:15.5px;line-height:1.3;color:var(--text)}
-.ix-tab small{display:block;font-size:12.5px;color:var(--dim);line-height:1.35}
-.ix-tab:hover{background:rgba(255,255,255,.07)}
-.ix-tab:active{transform:scale(.98)}
-.ix-tab[aria-selected="true"]{background:radial-gradient(120% 120% at 0% 0%,rgba(200,206,214,.16),transparent 65%),var(--surface-2);border-color:rgba(255,255,255,.55);box-shadow:0 0 0 1px rgba(255,255,255,.1),0 10px 30px -16px rgba(220,226,234,.5)}
-/* fimm flipar: 3 + 2 á miðlungsskjá, 2 + 2 + 1 á síma */
-@media (max-width:1060px){.ix-tabs{grid-template-columns:repeat(6,minmax(0,1fr))}.ix-tab{grid-column:span 2}.ix-tab:nth-child(n+4){grid-column:span 3}}
-@media (max-width:600px){.ix-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.ix-tab,.ix-tab:nth-child(n+4){grid-column:auto}.ix-tab:last-child{grid-column:1/-1}}
-@media (max-width:420px){.ix-tab{padding:12px;gap:10px}.ix-tab b{font-size:14.5px}.ix-tab svg{width:19px;height:19px}}
+/* ---------- 2. Solutions for ... ---------- */
+.sec.ix-sol{padding-top:72px;scroll-margin-top:0}
+.ix-sol .sec__head{max-width:960px;margin-bottom:40px}
+.ix-intro{color:var(--text);font-size:clamp(17px,1.7vw,21px);line-height:1.5;max-width:720px;margin-left:auto;margin-right:auto}
+.ix-sols{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:1040px;margin:0 auto}
+.ix-sol__c{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:24px 24px 22px}
+.ix-sol__c .mod__ic{margin:0;width:44px;height:44px}
+.ix-sol__c .mod__ic svg{width:19px;height:19px}
+.ix-sol__b{display:grid;gap:6px;align-content:start}
+.ix-sol__k{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+.ix-sol__k--x{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);color:var(--muted)}
+.ix-sol__k--x img{width:16px}
+.ix-sol__k .tag{text-transform:none;letter-spacing:0}
+.ix-sol__p{font-size:16px;line-height:1.5;color:var(--text)}
+.ix-sol__x{font-size:14.5px;line-height:1.55;color:var(--muted)}
+.ix-sol.is-new .ix-sols li{animation:msgInn .5s cubic-bezier(.2,.7,.2,1) both}
+.ix-sol.is-new .ix-sols li:nth-child(2){animation-delay:.06s}
+.ix-sol.is-new .ix-sols li:nth-child(3){animation-delay:.12s}
+.ix-sol.is-new .ix-sols li:nth-child(4){animation-delay:.18s}
+@media (max-width:860px){.ix-sols{grid-template-columns:minmax(0,1fr);max-width:620px}}
+@media (max-width:600px){.ix-sol__c{grid-template-columns:36px minmax(0,1fr);gap:12px;padding:18px 16px}.ix-sol__c .mod__ic{width:36px;height:36px}.ix-sol__c .mod__ic svg{width:17px;height:17px}.ix-sol__p{font-size:15px}}
+
+/* dæmið */
+.ix-try{display:grid;gap:8px;justify-items:center;text-align:center;margin:64px auto 22px;max-width:640px}
+.ix-try h3{font-size:clamp(19px,1.8vw,22px)}
+.ix-try p{color:var(--muted);font-size:15.5px}
 
 .ix-demo{padding:28px;background:radial-gradient(90% 60% at 50% 0%,rgba(200,206,214,.08),transparent 60%),var(--surface)}
 .ix-ex{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);margin-bottom:20px}
@@ -131,20 +165,8 @@
 .ix-reset:hover{border-color:#fff}
 .ix-reset[hidden]{display:none}
 
-/* hvað X setur upp */
-.ix-sets{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 32px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
-.ix-sets h3{grid-column:1/-1;font-size:17px}
-.ix-sets ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.ix-sets li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.5;color:var(--muted);flex-wrap:wrap}
-.ix-sets li > span:not(.tag){flex:1;min-width:0}
-.ix-sets li svg{width:16px;height:16px;flex:none;margin-top:3px;color:#dfe2e7}
-.ix-sets li.is-soon svg{color:var(--soon)}
-.ix-sets li .tag{margin-left:4px;vertical-align:1px}
-
 @media (max-width:1060px){
   .ix-play{grid-template-columns:minmax(0,360px) 48px minmax(0,1fr)}
-  .ix-sets{grid-template-columns:1fr}
-  .ix-sets .btn{justify-self:start}
 }
 @media (max-width:960px){
   .ix-play{grid-template-columns:minmax(0,1fr)}
@@ -152,7 +174,6 @@
   .ix-wire{width:2px;height:44px;margin:8px auto;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.24),rgba(255,255,255,.06))}
   .ix-wire i{left:-2px;top:0;width:6px;height:18px;background:linear-gradient(180deg,transparent,#fff,transparent)}
   @keyframes ixWire{0%{top:0;opacity:0}20%,80%{opacity:1}100%{top:calc(100% - 18px);opacity:0}}
-  .ix-sets ul{grid-template-columns:1fr}
 }
 @media (max-width:600px){
   .ix-demo{padding:18px 14px}
@@ -161,69 +182,9 @@
   .ix-step--q .tag{grid-column:2;justify-self:start}
   .ix-step .mod__ic{width:34px;height:34px}
   .ix-checks{grid-template-columns:1fr}
-  .ix-sets .btn{width:100%}
 }
-
-/* tengill á alla uppsetninguna fyrir greinina */
-.ix-full{margin-top:22px;text-align:center}
-.ix-full .tlink{font-size:15.5px}
-
-/* ---------- flæðið: þéttara ---------- */
-.ix-flow .fstep{gap:8px;padding:20px 16px}
-.ix-flow .fstep h3{font-size:15.5px}
-@media (max-width:640px){.ix-flow .fstep{padding:16px 14px;gap:6px}.ix-flow .fstep h3{font-size:14.5px}.ix-flow .fstep p{font-size:13px}}
-@media (max-width:420px){.ix-flow{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.ix-flow .fstep{padding:14px 12px}.ix-flow .mod__ic{width:34px;height:34px}}
-
-/* ---------- samanburður: fjórir dálkar ---------- */
-.ix-ways{grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.15fr)}
-.ix-ways .way{padding:26px 22px}
-.ix-ways .way h3{font-size:20px}
-.ix-ways .way ul{font-size:14.5px}
-@media (max-width:1060px){.ix-ways{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}.ix-ways .way--x,.ix-ways .way--x.rv.in{transform:none}}
-@media (max-width:640px){.ix-ways{grid-template-columns:1fr;max-width:560px;margin:0 auto}}
-
-/* ---------- prufuhópurinn ---------- */
-.ix-pilot{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:center;padding:48px;background:radial-gradient(90% 120% at 0% 0%,rgba(200,206,214,.13),transparent 60%),var(--surface-2)}
-.ix-pilot::before{background:var(--metal)!important;opacity:.7}
-.ix-pilot__t{display:grid;gap:18px;justify-items:start}
-.ix-pilot__t .lead{color:var(--text)}
-.ix-pilot__t .hero__cta{justify-content:flex-start}
-.ix-pilot__l{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.ix-pilot__l li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
-.ix-pilot__n{font-family:var(--mono);font-size:14px;font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;padding-top:1px}
-.ix-pilot__l h3{font-size:16px}
-.ix-pilot__l p{color:var(--muted);font-size:14.5px;margin-top:3px}
-@media (max-width:960px){.ix-pilot{grid-template-columns:1fr;gap:32px;padding:36px 28px}}
-@media (max-width:600px){.ix-pilot{padding:28px 18px}.ix-pilot__t .hero__cta .btn{flex:1 1 100%}}
-
-/* ---------- hver svarar þér ---------- */
-.ix-who__h{margin-top:18px}
-.ix-who__lead{margin-top:18px;color:var(--text)}
-.ix-who__p{color:var(--muted);margin-top:10px;font-size:15.5px}
-.ix-who{padding:26px;display:grid;gap:8px;justify-items:start}
-.ix-who .support{padding:0;width:100%}
-.ix-who__me{display:flex;align-items:center;gap:16px;padding-bottom:10px;border-bottom:1px solid var(--line);width:100%}
-.ix-who__photo{width:72px;height:72px;border-radius:50%;flex:none;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.4);background:#131418;font-family:var(--mono);font-size:11px;color:var(--dim)}
-.ix-who__me b{display:block;font-size:19px;font-weight:600}
-.ix-who__me small{display:block;color:var(--muted);font-size:14px}
-.ix-who .btn{margin-top:14px}
-
-@media (prefers-reduced-motion:reduce){
-  .ix-wire i{display:none}
-  .ix-done,.ix-done__ic{transition:none}
-}
-
-/* fyrirsagnir sem brotna á réttum stað */
-.ix-pick .sec__head,#leidin .sec__head{max-width:940px}
-.ix-pilot h2{font-size:clamp(24px,2.5vw,32px)}
-@media (max-width:600px){.ix-pick h2 br,#leidin h2 br,#flaedi h2 br{display:none}}
-.ix-tools__send{margin-top:18px}
-.ix-tools__send + .ix-tools__all{margin-top:10px}
-.ix-tools__all{margin-top:18px}
 
 /* ---------- Crew chat: verkefni á tungumáli hvers og eins (dæmi) ---------- */
-.cw .sec__head{max-width:820px}
-.sec.cw{padding-top:56px;scroll-margin-top:32px}
 .cw-demo{padding:28px;background:radial-gradient(90% 60% at 50% 0%,rgba(200,206,214,.08),transparent 60%),var(--surface)}
 .cw-top{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap;margin-bottom:18px}
 .cw-top .ix-ex{margin:0}
@@ -298,7 +259,7 @@
 .cw-wait{color:var(--dim)}
 .cw-row:not(.on) .cw-val{display:none}
 .cw-row.on .cw-wait{display:none}
-.cw-row[data-s].on .cw-val{display:inline-block;animation:msgInn .45s cubic-bezier(.2,.7,.2,1) both}
+.cw-row.on .cw-val{display:inline-block;animation:msgInn .45s cubic-bezier(.2,.7,.2,1) both}
 
 .cw-foot{display:flex;justify-content:center;margin-top:14px}
 .cw-foot:has(.ix-reset[hidden]){display:none}
@@ -324,12 +285,56 @@
   .cw-chat [data-s].on,.cw-row[data-s].on .cw-val{animation:none}
 }
 
-/* vandinn: lítill merkimiði ofan við hvert vandamál */
-.ix-pain__k{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:-8px}
-.ix-pain__k svg{width:16px;height:16px;flex:none;color:#dfe2e7}
-.ix-pain__a .tag{margin-left:4px;vertical-align:1px}
+/* gátlisti í dagbókinni (ræstingar) */
+.cw-list{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.cw-list li{display:flex;gap:8px;align-items:flex-start}
+.cw-list svg{width:14px;height:14px;flex:none;margin-top:4px;color:var(--ok)}
+#crew{scroll-margin-top:84px}
 
-/* yfirlitið: skjámyndin er núna neðar á síðunni */
-.ix-over .shot{margin-top:8px}
-.ix-pain__k + .ix-pain__q{padding-top:0}
-.ix-pain__k + .ix-pain__q::before{content:none}
+/* áætlunin sem passar greininni */
+.ix-plan{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;margin:22px auto 0;padding:24px 28px;background:radial-gradient(90% 140% at 0% 0%,rgba(200,206,214,.1),transparent 60%),var(--surface)}
+.ix-plan__t{display:grid;gap:4px}
+.ix-plan__k{font-family:var(--mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--dim)}
+.ix-plan__n{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.ix-plan__n b{font-size:22px;font-weight:600;letter-spacing:-.01em}
+.ix-plan__n span{font-family:var(--mono);font-size:14px;color:var(--text)}
+.ix-plan__w{color:var(--muted);font-size:14.5px}
+.ix-plan__act{display:flex;align-items:center;gap:14px 26px;flex-wrap:wrap}
+.ix-again{text-align:center;margin-top:20px}
+.ix-back{background:none;border:0;padding:4px 0;cursor:pointer;color:var(--muted);font:inherit;font-size:14.5px;border-bottom:1px solid var(--line-2);transition:border-color .2s,color .2s}
+.ix-back:hover{color:var(--text);border-color:#fff}
+@media (max-width:600px){.ix-plan{padding:20px 18px}.ix-plan__act{width:100%}.ix-plan__act .btn{width:100%}}
+
+/* ---------- 3. How it works ---------- */
+.ix-how .step h3{font-size:18px}
+.ix-how__more{text-align:center;margin-top:26px}
+
+/* ---------- 4. Verð og prufuhópurinn ---------- */
+.ix-pp{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center;padding:44px 48px;background:radial-gradient(90% 120% at 0% 0%,rgba(200,206,214,.13),transparent 60%),var(--surface-2)}
+.ix-pp::before{background:var(--metal)!important;opacity:.7}
+.ix-pp__price,.ix-pp__pilot{display:grid;gap:16px;justify-items:start}
+.ix-pp h2{font-size:clamp(24px,2.5vw,32px)}
+.ix-pp__from{font-size:clamp(22px,2.2vw,28px);font-weight:600;letter-spacing:-.02em;line-height:1.2;margin-bottom:-6px}
+.ix-pp__sm{color:var(--muted);font-family:var(--mono);font-size:13px}
+.ix-pp__pilot{padding-left:48px;border-left:1px solid var(--line-2)}
+.ix-pp__offer{font-size:16.5px;line-height:1.6;color:var(--text)}
+@media (max-width:960px){.ix-pp{grid-template-columns:1fr;gap:32px;padding:36px 28px}.ix-pp__pilot{padding-left:0;border-left:0;padding-top:28px;border-top:1px solid var(--line-2)}}
+@media (max-width:600px){.ix-pp{padding:28px 18px}.ix-pp__pilot .btn{width:100%}}
+
+/* ---------- hver svarar þér ---------- */
+.ix-who__h{margin-top:18px}
+.ix-who__lead{margin-top:18px;color:var(--text)}
+.ix-who__p{color:var(--muted);margin-top:10px;font-size:15.5px}
+.ix-who{padding:26px;display:grid;gap:8px;justify-items:start}
+.ix-who .support{padding:0;width:100%}
+.ix-who__me{display:flex;align-items:center;gap:16px;padding-bottom:10px;border-bottom:1px solid var(--line);width:100%}
+.ix-who__photo{width:72px;height:72px;border-radius:50%;flex:none;display:grid;place-items:center;border:1px dashed rgba(255,255,255,.4);background:#131418;font-family:var(--mono);font-size:11px;color:var(--dim)}
+.ix-who__me b{display:block;font-size:19px;font-weight:600}
+.ix-who__me small{display:block;color:var(--muted);font-size:14px}
+.ix-who .btn{margin-top:14px}
+
+@media (prefers-reduced-motion:reduce){
+  .ix-wire i{display:none}
+  .ix-done,.ix-done__ic{transition:none}
+  .ix-sol.is-new .ix-sols li{animation:none}
+}

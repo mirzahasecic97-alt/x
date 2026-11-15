@@ -82,9 +82,9 @@
 
 <h1 class="ix-h1">Less admin.<br/> <span class="metal">More work done.</span></h1>
 
-<p class="lead">Your crew does not speak your language? Write the task in yours. They read it in theirs, and the work diary and hours fill in from their replies. <span class="tag">Coming soon</span></p>
+<p class="lead">One simple system for your customers, jobs, crew and invoices. Set up for the way your industry works.</p>
 <div class="hero__cta">
-<a class="btn btn--metal" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--metal" data-ix-cta="" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
 <a class="btn btn--ghost" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
 </div>
 <p class="hero__note">
@@ -96,17 +96,45 @@
 </div>
 </div>
 </section>
-<!-- ============ VINNUFLOKKURINN: verkefni á tungumáli hvers og eins (index.js, dæmi með tilbúnum þýðingum, ekkert sent) ============ -->
-<section class="sec sec--tight cw" id="crew">
+<!-- ============ 1. HVAÐ GERIR ÞÚ? Valið stýrir lausnunum fyrir neðan (index.js) ============ -->
+<section class="sec sec--tight ix-pick" id="grein">
 <div class="wrap">
 <div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>Crew chat</span></p>
+<p class="kicker"><span>Your industry</span></p>
 
-<h2>Your crew, <span class="metal">in their language.</span></h2>
+<h2>What do <span class="metal">you do?</span></h2>
 
-<p class="lead">Write a task in your language. Marek reads it in his and answers in his. You read the answer in yours, and X keeps the work diary and the hours.</p>
+<p class="lead">Pick your industry. We show you what X does for it.</p>
 </div>
-<div class="cw-demo edge rv">
+<div aria-label="Your industry" class="ix-cards rv" role="group">
+<button aria-controls="lausnir" aria-pressed="false" class="ix-card edge" data-grein="contractors" type="button"><span class="mod__ic"><svg aria-hidden="true"><use href="#i-verk"></use></svg></span><span class="ix-card__t"><b>Contractors</b><small>(trades and renovation)</small></span><span class="ix-card__l">Your crew, quotes, jobs in stages and invoices.</span></button>
+<button aria-controls="lausnir" aria-pressed="false" class="ix-card edge" data-grein="cleaning" type="button"><span class="mod__ic"><svg aria-hidden="true"><use href="#i-dagatal"></use></svg></span><span class="ix-card__t"><b>Cleaning and services</b></span><span class="ix-card__l">Contracts, visit schedule and monthly invoices.</span></button>
+<button aria-controls="lausnir" aria-pressed="false" class="ix-card edge" data-grein="consultants" type="button"><span class="mod__ic"><svg aria-hidden="true"><use href="#i-bok"></use></svg></span><span class="ix-card__t"><b>Consultants</b></span><span class="ix-card__l">Proposals, projects, time and meeting notes.</span></button>
+<button aria-controls="lausnir" aria-pressed="false" class="ix-card edge" data-grein="shops" type="button"><span class="mod__ic"><svg aria-hidden="true"><use href="#i-verslun"></use></svg></span><span class="ix-card__t"><b>Shops</b></span><span class="ix-card__l">Webshop orders, business customers and stock.</span></button>
+<button aria-controls="lausnir" aria-pressed="false" class="ix-card edge" data-grein="wholesale" type="button"><span class="mod__ic"><svg aria-hidden="true"><use href="#i-vorur"></use></svg></span><span class="ix-card__t"><b>Wholesale</b><small>(selling to shops)</small></span><span class="ix-card__l">Shops reorder from their own price list.</span></button>
+</div>
+<p aria-live="polite" class="ix-prompt" id="ix-prompt">Pick one to see the solutions for your industry.</p>
+</div>
+</section>
+<!-- ============ 2. LAUSNIR FYRIR GREININA: allt efni úr GREINAR í index.js. Falið þar til grein er valin ============ -->
+<section aria-labelledby="ix-sol-h" class="sec sec--tight ix-sol" hidden="" id="lausnir">
+<div class="wrap">
+<div class="sec__head sec__head--mid">
+<p class="kicker"><span>Solutions</span></p>
+
+<h2 id="ix-sol-h">Solutions for <span class="metal" data-l="for">contractors</span></h2>
+
+<p class="lead ix-intro" data-l="intro"></p>
+</div>
+<ul class="ix-sols" data-l="sols"></ul>
+
+<div class="ix-try">
+<h3 data-l="dh">See it work</h3>
+<p data-l="dp"></p>
+</div>
+
+<!-- dæmi A: vinnuflokkurinn á sínu tungumáli (verktakar og ræstingar). Tilbúnar þýðingar, ekkert er sent -->
+<div class="cw-demo edge" hidden="" id="crew">
 <div class="cw-top">
 <p class="ix-ex"><i aria-hidden="true"></i><span>Example. The system is in development.</span></p>
 <span class="tag">Coming soon</span>
@@ -131,7 +159,7 @@
 </div>
 </div>
 </div>
-<div class="cw-play" data-cw="">
+<div class="cw-play">
 
 <!-- síminn hjá eigandanum -->
 <div class="cw-col">
@@ -140,25 +168,25 @@
 <div class="cw-screen">
 <div class="cw-head"><span class="cw-ava cw-ava--x"><img alt="" src="assets/merki/merki.svg"/></span><span><b>X</b><small>Crew chat</small></span><span class="cw-nat" data-cw-t="own-nat">English</span></div>
 <div class="cw-chat">
-<div class="cw-b cw-b--out"><span data-cw-t="task-own">Marek, today: the bathroom at 12 Elm Road. Take off the old tiles. Send a photo when you finish.</span><small class="cw-time">07:12</small></div>
+<div class="cw-b cw-b--out"><span data-cw-t="task-own"></span><small class="cw-time" data-cw-t="t1"></small></div>
 <div class="cw-conf">
-<p class="cw-ask">Send to Marek in <span data-cw-t="wrk-name">Polish</span>, job Bathroom at 12 Elm Road?</p>
+<p class="cw-ask">Send to Marek in <span data-cw-t="wrk-name">Polish</span>, job <span data-cw-t="job"></span>?</p>
 <button class="cw-send" type="button"><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Send</span></button>
 <p class="cw-sent" tabindex="-1"><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Sent to Marek in <span data-cw-t="wrk-name">Polish</span></span></p>
 </div>
 <div class="cw-b cw-b--in" data-s="2">
 <small class="cw-tr">Marek · translated from <span data-cw-t="wrk-name">Polish</span></small>
-<span data-cw-t="start-own">Starting now.</span>
-<small class="cw-orig"><b>Original</b> <span data-cw-t="start-wrk">Zaczynam.</span></small>
-<small class="cw-time">08:00</small>
+<span data-cw-t="start-own"></span>
+<small class="cw-orig"><b>Original</b> <span data-cw-t="start-wrk"></span></small>
+<small class="cw-time" data-cw-t="t2"></small>
 </div>
 <div class="cw-b cw-b--in" data-s="3">
 <small class="cw-tr">Marek · voice note, translated from <span data-cw-t="wrk-name">Polish</span></small>
 <span aria-hidden="true" class="cw-voice"><span class="cw-voice__p"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"></path></svg></span><span class="cw-wave"><i style="height:30%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:35%"></i><i style="height:85%"></i><i style="height:55%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:25%"></i></span><small>0:12</small></span>
-<span data-cw-t="done-own">Finished. The old tiles are off and the skip is full. Tomorrow I need 4 bags of tile adhesive.</span>
-<small class="cw-orig"><b>Original</b> <span data-cw-t="done-wrk">Skończone. Stare płytki zdjęte, kontener pełny. Jutro potrzebuję 4 worki kleju do płytek.</span></small>
-<span class="cw-photo"><span>Photo: old tiles off</span></span>
-<small class="cw-time">15:30</small>
+<span data-cw-t="done-own"></span>
+<small class="cw-orig"><b>Original</b> <span data-cw-t="done-wrk"></span></small>
+<span class="cw-photo"><span>Photo: <span data-cw-t="photo"></span></span></span>
+<small class="cw-time" data-cw-t="t3"></small>
 </div>
 </div>
 </div>
@@ -170,42 +198,33 @@
 <p class="ix-lbl"><span>Marek's phone</span></p>
 <div class="cw-phone">
 <div class="cw-screen">
-<div class="cw-head"><span class="cw-ava">N</span><span><b>Northside Builders</b><small>via X</small></span><span class="cw-nat" data-cw-t="wrk-nat">Polski</span></div>
+<div class="cw-head"><span class="cw-ava" data-cw-t="ini">N</span><span><b data-cw-t="firm"></b><small>via X</small></span><span class="cw-nat" data-cw-t="wrk-nat">Polski</span></div>
 <div class="cw-chat">
 <p class="cw-empty">Marek gets the task here, in <span data-cw-t="wrk-name">Polish</span>, once you tap Send.</p>
 <div class="cw-b cw-b--in" data-s="1">
-<small class="cw-tr">Sarah · translated from <span data-cw-t="own-name">English</span></small>
-<span data-cw-t="task-wrk">Marek, dzisiaj: łazienka przy 12 Elm Road. Zdejmij stare płytki. Wyślij zdjęcie, jak skończysz.</span>
-<small class="cw-orig"><b>Original</b> <span data-cw-t="task-own">Marek, today: the bathroom at 12 Elm Road. Take off the old tiles. Send a photo when you finish.</span></small>
-<small class="cw-time">07:12</small>
+<small class="cw-tr"><span data-cw-t="owner"></span> · translated from <span data-cw-t="own-name">English</span></small>
+<span data-cw-t="task-wrk"></span>
+<small class="cw-orig"><b>Original</b> <span data-cw-t="task-own"></span></small>
+<small class="cw-time" data-cw-t="t1"></small>
 </div>
-<div class="cw-b cw-b--out" data-s="2"><span data-cw-t="start-wrk">Zaczynam.</span><small class="cw-time">08:00</small></div>
+<div class="cw-b cw-b--out" data-s="2"><span data-cw-t="start-wrk"></span><small class="cw-time" data-cw-t="t2"></small></div>
 <div class="cw-b cw-b--out" data-s="3">
 <span aria-hidden="true" class="cw-voice"><span class="cw-voice__p"><svg viewbox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"></path></svg></span><span class="cw-wave"><i style="height:30%"></i><i style="height:60%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:75%"></i><i style="height:35%"></i><i style="height:85%"></i><i style="height:55%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:45%"></i><i style="height:25%"></i></span><small>0:12</small></span>
-<span class="sr">Voice note: <span data-cw-t="done-wrk">Skończone. Stare płytki zdjęte, kontener pełny. Jutro potrzebuję 4 worki kleju do płytek.</span></span>
+<span class="sr">Voice note: <span data-cw-t="done-wrk"></span></span>
 <span class="cw-photo"><span>Photo</span></span>
-<small class="cw-time">15:30</small>
+<small class="cw-time" data-cw-t="t3"></small>
 </div>
 </div>
 </div>
 </div>
 </div>
 
-<!-- það sem gerist í X: dagbókin fyllist -->
+<!-- það sem gerist í X: dagbókin fyllist (línurnar koma úr GREINAR) -->
 <div class="cw-col cw-col--diary">
 <p class="ix-lbl"><img alt="" src="assets/merki/merki.svg"/><span>In your X</span></p>
 <div class="cw-diary">
 <div class="cw-diary__h"><span class="mod__ic"><svg><use href="#i-bok"></use></svg></span><span><b>Work diary</b><small>Fills in from Marek's messages</small></span></div>
-<dl>
-<div class="cw-row on"><dt>Job</dt><dd>Bathroom at 12 Elm Road</dd></div>
-<div class="cw-row on"><dt>Worker</dt><dd>Marek</dd></div>
-<div class="cw-row" data-s="2"><dt>Start</dt><dd><span class="cw-wait">Waiting</span><span class="cw-val">08:00</span></dd></div>
-<div class="cw-row" data-s="3"><dt>Finish</dt><dd><span class="cw-wait">Waiting</span><span class="cw-val">15:30</span></dd></div>
-<div class="cw-row" data-s="3"><dt>Hours</dt><dd><span class="cw-wait">Waiting</span><span class="cw-val"><b>7 h 30 min</b> <span class="tag tag--warn">Waits for your OK</span></span></dd></div>
-<div class="cw-row" data-s="3"><dt>Done</dt><dd><span class="cw-wait">Waiting</span><span class="cw-val">Old tiles off. Skip full.</span></dd></div>
-<div class="cw-row" data-s="3"><dt>Needs</dt><dd><span class="cw-wait">Waiting</span><span class="cw-val">4 bags of tile adhesive for tomorrow</span></dd></div>
-<div class="cw-row" data-s="3"><dt>Photo</dt><dd><span class="cw-wait">Waiting</span><span class="cw-val"><span class="cw-photo cw-photo--sm"><span>Old tiles off</span></span></span></dd></div>
-</dl>
+<dl data-cw-diary=""></dl>
 </div>
 </div>
 </div>
@@ -217,115 +236,9 @@
 <p><svg aria-hidden="true"><use href="#i-skjoldur"></use></svg><span><b>You stay in charge.</b> You check each task before it goes out and approve the hours. X does not track where your workers are.</span></p>
 </div>
 </div>
-</div>
-</section>
-<!-- ============ VANDINN: þrjú vandamál, hvert með svari X ============ -->
-<section class="sec sec--tight ix-pain" id="vandinn">
-<div class="wrap">
-<div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>The problems</span></p>
 
-<h2>Three problems.<br/> <span class="metal">Three answers.</span></h2>
-</div>
-<ul class="ix-pains">
-<li class="ix-pain__c edge rv">
-<p class="ix-pain__k"><svg aria-hidden="true"><use href="#i-spjall"></use></svg><span>Crew who do not speak your language</span></p>
-<p class="ix-pain__q">You explain the same task three times in bad English. It still gets done wrong.</p>
-<p class="ix-pain__a"><img alt="" src="assets/merki/merki.svg"/><span>Write the task in your language. Each worker reads it in their own and answers the same way. <span class="tag">Coming soon</span></span></p>
-</li>
-<li class="ix-pain__c edge rv">
-<p class="ix-pain__k"><svg aria-hidden="true"><use href="#i-tilbod"></use></svg><span>Quotes nobody chased</span></p>
-<p class="ix-pain__q">You sent the quote on Friday. No answer, and nobody followed it up.</p>
-<p class="ix-pain__a"><img alt="" src="assets/merki/merki.svg"/><span>X drafts a reminder after 3 and 7 days. You tap yes.</span></p>
-</li>
-<li class="ix-pain__c edge rv">
-<p class="ix-pain__k"><svg aria-hidden="true"><use href="#i-bok"></use></svg><span>The diary and hours, at night</span></p>
-<p class="ix-pain__q">At night you write the work diary and everyone's hours in a notebook at home.</p>
-<p class="ix-pain__a"><img alt="" src="assets/merki/merki.svg"/><span>The diary and the hours fill in from your crew's messages. You check and approve. <span class="tag">Coming soon</span></span></p>
-</li>
-</ul>
-</div>
-</section>
-<!-- ============ YFIRLITIÐ: skrifstofuhliðin (skjámyndin, skraut, ekki gagnvirkt) ============ -->
-<section class="sec sec--tight ix-over" id="yfirlit">
-<div class="wrap">
-<div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>The office side</span></p>
-
-<h2>Run the whole business<br/> <span class="metal">in one place.</span></h2>
-
-<p class="lead">Customers, quotes, jobs and invoices in one simple system. Each morning X shows what needs you today.</p>
-</div>
-<!-- skjámynd: morgunlistinn (skraut, ekki gagnvirkt). Sömu dæmi og á kerfid.html: tilboð 1043 óopnað í 7 daga, 1044 samþykkt í gærkvöldi, áfangi 2 á Oak Street búinn -->
-<div class="shot rv">
-<div class="shot__glow"></div>
-<div aria-hidden="true" class="app" inert="">
-<div class="app__bar"><i></i><i></i><i></i><span class="app__url">app.x.is</span></div>
-<div class="app__body">
-<aside class="app__side">
-<div class="app__co"><b>N</b>Northside Builders</div>
-<div class="app__nav on"><svg><use href="#i-yfirlit"></use></svg><span>Overview</span></div>
-<div class="app__nav"><svg><use href="#i-folk"></use></svg><span>Customers</span></div>
-<div class="app__nav"><svg><use href="#i-sala"></use></svg><span>Sales</span><em>2</em></div>
-<div class="app__nav"><svg><use href="#i-tilbod"></use></svg><span>Quotes</span><em>4</em></div>
-<div class="app__nav"><svg><use href="#i-verk"></use></svg><span>Jobs</span><em>6</em></div>
-<div class="app__nav"><svg><use href="#i-reikningur"></use></svg><span>Invoices</span></div>
-<div class="app__nav"><svg><use href="#i-postur"></use></svg><span>Email</span></div>
-<div class="app__nav"><svg><use href="#i-heili"></use></svg><span>AI</span></div>
-<div class="app__nav"><svg><use href="#i-tengi"></use></svg><span>Connections</span></div>
-</aside>
-<div class="app__main">
-<div>
-<div class="app__hi"><span>Good morning, Sarah</span></div>
-<div class="app__date"><span>Monday · 6 jobs this week</span></div>
-</div>
-<div class="app__stats">
-<div class="stat"><small>Awaiting reply</small><b>2</b></div>
-<div class="stat"><small>Accepted</small><b>1</b></div>
-<div class="stat"><small>Ready for accounting</small><b>1</b></div>
-</div>
-<div class="app__list">
-<h4><span>Today</span></h4>
-<div class="row"><i class="tick done"></i><span>Cladding at Birch Lane: stage 3</span><small>08:00</small></div>
-<div class="row"><i class="tick"></i><span>Measure Anna Miller's kitchen, 12 Elm Road</span><small>10:30</small></div>
-<div class="row"><i class="tick"></i><span>Quote 1043: Harbor Hotel bathroom</span><span class="tag tag--warn">Not opened</span></div>
-<div class="row"><i class="tick"></i><span>Quote 1044: Porch at 7 Lake Drive</span><span class="tag tag--ok">Accepted</span></div>
-</div>
-</div>
-<aside class="app__ai">
-<div class="app__aihead"><img alt="" src="assets/merki/merki.svg"/>X<small>AI</small></div>
-<div class="msg"><span>Three things today: Anna Miller's kitchen is measured at 10:30, quote 1043 to Harbor Hotel has not been opened in 7 days, and quote 1044 for the porch at 7 Lake Drive was accepted last night. Send Harbor Hotel a reminder?</span>
-<div class="msg__act"><button tabindex="-1"><span>Send reminder</span></button><button tabindex="-1"><span>Later</span></button></div>
-</div>
-<div class="msg msg--me"><span>What about the Oak Street roof?</span></div>
-<div class="msg"><span>Stage 2 finished yesterday. The stage 2 invoice draft is ready for your accounting. Send it?</span>
-<div class="msg__act"><button tabindex="-1"><span>Send</span></button><button tabindex="-1"><span>Check first</span></button></div>
-</div>
-<div class="app__input"><span>Ask X...</span></div>
-</aside>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- ============ VELDU ÞÍNA GREIN: tilboð verður verk og reikningur (index.js) ============ -->
-<section class="sec sec--tight ix-pick" id="grein">
-<div class="wrap">
-<div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>Pick your industry</span></p>
-
-<h2>One quote.<br/> <span class="metal">Watch it become an invoice.</span></h2>
-
-<p class="lead">Pick your industry, then accept the quote as your customer would. In Wholesale, you accept a shop's order. See what X does with it.</p>
-</div>
-<div aria-label="Industry" class="ix-tabs rv" role="tablist">
-<button aria-controls="ix-demo" aria-selected="true" class="ix-tab" data-grein="contractors" id="ix-t-contractors" role="tab" type="button"><svg aria-hidden="true"><use href="#i-verk"></use></svg><span><b>Contractors</b><small>(trades and renovation)</small></span></button>
-<button aria-controls="ix-demo" aria-selected="false" class="ix-tab" data-grein="cleaning" id="ix-t-cleaning" role="tab" tabindex="-1" type="button"><svg aria-hidden="true"><use href="#i-dagatal"></use></svg><span><b>Cleaning and services</b></span></button>
-<button aria-controls="ix-demo" aria-selected="false" class="ix-tab" data-grein="consultants" id="ix-t-consultants" role="tab" tabindex="-1" type="button"><svg aria-hidden="true"><use href="#i-skyrsla"></use></svg><span><b>Consultants</b></span></button>
-<button aria-controls="ix-demo" aria-selected="false" class="ix-tab" data-grein="shops" id="ix-t-shops" role="tab" tabindex="-1" type="button"><svg aria-hidden="true"><use href="#i-verslun"></use></svg><span><b>Shops</b></span></button>
-<button aria-controls="ix-demo" aria-selected="false" class="ix-tab" data-grein="wholesale" id="ix-t-wholesale" role="tab" tabindex="-1" type="button"><svg aria-hidden="true"><use href="#i-vorur"></use></svg><span><b>Wholesale</b><small>(selling to shops)</small></span></button>
-</div>
-<div aria-labelledby="ix-t-contractors" class="ix-demo edge rv" id="ix-demo" role="tabpanel">
+<!-- dæmi B: tilboð eða pöntun verður verk og reikningsdrög (ráðgjafar, verslanir, heildsala) -->
+<div class="ix-demo edge" hidden="" id="ix-demo">
 <p class="ix-ex"><i aria-hidden="true"></i><span>Example. The system is in development.</span></p>
 <div class="ix-play">
 
@@ -334,17 +247,13 @@
 <p class="ix-lbl"><span data-f="lbl">Your customer's phone</span></p>
 <div class="ix-phone">
 <div class="ix-screen">
-<div class="ix-q__top"><b class="ix-logo" data-f="ini">N</b><span><b data-f="firm">Northside Builders</b><small data-f="qno">Quote 1043</small></span></div>
-<div class="ix-q__for"><b data-f="what">Bathroom on the 2nd floor</b><small data-f="cust">For Harbor Hotel</small></div>
+<div class="ix-q__top"><b class="ix-logo" data-f="ini"></b><span><b data-f="firm"></b><small data-f="qno"></small></span></div>
+<div class="ix-q__for"><b data-f="what"></b><small data-f="cust"></small></div>
 <p class="ix-q__pick" data-f="pick" id="ix-pick-l">Choose a version</p>
-<div aria-labelledby="ix-pick-l" class="ix-opts" role="group">
-<button aria-pressed="false" class="ix-opt" type="button"><span class="ix-opt__h"><b>Good</b><span class="ix-opt__p">€8,400</span></span><span class="ix-opt__li">Floor tiles · New sink and toilet · Painting</span></button>
-<button aria-pressed="true" class="ix-opt" type="button"><span class="ix-opt__h"><b>Better <span class="tag">Recommended</span></b><span class="ix-opt__p">€11,700</span></span><span class="ix-opt__li">Everything in Good · Wall tiles · Glass shower screen</span></button>
-<button aria-pressed="false" class="ix-opt" type="button"><span class="ix-opt__h"><b>Best</b><span class="ix-opt__p">€14,900</span></span><span class="ix-opt__li">Everything in Better · Underfloor heating · Concealed fittings</span></button>
-</div>
-<div class="ix-q__tot"><span data-f="vat">Total, incl. VAT</span><b data-f="total">€11,700</b></div>
-<button class="ix-accept" type="button"><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Accept as your customer</span></button>
-<div aria-hidden="true" class="ix-done"><span class="ix-done__ic"><svg><use href="#i-hak"></use></svg></span><b>Accepted</b><small data-f="thanks">Thank you. Northside Builders has been told.</small></div>
+<div aria-labelledby="ix-pick-l" class="ix-opts" role="group"></div>
+<div class="ix-q__tot"><span data-f="vat"></span><b data-f="total"></b></div>
+<button class="ix-accept" type="button"><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Accept</span></button>
+<div aria-hidden="true" class="ix-done"><span class="ix-done__ic"><svg><use href="#i-hak"></use></svg></span><b>Accepted</b><small data-f="thanks"></small></div>
 </div>
 </div>
 </div>
@@ -356,16 +265,16 @@
 <p class="ix-lbl"><img alt="" src="assets/merki/merki.svg"/><span>In your X</span></p>
 <div class="ix-step ix-step--q">
 <span class="mod__ic"><svg><use data-f="qic" href="#i-tilbod"></use></svg></span>
-<span class="ix-step__t"><b data-f="qline">Quote 1043 · Harbor Hotel</b><small data-f="qstate">Sent. Reminder after 3 and 7 days if there is no answer.</small></span>
+<span class="ix-step__t"><b data-f="qline"></b><small data-f="qstate"></small></span>
 <span class="tag tag--warn" data-f="qtag">Waiting</span>
 </div>
 <div class="ix-step ix-step--job">
 <span class="mod__ic"><svg><use data-f="jic" href="#i-verk"></use></svg></span>
 <div class="ix-step__b">
 <p class="ix-step__k" data-f="jk">Job</p>
-<p class="ix-wait" data-f="jw">Becomes a job when your customer accepts.</p>
+<p class="ix-wait" data-f="jw"></p>
 <div class="ix-fill">
-<p class="ix-step__h"><b data-f="jt">Bathroom, 2nd floor</b><small data-f="js">Harbor Hotel · Better · 3 stages</small></p>
+<p class="ix-step__h"><b data-f="jt"></b><small data-f="js"></small></p>
 <ul class="ix-checks" data-f="jl"></ul>
 </div>
 </div>
@@ -376,9 +285,9 @@
 <p class="ix-step__k">Invoice draft</p>
 <p class="ix-wait" data-f="iw">Made from the job. Nothing typed twice.</p>
 <div class="ix-fill">
-<p class="ix-step__h"><b data-f="it">Stage 1 of 3</b><small data-f="is">Harbor Hotel</small></p>
+<p class="ix-step__h"><b data-f="it"></b><small data-f="is"></small></p>
 <ul class="ix-lines" data-f="il"></ul>
-<div class="ix-ready"><span class="tag tag--ok">Ready for your accounting</span><small data-f="in">Waits for your yes, then goes to the accounting you already use.</small></div>
+<div class="ix-ready"><span class="tag tag--ok">Ready for your accounting</span><small>Waits for your yes, then goes to the accounting you already use.</small></div>
 </div>
 </div>
 </div>
@@ -387,189 +296,57 @@
 </div>
 </div>
 <p aria-live="polite" class="sr" id="ix-say"></p>
+</div>
 
-<!-- hvað X setur upp fyrir greinina -->
-<div class="ix-sets">
-<h3>What X sets up for <span data-f="for">contractors</span></h3>
-<ul data-f="sets">
-<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Your price list as quote lines, ready for Good, Better and Best.</span></li>
-<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Jobs in stages, with an invoice draft for each stage.</span></li>
-<li><svg aria-hidden="true"><use href="#i-hak"></use></svg><span>Change orders your customer accepts online, added to the right stage.</span></li>
-</ul>
-<a class="btn btn--metal" data-f="cta" href="pilot.html?industry=contractors"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
+<!-- áætlunin sem passar greininni -->
+<div class="ix-plan edge">
+<div class="ix-plan__t">
+<p class="ix-plan__k">Recommended plan</p>
+<p class="ix-plan__n"><b data-l="plan">Team</b> <span data-l="price">€129 a month excl. VAT</span></p>
+<p class="ix-plan__w" data-l="who"></p>
+</div>
+<div class="ix-plan__act">
+<a class="tlink" data-l="full" href="industries.html"><span>See the full setup</span><svg><use href="#i-or"></use></svg></a>
+<a class="btn btn--metal" data-l="cta" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
 </div>
 </div>
-<p class="ix-full"><a class="tlink" data-ix-full="" href="industries.html?industry=contractors"><span>See the full setup for contractors</span><svg><use href="#i-or"></use></svg></a></p>
+<p class="ix-again"><button class="ix-back" type="button"><span>Pick another industry</span></button></p>
 </div>
 </section>
-<!-- ============ FLÆÐIÐ: frá tilboði til greiðslu ============ -->
-<section class="sec sec--tight" id="flaedi">
-<div class="wrap">
-<div class="sec__head rv">
-<p class="kicker"><span>How it works</span></p>
-
-<h2>From quote to payment.<br/> <span class="metal">Six steps.</span></h2>
-</div>
-<ol class="flow ix-flow">
-<li class="fstep fstep--short edge rv">
-<div class="fstep__top"><span class="mod__ic"><svg><use href="#i-tilbod"></use></svg></span><span class="fstep__n">01</span></div>
-<h3>A quote from your price list</h3>
-<p>The AI can write the draft.</p>
-</li>
-<li class="fstep fstep--short edge rv">
-<div class="fstep__top"><span class="mod__ic"><svg><use href="#i-hak"></use></svg></span><span class="fstep__n">02</span></div>
-<h3>Accepted online</h3>
-<p>One link, one tap.</p>
-</li>
-<li class="fstep fstep--short edge rv">
-<div class="fstep__top"><span class="mod__ic"><svg><use href="#i-hond"></use></svg></span><span class="fstep__n">03</span></div>
-<h3>A reminder if there is no reply</h3>
-<p>After 3 and 7 days.</p>
-</li>
-<li class="fstep fstep--short edge rv">
-<div class="fstep__top"><span class="mod__ic"><svg><use href="#i-verk"></use></svg></span><span class="fstep__n">04</span></div>
-<h3>Becomes a job</h3>
-<p>You hand out the tasks to your people.</p>
-</li>
-<li class="fstep fstep--short edge rv">
-<div class="fstep__top"><span class="mod__ic"><svg><use href="#i-reikningur"></use></svg></span><span class="fstep__n">05</span></div>
-<h3>Invoice to your accounting</h3>
-<p class="fstep__via"><span>DK, Payday</span></p>
-</li>
-<li class="fstep fstep--short edge rv">
-<div class="fstep__top"><span class="mod__ic"><svg><use href="#i-greidsla"></use></svg></span><span class="fstep__n">06</span></div>
-<h3>Payment link</h3>
-<p class="fstep__via">Straumur, Teya</p>
-<span class="tag">Coming soon</span>
-</li>
-</ol>
-</div>
-</section>
-<!-- ============ HVAÐ NOTAR ÞÚ Í DAG: sami velja og á tengingar.html (assets/js/tengingar.js) ============ -->
-<section class="sec sec--tight" id="verkfaeri">
-<div class="wrap">
-<div class="sec__head rv">
-<p class="kicker"><span>Your tools</span></p>
-
-<h2>What do you use <span class="metal">today?</span></h2>
-
-<p class="lead">Tell us what you use. We connect it. Tick a tool to see what X does with it.</p>
-</div>
-<div class="picker" data-velja="">
-<div class="picker__groups">
-<div aria-label="Accounting" class="pgroup edge rv" role="group">
-<h3><span>Accounting</span></h3>
-<div class="tools">
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">DK</span><span class="tool__does" hidden=""><span>An accepted quote becomes an invoice in DK. You create a key there and paste it in, or we do it with you on a call.</span></span></button>
-<button aria-pressed="true" class="tool" data-st="ok" type="button"><span class="tool__name">Payday</span><span class="tool__does" hidden=""><span>An accepted quote becomes an invoice in Payday. Needs Payday Premium or higher.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Something else</span></span><span class="tool__does" hidden=""><span>Tell us what you use. We connect it with you, or set up a file export your bookkeeper imports.</span></span></button>
-</div>
-</div>
-<div aria-label="Email and calendar" class="pgroup edge rv" role="group">
-<h3><span>Email and calendar</span></h3>
-<div class="tools">
-<button aria-pressed="true" class="tool" data-st="ok" type="button"><span class="tool__name">Google</span><span class="tool__does" hidden=""><span>X sends email from your Gmail and puts jobs in your calendar. Incoming mail arrives by forwarding.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name">Microsoft 365</span><span class="tool__does" hidden=""><span>Email and calendar in Outlook. Your admin approves X once.</span></span></button>
-</div>
-</div>
-<div aria-label="Quotes and customers" class="pgroup edge rv" role="group">
-<h3><span>Quotes and customers</span></h3>
-<div class="tools">
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Word or Excel</span></span><span class="tool__does" hidden=""><span>Customers, products and history come in from a file. You don't start from zero.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="ok" type="button"><span class="tool__name"><span>Web form</span></span><span class="tool__does" hidden=""><span>Enquiries from your website go straight into sales in X.</span></span></button>
-</div>
-</div>
-<div aria-label="Payments" class="pgroup edge rv" role="group">
-<h3><span>Payments</span></h3>
-<div class="tools">
-<button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Straumur</span><span class="tool__does" hidden=""><span>A payment link on the invoice, and the payment is recorded on its own. Uses your own Straumur agreement.</span></span></button>
-<button aria-pressed="false" class="tool" data-st="soon" type="button"><span class="tool__name">Teya</span><span class="tool__does" hidden=""><span>A payment link on the invoice, with your own Teya agreement.</span></span></button>
-</div>
-</div>
-</div>
-<div class="picker__out edge rv">
-<h3><img alt="" src="assets/merki/merki.svg"/><span>How X works with your tools</span></h3>
-<ul aria-live="polite" class="picks" data-velja-ut=""></ul>
-<p class="picker__empty" data-velja-tomt="" hidden=""><span>Tick a tool to see what X does with it.</span></p>
-<div class="legend"><span><i></i><span>Planned for the first release</span></span><span><i class="s"></i><span>Coming soon</span></span></div>
-<p class="ix-tools__send"><a class="tlink" data-velja-send="" href="pilot.html"><span>Send this list with your pilot request</span><svg><use href="#i-or"></use></svg></a></p>
-<p class="ix-tools__all"><a class="tlink" href="tengingar.html"><span>How we connect your tools</span><svg><use href="#i-or"></use></svg></a></p>
-</div>
-</div>
-</div>
-</section>
-<!-- ============ SAMANBURÐUR: fjórar leiðir ============ -->
-<section class="sec sec--tight" id="leidin">
+<!-- ============ 3. HVERNIG ÞETTA VIRKAR ============ -->
+<section class="sec sec--tight ix-how" id="leidin">
 <div class="wrap">
 <div class="sec__head sec__head--mid rv">
-<p class="kicker"><span>A different way</span></p>
+<p class="kicker"><span>How it works</span></p>
 
-<h2>Not a suite. Not ten apps.<br/> <span class="metal">Not your evenings.</span></h2>
-
-<p class="lead">Most small firms do it by hand, or are offered a big system that replaces everything, or lots of small apps that do not talk to each other. X connects what you already have.</p>
+<h2>Three <span class="metal">simple steps.</span></h2>
 </div>
-<div class="ways ix-ways">
-<div class="way edge rv">
-<p class="way__sub"><span>By hand</span></p>
-<h3>Doing it yourself</h3>
-<ul>
-<li><svg><use href="#i-x"></use></svg><span>Quotes in Word or Excel</span></li>
-<li><svg><use href="#i-x"></use></svg><span>Follow-up from memory</span></li>
-<li><svg><use href="#i-x"></use></svg><span>Invoices typed in the evening</span></li>
-</ul>
+<div class="steps">
+<div class="step edge rv"><span class="step__n"><b>01</b></span><h3>Choose your industry.</h3><p>X comes set up for the way your industry works.</p></div>
+<div class="step edge rv"><span class="step__n"><b>02</b></span><h3>We connect the tools you already use.</h3><p>Your accounting, email and calendar stay where they are.</p></div>
+<div class="step edge rv"><span class="step__n"><b>03</b></span><h3>Start with your system ready.</h3><p>Your customers, price list and templates are in place when you start.</p></div>
 </div>
-<div class="way edge rv">
-<p class="way__sub"><span>Replaces everything</span></p>
-<h3>A big suite</h3>
-<ul>
-<li><svg><use href="#i-x"></use></svg><span>A price per user</span></li>
-<li><svg><use href="#i-x"></use></svg><span>A setup project before you start</span></li>
-<li><svg><use href="#i-x"></use></svg><span>A new accounting system for you and your bookkeeper</span></li>
-</ul>
-</div>
-<div class="way edge rv">
-<p class="way__sub"><span>Each does one job</span></p>
-<h3>Lots of small apps</h3>
-<ul>
-<li><svg><use href="#i-x"></use></svg><span>They rarely talk to each other</span></li>
-<li><svg><use href="#i-x"></use></svg><span>The same name and company ID typed in again and again</span></li>
-<li><svg><use href="#i-x"></use></svg><span>Nobody sees the whole picture</span></li>
-</ul>
-</div>
-<div class="way way--x edge rv">
-<p class="way__sub"><span>Connects what you have</span></p>
-<h3><img alt="" src="assets/merki/merki.svg"/>X</h3>
-<ul>
-<li><svg><use href="#i-hak"></use></svg><span>A quote out the same day</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Accepted on your customer's phone</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>Reminders after 3 and 7 days</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>The invoice goes to your current accounting</span></li>
-<li><svg><use href="#i-hak"></use></svg><span>One price for the whole team, not per user</span></li>
-</ul>
-</div>
-</div>
+<p class="ix-how__more rv"><a class="tlink" href="tengingar.html"><span>How we connect your tools</span><svg><use href="#i-or"></use></svg></a></p>
 </div>
 </section>
-<!-- ============ PRUFUHÓPURINN ============ -->
-<section class="sec sec--tight" id="pilot">
+<!-- ============ 4. VERÐ OG PRUFUHÓPURINN ============ -->
+<section class="sec sec--tight ix-pp-sec" id="pilot">
 <div class="wrap">
-<div class="ix-pilot edge rv">
-<div class="ix-pilot__t">
+<div class="ix-pp edge rv">
+<div class="ix-pp__price">
+<p class="kicker"><span>Pricing</span></p>
+
+<h2>One price <span class="metal">for the whole team.</span></h2>
+
+<p class="ix-pp__from">From €49 a month</p>
+<p class="ix-pp__sm">Solo €49, Team €129, Business €299 a month excl. VAT.</p>
+<a class="tlink" href="verd.html"><span>See pricing</span><svg><use href="#i-or"></use></svg></a>
+</div>
+<div class="ix-pp__pilot">
 <p class="kicker"><span>The pilot</span></p>
-
-<h2>Use X free for 3 months.<br/> <span class="metal">Help shape it.</span></h2>
-
-<p class="lead">Pilot: the first 10 firms use X free for 3 months. In return: a short call every two weeks and honest feedback. After the pilot: 25% off for the first 12 months.</p>
-<div class="hero__cta">
+<p class="ix-pp__offer">Pilot: the first 10 firms use X free for 3 months. In return: a short call every two weeks and honest feedback. After the pilot: 25% off for the first 12 months.</p>
 <a class="btn btn--metal" data-ix-cta="" href="pilot.html"><span>Join the pilot</span><svg><use href="#i-or"></use></svg></a>
-<a class="btn btn--ghost" href="pilot.html?call=1"><span>Book a 15 min call</span></a>
 </div>
-</div>
-<ol class="ix-pilot__l">
-<li><span class="ix-pilot__n">01</span><div><h3>You get</h3><p>X free for 3 months, with the pack for your industry.</p></div></li>
-<li><span class="ix-pilot__n">02</span><div><h3>You give</h3><p>A short call every two weeks and honest feedback.</p></div></li>
-<li><span class="ix-pilot__n">03</span><div><h3>After the pilot</h3><p>25% off for the first 12 months.</p></div></li>
-</ol>
 </div>
 </div>
 </section>
@@ -636,6 +413,5 @@
 </footer>
 <script defer="" src="assets/js/site.js"></script>
 <script defer="" src="assets/js/index.js"></script>
-<script defer="" src="assets/js/tengingar.js"></script>
 </body>
 </html>
