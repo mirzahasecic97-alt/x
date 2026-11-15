@@ -113,3 +113,91 @@ html:not(.in-js) .in-match,html:not(.in-js) .in-show{display:none}
 }
 @media (max-width:420px){.in-app .stat b{font-size:17px}}
 .in-rec__set{color:var(--muted);font-size:14px;margin-top:-4px}
+
+/* ---------- service contracts (contractors): demo and five solutions ---------- */
+.in-svc{margin-top:96px}
+.in-svc[hidden]{display:none}
+.in-svc .sec__head{margin-bottom:36px}
+.in-ex{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--dim);margin:0 0 18px}
+.in-ex i{width:6px;height:6px;border-radius:50%;background:var(--warn);flex:none}
+.in-svc__demo{padding:26px}
+.in-svc__grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:28px;align-items:start}
+.in-svc__in{display:grid;gap:14px}
+.in-svc__chat{border-radius:16px;background:#0e0f12;border:1px solid var(--line-2);padding:14px;box-shadow:0 24px 60px -30px rgba(0,0,0,.9)}
+.in-svc__head{display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.in-svc__head > span:nth-child(2){display:grid;line-height:1.3;min-width:0}
+.in-svc__head b{font-size:14.5px;font-weight:600}
+.in-svc__head small{font-size:12px;color:var(--dim)}
+.in-svc__head > small{margin-left:auto;font-family:var(--mono);font-size:11px}
+.in-svc__bubble{margin:0;padding:12px 14px;border-radius:16px 16px 16px 4px;background:#1f2126;color:#e4e5e8;font-size:14.5px;line-height:1.6}
+.in-svc__acts{display:flex;gap:10px;flex-wrap:wrap}
+.in-svc__send,.in-svc__again{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s}
+.in-svc__send{width:100%;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.12);color:var(--text)}
+.in-svc__send:hover{background:rgba(255,255,255,.18)}
+.in-svc__send svg{width:16px;height:16px}
+.in-svc__again{border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:var(--muted)}
+.in-svc__again:hover{color:var(--text)}
+.in-svc__send:focus-visible,.in-svc__again:focus-visible{outline:2px solid #dfe2e7;outline-offset:3px}
+.in-svc__acts [hidden]{display:none}
+.in-svc__how{font-size:13px;color:var(--dim);line-height:1.5}
+.in-svc__out{display:grid;gap:10px;min-width:0}
+.in-svc__empty{display:grid;gap:10px;padding:18px;border-radius:14px;border:1px dashed var(--line-2);color:var(--dim);font-size:14px}
+.in-svc__empty i{display:block;height:58px;border-radius:12px;background:rgba(255,255,255,.025);border:1px solid var(--line)}
+.in-svc__clock{display:flex;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.03em}
+.in-svc__c2,.in-svc__out.is-later .in-svc__c1{display:none}
+.in-svc__out.is-later .in-svc__c2{display:inline}
+
+.in-task{display:grid;gap:8px;padding:14px 16px;border-radius:14px;background:#131418;border:1px solid var(--line);animation:msgInn .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+.in-task__top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.in-task__top small{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.in-task__st{margin-left:auto}
+.in-task__t{font-size:15.5px;font-weight:600;line-height:1.35}
+.in-task__who{display:flex;align-items:center;gap:8px;font-size:13.5px;flex-wrap:wrap}
+.in-task__who small{color:var(--dim);font-size:12.5px}
+.in-task__av{width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:10.5px;color:#0a0b0d;background:var(--metal)}
+.in-task__brief,.in-task__sup,.in-task__flag{display:flex;align-items:flex-start;gap:8px;margin:0;font-size:13px;line-height:1.45;color:var(--muted)}
+.in-task__brief{padding:7px 10px;border-radius:9px;background:rgba(255,255,255,.04);border:1px solid var(--line);justify-self:start}
+.in-task svg{width:14px;height:14px;flex:none;margin-top:2px;color:#dfe2e7}
+.in-task__sup{flex-wrap:wrap;align-items:center}
+.in-task__sup svg{margin-top:0}
+.in-task__sup span:not(.tag){flex:1 1 220px}
+.in-task__over{display:grid;gap:8px;padding-top:10px;border-top:1px solid var(--line)}
+.in-task__flag{color:var(--warn)}
+.in-task__flag svg{color:var(--warn)}
+.in-task__flag b{font-weight:500}
+.in-task__note{display:grid;gap:6px;padding:10px 12px;border-radius:10px;border-left:2px solid rgba(255,255,255,.4);background:rgba(255,255,255,.03)}
+.in-task__note small{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.03em}
+.in-task__note p{margin:0;font-size:13.5px;line-height:1.5;color:#d6d7db}
+.in-task__note .tag{justify-self:start}
+/* before "later that day": first status, nothing extra. After: the later status, the flag and the invoice line */
+.in-task__later{display:none}
+.in-svc__out.is-later .in-task__now{display:none}
+.in-svc__out.is-later .in-task__later{display:revert}
+.in-svc__out.is-later .in-task__over{display:grid;animation:msgInn .5s cubic-bezier(.2,.7,.2,1) both}
+.in-svc__out.is-later .in-task__sup{display:flex;animation:msgInn .5s cubic-bezier(.2,.7,.2,1) both}
+.in-svc__out.is-later .in-task--over{border-color:rgba(240,182,90,.35)}
+.in-svc__fine{margin-top:18px;font-size:13px;color:var(--dim);line-height:1.55}
+.in-svc__fine .tag{vertical-align:1px}
+
+.in-svc__items{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:20px}
+.in-svc__items .mod:hover{transform:none}
+.in-svc__more{color:#d6d7db!important}
+.in-svc__more .tag{margin-left:4px;vertical-align:1px}
+.in-svc__note{font-size:13px!important;color:var(--dim)!important}
+
+@media (max-width:900px){.in-svc__grid{grid-template-columns:minmax(0,1fr);gap:20px}}
+@media (max-width:720px){
+  .in-svc{margin-top:72px}
+  .in-svc__demo{padding:18px 14px}
+  .in-svc__items{grid-template-columns:minmax(0,1fr);gap:10px}
+  .in-svc__items .mod{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;row-gap:4px;align-items:start;padding:16px}
+  .in-svc__items .mod .mod__ic{grid-row:1/span 4;margin:0}
+  .in-svc__items .mod h3{font-size:16px;align-self:center}
+  .in-svc__items .mod > :not(.mod__ic){grid-column:2}
+  .in-svc__items .mod p{font-size:14px}
+  .in-svc__items .mod > .tag{justify-self:start;margin-top:4px}
+  .in-task{padding:12px}
+  .in-task__st{margin-left:0;flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){.in-task,.in-svc__out.is-later .in-task__over,.in-svc__out.is-later .in-task__sup{animation:none}}
+.in-svc{scroll-margin-top:72px}

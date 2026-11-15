@@ -79,6 +79,7 @@
         { i: 'i-sala', h: 'The enquiry', p: 'A web enquiry for a bathroom lands in Sales with the customer\'s details.' },
         { i: 'i-tilbod', h: 'Quote in three versions', p: 'X drafts Good, Better and Best from your price list. You check and send.' },
         { i: 'i-hak', h: 'Accepted online', p: 'The customer picks Better. A job is created with its stages.' },
+        { i: 'i-verk', h: 'The morning list', p: 'The day\'s list goes into X once. Each worker sees his own tasks, most urgent first.' },
         { i: 'i-spjall', h: 'Tasks to the crew', p: 'You write the tasks in your language. Each worker gets them in their own, on WhatsApp or by text message.', soon: true },
         { i: 'i-bok', h: 'Diary and hours', p: 'Replies, photos, start and finish fill the work diary. You approve the hours.', soon: true },
         { i: 'i-reikningur', h: 'The invoice', p: 'Each stage done: the invoice waits for your yes, then goes to DK or Payday.' },
@@ -89,8 +90,44 @@
         ['Quote not opened in 3 days: a reminder on the morning list.'],
         ['Quote accepted: a job is created and the deposit invoice is drafted.'],
         ['Stage done: the invoice for that stage waits for your yes.'],
+        ['A job runs over its estimate: a short note to the client waits for your OK.'],
       ],
       tools: ['whatsapp', 'payday', 'dk', 'gmail', 'outlook', 'gcal', 'wordquotes'],
+      // Service contracts: from a plumber interview (docs/customer-interviews/2026-11-15-plumber.md).
+      // Status: the day's list in each worker's language follows crew chat (Coming soon),
+      // the supplier invoice match is Coming soon. The rest is planned for the first release.
+      svc: {
+        kicker: 'Service contracts',
+        h: ['Service contracts.', 'One list for the day.'],
+        lead: 'For plumbers, electricians and maintenance crews who work for companies on service agreements.',
+        msg: { from: 'Sarah', time: '06:50', lines: ['Today:', '1. Leak at Harbor Hotel room 214, urgent.', '2. Replace water heater at 40 Hill Road.', '3. Check radiators at Westgate Market.'] },
+        tasks: [
+          {
+            job: '1042', pri: ['Urgent', 'warn'], t: 'Leak at Harbor Hotel, room 214', who: ['MA', 'Marek', 'Polish'],
+            brief: 'Job brief: 2 client photos, 3 past visits, checklist, estimate 1 h',
+            later: ['Started 08:10', ''],
+            over: { h: 'Over estimate: 1 h planned, 3 h 40 min so far', to: 'Draft note to Harbor Hotel', note: 'The leak is inside the wall behind the shower, so a panel had to come off. Photo attached.', ok: 'Waits for your OK' },
+          },
+          {
+            job: '1043', pri: ['Today', ''], t: 'Replace water heater at 40 Hill Road', who: ['TO', 'Tomas', 'Lithuanian'],
+            brief: 'Job brief: photo of the old heater, model from the last visit, estimate 3 h',
+            later: ['Done, 2 photos', 'ok'],
+            sup: 'Supplier invoice 77812, job 1043: €186 materials matched',
+          },
+          {
+            job: '1044', pri: ['Routine', ''], t: 'Check radiators at Westgate Market', who: ['AN', 'Ana', 'Romanian'],
+            brief: 'Job brief: last check in March, 6 radiators, estimate 2 h',
+            later: ['Waiting for parts', 'warn'],
+          },
+        ],
+        items: [
+          { i: 'i-verk', h: 'The day\'s list, sent once', p: 'Paste or type the list in X, or send it to your jobs address. X splits it into tasks, most urgent first, and puts each one on the right worker\'s list.', more: 'Forward it to X on WhatsApp, and each worker reads his list in his own language. A text message link until Meta approves X.', moreSoon: true, fine: 'Apps cannot read personal Messenger chats, so the list is forwarded or typed in.' },
+          { i: 'i-tilbod', h: 'A job brief first', p: 'Before anyone calls it a quick one: the client\'s photos, past visits to the same address and the same kind of job, a short checklist (access, shut-off valves, parts) and an estimate.' },
+          { i: 'i-hond', h: 'Planned against actual', p: 'The worker taps Started, so X knows how long a job has run. When it runs over, X flags it and drafts a short note to the client with the reason and a photo, for you to approve. Over time you see which kinds of job always take longer than planned.' },
+          { i: 'i-reikningur', h: 'Materials on the job', p: 'The worker gives the job number at the supplier\'s counter, so it is printed on the supplier\'s invoice. When that invoice reaches DK or Payday, X matches it to the job by the number. Hours and materials sit on the same job, so you invoice the client in full.', soon: true, fine: 'Depends on reading supplier invoices through the accounting connection.' },
+          { i: 'i-yfirlit', h: 'One board for status', p: 'Started, waiting for parts, or done with a photo. You see every job without calling round.' },
+        ],
+      },
     },
 
     cleaning: {
@@ -332,8 +369,84 @@
       '</div>';
   };
 
+  // ---------- service contracts: five solutions and a small demo (nothing is sent) ----------
+  const svcBox = $('[data-in-svc]');
+  let svcTimer = 0;
+  const TAG = (t, k) => '<span class="tag' + (k ? ' tag--' + k : '') + '">' + esc(t) + '</span>';
+
+  const renderTask = (k, i) =>
+    '<article class="in-task' + (k.over ? ' in-task--over' : '') + '" style="--d:' + (i * 0.12) + 's">' +
+      '<div class="in-task__top">' + TAG(k.pri[0], k.pri[1]) + '<small>Job ' + esc(k.job) + '</small>' +
+        '<span class="in-task__st"><span class="in-task__now">' + TAG('Not started') + '</span><span class="in-task__later">' + TAG(k.later[0], k.later[1]) + '</span></span></div>' +
+      '<b class="in-task__t">' + esc(k.t) + '</b>' +
+      '<div class="in-task__who"><span class="in-task__av" aria-hidden="true">' + esc(k.who[0]) + '</span><span>' + esc(k.who[1]) + '</span><small>list in ' + esc(k.who[2]) + '</small></div>' +
+      '<p class="in-task__brief">' + ic('i-tilbod') + '<span>' + esc(k.brief) + '</span></p>' +
+      (k.over ? '<div class="in-task__later in-task__over"><p class="in-task__flag">' + ic('i-hond') + '<b>' + esc(k.over.h) + '</b></p>' +
+        '<div class="in-task__note"><small>' + esc(k.over.to) + '</small><p>' + esc(k.over.note) + '</p>' + TAG(k.over.ok, 'warn') + '</div></div>' : '') +
+      (k.sup ? '<p class="in-task__later in-task__sup">' + ic('i-reikningur') + '<span>' + esc(k.sup) + '</span>' + SOON + '</p>' : '') +
+    '</article>';
+
+  const renderSvc = s =>
+    '<div class="sec__head sec__head--mid"><p class="kicker"><span>' + esc(s.kicker) + '</span></p>' +
+      '<h2>' + esc(s.h[0]) + '<br/> <span class="metal">' + esc(s.h[1]) + '</span></h2>' +
+      '<p class="lead">' + esc(s.lead) + '</p></div>' +
+    '<div class="in-svc__demo edge" data-svc-demo="">' +
+      '<p class="in-ex"><i aria-hidden="true"></i><span>Example. The system is in development.</span></p>' +
+      '<div class="in-svc__grid">' +
+        '<div class="in-svc__in">' +
+          '<div class="in-svc__chat">' +
+            '<div class="in-svc__head"><span class="in-task__av" aria-hidden="true">' + esc(s.msg.from.charAt(0)) + '</span><span><b>' + esc(s.msg.from) + '</b><small>The day\'s list, as sent on Messenger</small></span><small>' + esc(s.msg.time) + '</small></div>' +
+            '<p class="in-svc__bubble">' + s.msg.lines.map(esc).join('<br/>') + '</p>' +
+          '</div>' +
+          '<div class="in-svc__acts"><button class="in-svc__send" data-svc-send="" type="button"><span>Send to X</span>' + ic('i-or') + '</button>' +
+            '<button class="in-svc__again" data-svc-again="" hidden="" type="button"><span>Start over</span></button></div>' +
+          '<p class="in-svc__how">Pasted, typed or sent to your jobs address.</p>' +
+        '</div>' +
+        '<div class="in-svc__out" aria-live="polite" data-svc-out="">' +
+          '<div class="in-svc__empty"><span>Press Send to X. The list becomes tasks here, one list per worker.</span><i></i><i></i><i></i></div>' +
+        '</div>' +
+      '</div>' +
+      '<p class="in-svc__fine">Each worker\'s list in his own language comes with crew chat ' + SOON + '. The supplier invoice match is Coming soon too. Names, jobs and amounts are made up.</p>' +
+    '</div>' +
+    '<div class="in-svc__items">' + s.items.map(h => '<div class="mod edge"><span class="mod__ic">' + ic(h.i) + '</span><h3>' + esc(h.h) + '</h3><p>' + esc(h.p) + '</p>' +
+      (h.more ? '<p class="in-svc__more">' + esc(h.more) + (h.moreSoon ? ' ' + SOON : '') + '</p>' : '') +
+      (h.fine ? '<p class="in-svc__note">' + esc(h.fine) + '</p>' : '') + (h.soon ? SOON : '') + '</div>').join('') + '</div>';
+
+  const svcRun = () => {
+    const s = G[grein].svc;
+    const out = svcBox.querySelector('[data-svc-out]');
+    if (!s || !out) return;
+    clearTimeout(svcTimer);
+    out.classList.remove('is-later');
+    out.innerHTML = '<p class="in-svc__clock"><span class="in-svc__c1">06:52 · 3 tasks, most urgent first</span><span class="in-svc__c2">11:50 · later that day</span></p>' +
+      s.tasks.map(renderTask).join('');
+    const again = svcBox.querySelector('[data-svc-again]');
+    svcBox.querySelector('[data-svc-send]').hidden = true;
+    again.hidden = false;
+    again.focus({ preventScroll: true });
+    svcTimer = setTimeout(() => out.classList.add('is-later'), 1800);
+  };
+  const svcReset = () => {
+    clearTimeout(svcTimer);
+    const s = G[grein].svc;
+    svcBox.innerHTML = s ? renderSvc(s) : '';
+    const send = svcBox.querySelector('[data-svc-send]');
+    if (send) send.focus({ preventScroll: true });
+  };
+  if (svcBox) {
+    svcBox.addEventListener('click', e => {
+      if (e.target.closest('[data-svc-send]')) svcRun();
+      else if (e.target.closest('[data-svc-again]')) svcReset();
+    });
+  }
+
   const renderShow = g => {
     const d = G[g];
+    if (svcBox) {
+      clearTimeout(svcTimer);
+      svcBox.hidden = !d.svc;
+      svcBox.innerHTML = d.svc ? renderSvc(d.svc) : '';
+    }
     $('[data-in-kicker]').textContent = 'Your X: ' + d.name;
     $('[data-in-h2]').innerHTML = esc(d.h2[0]) + '<br/> <span class="metal">' + esc(d.h2[1]) + '</span>';
     $('[data-in-lead]').textContent = d.lead;
@@ -418,5 +531,12 @@
   const fyrst = lesa();
   const urlGrein = new URLSearchParams(location.search).get('industry');
   velja(fyrst, false);
+  // links from kerfid.html and verd.html end in #service-contracts. The block is filled in above,
+  // after the browser has already looked for the anchor, so scroll to it here
+  if (location.hash === '#service-contracts' && svcBox && !svcBox.hidden) {
+    const tilSvc = () => svcBox.scrollIntoView({ behavior: 'instant' });
+    if (document.readyState === 'complete') requestAnimationFrame(tilSvc);
+    else window.addEventListener('load', tilSvc, { once: true });
+  }
   if (urlGrein) { try { localStorage.setItem(LYKILL, fyrst); } catch (e) { /* storage blocked */ } }
 })();

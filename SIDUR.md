@@ -18,9 +18,9 @@ The site is **English only and global**. No `lang` attributes on elements, no IS
 | `assets/js/site.js` | Shared script: settings (`STILLINGAR`), header, reveal on scroll, the mobile action bar, year in the footer, hero effects |
 | `assets/js/<page>.js` | Script for one page, loaded after `site.js`, both with `defer`. Wrap everything in `(() => { ... })();` |
 | `assets/js/pilot.js` | The pilot form: prefill from the URL (or the industry saved in `localStorage` `x-grein` by the home page picker, `industries.html` or `kerfid.html`), `?tools=` ticks matching tools and puts the rest in "Other tools", validation, sending |
-| `assets/js/industries.js` | `industries.html`: all content for the five industries in one data object (`G`), the connection list with status (`T`), the plans (`PLANS`), and the rendering |
-| `assets/js/index.js` | The home page: the industry demo (`GREINAR`) and the crew chat example (`CW`, prewritten sample translations, no API, nothing is sent) |
-| `assets/js/tengingar.js` | The "What do you use today?" picker (`[data-velja]`). On `tengingar.html` and the home page it builds the start of a pilot request: `[data-velja-send]` links to `pilot.html?tools=A,B,C` with the ticked tools and `[data-velja-annad]` |
+| `assets/js/industries.js` | `industries.html`: all content for the five industries in one data object (`G`, with the service contracts block in `G.contractors.svc`), the connection list with status (`T`), the plans (`PLANS`), and the rendering |
+| `assets/js/index.js` | The home page: the industry picker under the hero and the "Solutions for ..." section, all from one data object (`GREINAR`), plus the two demos: crew chat (`cw`, for contractors and cleaning, prewritten sample translations, no API, nothing is sent) and a quote or order that becomes a job and an invoice draft (`qd`, for consultants, shops and wholesale) |
+| `assets/js/tengingar.js` | The "What do you use today?" picker (`[data-velja]`). On `tengingar.html` it builds the start of a pilot request: `[data-velja-send]` links to `pilot.html?tools=A,B,C` with the ticked tools and `[data-velja-annad]` |
 | `assets/merki/` | `x-logo-malmur.svg` (mark and X, header and footer), `merki.svg` (mark only, decoration), `favicon.svg` |
 
 Paths are always relative: `assets/...`, `kerfid.html`. No leading slash.
@@ -77,7 +77,7 @@ Always these five, in this order and with this wording:
 4. Shops
 5. Wholesale (selling to shops)
 
-URL values: `contractors`, `cleaning`, `consultants`, `shops`, `wholesale`. The chosen one is saved in `localStorage` `x-grein` and read by `index.html`, `industries.html`, `kerfid.html` and `pilot.html`. The home page demo has all five tabs (in Wholesale you accept a shop's order).
+URL values: `contractors`, `cleaning`, `consultants`, `shops`, `wholesale`. The chosen one is saved in `localStorage` `x-grein` and read by `index.html`, `industries.html`, `kerfid.html` and `pilot.html`. The home page order is: hero, "What do you do?" (five industry cards, none chosen until the visitor picks or `?industry=` / `x-grein` gives one), "Solutions for <industry>" (four problem and solution cards and one demo), how it works, pricing and pilot, who answers you, final call to action. `index.html#crew` opens the contractors crew chat demo. In Wholesale you accept a shop's order.
 
 Wholesale is the newest pack and the research is still running. Never claim that store data (stock or sell-through per store) is available today: it is Coming soon and only where the store or chain shares it, depending on agreements. Reorder suggestions, webshop stock sync and store or POS connections are Coming soon. Shopify, WooCommerce, DK, Payday and store systems are named as plain text connections.
 
@@ -95,13 +95,27 @@ The lead feature for contractors. The owner writes or speaks a task on WhatsApp 
 
 - **Names:** "Crew chat in their language" (long), "Crew chat" (module chip), "Work diary and hours" (module chip). The old "Crew link" is gone.
 - **Status: Coming soon** everywhere. Nothing is built, the Meta setup has not started and no language pair has been tested. Move it to **In testing** only when a pilot firm sends real tasks to real workers through a live WhatsApp number and one language pair has passed a test by native speakers.
-- **Where:** home page hero line and the example right under the hero (`#crew`), the three problems, `industries.html` (contractors: first highlights, "A day with X", modules, automation, WhatsApp connection), `kerfid.html#crew`, `verd.html` (Team and Business, table row, FAQ "How does crew chat work?").
+- **Where:** home page "Solutions for contractors" and "Solutions for cleaning and services" (cards and the demo, `#crew`), `industries.html` (contractors: first highlights, "A day with X", modules, automation, WhatsApp connection), `kerfid.html#crew`, `verd.html` (Team and Business, table row, FAQ "How does crew chat work?").
 - **Plans:** Team and Business. Solo does not list it (`industries.js` hides the two modules when the recommendation is Solo).
 - **Channel:** WhatsApp once Meta approves X. Until then a text message with a private link that opens the task in the worker's language, no app and no login. Say this wherever the channel comes up.
 - **Languages:** no list of supported languages. The home example has English, Icelandic and Croatian for the owner and Polish, Lithuanian, Romanian, Ukrainian and Spanish for the worker, always with "Example" and the note that each language pair is tested with native speakers before it is offered.
 - **Costs:** no per-message prices on the site. Say only that WhatsApp charges per message and those fees may be added at cost, confirmed before launch.
 - **Honest limits:** the owner checks each task before it goes out and approves the hours. X does not track location. The work diary helps keep the official site diary, it does not replace it. Never "first" or "only": others already do parts of this.
 - **Sample data:** owner Sarah, worker Marek, firm Northside Builders, job "Bathroom at 12 Elm Road", 08:00 to 15:30, 7 h 30 min.
+
+## Service contracts
+
+A block for contractors who work for companies on service agreements (plumbers, electricians, maintenance crews). Source: the plumber interview in `docs/customer-interviews/2026-11-15-plumber.md` (one level up from `site`). The pain: the boss sends the day's tasks on Messenger, calls a job "a quick one" without checking, and hours and materials end up in different places.
+
+- **Where:** `industries.html` (contractors only: the block `#service-contracts` after the highlights, rendered from `G.contractors.svc` in `industries.js`, plus the step "The morning list" in "A day with X" and one example automation), `kerfid.html#service-contracts` (compact list under crew chat in `#verk`, links to `industries.html?industry=contractors#service-contracts`), `verd.html` (FAQ "Do you handle service contracts?"). No price changes.
+- **The five, with status:**
+  1. The day's list, sent once: paste, type or send the list to the jobs address and X splits it into tasks per worker, most urgent first (first release). Forwarding to X on WhatsApp and each worker's list in his own language follow the crew chat rules: **Coming soon**, a text message link until Meta approves X. Apps cannot read personal Messenger chats, so the list is forwarded or typed in. Say this.
+  2. A job brief first: client photos, past visits to the same address and job type, a short checklist (access, shut-off valves, parts) and an estimate (first release).
+  3. Planned against actual: the worker taps Started, X flags a job that runs over and drafts a short note to the client for the owner's OK. Over time the owner sees which job types run over. No numbers on the site (first release).
+  4. Materials on the job: the worker gives the job number at the supplier's counter, the supplier invoice reaches DK or Payday and X matches it to the job by that number. **Coming soon**: depends on reading supplier invoices through the accounting connection.
+  5. One board for status: started, waiting for parts, done with a photo (first release).
+- **The demo** (`industries.html`, contractors): a Messenger style list from Sarah, a "Send to X" button that turns it into three task cards (priority, worker, job brief), then "later that day" with statuses, "Over estimate: 1 h planned, 3 h 40 min so far" with a draft note that "Waits for your OK", and the supplier invoice line marked Coming soon. Labelled "Example. The system is in development." Nothing is sent. "Send to X" and "Start over" are demo controls, not CTAs.
+- **Sample data:** owner Sarah, workers Marek (Polish), Tomas (Lithuanian), Ana (Romanian), jobs 1042 to 1044 at Harbor Hotel, 40 Hill Road and Westgate Market, supplier invoice 77812, €186. All made up.
 
 ## Status
 
