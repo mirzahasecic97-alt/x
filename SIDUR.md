@@ -2,7 +2,7 @@
 
 This file is for people building the site's pages. It does not go live. Never publish files that start with `_` or end in `.md`.
 
-The site is **English only and global**. No `lang` attributes on elements, no IS/EN toggle, no Icelandic text, names, company IDs or amounts in kr, and no mention of Iceland or a country switch. (The ISK price switch on `verd.html` is the one exception: it only changes the currency.)
+The site is **English only and global**. No `lang` attributes on elements, no IS/EN toggle, no Icelandic text, names, company IDs or amounts in kr, and no mention of Iceland or a country switch. (The ISK price switch on `verd.html` is one exception: it only changes the currency. The other is the crew chat example on the home page, where "Icelandic" is one of the owner's languages and the sample task is shown in it. Never name the country there.)
 
 ## Files
 
@@ -19,6 +19,7 @@ The site is **English only and global**. No `lang` attributes on elements, no IS
 | `assets/js/<page>.js` | Script for one page, loaded after `site.js`, both with `defer`. Wrap everything in `(() => { ... })();` |
 | `assets/js/pilot.js` | The pilot form: prefill from the URL (or the industry saved in `localStorage` `x-grein` by the home page picker, `industries.html` or `kerfid.html`), `?tools=` ticks matching tools and puts the rest in "Other tools", validation, sending |
 | `assets/js/industries.js` | `industries.html`: all content for the five industries in one data object (`G`), the connection list with status (`T`), the plans (`PLANS`), and the rendering |
+| `assets/js/index.js` | The home page: the industry demo (`GREINAR`) and the crew chat example (`CW`, prewritten sample translations, no API, nothing is sent) |
 | `assets/js/tengingar.js` | The "What do you use today?" picker (`[data-velja]`). On `tengingar.html` and the home page it builds the start of a pilot request: `[data-velja-send]` links to `pilot.html?tools=A,B,C` with the ticked tools and `[data-velja-annad]` |
 | `assets/merki/` | `x-logo-malmur.svg` (mark and X, header and footer), `merki.svg` (mark only, decoration), `favicon.svg` |
 
@@ -87,6 +88,20 @@ Wholesale is the newest pack and the research is still running. Never claim that
 - Showcase, rendered from `G` in `industries.js`: an Overview mockup made for the industry (`.app` classes from `site.css`, `aria-hidden` and `inert`), highlights, "A day with X", modules, example automations and connections.
 - Every "Join the pilot" on the page points to `pilot.html?industry=<slug>&plan=<recommended>&size=<size>` (no `plan` for more than 20, plus `&tools=` with the ticked tools), and every "Book a 15 min call" to `pilot.html?call=1&` plus the same. `pilot.html` preselects industry, plan and team size from these.
 - To change an industry's wording, sample data or status, edit `G` (and `T` for connections) in `industries.js`. Statuses must match `tengingar.html` and `kerfid.html`. Sample companies and people are made up and neutral English.
+
+## Crew chat in their language
+
+The lead feature for contractors. The owner writes or speaks a task on WhatsApp in his own language, each worker gets it in their own language and answers by text, voice note or photo, and the owner reads the answer in his. From these messages X keeps the **work diary** per job and the **hours** per worker. The plan and the sources are in `docs/crew-translation.md` (one level up from `site`).
+
+- **Names:** "Crew chat in their language" (long), "Crew chat" (module chip), "Work diary and hours" (module chip). The old "Crew link" is gone.
+- **Status: Coming soon** everywhere. Nothing is built, the Meta setup has not started and no language pair has been tested. Move it to **In testing** only when a pilot firm sends real tasks to real workers through a live WhatsApp number and one language pair has passed a test by native speakers.
+- **Where:** home page hero line and the example right under the hero (`#crew`), the three problems, `industries.html` (contractors: first highlights, "A day with X", modules, automation, WhatsApp connection), `kerfid.html#crew`, `verd.html` (Team and Business, table row, FAQ "How does crew chat work?").
+- **Plans:** Team and Business. Solo does not list it (`industries.js` hides the two modules when the recommendation is Solo).
+- **Channel:** WhatsApp once Meta approves X. Until then a text message with a private link that opens the task in the worker's language, no app and no login. Say this wherever the channel comes up.
+- **Languages:** no list of supported languages. The home example has English, Icelandic and Croatian for the owner and Polish, Lithuanian, Romanian, Ukrainian and Spanish for the worker, always with "Example" and the note that each language pair is tested with native speakers before it is offered.
+- **Costs:** no per-message prices on the site. Say only that WhatsApp charges per message and those fees may be added at cost, confirmed before launch.
+- **Honest limits:** the owner checks each task before it goes out and approves the hours. X does not track location. The work diary helps keep the official site diary, it does not replace it. Never "first" or "only": others already do parts of this.
+- **Sample data:** owner Sarah, worker Marek, firm Northside Builders, job "Bathroom at 12 Elm Road", 08:00 to 15:30, 7 h 30 min.
 
 ## Status
 

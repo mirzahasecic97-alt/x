@@ -1,6 +1,6 @@
 /* Kerfið (kerfid.html): stíll sem aðeins þessi síða notar. Allir klasar byrja á kf- */
 
-#efni section[id]{scroll-margin-top:72px}
+#efni section[id],.kf-crew{scroll-margin-top:72px}
 .kf-center{text-align:center;margin-left:auto;margin-right:auto}
 
 /* hetja: stökk á kafla */
@@ -336,3 +336,9 @@
 .kf-mail__out .row > span:not(.kf-av){white-space:normal}
 .kf-mail__out .row > .kf-av{flex:none}
 }
+
+/* crew chat: skilaboð í símanum */
+.kf-crew__fine{font-size:13px!important;color:var(--dim)!important;line-height:1.55}
+.kf-phone__msg{justify-self:start;max-width:92%;padding:8px 11px;border-radius:14px 14px 14px 5px;background:#17181c;border:1px solid var(--line);font-size:12.5px;line-height:1.45;color:#e6e7ea}
+.kf-phone__msg--me{justify-self:end;border-radius:14px 14px 5px 14px;background:#2a2d33;border-color:rgba(255,255,255,.1)}
+.kf-phone__msg small{display:block;text-align:right;font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:2px}

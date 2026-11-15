@@ -28,6 +28,7 @@
     mailchimp: { label: 'Mailchimp', conn: { n: 'Mailchimp', st: 'soon' } },
     social: { label: 'Facebook or Instagram', conn: { n: 'Facebook and Instagram', st: 'soon' } },
     pos: { label: 'A till or POS system', conn: { n: 'Store and POS systems', note: 'more to come', st: 'soon' } },
+    whatsapp: { label: 'WhatsApp with the crew', conn: { n: 'WhatsApp', note: 'crew chat', st: 'soon' } },
   };
   const AI = { n: 'Claude or ChatGPT', st: 'ok' };
 
@@ -46,47 +47,50 @@
       name: 'Contractors', full: 'Contractors (trades and renovation)',
       h2: ['Contractors.', 'Your morning in X.'],
       dayh: 'From the first enquiry',
-      lead: 'Quotes in three versions, jobs in stages and an invoice for each stage. From the first enquiry to your accounting.',
-      why: 'the contractor pack takes every job from the first quote to the last staged invoice',
+      lead: 'Tasks to your crew in their own language, and the work diary and hours kept from their replies. Quotes in three versions, jobs in stages and an invoice for each stage.',
+      why: 'the contractor pack takes every job from the first quote to the last staged invoice, with crew chat in each worker\'s language coming soon',
       app: {
         co: 'Northside Builders', user: 'Sarah', date: 'Monday · 6 jobs this week',
         nav: [['i-yfirlit', 'Overview'], ['i-folk', 'Customers'], ['i-sala', 'Sales', 2], ['i-tilbod', 'Quotes', 4], ['i-verk', 'Jobs', 6], ['i-reikningur', 'Invoices'], ['i-heili', 'AI'], ['i-tengi', 'Connections']],
         stats: [['Quotes awaiting reply', '2'], ['Accepted this week', '1'], ['Ready to invoice', '€4,860']],
         list: 'Today',
         rows: [
+          { t: 'Crew chat: Marek finished at 12 Elm Road, 7 h 30 min', tag: ['Coming soon', ''] },
           { t: 'Cladding at Birch Lane: stage 3', s: '08:00', done: true },
           { t: 'Measure Anna Miller\'s kitchen, 12 Elm Road', s: '10:30' },
           { t: 'Quote 1043: Harbor Hotel bathroom', tag: ['Not opened', 'warn'] },
           { t: 'Quote 1044: Porch at 7 Lake Drive, Better option', tag: ['Accepted', 'ok'] },
           { t: 'Oak Street roof: stage 2 invoice, €2,480', tag: ['Draft', ''] },
-          { t: 'Crew link: today\'s jobs to Tom and Ali', tag: ['Coming soon', ''] },
         ],
         ai: [
-          { m: 'Quote 1044 was accepted last night: the Better option, €6,900. The job is created with three stages and the deposit invoice is drafted. Send it?', act: ['Send', 'Check first'] },
+          { m: 'Marek wrote in Polish: the old tiles at 12 Elm Road are off and he needs 4 bags of tile adhesive tomorrow. His 7 h 30 min are in the work diary. Approve them?', act: ['Approve', 'Check first'], soon: true },
           { me: 'And Harbor Hotel?' },
           { m: 'Quote 1043 has not been opened in 7 days. I drafted a short reminder. Send it?', act: ['Send reminder', 'Later'] },
         ],
       },
       hl: [
+        { i: 'i-spjall', h: 'Crew chat in their language', p: 'You write in your language, each worker reads in theirs and answers by text, voice note or photo. On WhatsApp once Meta approves X, a text message link until then.', soon: true },
+        { i: 'i-bok', h: 'Work diary and hours', p: 'Start, finish, what was done and the photos fill in from your crew\'s replies. You check and approve the hours.', soon: true },
         { i: 'i-tilbod', h: 'Good, Better, Best', p: 'Three versions of one quote, side by side. Your customer picks one and accepts online.' },
         { i: 'i-reikningur', h: 'Staged invoices', p: 'Deposit, stages and the final invoice from one quote. Each one waits for your yes.' },
         { i: 'i-skipti', h: 'Change orders', p: 'Extra work is priced and accepted on the job, then lands on the next invoice.' },
-        { i: 'i-folk', h: 'Crew link', p: 'Today\'s jobs to each worker as a link. No app and no password.', soon: true },
       ],
       day: [
         { i: 'i-sala', h: 'The enquiry', p: 'A web enquiry for a bathroom lands in Sales with the customer\'s details.' },
         { i: 'i-tilbod', h: 'Quote in three versions', p: 'X drafts Good, Better and Best from your price list. You check and send.' },
         { i: 'i-hak', h: 'Accepted online', p: 'The customer picks Better. A job is created with its stages.' },
-        { i: 'i-verk', h: 'The work', p: 'Stage by stage on the job board, with change orders when the plan changes.' },
+        { i: 'i-spjall', h: 'Tasks to the crew', p: 'You write the tasks in your language. Each worker gets them in their own, on WhatsApp or by text message.', soon: true },
+        { i: 'i-bok', h: 'Diary and hours', p: 'Replies, photos, start and finish fill the work diary. You approve the hours.', soon: true },
         { i: 'i-reikningur', h: 'The invoice', p: 'Each stage done: the invoice waits for your yes, then goes to DK or Payday.' },
       ],
-      mods: [['Overview'], ['Customers'], ['Sales'], ['Quotes in three versions'], ['Jobs'], ['Staged invoices'], ['Change orders'], ['Crew link', 1], ['Documents', 1], ['Client portal', 1]],
+      mods: [['Overview'], ['Customers'], ['Sales'], ['Quotes in three versions'], ['Jobs'], ['Crew chat', 1, 'team'], ['Work diary and hours', 1, 'team'], ['Staged invoices'], ['Change orders'], ['Documents', 1], ['Client portal', 1]],
       autos: [
+        ['A worker sends "done" with a photo: the hours and the photo go in the work diary.', 1],
         ['Quote not opened in 3 days: a reminder on the morning list.'],
         ['Quote accepted: a job is created and the deposit invoice is drafted.'],
         ['Stage done: the invoice for that stage waits for your yes.'],
       ],
-      tools: ['payday', 'dk', 'gmail', 'outlook', 'gcal', 'wordquotes'],
+      tools: ['whatsapp', 'payday', 'dk', 'gmail', 'outlook', 'gcal', 'wordquotes'],
     },
 
     cleaning: {
@@ -360,7 +364,8 @@
     $('[data-in-why]').textContent = p.key
       ? p.who + ', so ' + p.why + ', and ' + d.why + '.'
       : p.who + ', so ' + p.why + '. ' + d.why.charAt(0).toUpperCase() + d.why.slice(1) + '.';
-    $('[data-in-rmods]').innerHTML = d.mods.map(m => chip(m[0], m[1])).join('');
+    // crew chat and the work diary come with Team and Business, so Solo does not list them
+    $('[data-in-rmods]').innerHTML = d.mods.filter(m => !(m[2] === 'team' && p.key === 'solo')).map(m => chip(m[0], m[1])).join('');
     const valin = Array.from(toolsBox.querySelectorAll('input:checked')).map(i => i.value);
     const sed = new Set();
     const conns = [];

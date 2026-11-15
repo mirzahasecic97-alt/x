@@ -342,3 +342,109 @@ velja(byrjun || 'contractors', false);
 if (byrjun) document.querySelectorAll('[data-ix-cta]').forEach(a => { a.href = 'pilot.html?industry=' + byrjun; });
 
 })();
+
+// Forsíðan: "Your crew, in their language". Eigandinn skrifar verkefni á sínu máli, Marek fær það á sínu,
+// svarar á sínu og dagbókin fyllist. Þýðingarnar eru skrifaðar fyrirfram hér: ekkert API, ekkert er sent.
+(() => {
+  const play = document.querySelector('[data-cw]');
+  if (!play) return;
+  const demo = play.closest('.cw-demo') || play.parentNode;
+
+  // dæmatextar: sama merking á öllum málum. Nöfn og heimilisfang eru tilbúin.
+  const CW = {
+    own: {
+      en: { name: 'English', nat: 'English',
+        task: 'Marek, today: the bathroom at 12 Elm Road. Take off the old tiles. Send a photo when you finish.',
+        start: 'Starting now.',
+        done: 'Finished. The old tiles are off and the skip is full. Tomorrow I need 4 bags of tile adhesive.' },
+      is: { name: 'Icelandic', nat: 'Íslenska',
+        task: 'Marek, í dag: baðherbergið á 12 Elm Road. Taktu gömlu flísarnar af. Sendu mynd þegar þú klárar.',
+        start: 'Byrja núna.',
+        done: 'Búinn. Gömlu flísarnar eru farnar og gámurinn er fullur. Á morgun þarf ég 4 poka af flísalími.' },
+      hr: { name: 'Croatian', nat: 'Hrvatski',
+        task: 'Marek, danas: kupaonica na 12 Elm Road. Skini stare pločice. Pošalji fotografiju kad završiš.',
+        start: 'Počinjem sada.',
+        done: 'Gotovo. Stare pločice su skinute i kontejner je pun. Sutra trebam 4 vreće ljepila za pločice.' },
+    },
+    wrk: {
+      pl: { name: 'Polish', nat: 'Polski',
+        task: 'Marek, dzisiaj: łazienka przy 12 Elm Road. Zdejmij stare płytki. Wyślij zdjęcie, jak skończysz.',
+        start: 'Zaczynam.',
+        done: 'Skończone. Stare płytki zdjęte, kontener pełny. Jutro potrzebuję 4 worki kleju do płytek.' },
+      lt: { name: 'Lithuanian', nat: 'Lietuvių',
+        task: 'Marekai, šiandien: vonios kambarys, 12 Elm Road. Nuimk senas plyteles. Atsiųsk nuotrauką, kai baigsi.',
+        start: 'Pradedu.',
+        done: 'Baigta. Senos plytelės nuimtos, konteineris pilnas. Rytoj reikės 4 maišų plytelių klijų.' },
+      ro: { name: 'Romanian', nat: 'Română',
+        task: 'Marek, azi: baia de la 12 Elm Road. Scoate plăcile vechi. Trimite o poză când termini.',
+        start: 'Încep acum.',
+        done: 'Gata. Plăcile vechi sunt scoase și containerul e plin. Mâine am nevoie de 4 saci de adeziv pentru plăci.' },
+      uk: { name: 'Ukrainian', nat: 'Українська',
+        task: 'Мареку, сьогодні: ванна кімната на 12 Elm Road. Зніми стару плитку. Надішли фото, коли закінчиш.',
+        start: 'Починаю.',
+        done: 'Готово. Стару плитку знято, контейнер повний. Завтра потрібно 4 мішки клею для плитки.' },
+      es: { name: 'Spanish', nat: 'Español',
+        task: 'Marek, hoy: el baño de 12 Elm Road. Quita los azulejos viejos. Manda una foto cuando termines.',
+        start: 'Empiezo ahora.',
+        done: 'Terminado. Los azulejos viejos están fuera y el contenedor está lleno. Mañana necesito 4 sacos de adhesivo para azulejos.' },
+    },
+  };
+
+  const kyrrt = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const allt = s => Array.from(demo.querySelectorAll(s));
+  const send = demo.querySelector('.cw-send');
+  const sent = demo.querySelector('.cw-sent');
+  const reset = demo.querySelector('.ix-reset');
+  const say = document.getElementById('cw-say');
+  let own = 'en', wrk = 'pl', stig = 0, timar = [];
+
+  const textar = () => {
+    const o = CW.own[own], w = CW.wrk[wrk];
+    const t = {
+      'own-name': o.name, 'own-nat': o.nat, 'wrk-name': w.name, 'wrk-nat': w.nat,
+      'task-own': o.task, 'task-wrk': w.task, 'start-own': o.start, 'start-wrk': w.start, 'done-own': o.done, 'done-wrk': w.done,
+    };
+    allt('[data-cw-t]').forEach(el => { el.textContent = t[el.dataset.cwT]; });
+  };
+
+  // stig 0: bíður eftir Send, 1: verkefnið farið, 2: Marek byrjaði, 3: búinn, dagbókin full
+  const syna = n => {
+    stig = n;
+    allt('[data-s]').forEach(el => el.classList.toggle('on', Number(el.dataset.s) <= n));
+    demo.classList.toggle('is-sent', n >= 1);
+    demo.classList.toggle('is-done', n >= 3);
+    reset.hidden = n < 3;
+  };
+  const segja = n => {
+    const w = CW.wrk[wrk].name;
+    say.textContent = [
+      '',
+      'Sent. Marek got the task in ' + w + '.',
+      'Marek replied in ' + w + ' that he started at 08:00. You read it in ' + CW.own[own].name + '.',
+      'Marek sent a voice note and a photo at 15:30. The work diary shows 7 h 30 min, waiting for your OK.',
+    ][n];
+  };
+  const hreinsa = () => { timar.forEach(clearTimeout); timar = []; };
+
+  send.addEventListener('click', () => {
+    if (stig) return;
+    syna(1); segja(1);
+    sent.focus({ preventScroll: true });
+    if (kyrrt) { syna(3); segja(3); return; }
+    timar.push(setTimeout(() => { syna(2); segja(2); }, 1500));
+    timar.push(setTimeout(() => { syna(3); segja(3); }, 3300));
+  });
+  reset.addEventListener('click', () => {
+    hreinsa(); syna(0); say.textContent = '';
+    send.focus({ preventScroll: true });
+  });
+
+  const velja = (attr, gildi) => {
+    allt('[' + attr + ']').forEach(b => b.setAttribute('aria-pressed', String(b.getAttribute(attr) === gildi)));
+  };
+  allt('[data-cw-own]').forEach(b => b.addEventListener('click', () => { own = b.dataset.cwOwn; velja('data-cw-own', own); textar(); }));
+  allt('[data-cw-wrk]').forEach(b => b.addEventListener('click', () => { wrk = b.dataset.cwWrk; velja('data-cw-wrk', wrk); textar(); }));
+
+  textar();
+  syna(0);
+})();
