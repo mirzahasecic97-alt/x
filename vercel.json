@@ -3,7 +3,54 @@
   "headers": [
     {
       "source": "/(.*)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/industries",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/kerfid",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/tengingar",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/gervigreind",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/leidbeiningar",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/samstarf",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/verd",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/flow",
+      "destination": "/",
+      "permanent": false
     }
   ]
 }
